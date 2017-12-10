@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+
+
+nav{
+    background: #d8fbff;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    box-shadow: -2px -7px 47px 9px rgba(0, 0, 0, 0.35);
+    margin: auto;
+}
+
+.logo-section{
+    float: left;
+    padding: 19px;
+    font-family: serif;
+}
+
+.hb-button{
+    float: right;
+    background: black;
+    color: #ffffff;
+    border: none;
+    font-size: 18px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    display: none;
+}
+
+nav a{
+    text-decoration: none;https://www.w3schools.com/css/css_padding.asp
+    color: #282828;
+    font-size: 20px;
+    padding: 5px;
+}
+
+nav ul{
+    overflow: hidden;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    transition: max-height 0.5s;
+    -webkit-transition: max-height 0.5s;
+    -moz-transition: max-height 0.5s;
+    -ms-transition: max-height 0.5s;
+    -o-transition: max-height 0.5s;
+}
+
+nav ul li{
+    float: right;
+    display: inline-block;
+    padding: 19px;
+}
+
+li a{
+    position: relative;
+    color: #000;
+    text-decoration: none;
+    
+}
+
+li a:hover{
+    color: #000;
+}
+
+li a:before{
+    content:"";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    /*visibility: hidden;*/
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+li a:hover:before{
+    /*visibility: visible;*/
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+body{
+    font-family: sans-serif;
+    height: auto;
+    overflow: hidden;
+}
+
+
+a
+{
+    color: #004747;
+}
+
+@media screen and (max-width: 1089px){
+    .logo-section{
+        float: none;
+    }
+    nav ul{
+        background: #ffffff;
+        max-height: 0;
+        width: 100%;
+    }
+    nav ul.show{
+        max-height: 25em;
+    }
+    nav ul li{
+        box-sizing: border-box;
+        width: 100%;
+        padding: 15px;
+    }
+    .hb-button{
+        display: inline;
+    }
+}
