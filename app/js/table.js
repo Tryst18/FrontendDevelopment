@@ -1,7 +1,7 @@
 var cells= 15;
 var rows= cells/4;
 var extra= cells%4;
-var table='';
+var table='<h2>LATEST INNOVATIVE LEARNING @ RoboTryst 2018 at,  Tryst 2018 IIT DELHI</h2><div class="hm"></div>';
 var k=0;
 table += '<table>';
 for(var i=0; i<Math.floor(rows); i++)

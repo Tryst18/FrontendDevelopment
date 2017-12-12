@@ -21,7 +21,7 @@ th
 }
 th:hover
 {
-	opacity: .75;
+	box-shadow: 1px 1px 1px 1px;
 	cursor: pointer;
 }
 div#tablelast
@@ -94,6 +94,25 @@ img
 }
 img:hover
 {
-	opacity: .75;
+	box-shadow: 1px 1px 1px 1px;
 	cursor: pointer;
+}
+h2
+{
+	text-align: center;
+	font-size: 27px;
+	background-color: #d8fbff;
+	position: fixed;
+	width: 100%;
+	text-decoration: underline;
+	font-family:arial, geneva, arial black;
+	color: #595959;
+	padding: 2px;
+	/*position: fixed;*/
+}
+.hm
+{
+	position: relative;
+	width: 100%;
+	height: 35px;
 }

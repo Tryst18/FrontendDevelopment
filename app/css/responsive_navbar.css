@@ -103,7 +103,7 @@ a
     color: #004747;
 }
 
-@media screen and (max-width: 1089px){
+@media screen and (max-width: 862px){
     .logo-section{
         float: none;
     }
