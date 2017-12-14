@@ -11,6 +11,7 @@ nav {
     overflow: hidden;
     position: relative;
     width: 100%;
+    z-index: 100;
     box-shadow: -2px -7px 47px 9px rgba(0, 0, 0, 0.35);
     margin: auto;
 }
@@ -111,6 +112,11 @@ a
     background-color: black;
 }*/
 
+header {
+    position: fixed;
+    width: 100%;
+}
+
 .image img
 {
     max-height: 200px;
@@ -119,7 +125,7 @@ a
     width: auto;
     background-color: black;
     position: absolute;
-    z-index: 2;
+    z-index: 200;
     padding: 200px 20px 20px 200px;
     border-radius: 200px;
     top: -210px;

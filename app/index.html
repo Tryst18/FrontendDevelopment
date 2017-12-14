@@ -2,13 +2,21 @@
 <html>
     <head>
         <title>Tryst 2018</title>
-        <link rel="stylesheet" type="text/css" href="css/styles.css">    
-  		<link rel="import" href="responsive_navbar.html">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+  		<link rel="stylesheet" type="text/css" href="css/animate.css">
+  		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+        
+        <link rel="stylesheet" href="css/responsive_navbar.css">
 
     </head>
     <body>
     	
-    		<div class="image"><a href="#"><img src="images/tryst_logo.png"></a></div>
+	<header>
+    	<div class="image"><a href="#"><img src="images/tryst_logo.png"></a></div>
         <nav>
             <div class="logo-section">
                 <a class="logo" href="#"></a>
@@ -23,11 +31,17 @@
                 <li><a href="#">Home</a></li>
             </ul>
         </nav>
-        <marquee onmouseover="this.stop();" onmouseout="this.start();">RoboSapiens in associaltion with Tryst 2018, is conducting 1 day training program between 23rd-26th February 2018 at IIT Delhi. You can register for it <a href="http://robotryst.com/workshops.php">here</a>. Also refer your friend and get a workshop free.</marquee>
-    	
+    </header>
+    <!-- <div class="initial"><img src="images/tryst_logo.png"></div> -->
+    <div id="particle-js">
+        <div class="init"><MARQUEE onmouseover="this.stop();" onmouseout="this.start();">RoboSapiens in associaltion with Tryst 2018, is conducting 1 day training program between 23rd-26th February 2018 at IIT Delhi. You can register for it <a href="http://robotryst.com/workshops.php">here</a>. Also refer your friend and get a workshop free.</MARQUEE></div>
+    </div>
+    <!-- <script src="js/particle.js"></script> -->
+    <script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js">
+    	particlesJS();
+    </script>
 
-    	<div class="initial"><img src="images/tryst_logo.png"></div>
-    
+    <script type="text/javascript" src="js/responsive_navbar.js"></script>
     	
 
     </body>

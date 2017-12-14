@@ -1,5 +1,6 @@
-.testing {
-  width: 71.42857%; }
-
 body {
-  background-color: purple; }
+  background-color: #001111; }
+
+#particle-js {
+  height: auto;
+  width: 100%; }
