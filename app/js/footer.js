@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('.hb-button').on('click', function(){
-        $('nav ul').toggleClass('show');
+    $('.foot .hb-button').on('click', function(){
+        $('nav.foot ul').toggleClass('show');
     });
 });
