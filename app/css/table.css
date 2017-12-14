@@ -5,12 +5,12 @@
 }
 tr
 {
-	height: 150px;
+	height: 200px;
 	margin: auto;
 }
 table
 {
-	width: 80%;
+	width: 1200px;
 	margin: auto;
 }
 th
@@ -26,9 +26,9 @@ th:hover
 }
 div#tablelast
 {
-	width:80%;
+	width:1200px;
 	margin: auto;
-	height: 150px;
+	height: 200px;
 	position: relative;
 }
 div#one

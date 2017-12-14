@@ -7,7 +7,7 @@
 
 
 nav{
-    background: #d8fbff;
+    background: orange;
     overflow: hidden;
     position: relative;
     width: 100%;
@@ -16,8 +16,9 @@ nav{
 }
 
 .logo-section{
+    
     float: left;
-    padding: 19px;
+    margin: 0px;
     font-family: serif;
 }
 
@@ -28,6 +29,7 @@ nav{
     border: none;
     font-size: 18px;
     padding: 5px 10px;
+    margin: 16px;
     border-radius: 3px;
     cursor: pointer;
     display: none;
@@ -102,8 +104,28 @@ a
 {
     color: #004747;
 }
+/*div.image
+{
+    padding: 0 0 0 200px;
+    background-color: black;
+}*/
+img
+{
+    max-height: 200px;
+    max-width: 300px;
+    height: auto;
+    width: auto;
+    background-color: black;
+    position: absolute;
+    z-index: 100;
+    padding: 200px 20px 20px 200px;
+    border-radius: 200px;
+    top: -210px;
+    left: -220px;
+}
 
-@media screen and (max-width: 862px){
+
+@media screen and (max-width: 910px){
     .logo-section{
         float: none;
     }
