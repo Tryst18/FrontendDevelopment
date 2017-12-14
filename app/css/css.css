@@ -2173,10 +2173,10 @@ ul.social-buttons li a:active {
 	width: 600px;
 	background-color: black;
 	position: fixed;
-	top: -250px;
-	left: -300px;
+	top: -240px;
+	left: -360px;
 	z-index: 2001;
-	border-radius: 0 0 500px 0;
+	border-radius: 0 0 250px 0;
 }
 
 .imageu img
@@ -2185,8 +2185,13 @@ ul.social-buttons li a:active {
 	background-color: black;
 	position: relative;
 	top: 230px;
-	left: 270px;
+	left: 330px;
 	height: 250px;
 	width: 250px;
+	border-radius: 0 0 180px 0;
+}
+.tk
+{
+	font-size: 20px;
 }
 
