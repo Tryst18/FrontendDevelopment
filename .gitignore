@@ -1,0 +1,9 @@
+node_modules
+dist
+*.iml
+.DS_Store
+*.zip
+*.jar
+*.war
+*.ear
+npm-debug.log

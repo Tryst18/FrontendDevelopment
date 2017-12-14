@@ -1,0 +1,118 @@
+*
+{
+	margin: 0;
+	padding: 0;
+}
+tr
+{
+	height: 150px;
+	margin: auto;
+}
+table
+{
+	width: 80%;
+	margin: auto;
+}
+th
+{
+	background-size: 100% 100%;
+	border-radius: 20px;
+	background-position: center;
+}
+th:hover
+{
+	box-shadow: 1px 1px 1px 1px;
+	cursor: pointer;
+}
+div#tablelast
+{
+	width:80%;
+	margin: auto;
+	height: 150px;
+	position: relative;
+}
+div#one
+{
+	width:25%;
+	margin: 0 37.5% 0 37.5%;
+	height:100%;
+	position: absolute;
+}
+div#two
+{
+	width: 50%;
+	margin: 0 25% 0 25%;
+	height: 100%;
+	position: absolute;
+}
+div.twocell
+{
+	width: 50%;
+	position: absolute;
+	height: 100%;
+}
+div#two1
+{
+	left: 0;
+}
+div#two2
+{
+	left: 50%;
+}
+div#three
+{
+	width: 75%;
+	margin: 0 12.5% 0 12.5%;
+	height: 100%;
+	position: absolute;
+}
+div.threecell
+{
+	position: absolute;
+	height: 100%;
+	width: 33.33%;
+}
+div#three1
+{
+	left: 0;
+}
+div#three2
+{
+	left: 33.33%;
+}
+div#three3
+{
+	left: 66.66%;
+}
+img
+{
+	height: 100%;
+	width: 99.5%;
+	border-radius: 20px;
+	margin: 0 .25% 0 .25%;
+
+}
+img:hover
+{
+	box-shadow: 1px 1px 1px 1px;
+	cursor: pointer;
+}
+h2
+{
+	text-align: center;
+	font-size: 27px;
+	background-color: #d8fbff;
+	position: fixed;
+	width: 100%;
+	text-decoration: underline;
+	font-family:arial, geneva, arial black;
+	color: #595959;
+	padding: 2px;
+	/*position: fixed;*/
+}
+.hm
+{
+	position: relative;
+	width: 100%;
+	height: 35px;
+}
