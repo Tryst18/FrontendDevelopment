@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html class="js no-touch gr__robosapi_com"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+       
+		
+   
+<link rel="stylesheet" type="text/css" href="css/on_the_fly_combine.css">
+<script async="" src="js/default_002" charset="UTF-8" crossorigin="*" id="TawkScript-1513260212129"></script></head>    	
+<body data-gr-c-s-loaded="true" background="images/index.jpeg">
+	
+
+</nav>
+
+<div id="myModal" class="modal hide fade span10 logintabmodel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="padding:0;cursor:pointer;background:transparent;border:0;-webkit-appearance:none;opacity:1;margin-top:-25px;margin-right:-25px;">
+	<img src="images/close_fancy.png" alt="close" width="47" height="45">
+    </button>
+
+<div class="container span9" style=" padding:15px;">
+	<div class="tabbable">
+    	<ul class="nav nav-tabs" id="myTab">
+            <li class="active"><a href="#tabL1" data-toggle="tab" onclick="show_again_login_form();"><i class="fa fa-sign-in fa-lg"></i> Login</a></li>
+            <li><a href="#tabL2" data-toggle="tab" onclick="show_again_sign_up_form();"><i class="fa fa-thumbs-up fa-lg"></i> Signup</a></li>
+        </ul>
+    <div class="tab-content" style="overflow-x:hidden; max-height:350px;">                
+
+    <div class="tab-pane fade in active" id="tabL1">
+    	<div class="row-fluid">
+        	<div class="span9 bordernone"><h4 id="show_hide_new_user_login">Login With</h4><div id="show_php_error"></div>
+<script>
+	function abc()
+		{
+			email=$("#email").val();
+			$("#username").val(email);
+		}
+</script>
+             <div id="show_login_form">
+
+                
+<div class="row-fluid">
+	<div class="span12">
+		<div style="margin-left:5px;margin-bottom:5px;" class="controls">
+        	<div class="input-prepend span12">
+            	<span id="show_first_name_error_content_light" class="add-on"><i class="fa fa-envelope"></i></span>
+                
+                                <input name="login" id="login" value="" type="hidden">
+                <input id="username" name="username" size="40" placeholder="Your Email" onkeyup="return remove_css_username(this.value)" class="span10 size11 worksh_info_user" type="text">
+
+				<span class="input-append" style="margin-bottom:0;font-style:italic;"><span class="add-on size11">Email Id&nbsp;&nbsp;&nbsp;</span></span>
+			</div>
+		</div>
+	</div>
+</div>                
+
+<div class="row-fluid">
+	<div class="span12">
+		<div style="margin-left:5px;margin-bottom:5px;" class="controls">
+        	<div class="input-prepend span12">
+            	<span id="show_first_name_error_content_light" class="add-on"><i class="fa fa-key"></i></span>
+                <input id="password" name="password" value="" size="40" placeholder="Your Password" class="span10 size11 worksh_info_user" onkeyup="return remove_css_pass(this.value)" type="password">
+								<input name="baseurl" id="baseurl" value="www.robosapi.com/" type="hidden">
+				<span class="input-append" style="margin-bottom:0;font-style:italic;"><span class="add-on size11">Password</span></span>
+			</div>
+		</div>
+	</div>
+</div>
+
+                
+                
+                <div class="row-fluid">
+                	<div class="span6">
+                    <button class="btn btn-primary span12" id="submit" type="submit" name="submit" onclick="return login_form()">
+                    	<i class="fa fa-lock fa-lg"></i>  <span style="font-size: 20px;">Submit</span>
+                    </button>
+                	</div>
+                             
+                    <div class="span6" id="forget_pass_one">
+                        <h5 style="margin-top:6px;"><i class="fa fa-info-circle"></i>
+                        <a href="javascript:void();" onclick="return forget_pass_second()"> Forgot Password</a></h5>
+                    </div>
+                    <div class="span6" id="forget_pass_two" style="display:true">
+                       
+                    </div>
+				</div>
+			</div>
+        	<div id="ForgetPassowordData" style="display:none;">
+            	<div class="row-fluid">
+                	<div class="span12" id="forget_pass_message"><b> Forgot your Password?</b><br>
+                    	<div id="forget_password_msg_second"></div>
+							<span style="font-size: 11px;">Enter your email address to receive a new password.</span>
+                        </div>
+                    </div>
+                    <div class="row-fluid">
+                    <div id="login_tiny_help_message2" class="span12" style="display: none;">
+                    	<span style="font-size: 11px;" class="alert-1-error"><i class="fa fa-info"></i> Please enter a valid email address.</span>
+					</div>
+				</div>
+  				<div style="" id="forget_pass_view">
+    				
+<div class="row-fluid">
+	<div class="span12">
+		<div style="margin-left:5px;margin-bottom:5px;" class="controls">
+        	<div class="input-prepend span12">
+            	<span id="show_first_name_error_content_light" class="add-on"><i class="fa fa-envelope"></i></span>
+                <input id="forget_pass_email_id" name="forget_pass_email_id" size="40" placeholder="Your Email" class="span10 size11 worksh_info_user" onkeyup="return show_forget_error(this.value);" type="text">
+				<span class="input-append" style="margin-bottom:0;font-style:italic;"><span class="add-on size11">Email</span></span>
+			</div>
+		</div>
+	</div>
+</div>
+       				<div class="row-fluid">
+        				<div class="span10">
+                            <button class="btn btn-primary span12" id="submit" type="submit" name="submit" onclick="return forget_password_button();">
+                    			<i class="fa fa-lock fa-lg"></i> <span style="font-size:20px;">Submit</span>
+                    		</button>
+						</div>
+       				</div>
+
+
+				</div>
+                
+			</div>               
+		</div>
+		<div class="span3">
+        	<h5>Sign In With</h5>
+			<form id="form" class="contact" action="#" method="post" name="contactform">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <a href="https://www.facebook.com/dialog/oauth?client_id=1402752116708706&amp;redirect_uri=https%3A%2F%2Fwww.robosapi.com%2Findex.php%2Fcommon%2Fdashboard%2F%3Faction%3Dfb&amp;state=51c741951c1d6aa13fb4cf54ba34f38a&amp;sdk=php-sdk-3.2.3&amp;scope=email">
+                            <div class="sprite-social sprite-facebook"></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="row-fluid" style="margin-top:25px;">
+                    <div class="span12">                        <a href="https://accounts.google.com/o/oauth2/auth?response_type=code&amp;redirect_uri=http%3A%2F%2Fwww.robosapi.com%2Findex.php%2Fcommon%2Fdashboard%2F&amp;client_id=832996445537-7tdjlk33tanvindd0vnlavoub0nt0cmu.apps.googleusercontent.com&amp;scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fplus.login&amp;access_type=offline&amp;approval_prompt=force"><div class="sprite-social sprite-google"></div></a>
+                    </div>
+                </div>
+			</form>
+		</div>
+	</div>
+</div>
+ 
+<div class="tab-pane fade in" id="tabL2">
+	<div class="row-fluid">
+		<div class="span9 bordernone">
+			<h4 id="show_hide_new_user_signup">New User Signup</h4>
+            <h4 class="error-bg error-text" id="show_php_error_signup" style="color:red; padding:10px;display:none; font-family:Verdana, Arial, Helvetica, sans-serif;font-size:11px; font:bold; margin-right:15px;">
+            <span>It Seems That you already have an account with us. We 
+request you to please Login. if you forget the password then please 
+reset your password.
+			 
+			</span>
+            </h4>
+            <script>
+             	function abc()
+                	{
+                     	email=$("#email").val();
+                        $("#username").val(email);
+                     }
+            </script>
+<div id="show_sign_form">
+	
+    <div class="row-fluid">
+        <div class="span12">
+            <div style="margin-left:5px;margin-bottom:5px;" class="controls">
+                <div class="input-prepend span12">
+                    <span id="show_first_name_error_content_light" class="add-on"><i class="fa fa-user"></i></span>
+                    <input id="user_name" name="user_name" size="40" placeholder="First Name" title="First Name" class="span10 size11 worksh_info_user" onkeyup="return check_fist_name_error_image(this.value)" type="text">
+                    <span class="input-append" style="margin-bottom:0;font-style:italic;"><span class="add-on size11">First Name</span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+	
+    <div class="row-fluid">
+        <div class="span12">
+            <div style="margin-left:5px;margin-bottom:5px;" class="controls">
+                <div class="input-prepend span12">
+                    <span id="show_first_name_error_content_light" class="add-on"><i class="fa fa-user"></i></span>
+                    <input id="lastname" name="lastname" size="40" title="Last Name" placeholder="Last Name" onkeyup="return check_lastname_error(this.value)" class="span10 size11 worksh_info_user" type="text">
+                    <span class="input-append" style="margin-bottom:0;font-style:italic;"><span class="add-on size11">Last Name</span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+			
+	<div class="row-fluid">
+        <div class="span12">
+            <div style="margin-left:5px;margin-bottom:5px;" class="controls">
+                <div class="input-prepend span12">
+                    <span id="show_first_name_error_content_light" class="add-on"><i class="fa fa-envelope"></i></span>
+                    <input id="first_email" name="first_email" size="40" placeholder="Your Email" title="Email" class="span10 size11 worksh_info_user" onkeyup="return check_mail(this.value)" style="height:auto; padding:5px; margin:0px;" type="text">
+                    <span class="input-append" style="margin-bottom:0;font-style:italic;"><span class="add-on size11">Email Id&nbsp;&nbsp;&nbsp;&nbsp;</span></span>
+                </div>
+            </div>
+        </div>
+    </div>              
+              
+             
+	<div class="row-fluid">
+        <div class="span12">
+            <div style="margin-left:5px;margin-bottom:5px;" class="controls">
+                <div class="input-prepend span12">
+                    <span id="show_first_name_error_content_light" class="add-on"><i class="fa fa-envelope"></i></span>
+                    <input id="second_email" name="second_email" size="40" placeholder="Confirm Email" title="Confirm Email" class="span10 size11 worksh_info_user" onkeyup="return check_first_second_email(this.value)" style="height:auto; padding:5px; margin:0px;" type="text">
+                    <span class="input-append" style="margin-bottom:0;font-style:italic;"><span class="add-on size11">Reconfirm&nbsp;</span></span>
+                </div>
+            </div>
+        </div>
+    </div>               
+              
+	<div class="row-fluid">
+        <div class="span12">
+            <div style="margin-left:5px;margin-bottom:5px;" class="controls">
+                <div class="input-prepend span12">
+                    <span id="show_first_name_error_content_light" class="add-on"><i class="fa fa-key"></i></span>
+                    <input id="first_password" name="first_password" value="" size="40" placeholder="********" title="Password" class="span10 size11 worksh_info_user" onkeyup="return check_first_password_signup(this.value)" type="password">
+                    <span class="input-append" style="margin-bottom:0;font-style:italic;"><span class="add-on size11">Password&nbsp;&nbsp;</span></span>
+                </div>
+            </div>
+        </div>
+    </div>               
+               
+			
+	<div class="row-fluid">
+        <div class="span12">
+            <div style="margin-left:5px;margin-bottom:5px;" class="controls">
+                <div class="input-prepend span12">
+                    <span id="show_first_name_error_content_light" class="add-on"><i class="fa fa-key"></i></span>
+                    <input id="second_password" name="second_password" value="" size="40" placeholder="********" title="Confirm Password" class="span10 size11 worksh_info_user" onkeyup="return check_second_password_signup(this.value)" type="password">
+                    <span class="input-append" style="margin-bottom:0;font-style:italic;"><span class="add-on size11">Reconfirm&nbsp;</span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+            
+	<div class="row-fluid">
+        <div class="span12">
+            <div style="margin-left:5px;margin-bottom:5px;" class="controls">
+                <div class="input-prepend span12">
+                    <span id="show_first_name_error_content_light" class="add-on"><i class="fa fa-mobile"></i></span>
+                    <input id="pnone_no" name="pnone_no" size="40" placeholder="Your Phone No." class="span10 size11 worksh_info_user" onkeyup="return check_mob_name_error_header(this.value)" maxlength="10" style="height:auto; padding:5px; margin:0px;" type="text">
+                    <span class="input-append" style="margin-bottom:0;font-style:italic;"><span class="add-on size11">Phone No.&nbsp;</span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+           
+	<div class="row-fluid">
+        <div class="span12">
+            <div style="margin-left:5px;margin-bottom:5px;" class="controls">
+                <div class="input-prepend captcha_width">
+                    <span id="show_first_name_error_content_light" class="add-on"><i class="fa fa-lock"></i></span>
+                    <span id="Signup_captcha">
+                    <img src="images/1513256666.jpeg" style="border:0;" alt=" " width="120" height="30">                    	<input name="security_hidden_image" id="security_hidden_image" title="Captcha" value="2069" type="hidden">
+                    </span>
+                    <span id="loading" style="margin-left: 5px;width: 64%;height: 9%;display: none;" class="center">
+                        <img src="images/refresh_captcha.gif" style="margin-left: 50px;" width="32" height="25">
+                    </span>
+                </div>
+                <i style="cursor: pointer;" onclick="reload_captcha_Signup();" class="fa fa-refresh fa-2x"></i>
+            </div>
+        </div>
+    </div>
+           
+	<div class="row-fluid">
+        <div class="span12">
+            <div style="margin-left:5px;margin-bottom:5px;" class="controls">
+                <div class="input-prepend span12">
+                    <span id="show_first_name_error_content_light" class="add-on"><i class="fa fa-unlock-alt"></i></span>
+                    <input id="security_code_image" name="security_code_image" size="40" placeholder="Security Code" class="span10 size11 worksh_info_user" onkeyup="return captchamatch_signup_userform(this.value)" maxlength="10" title="Enter Security Code" type="text">
+                    <span class="input-append" style="margin-bottom:0;font-style:italic;"><span class="add-on size11">Captcha&nbsp;&nbsp;</span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+			<div class="row-fluid">
+				<div class="span6">
+                    <button class="btn btn-primary span12" id="submit_second" type="submit" name="submit" onclick="return signup_form_user();">
+                        <i class="fa fa-lock fa-lg"></i>  <span style="font-size: 20px;">Submit</span>
+                    </button>
+            	</div>
+                              
+                <div class="span6" id="forget_pass_one">
+                    <h5 style="margin-top:6px;"><i class="fa fa-info-circle"></i><a href="javascript:void();" onclick=" return forget_pass_second_sec();"> Forgot Password</a></h5>
+                </div>
+                <div class="span6" id="forget_pass_two" style="display:true">
+                  
+                </div>
+			</div>
+</div>  
+<div id="ForgetPassowordData_second" style="display:none;">
+	<div class="row-fluid">
+    	<div class="span12" id="forget_pass_message"><b> Forgot your Password?</b><br>
+        	<div id="forget_password_msg"></div>
+			<span style="font-size: 11px;">Enter your email address to receive a new password.</span>
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div id="login_tiny_help_message2" class="span12" style="display: none;">
+        	<span style="font-size: 11px;" class="alert-1-error"><i class="fa fa-info"></i> Please enter a valid email address.</span>
+        </div>
+    </div>
+  	<div style="" id="forget_pass_view">
+		<div class="row-fluid">
+            <div class="span12">
+                <div style="margin-left:5px;margin-bottom:5px;" class="controls">
+                    <div class="input-prepend span12">
+                        <span id="show_first_name_error_content_light" class="add-on"><i class="fa fa-envelope"></i></span>
+                        <input id="forget_pass_email_id_second" name="forget_pass_email_id_second" size="40" title="Email" placeholder="Your Email" class="span10 size11 worksh_info_user" onkeyup="return show_forget_error_second(this.value);" type="text">
+                        <span class="input-append" style="margin-bottom:0;font-style:italic;"><span class="add-on size11">Email</span></span>
+                    </div>
+                </div>
+            </div>
+    	</div>
+		<div class="row-fluid">
+        	<div class="span10">
+                <button class="btn btn-primary span12" id="submit_second" type="submit" name="submit" onclick="return forget_password_button_second();">
+                        <i class="fa fa-lock fa-lg"></i>  <span style="font-size: 20px;">Submit</span>
+                </button>
+        	</div>
+       	</div>
+	</div>
+    
+</div>               
+</div>
+
+
+<div class="span3">
+	<h5>Sign In With</h5>
+ 	<form id="form" class="contact" action="#" method="post" name="contactform">
+   		<div class="row-fluid">
+    		<div class="span12">
+      			<a href="https://www.facebook.com/dialog/oauth?client_id=1402752116708706&amp;redirect_uri=https%3A%2F%2Fwww.robosapi.com%2Findex.php%2Fcommon%2Fdashboard%2F%3Faction%3Dfb&amp;state=51c741951c1d6aa13fb4cf54ba34f38a&amp;sdk=php-sdk-3.2.3&amp;scope=email"><div class="sprite-social sprite-facebook"></div></a>
+     		</div>
+    	</div>
+     	<p></p>
+ 		<div class="row-fluid" style="margin-top:25px;">
+  			<div class="span12"><a href="https://accounts.google.com/o/oauth2/auth?response_type=code&amp;redirect_uri=http%3A%2F%2Fwww.robosapi.com%2Findex.php%2Fcommon%2Fdashboard%2F&amp;client_id=832996445537-7tdjlk33tanvindd0vnlavoub0nt0cmu.apps.googleusercontent.com&amp;scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fplus.login&amp;access_type=offline&amp;approval_prompt=force"><div class="sprite-social sprite-google"></div></a></div>
+ 		</div>
+	</form>
+</div>
+</div>              
+</div>
+
+			</div>       
+		</div>
+	</div>
+<!-- ====================== Login New Style ====================== -->    
+ 
+<!-- ==================== Login New Style End ==================== -->    
+    
+
+</div>
+<style>
+.worksh_info{height:20px !important;margin:0px !important;width:76% !important;font-weight:bold;}
+.worksh_info_user{height:20px !important;margin:0px !important;width:75% !important;}
+.worksh_info_user_select{height:20px !important;margin:0px !important;width:101% !important;}
+.border-right{border-right:#eee 2px solid; padding:20px;}
+@media (max-width: 480px)
+{ 
+.contactus_heading{ font-size:15px;}
+.worksh_info{height:20px !important;margin:0px !important;width:62% !important;}
+.worksh_info_user{height:20px !important;margin:0px !important;width:62% !important;}
+.worksh_info_user_select{height:20px !important;margin:0px !important;width:62% !important;}
+.size11{ font-size:11px !important;}
+.border-right{border-right:#eee 0px solid; padding:0px;}
+}
+</style>
+
+<!-- Cordinator login Divyanshu -->
+<div id="myModal_second" class="modal hide fade span10 logintabmodel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="padding:0;cursor:pointer;background:transparent;border:0;-webkit-appearance:none;opacity:1;margin-top:-25px;margin-right:-25px;">
+	<img src="images/close_fancy.png" alt="close" width="47" height="45">
+    </button>
+    <div class="container span9" style=" padding:15px;">
+		<div class="tabbable">
+        	<ul class="nav nav-tabs" id="myTab">
+            	<li class="active"><a href="#tabL1" data-toggle="tab" onclick="show_again_login_form_cord();"><i class="fa fa-key fa-lg"></i> Coordinator Login</a></li>
+            </ul>
+            <div class="tab-content" style="overflow-x:hidden; max-height:350px;">  
+            	 <div class="tab-pane fade in active" id="tabL1">
+    				<div class="row-fluid">
+        				<div class="span8 bordernone">
+                        	<h4 id="show_hide_new_user_login_cord">Login With</h4>
+                            <span style="display:none" id="show_php_error_cord" class="label label-important"></span>
+							<script>
+                                function abc()
+                                    {
+                                        email=$("#email").val();
+                                        $("#username").val(email);
+                                    }
+                            </script>
+             				<div id="show_login_form_cord">
+             		
+	<div class="row-fluid">
+        <div class="span12">
+            <div style="margin-left:5px;margin-bottom:5px;" class="controls">
+                <div class="input-prepend span12">
+                    <span id="show_first_name_error_content_light" class="add-on"><i class="fa fa-envelope"></i></span>
+                    					<input name="login_cord" id="login_cord" value="" type="hidden">
+					<input id="username_cord" name="username_cord" size="40" placeholder="Your Email" title="Email" onkeyup="return remove_css_username_cord(this.value)" class="span10 size11 worksh_info_user" type="text">
+                    <span class="input-append" style="margin-bottom:0;font-style:italic;"><span class="add-on size11">Email Id&nbsp;&nbsp;</span></span>
+                </div>
+            </div>
+        </div>
+    </div>                                
+                                
+
+<div class="row-fluid">
+        <div class="span12">
+            <div style="margin-left:5px;margin-bottom:5px;" class="controls">
+                <div class="input-prepend span12">
+                    <span id="show_first_name_error_content_light" class="add-on"><i class="fa fa-key"></i></span>
+                    <input id="password_cord" name="password_cord" value="" size="40" placeholder="Your Password" onkeyup="return remove_css_pass_cord(this.value)" class="span10 size11 worksh_info_user" type="password">
+                                    	<input name="baseurl_cord" id="baseurl_cord" value="www.robosapi.com/" type="hidden">
+                    <span class="input-append" style="margin-bottom:0;font-style:italic;"><span class="add-on size11">Password</span></span>
+                </div>
+            </div>
+        </div>
+    </div>                                   
+                                <div class="row-fluid">
+                                    <div class="span6">
+                                    <!--<button class="btn btn-block" id="submit" type="submit" name="submit" onClick="return login_form_cord()">
+                                        <i class="fa fa-lock fa-lg"></i>  <span style="font-size: 20px;">Submit</span>
+                                    </button>
+                                    -->
+                                    <button class="btn btn-primary span12" id="submit" type="submit" name="submit" onclick="return login_form_cord()">
+                       					 <i class="fa fa-lock fa-lg"></i>  <span style="font-size: 20px;">Submit</span>
+                					</button>
+
+                                    </div>
+               						<!--Foret pass herre-->                                
+                                    <div class="span6" id="forget_pass_one">
+                                        <h5 style="margin-top:6px;"><i class="fa fa-info-circle"></i>
+                                        	<a href="javascript:void();" onclick="return forget_pass_second_cord()"> Forgot Password</a>
+                                        </h5>
+                                    </div>
+                                    <div class="span6" id="forget_pass_two_cord" style="display:true">
+                                        <!-- <h5><i class="fa fa-info-circle"></i><a href="#" onclick="forget_pass_second()">Forget Passwordtt</a></h5>-->
+                                    </div>
+                                </div>
+						</div>
+        	<div id="ForgetPassowordData_cord" style="display:none;">
+            	<div class="row-fluid">
+                	<div class="span12" id="forget_pass_message_cord"><b> Forgot your Password?</b><br>
+                    	<div id="forget_password_msg_second_cord"></div>
+							<span style="font-size: 11px;">Enter your email address to receive a new password.</span>
+                        </div>
+                    </div>
+                    <div class="row-fluid">
+                    <div id="login_tiny_help_message2" class="span12" style="display: none;">
+                    	<span style="font-size: 11px;" class="alert-1-error"><i class="fa fa-info"></i> Please enter a valid email address.</span>
+					</div>
+				</div>
+  				<div style="" id="forget_pass_view_cord">
+    				
+	<div class="row-fluid">
+        <div class="span12">
+            <div style="margin-left:5px;margin-bottom:5px;" class="controls">
+                <div class="input-prepend span12">
+                    <span id="show_first_name_error_content_light" class="add-on"><i class="fa fa-envelope"></i></span>
+                 	<input id="forget_pass_email_id_cord" name="forget_pass_email_id_cord" size="40" title="Email" placeholder="Your Email" class="span10 size11 worksh_info_user" onkeyup="return show_forget_error_cord(this.value);" type="text">
+                    <span class="input-append" style="margin-bottom:0;font-style:italic;"><span class="add-on size11">Email</span></span>
+                </div>
+            </div>
+        </div>
+    </div>                     
+                    
+       				<div class="row-fluid">
+        				<div class="span11">
+							<!--<a href="javascript:void()" class="btn btn-block" onClick="return forget_password_button_cord();"><i class="fa fa-lock fa-lg"></i>  
+          						<span style="font-size: 20px; margin-top:12px;">Submit</span>
+							</a>-->
+                            <button class="btn btn-primary span12" id="submit" type="submit" name="submit" onclick="return forget_password_button_cord();">
+								<i class="fa fa-lock fa-lg"></i>  <span style="font-size: 20px;">Submit</span>
+                			</button>
+						</div>
+       				</div>
+				</div>
+			</div>               
+		</div>
+        
+        				<!--============== Message for Coordinator =====================-->
+        <div class="span4">
+        <span class="span12 error-bg" style="text-align:center;"><span style="font-weight:bold;text-decoration:underline;color:#C00;">Important</span>
+        	<span class="span12" style="font-size:12px;line-height:18px;margin-top:5px;margin-left:0;margin-bottom:5px;">This
+ Special Login Facility is only for our Clients (Workshop Coordinators) 
+those who organize our workshop/Training program at their 
+Colleges/Schools. After Login One can access latest 
+update/proceeding/SMSs Sent regarding your event. They can download 
+Posters/Flyers Softcopy, Track Publicity Stuff Sent by us. You can also 
+view the actual pictures of Training kits and their content.</span></span>
+        </div>
+	
+	</div>
+</div>
+                         
+                         
+                     </div>
+                    
+                    
+                </div>
+    </div>
+</div>
+<style>
+.descrip{ padding:0;}
+.mobilelogo{display:none;}
+#MainMenu{display:none;}
+.captcha_width{ width:26%}
+@media(min-width:500px) and (max-width:1200px)
+{
+	.captcha_width{ width:60%}
+}
+@media (max-width:979px)
+{
+.mobilelogo{ display:block;}
+.desktopmenu{ display:none;}
+.topbarmenu{display:none;}
+.top-soc{ display:none;}
+#MainMenu{display:block;}
+}
+
+
+@media (max-width:480px){
+.requesttexttab{ display:none;}
+.container{ margin:0;}
+.captcha_width{ width:80%}
+.tab-content {padding: 6px;}
+}
+</style>
+
+
+<script>
+
+
+ function reload_captcha_Signup(){
+     
+     $("#Signup_captcha").hide();
+     $('#loading').show();
+      var t=new Date().getTime(); 
+        $.ajax({
+          url:'https://www.robosapi.com/index.php/home/home/reload_captcha_Signup/'+t,
+           success:function(data){ 
+           $("#Signup_captcha").html(data);
+           $('#loading').hide();
+           $("#Signup_captcha").show();
+            },
+           error: function(data) {
+            $("#Signup_captcha").html('<span style="color:red">Error in Captcha Loading</span>');
+            }
+        });  
+   }
+</script>
+
+
+
+<!--=================================================workshop End========================================================-->
+
+
+<!--============================================ Upcoming Workshops START ===============================================-->
+<style>
+.heading-wrap {
+    margin-bottom: 30px;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+}
+.heading-wrap .heading-wrap-line {
+    border-bottom: 1px solid #dddddd;
+    bottom: 18px;
+    content: "";
+    display: block;
+    left: -51%;
+    position: absolute;
+    width: 100%;
+}
+.small-heading {
+    display: inline-block;
+    margin-left: -20px;
+    padding-left: 20px;
+    padding-top: 10px;
+    position: relative;
+    text-align: right;
+    vertical-align: top;
+    z-index: 7;
+}
+.small-heading h4 {
+    font-family: "ralewaybold";
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+}
+.section-heading {
+    display: inline-block;
+    font-size: 60px;
+    text-align: left;
+    vertical-align: top;
+}
+.primary-color {
+    color: #ffff00 !important;
+}
+
+</style> 
+<!-- ====================== Summer Training =======================-->
+<style>
+
+
+
+.sprite {
+    background-image: url(https://www.robosapi.com/assets/images/training/summer_training/summer.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+.sprite-summer_training111 {
+    width: 370px;
+    height: 370px;
+    background-position: -1px -1px;
+}
+
+.sprite-summer_training22 {
+    width: 370px;
+    height: 370px;
+    background-position: -373px -1px;
+}
+
+.sprite-summer_training33 {
+    width: 370px;
+    height: 370px;
+    background-position: -745px -1px;
+}
+
+.sprite-summer_training44 {
+    width: 370px;
+    height: 370px;
+    background-position: -1px -373px;
+}
+
+.sprite-summer_training55 {
+    width: 370px;
+    height: 370px;
+    background-position: -373px -373px;
+}
+
+.sprite-summer_training66 {
+    width: 370px;
+    height: 370px;
+    background-position: -745px -373px;
+}
+
+.sprite-summer_training77 {
+    width: 370px;
+    height: 370px;
+    background-position: -1px -745px;
+}
+
+.sprite-summer_training88 {
+    width: 370px;
+    height: 370px;
+    background-position: -373px -745px;
+}
+
+.sprite-summer_training99 {
+    width: 370px;
+    height: 370px;
+    background-position: -745px -745px;
+}
+
+
+
+
+
+
+</style>
+<section id="work" style="padding-bottom:30px; background:#000;">
+    <div class="container">
+        <div class="title from-bottom" style="opacity: 1; bottom: 0px;">
+            <div class="heading-wrap bg-color-1"> <!-- <div class="heading-wrap-line" style="margin-left: -297px;"></div> -->
+                <div class="small-heading">
+                    <h4></h4>
+                    <p></p>
+                </div>
+                <h2 class="section-heading primary-color" style="color:yellow;">Workshops</h2>
+            </div>
+
+            <!--<h2>Workshop at IIT Guwahati During Techniche-2015 on 3rd to 5th September 2015</h2>-->
+            <div class="bullerBr"> 
+                <span>&nbsp;</span> 
+              <!--  <i class="fa fa-circle"></i> 
+                <label class="smlwidth">&nbsp;</label>-->
+            </div>
+            <p class="descrip">
+                <!--Participate in Exciting Learning Workshops by Techniche-2015 IIT Guwahati. Limited Seats. 
+                All participants  will get a certificate of Participation.-->
+            </p>
+        </div>
+        <div class="flexslider">
+            <ul style="list-style-type:none; margin-left:0;">
+                <li>
+
+<ul class="work">
+<style>
+ @media (min-width: 768px) {
+                .setimg { 
+                    float: left; 
+                    margin-left:34%;
+                    margin-right:30%;
+                }
+            }
+</style>
+
+
+<!-- =============== 1 =============== -->
+<li class="span4 from-bottom" style="margin-left: 0px; opacity: 1; bottom: 0px;">
+    <div class="hoveritem">
+        <div class="link">
+            <div class="hovercontent">
+                <ul class="caption" style="margin: 40% auto 0;"> 
+<!--<li style="line-height:1.5;"><a href="https://www.robosapi.com/robotic-summer-training-by-robosapiens" title="Learn More.">Learn More.</a></li>
+<li style="line-height:1.5;"><a href="https://www.robosapi.com/training-registration/?id=Summer-Internship-Program" target="_blank" title="Register">Register</a></li> -->
+                </ul>
+            </div>
+          <div class="sprite sprite-summer_training111"></div>
+            <!-- <img src="https://www.robosapi.com/assets/images/training/summer_training/summer_training111.jpg" draggable="false" width="400" height="400"> -->
+        </div>
+    </div>
+    <div class="post">  
+        <p>Robotics &amp; Embedded 'C'</p>
+        <a href="https://www.robosapi.com/robotic-summer-training-by-robosapiens" title="Learn More.">Learn More.</a><span>  </span>
+        <a href="https://www.robosapi.com/training-registration/?id=Summer-Internship-Program" target="_blank" title="Register">Register</a>
+    </div>
+</li>
+<!-- =============== 2 =============== -->
+<li class="span4 from-bottom" style="opacity: 1; bottom: 0px;">
+    <div class="hoveritem">
+        <div class="link">
+            <div class="hovercontent">
+                <ul class="caption" style="margin: 40% auto 0;"> 
+<li style="line-height:1.5;"><a href="https://www.robosapi.com/robotic-summer-training-by-robosapiens" title="Learn More.">Learn More.</a></li>
+<li style="line-height:1.5;"><a href="https://robosapi.com/training-registration/?id=Summer-Internship-Program" target="_blank" title="Register">Register</a></li>
+                </ul>
+            </div>
+            <div class="sprite sprite-summer_training22"></div> 
+           <!--<img src="https://www.robosapi.com/assets/images/training/summer_training/summer_training22.jpg" draggable="false" width="400" height="400">-->
+        </div>
+    </div>
+    <div class="post">  
+        <p>8051/52 Embedded Systems</p>
+        <a href="https://www.robosapi.com/robotic-summer-training-by-robosapiens" title="Learn More.">Learn More.</a>
+        <a href="https://www.robosapi.com/training-registration/?id=Summer-Internship-Program" target="_blank" title="Register">Register</a>
+    </div>
+</li>   
+<!-- =============== 3 =============== -->
+<li class="span4 from-bottom" style="opacity: 1; bottom: 0px;">
+    <div class="hoveritem">
+        <div class="link">
+            <div class="hovercontent">
+                <ul class="caption" style="margin: 40% auto 0;"> 
+<li style="line-height:1.5;"><a href="https://www.robosapi.com/robotic-summer-training-by-robosapiens" title="Learn More.">Learn More.</a></li>
+<li style="line-height:1.5;"><a href="https://robosapi.com/training-registration/?id=Summer-Internship-Program" target="_blank" title="Register">Register</a></li>
+                </ul>
+            </div>
+             <div class="sprite sprite-summer_training33"></div> 
+            <!--<img src="https://www.robosapi.com/assets/images/training/summer_training/summer_training33.jpg" draggable="false" width="400" height="400">-->
+        </div>
+    </div>
+    <div class="post">  
+        <p>QuadCopter &amp; UAV</p>
+        <a href="https://www.robosapi.com/robotic-summer-training-by-robosapiens" title="Learn More.">Learn More.</a>
+        <a href="https://www.robosapi.com/training-registration/?id=Summer-Internship-Program" target="_blank" title="Register">Register</a>
+    </div>
+</li>   
+<!-- =============== 4 =============== -->
+<li class="span4 from-bottom" style="margin-left: 0px; opacity: 1; bottom: 0px;">
+    <div class="hoveritem">
+        <div class="link">
+            <div class="hovercontent">
+                <ul class="caption" style="margin: 40% auto 0;"> 
+<li style="line-height:1.5;"><a href="https://www.robosapi.com/robotic-summer-training-by-robosapiens" title="Learn More.">Learn More.</a></li>
+<li style="line-height:1.5;"><a href="https://robosapi.com/training-registration/?id=Summer-Internship-Program" target="_blank" title="Register">Register</a></li>
+                </ul>
+            </div>
+           <div class="sprite sprite-summer_training44"></div> 
+            <!--<img src="https://www.robosapi.com/assets/images/training/summer_training/summer_training44.jpg" draggable="false" width="400" height="400">-->
+        </div>
+    </div>
+    <div class="post">  
+        <p>MATLAB with Robotics</p>
+        <a href="https://www.robosapi.com/robotic-summer-training-by-robosapiens" title="Learn More.">Learn More.</a>
+        <a href="https://www.robosapi.com/training-registration/?id=Summer-Internship-Program" target="_blank" title="Register">Register</a>
+    </div>
+</li>
+<!-- =============== 5 =============== -->
+<li class="span4 from-bottom" style="opacity: 1; bottom: 0px;">
+    <div class="hoveritem">
+        <div class="link">
+            <div class="hovercontent">
+                <ul class="caption" style="margin: 40% auto 0;"> 
+<li style="line-height:1.5;"><a href="https://www.robosapi.com/robotic-summer-training-by-robosapiens" title="Learn More.">Learn More.</a></li>
+<li style="line-height:1.5;"><a href="https://robosapi.com/training-registration/?id=Summer-Internship-Program" target="_blank" title="Register">Register</a></li>
+                </ul>
+            </div>
+           <div class="sprite sprite-summer_training55"></div> 
+            <!--<img src="https://www.robosapi.com/assets/images/training/summer_training/summer_training55.jpg" draggable="false" width="400" height="400">-->
+        </div>
+    </div>
+    <div class="post">  
+        <p>Automobile Engine Mechanics</p>
+        <a href="https://www.robosapi.com/robotic-summer-training-by-robosapiens" title="Learn More.">Learn More.</a>
+        <a href="https://www.robosapi.com/training-registration/?id=Summer-Internship-Program" target="_blank" title="Register">Register</a>
+    </div>
+</li>
+<!-- =============== 6 =============== -->
+<li class="span4 from-bottom" style="opacity: 1; bottom: 0px;">
+    <div class="hoveritem">
+        <div class="link">
+            <div class="hovercontent">
+                <ul class="caption" style="margin: 40% auto 0;"> 
+<li style="line-height:1.5;"><a href="https://www.robosapi.com/robotic-summer-training-by-robosapiens" title="Learn More.">Learn More.</a></li>
+<li style="line-height:1.5;"><a href="https://robosapi.com/training-registration/?id=Summer-Internship-Program" target="_blank" title="Register">Register</a></li>
+                </ul>
+            </div>
+           <div class="sprite sprite-summer_training66"></div> 
+            <!--<img src="https://www.robosapi.com/assets/images/training/summer_training/summer_training66.jpg" draggable="false" width="400" height="400">-->
+        </div>
+    </div>
+    <div class="post">  
+        <p>Workshop on Arduino</p>
+        <a href="https://www.robosapi.com/robotic-summer-training-by-robosapiens" title="Learn More.">Learn More.</a>
+        <a href="https://www.robosapi.com/training-registration/?id=Summer-Internship-Program" target="_blank" title="Register">Register</a>
+    </div>
+</li>
+<!-- =============== 7 =============== -->
+<li class="span4 from-bottom" style="margin-left: 0px; opacity: 1; bottom: 0px;">
+    <div class="hoveritem">
+        <div class="link">
+            <div class="hovercontent">
+                <ul class="caption" style="margin: 40% auto 0;"> 
+<li style="line-height:1.5;"><a href="https://www.robosapi.com/robotic-summer-training-by-robosapiens" title="Learn More.">Learn More.</a></li>
+<li style="line-height:1.5;"><a href="https://robosapi.com/training-registration/?id=Summer-Internship-Program" target="_blank" title="Register">Register</a></li>
+                </ul>
+            </div>
+           <div class="sprite sprite-summer_training77"></div> 
+            <!--<img src="https://www.robosapi.com/assets/images/training/summer_training/summer_training44.jpg" draggable="false" width="400" height="400">-->
+        </div>
+    </div>
+    <div class="post">  
+        <p>Workshop on PCB, Circuit Designing</p>
+        <a href="https://www.robosapi.com/robotic-summer-training-by-robosapiens" title="Learn More.">Learn More.</a>
+        <a href="https://www.robosapi.com/training-registration/?id=Summer-Internship-Program" target="_blank" title="Register">Register</a>
+    </div>
+</li>
+
+<!-- =============== 8 =============== -->
+<li class="span4 from-bottom" style="opacity: 1; bottom: 0px;">
+    <div class="hoveritem">
+        <div class="link">
+            <div class="hovercontent">
+                <ul class="caption" style="margin: 40% auto 0;"> 
+<li style="line-height:1.5;"><a href="https://www.robosapi.com/robotic-summer-training-by-robosapiens" title="Learn More.">Learn More.</a></li>
+<li style="line-height:1.5;"><a href="https://robosapi.com/training-registration/?id=Summer-Internship-Program" target="_blank" title="Register">Register</a></li>
+                </ul>
+            </div>
+           <div class="sprite sprite-summer_training88"></div>
+            <!--<img src="https://www.robosapi.com/assets/images/training/summer_training/summer_training88.jpg" draggable="false" width="400" height="400">-->
+        </div>
+    </div>
+    <div class="post">  
+        <p>Android App Development</p>
+        <a href="https://www.robosapi.com/robotic-summer-training-by-robosapiens" title="Learn More.">Learn More.</a>
+        <a href="https://www.robosapi.com/training-registration/?id=Summer-Internship-Program" target="_blank" title="Register">Register</a>
+    </div>
+</li>
+<!-- =============== 9 =============== --> 
+<li class="span4 from-bottom" style="opacity: 1; bottom: 0px;">
+    <div class="hoveritem">
+        <div class="link">
+            <div class="hovercontent">
+                <ul class="caption" style="margin: 40% auto 0;"> 
+<li style="line-height:1.5;"><a href="https://www.robosapi.com/robotic-summer-training-by-robosapiens" title="Learn More.">Learn More.</a></li>
+<li style="line-height:1.5;"><a href="https://robosapi.com/training-registration/?id=Summer-Internship-Program" target="_blank" title="Register">Register</a></li>
+                </ul>
+            </div>
+            <div class="sprite sprite-summer_training99"></div>
+           <!-- <img src="https://www.robosapi.com/assets/images/training/summer_training/summer_training99.jpg" draggable="false" width="400" height="400">-->
+        </div>
+    </div>
+    <div class="post">  
+        <p>Workshop on Ethical Hacking</p>
+        <a href="https://www.robosapi.com/robotic-summer-training-by-robosapiens" title="Learn More.">Learn More.</a>
+        <a href="https://www.robosapi.com/training-registration/?id=Summer-Internship-Program" target="_blank" title="Register">Register</a>
+    </div>
+</li>
+<!-- =============== 10 =============== --> 
+<li class="span4 from-bottom" style="margin-left: -5px; opacity: 1; bottom: 0px;">
+    <div class="hoveritem">
+        <div class="link">
+            <div class="hovercontent">
+                <ul class="caption" style="margin: 35% auto 0;"> 
+<li style="line-height:1.5;"><a href="https://www.robosapi.com/robotic-summer-training-by-robosapiens" title="Learn More.">Learn More.</a></li>
+<li style="line-height:1.5;"><a href="https://robosapi.com/training-registration/?id=Summer-Internship-Program" target="_blank" title="Register">Register</a></li>
+                </ul>
+            </div>
+           
+            <img src="images/summer_training11.jpg" draggable="false">
+        </div>
+    </div>
+    <div class="post">  
+        <p>Raspberry Pi</p>
+        <a href="https://www.robosapi.com/robotic-summer-training-by-robosapiens" title="Learn More.">Learn More.</a>
+        <a href="https://www.robosapi.com/training-registration/?id=Summer-Internship-Program" target="_blank" title="Register">Register</a>
+    </div>
+</li>
+
+<!-- =============== 11 =============== --> 
+<li class="span4 from-bottom" style="opacity: 1; bottom: 0px;">
+    <div class="hoveritem">
+        <div class="link">
+            <div class="hovercontent">
+                <ul class="caption" style="margin:30% auto 0;"> 
+<li style="line-height:1.5;"><a href="https://www.robosapi.com/robotic-summer-training-by-robosapiens" title="Learn More.">Learn More.</a></li>
+<li style="line-height:1.5;"><a href="https://robosapi.com/training-registration/?id=Summer-Internship-Program" target="_blank" title="Register">Register</a></li>
+                </ul>
+            </div>
+           
+            <img src="images/iot_banner.jpg" draggable="false">
+        </div>
+    </div>
+    <div class="post">  
+        <p>Internet Of Things</p>
+        <a href="https://www.robosapi.com/robotic-summer-training-by-robosapiens" title="Learn More.">Learn More.</a>
+        <a href="https://www.robosapi.com/training-registration/?id=Summer-Internship-Program" target="_blank" title="Register">Register</a>
+    </div>
+</li>
+
+<!-- =============== 12 =============== --> 
+<li class="span4 from-bottom" style="opacity: 1; bottom: 0px;">
+    <div class="hoveritem">
+        <div class="link">
+            <div class="hovercontent">
+                <ul class="caption" style="margin:30% auto 0;"> 
+<li style="line-height:1.5;"><a href="https://www.robosapi.com/robotic-summer-training-by-robosapiens" title="Learn More.">Learn More.</a></li>
+<li style="line-height:1.5;"><a href="https://robosapi.com/training-registration/?id=Summer-Internship-Program" target="_blank" title="Register">Register</a></li>
+                </ul>
+            </div>
+           
+            <img src="images/java-banner.jpg" draggable="false">
+        </div>
+    </div>
+    <div class="post">  
+        <p>Java</p>
+        <a href="https://www.robosapi.com/robotic-summer-training-by-robosapiens" title="Learn More.">Learn More.</a>
+        <a href="https://www.robosapi.com/training-registration/?id=Summer-Internship-Program" target="_blank" title="Register">Register</a>
+    </div>
+</li>
+
+
+
+
+<!-- =============== End =============== -->                                                
+</ul>
+
+
+                </li>
+            </ul>
+    </div>
+</div>
+</section>
+
+
+
+</body><!--<script type="text/javascript" src="Robosapiens_files/on_the_fly_combine.css"></script>-->
+<script type="text/javascript" src="https://www.robosapi.com/assets/js/final.js"></script> 
+</html>

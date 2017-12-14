@@ -1,29 +1,25 @@
-*{
-    margin: 0;
-    padding: 0;
-
-}
 
 
 
-nav{
+
+nav.foot{
     background: transparent;
     overflow: hidden;
     position: fixed;
     width: 100%;
     /*box-shadow: -2px -7px 47px 9px rgba(0, 0, 0, 0.35);*/
     margin: auto;
-    bottom: 0px;
+    bottom: 0;
 }
 
-.logo-section{
+.foot .logo-section{
     
     float: left;
     margin: 0px;
     font-family: serif;
 }
 
-.hb-button{
+.foot .hb-button{
     float: right;
     background: black;
     color: #ffffff;
@@ -36,14 +32,14 @@ nav{
     display: none;
 }
 
-nav a{
+nav.foot a{
     text-decoration: none;
     color: #282828;
     font-size: 20px;
     padding: 5px;
 }
 
-nav ul{
+nav.foot ul{
     overflow: hidden;
     color: #fff;
     margin: 0;
@@ -56,24 +52,24 @@ nav ul{
     -o-transition: max-height 0.5s;
 }
 
-nav ul li{
+nav.foot ul li{
 
     display: inline-block;
     padding: 19px;
 }
 
-li a{
+.foot li a{
     position: relative;
     color: black;
     text-decoration: none;
     
 }
 
-li a:hover{
+.foot li a:hover{
     color: #000;
 }
 
-li a:after{
+.foot li a:after{
     content:"";
     position: absolute;
     width: 100%;
@@ -88,7 +84,7 @@ li a:after{
     transition: all 0.3s ease-in-out 0s;
 }
 
-li a:hover:after{
+.foot li a:hover:after{
     /*visibility: visible;*/
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
@@ -97,11 +93,11 @@ li a:hover:after{
 body{
     font-family: sans-serif;
     height: auto;
-    overflow: hidden;
+
 }
 
 
-a
+.foot a
 {
     color: #004747;
 }
@@ -110,7 +106,7 @@ a
     padding: 0 0 0 200px;
     background-color: black;
 }*/
-img
+.foot img
 {
     max-height: 200px;
     max-width: 300px;
@@ -127,23 +123,23 @@ img
 
 
 @media screen and (max-width: 910px){
-    .logo-section{
+    .foot .logo-section{
         float: none;
     }
-    nav ul{
+    nav.foot ul{
         background: #ffffff;
         max-height: 0;
         width: 100%;
     }
-    nav ul.show{
+    nav.foot ul.show{
         max-height: 25em;
     }
-    nav ul li{
+    nav.foot ul li{
         box-sizing: border-box;
         width: 100%;
         padding: 15px;
     }
-    .hb-button{
+    .foot .hb-button{
         display: inline;
     }
 }
