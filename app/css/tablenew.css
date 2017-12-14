@@ -1,0 +1,45 @@
+div#parent
+{
+	width: 300px;
+	height: 200px;
+	margin: auto;
+	position: relative;
+	border-color: #025477;
+	border-width: 5px;
+	border-style: solid;
+	border-radius: 20px 20px 20px 20px;
+	transition-duration: 500ms;
+}
+div#parent:hover
+{
+	border-color: orange;
+}
+img
+{
+	width: 100%;
+	height: 85%;
+	top: 0;
+	
+	
+	
+
+}
+div:hover
+{
+		
+		cursor: pointer;
+}
+#text
+{
+	width: 100%;
+	height: 15%;
+	top: 85%;
+	position: absolute;
+	text-align: center;
+	background-color: #59c4f2;
+	font-family: Arial;
+	font-size: 25px;
+
+}
+
+
