@@ -120,6 +120,11 @@ body{
     background-color: black;
 }*/
 
+header {
+    position: fixed;
+    width: 100%;
+}
+
 .image img
 {
     max-height: 200px;
@@ -127,6 +132,7 @@ body{
     height: auto;
     width: auto;
     background-color: black;
+
     position: fixed;
     z-index: 2000;
     padding: 200px 20px 20px 200px;

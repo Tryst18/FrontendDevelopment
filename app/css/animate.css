@@ -1,18 +1,33 @@
-@-webkit-keyframes zoomOut {
+@keyframes zoomOut {
   from {
-    opacity: 0;
+    opacity: 1;
   }
 
   50% {
-  	opacity: 1;
+    opacity: 1;
+    ransform: scale3d(1, 1, 1)
   }
 
-  55% {
-    transform: scale(0.3, 0.3, 0.3);
+  75% {
+  	opacity: 0;
+  	/*transform: scale3d(.3, .3, .3);*/
+  }
+
+  to {
     opacity: 0;
-	}
+    transform: scale3d(.3, .3, .3);
+  }
 }
 
-.initial {
-	animation: zoomOut 5s forwards;
+.initial img {
+	animation: zoomOut 3s forwards;
+	position: absolute;
+	z-index: 2;
+}
+
+div.init {
+	margin-top: 30%;
+	position: absolute;
+	font-size: 50px;
+	color: orange;
 }
