@@ -6,16 +6,25 @@
 
 
 
-nav {
+nav.head {
     background: orange;
     overflow: hidden;
-    position: relative;
+    position: fixed;
     width: 100%;
+    top: 0;
     box-shadow: -2px -7px 47px 9px rgba(0, 0, 0, 0.35);
     margin: auto;
+    z-index: 1000;
+}
+.block
+{
+    width:100%;
+    position: relative;
+    height: 65px;
+    z-index: -100;
 }
 
-.logo-section{
+.head .logo-section{
     
     float: left;
     margin: 0px;
@@ -23,7 +32,7 @@ nav {
     z-index: 1;
 }
 
-.hb-button{
+.head .hb-button{
     float: right;
     background: black;
     color: #ffffff;
@@ -36,14 +45,14 @@ nav {
     display: none;
 }
 
-nav a{
+nav.head a{
     text-decoration: none;https://www.w3schools.com/css/css_padding.asp
     color: #282828;
     font-size: 20px;
     padding: 5px;
 }
 
-nav ul{
+nav.head ul{
     overflow: hidden;
     color: #fff;
     margin: 0;
@@ -56,24 +65,24 @@ nav ul{
     -o-transition: max-height 0.5s;
 }
 
-nav ul li{
+nav.head ul li{
     float: right;
     display: inline-block;
     padding: 19px;
 }
 
-li a{
+.head li a{
     position: relative;
     color: #000;
     text-decoration: none;
-    
+    font-family: arial;
 }
 
-li a:hover{
+.head li a:hover{
     color: #000;
 }
 
-li a:before{
+.head li a:before{
     content:"";
     position: absolute;
     width: 100%;
@@ -88,7 +97,7 @@ li a:before{
     transition: all 0.3s ease-in-out 0s;
 }
 
-li a:hover:before{
+.head li a:hover:before{
     /*visibility: visible;*/
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
@@ -101,7 +110,7 @@ body{
 }
 
 
-a
+.head a
 {
     color: #004747;
 }
@@ -118,8 +127,8 @@ a
     height: auto;
     width: auto;
     background-color: black;
-    position: absolute;
-    z-index: 2;
+    position: fixed;
+    z-index: 2000;
     padding: 200px 20px 20px 200px;
     border-radius: 200px;
     top: -210px;
@@ -127,24 +136,24 @@ a
 }
 
 
-@media screen and (max-width: 910px){
-    .logo-section{
+@media screen and (max-width: 1200px){
+    .head .logo-section{
         float: none;
     }
-    nav ul{
+    nav.head ul{
         background: #ffffff;
         max-height: 0;
         width: 100%;
     }
-    nav ul.show{
+    nav.head ul.show{
         max-height: 25em;
     }
-    nav ul li{
+    nav.head ul li{
         box-sizing: border-box;
         width: 100%;
         padding: 15px;
     }
-    .hb-button{
+    .head .hb-button{
         display: inline;
     }
 }
