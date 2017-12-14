@@ -1,18 +1,18 @@
 @-webkit-keyframes zoomOut {
   from {
-    opacity: 1;
+    opacity: 0;
   }
 
-  to {
-    opacity: 1;
-    max-height: 200px;
-    max-width: 300px;
-    height: auto;
-    width: auto;
-    z-index: 2;
+  50% {
+  	opacity: 1;
+  }
+
+  55% {
+    transform: scale(0.3, 0.3, 0.3);
+    opacity: 0;
 	}
 }
 
 .initial {
-	animation: zoomOut;
+	animation: zoomOut 5s forwards;
 }

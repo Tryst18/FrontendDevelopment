@@ -9,6 +9,7 @@
 nav {
     background: orange;
     overflow: hidden;
+    position: relative;
     width: 100%;
     box-shadow: -2px -7px 47px 9px rgba(0, 0, 0, 0.35);
     margin: auto;
@@ -109,7 +110,8 @@ a
     padding: 0 0 0 200px;
     background-color: black;
 }*/
-header img
+
+.image img
 {
     max-height: 200px;
     max-width: 300px;
