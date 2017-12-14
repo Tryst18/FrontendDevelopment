@@ -6,10 +6,9 @@
 
 
 
-nav{
+nav {
     background: orange;
     overflow: hidden;
-    position: relative;
     width: 100%;
     box-shadow: -2px -7px 47px 9px rgba(0, 0, 0, 0.35);
     margin: auto;
@@ -20,6 +19,7 @@ nav{
     float: left;
     margin: 0px;
     font-family: serif;
+    z-index: 1;
 }
 
 .hb-button{
@@ -96,7 +96,7 @@ li a:hover:before{
 body{
     font-family: sans-serif;
     height: auto;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
 
@@ -109,7 +109,7 @@ a
     padding: 0 0 0 200px;
     background-color: black;
 }*/
-img
+header img
 {
     max-height: 200px;
     max-width: 300px;
@@ -117,7 +117,7 @@ img
     width: auto;
     background-color: black;
     position: absolute;
-    z-index: 100;
+    z-index: 2;
     padding: 200px 20px 20px 200px;
     border-radius: 200px;
     top: -210px;

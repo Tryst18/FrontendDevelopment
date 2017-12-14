@@ -2,14 +2,17 @@
 <html>
     <head>
         <title>Tryst 2018</title>
-        <!-- <link rel="stylesheet" type="text/css" href="css/styles.css">       -->
-  		<link rel="import" href="responsive_navbar.html">
-  		<script src="ejs.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/styles.css">      
+  		<!-- <link rel="import" href="responsive_navbar.html"> -->
+
+        <link rel="stylesheet" href="css/responsive_navbar.css">
     </head>
     <body>
-    	<nav>
+    	<header>
+    		<div class="image"><a href="#"><img src="images/tryst_logo.png"></a></div>
+        <nav>
             <div class="logo-section">
-                <a class="logo" href="#"><b>TRYST2K18</b></a>
+                <a class="logo" href="#"></a>
                 <button class="hb-button"><i class="fa fa-bars"></i></button>
             </div>
             <ul>
@@ -21,9 +24,11 @@
                 <li><a href="#">Home</a></li>
             </ul>
         </nav>
+    	</header>
+
+    	<div class="initial"><img src="images/tryst_logo.png"></div>
     
-    	<marquee>RoboSapiens in associaltion</marquee>
-    	<%var x = 2%>
+    	<marquee onmouseover="this.stop();" onmouseout="this.start();">RoboSapiens in associaltion with Tryst 2018, is conducting 1 day training program between 23rd-26th February 2018 at IIT Delhi. You can register for it <a href="http://robotryst.com/workshops.php">here</a>. Also refer your friend and get a workshop free.</marquee>
 
     </body>
 </html>
