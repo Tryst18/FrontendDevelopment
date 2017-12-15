@@ -8,7 +8,7 @@ body {
 .init {
   position: fixed;
   margin-top: 70px;
-  color: white; }
+  color: #f4f1de; }
 
 .init a {
   color: orange; }
@@ -16,7 +16,7 @@ body {
 .comingsoon {
   position: fixed;
   margin-top: 30%;
-  color: white;
+  color: #f4f1de;
   text-align: center;
   width: 100%;
   color: orange;

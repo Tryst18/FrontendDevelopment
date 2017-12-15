@@ -1,7 +1,3 @@
-
-
-
-
 nav.foot{
     background: transparent;
     overflow: hidden;
@@ -65,7 +61,7 @@ nav.foot ul li{
 
 .foot li a{
     position: relative;
-    color: white;
+    color: #f4f1de;
     text-decoration: none;
     
 }
