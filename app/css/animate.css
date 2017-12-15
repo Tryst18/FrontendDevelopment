@@ -1,29 +1,42 @@
 @keyframes zoomOut {
   from {
-    opacity: 1;
+    opacity: 0;
+    
   }
 
   50% {
     opacity: 1;
-    ransform: scale3d(1, 1, 1)
+    transform: scale3d(1, 1, 1)
   }
 
   75% {
-  	opacity: 0;
-  	/*transform: scale3d(.3, .3, .3);*/
+  	opacity: 1;
+  	transform: scale3d(.4, .4, .4);
   }
 
   to {
-    opacity: 0;
-    transform: scale3d(.3, .3, .3);
-    visibility: hidden;
+    opacity: 1;
+    transform: scale3d(.4, .4, .4);
   }
 }
-
+.initial {
+  max-height: 100%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  /*align-content: center;*/
+  vertical-align: middle;
+  z-index: -2;
+}
 .initial img {
 	animation: zoomOut 3s forwards;
-	position: absolute;
-	z-index: 2;
+	z-index: -2;
+  height: auto;
+  width: auto;
+  /*margin-left: 50%;*/
+  max-height: 100%;/*
+  max-width: 100%;*/
 }
 
 

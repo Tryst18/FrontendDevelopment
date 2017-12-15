@@ -18,8 +18,13 @@ body{
 	color: orange;
 }
 
-h1 {
+
+.comingsoon {
 	position: fixed;
-	margin-top: 70px;
+	margin-top: 30%;
 	color: white;
+	text-align: center;
+	width: 100%;
+	color: orange;
+	z-index: -3;
 }
