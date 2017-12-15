@@ -1,5 +1,5 @@
 body {
-  background-color: #001111; }
+  background-color: #3d405b; }
 
 #particle-js {
   height: auto;
@@ -11,7 +11,7 @@ body {
   color: #f4f1de; }
 
 .init a {
-  color: orange; }
+  color: #e07a5f; }
 
 .comingsoon {
   position: fixed;
@@ -19,5 +19,5 @@ body {
   color: #f4f1de;
   text-align: center;
   width: 100%;
-  color: orange;
+  color: #e07a5f;
   z-index: -3; }
