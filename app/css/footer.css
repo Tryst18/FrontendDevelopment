@@ -131,6 +131,10 @@ body{
     .foot .logo-section{
         float: none;
     }
+
+    .foot li a {
+        
+    }
     nav.foot ul{
         background: #ffffff;
         max-height: 0;
