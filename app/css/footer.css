@@ -70,6 +70,7 @@ nav.foot ul li{
     
 }
 
+
 .foot li a:hover{
     color: #fff;
 }
@@ -142,7 +143,26 @@ body{
     }
     nav.foot ul.show{
         max-height: 25em;
+        /*color: black;*/
     }
+    .foot li a{
+    color: black;
+    
+}
+
+
+.foot li a:hover{
+    color: black;
+}
+
+.foot li a:after{
+    
+    background-color: black;
+    /*visibility: hidden;*/
+    
+}
+
+
     nav.foot ul li{
         box-sizing: border-box;
         width: 100%;
