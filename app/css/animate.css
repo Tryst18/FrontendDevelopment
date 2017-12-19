@@ -24,14 +24,18 @@
   width: 100%;
   height: 100%;
   position: absolute;
+  
+  
   text-align: center;
   /*align-content: center;*/
   vertical-align: middle;
-  z-index: -2;
+  animation: zoomOut 3s forwards;
+  z-index: 10;
 }
 .initial img {
-	animation: zoomOut 3s forwards;
-	z-index: -2;
+  position: absolute;
+	left:50%;
+  transform: translateX(-50%);
   height: auto;
   width: auto;
   /*margin-left: 50%;*/
