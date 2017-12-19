@@ -1,4 +1,4 @@
-@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic,600");
+﻿@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic,600");
 @import url("font-awesome.min.css");
 
 *
@@ -8,7 +8,7 @@
 }
 #page-wrapper
 {
-	background-color: #121b28;
+	background-color: #3d405b;
 }
 
 	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
@@ -224,7 +224,7 @@
 
 	body {
 		background: #f0f4f4;
-		color: #5b5b5b;
+		color: #3d405b;
 		font-size: 15pt;
 		line-height: 1.85em;
 		font-family: 'Amethysta', serif!important;
@@ -251,7 +251,7 @@
 
 	h1, h2, h3, h4, h5, h6 {
 		font-weight: 400;
-		color: #483949;
+		color: #e07a5f;
 		line-height: 1.25em;
 	}
 
@@ -928,7 +928,7 @@
 
 		.dropotron li {
 			border-top: solid 1px rgba(128, 128, 128, 0.2);
-			color: #5b5b5b;
+			color: #3d405b;
 			font-size: 100%;
 		}
 
@@ -944,7 +944,7 @@
 				display: block;
 				border: 0;
 				padding: 0.5em 0 0.5em 0;
-				color: #5b5b5b;
+				color: #3d405b;
 				text-decoration: none;
 				-moz-transition: color 0.35s ease-in-out;
 				-webkit-transition: color 0.35s ease-in-out;
