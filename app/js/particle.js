@@ -131,7 +131,9 @@ var pJS = function(tag_id, params){
       modes: {},
       vendors:{}
     },
-    tmp: {}
+    tmp: {
+      retina: true
+    }
   };
 
   var pJS = this.pJS;

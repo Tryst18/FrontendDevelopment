@@ -39,6 +39,7 @@ nav.head {
     border: none;
     font-size: 18px;
     padding: 5px 10px;
+    z-index: 2002
     margin: 16px;
     border-radius: 3px;
     cursor: pointer;
@@ -150,14 +151,17 @@ header {
         background: #ffffff;
         max-height: 0;
         width: 100%;
+        z-index: 3000
     }
     nav.head ul.show{
         max-height: 25em;
+        z-index: 2002
     }
     nav.head ul li{
         box-sizing: border-box;
         width: 100%;
         padding: 15px;
+        z-index: 2002
     }
     .head .hb-button{
         display: inline;
