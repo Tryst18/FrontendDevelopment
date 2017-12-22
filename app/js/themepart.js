@@ -81,6 +81,10 @@ particlesJS('particles-js',
         "enable": true,
         "mode": "push"
       },
+      "onresize": {
+        "density_auto": true,
+        "density_area": 400
+      },
       "resize": true
     },
     "modes": {

@@ -16,9 +16,10 @@
 
 nav.head {
     background: #f2cc8f;
-    overflow: hidden;
+    /*overflow: hidden;*/
     width: 100%;
     top: 0;
+    position: fixed;
     box-shadow: -2px -7px 47px 9px rgba(0, 0, 0, 0.35);
     margin: auto;
     z-index: 1000;
@@ -29,6 +30,7 @@ nav.head {
     width:100%;
     position: relative;
     height: 65px;
+    background-color: #3d405b;
     z-index: -100;
 }
 
@@ -181,7 +183,8 @@ header {
     }
     nav.head ul.show{
         max-height: 25em;
-        z-index: 2002
+        z-index: 2002;
+        /*position: fixed;*/
     }
     nav.head ul li{
         box-sizing: border-box;
@@ -192,6 +195,7 @@ header {
     .head .hb-button{
         display: inline;
         position: fixed;
+        z-index: 2005;
         top: 0px;
         right: 0px;
     }
