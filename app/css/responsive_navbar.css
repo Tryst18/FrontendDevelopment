@@ -6,16 +6,24 @@
 
 
 
+/*nav.head {
+    background: #f2cc8f;
+    overflow: hidden;
+    width: 100%;
+    box-shadow: -2px -7px 47px 9px rgba(0, 0, 0, 0.35);
+    z-index: 1000;
+}*/
+
 nav.head {
     background: #f2cc8f;
     overflow: hidden;
-    position: fixed;
     width: 100%;
     top: 0;
     box-shadow: -2px -7px 47px 9px rgba(0, 0, 0, 0.35);
     margin: auto;
     z-index: 1000;
 }
+
 .block
 {
     width:100%;
@@ -39,6 +47,7 @@ nav.head {
     border: none;
     font-size: 18px;
     padding: 5px 10px;
+    z-index: 2002;
     margin: 16px;
     border-radius: 3px;
     cursor: pointer;
@@ -125,6 +134,20 @@ header {
     width: 100%;
 }
 
+.logosmall {
+    display: none;
+}
+
+.logosmall img {
+    display: none;
+    max-width: 100px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
+    
+    color: #fff;
+}
+
 .image img
 {
     max-height: 200px;
@@ -142,24 +165,61 @@ header {
 }
 
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1043px){
+    .head {
+        height: 65px
+    }
     .head .logo-section{
         float: none;
+        position: relative;
     }
     nav.head ul{
         background: #ffffff;
         max-height: 0;
         width: 100%;
+        z-index: 3000
     }
     nav.head ul.show{
         max-height: 25em;
+        z-index: 2002
     }
     nav.head ul li{
         box-sizing: border-box;
         width: 100%;
         padding: 15px;
+        z-index: 2002
     }
     .head .hb-button{
         display: inline;
+        position: fixed;
+        top: 0px;
+        right: 0px;
     }
+
+    nav.head {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 555px)  {
+    .image img {
+        display: none;
+    }
+
+    .logosmall {
+        display: inline;
+        width: 100%;
+        position: relative;
+    }
+
+    .logosmall img {
+        display: inline;
+        background-color: #000
+    }
+
+    nav.head {
+        text-align: center;
+        height: auto;
+    }
+
 }

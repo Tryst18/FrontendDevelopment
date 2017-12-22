@@ -8,7 +8,8 @@ body {
 .init {
   position: fixed;
   margin-top: 70px;
-  color: #f4f1de; }
+  color: #f4f1de;
+  font-size: 20px; }
 
 .init a {
   color: #e07a5f; }
