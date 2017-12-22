@@ -1097,6 +1097,29 @@ var pJS = function(tag_id, params){
 
       });
 
+      pJS.interactivity.el.addEventListener('touchmove', function(e){
+
+        if(pJS.interactivity.el == window){
+          var pos_x = e.clientX,
+              pos_y = e.clientY;
+        }
+        else{
+          var pos_x = e.offsetX || e.clientX,
+              pos_y = e.offsetY || e.clientY;
+        }
+
+        pJS.interactivity.mouse.pos_x = pos_x;
+        pJS.interactivity.mouse.pos_y = pos_y;
+
+        if(pJS.tmp.retina){
+          pJS.interactivity.mouse.pos_x *= pJS.canvas.pxratio;
+          pJS.interactivity.mouse.pos_y *= pJS.canvas.pxratio;
+        }
+
+        pJS.interactivity.status = 'mousemove';
+
+      });
+
       /* el on onmouseleave */
       pJS.interactivity.el.addEventListener('mouseleave', function(e){
 
@@ -1105,6 +1128,22 @@ var pJS = function(tag_id, params){
         pJS.interactivity.status = 'mouseleave';
 
       });
+
+      pJS.interactivity.el.addEventListener('touchleave', function(e){
+
+        pJS.interactivity.mouse.pos_x = null;
+        pJS.interactivity.mouse.pos_y = null;
+        pJS.interactivity.status = 'mouseleave';
+
+      });
+
+      pJS.interactivity.el.addEventListener('touchend', function(e){
+
+        pJS.interactivity.mouse.pos_x = null;
+        pJS.interactivity.mouse.pos_y = null;
+        pJS.interactivity.status = 'mouseleave';
+
+      }); 
 
     }
 
