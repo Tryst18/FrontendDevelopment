@@ -131,9 +131,7 @@ var pJS = function(tag_id, params){
       modes: {},
       vendors:{}
     },
-    tmp: {
-      retina: true
-    }
+    tmp: {}
   };
 
   var pJS = this.pJS;
@@ -194,14 +192,15 @@ var pJS = function(tag_id, params){
 
     pJS.canvas.el.width = pJS.canvas.w;
     pJS.canvas.el.height = pJS.canvas.h;
-
+    console.log(pJS.canvas.el.width+" "+pJS.canvas.el.height, "before");
     if(pJS && pJS.interactivity.events.resize){
 
       window.addEventListener('resize', function(){
 
           pJS.canvas.w = pJS.canvas.el.offsetWidth;
           pJS.canvas.h = pJS.canvas.el.offsetHeight;
-
+          console.log(pJS.canvas.el.offsetWidth+" "+pJS.canvas.el.offsetHeight, "canvas");
+          
           /* resize canvas */
           if(pJS.tmp.retina){
             pJS.canvas.w *= pJS.canvas.pxratio;
