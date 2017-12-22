@@ -227,7 +227,7 @@
 		color: #3d405b;
 		font-size: 15pt;
 		line-height: 1.85em;
-		/*font-family: 'Amethysta', serif!important;*/
+		font-family: 'Amethysta', serif!important;
 		font-weight: 300;
 	}
 
@@ -1418,7 +1418,7 @@
 			input[type="button"],
 			input[type="submit"],
 			input[type="reset"],
-			
+			button,
 			.button {
 				display: block;
 				padding: 0;
@@ -1873,7 +1873,7 @@ section h3.section-subheading {
 
 .team-member img {
     margin: 0 auto;
-    border: 7px solid #fff;
+    border: 7px solid #000;
 }
 
 .team-member h4 {
