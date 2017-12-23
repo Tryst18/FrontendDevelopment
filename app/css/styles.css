@@ -1,5 +1,6 @@
 body {
-  background-color: #3d405b; }
+  background-color: #3d405b;
+  /*background-image: url("../images/background-comp.jpg");*/ }
 
 #particle-js {
   height: auto;
@@ -9,7 +10,8 @@ body {
   position: fixed;
   margin-top: 70px;
   color: #f4f1de;
-  font-size: 20px; }
+  font-size: 20px;
+  z-index: 1990; }
 
 .init a {
   color: #e07a5f; }
