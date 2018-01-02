@@ -9,6 +9,18 @@ var imagemin = require('gulp-imagemin');
 var cache = require('gulp-cache');
 var del = require('del');
 var runSequence = require('run-sequence');
+var transpile  = require('gulp-es6-module-transpiler');
+ 
+gulp.task('es6', function() {
+    return gulp.src('app/utils/**/*.js')
+        .pipe(transpile({
+            formatter: 'bundle'
+        }))
+        .pipe(gulp.dest('app/components'))
+	.pipe(browserSync.reload({
+            stream: true
+        }));
+})
 
 /*=======development tasks=========*/
 //-----------------
@@ -24,10 +36,12 @@ gulp.task('sass', function(){
 
 
 /*=======Watch tasks=========*/
-gulp.task('watch',['browserSync','sass'], function(){
+gulp.task('watch',['browserSync','sass', 'es6'], function(){
    gulp.watch('app/scss/**/*.scss',['sass']);
+   gulp.watch('app/utils/**/*.js', ['es6']);
    gulp.watch('app/*.html',browserSync.reload);
    gulp.watch('app/js/**/*.js',browserSync.reload);
+   gulp.watch('app/components/**/*.js',browserSync.reload);
    //other watches
 });
 
@@ -89,12 +103,12 @@ gulp.task('clean:dist',function(){
 
 //build task to combine other tasks
 gulp.task('build',function(callback){
-    runSequence('clean:dist',['sass','useref','images','fonts'],callback)
+    runSequence('clean:dist',['sass','useref','images','fonts', 'es6'],callback)
 });
 
 
 //default task to run
 gulp.task('default',function(callback){
-    runSequence(['sass','browserSync','watch'],callback)
+    runSequence(['sass','browserSync','watch', 'es6'],callback)
 });
 
