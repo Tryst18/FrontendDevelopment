@@ -38,5 +38,10 @@
   "bugs": {
     "url": "https://github.com/Tryst18/FrontendDevelopment/issues"
   },
-  "homepage": "https://github.com/Tryst18/FrontendDevelopment#readme"
+  "homepage": "https://github.com/Tryst18/FrontendDevelopment#readme",
+  "dependencies": {
+    "es6-module-transpiler": "^0.10.0",
+    "gulp-es6-module-transpiler": "^0.2.2",
+    "recast": "^0.13.0"
+  }
 }
