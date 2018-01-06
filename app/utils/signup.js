@@ -5,28 +5,45 @@ function onSubmit() {
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", url+"/api/user/create", true);
 	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	console.log(xhr.readyState, xhr.status);
 	xhr.onreadystatechange = function () {
 		
 	    if (xhr.readyState === 4 && xhr.status === 200) {
-	    	var json = JSON.parse(xhr.responseText);
-	       	console.log(json);
-	    } else if (xhr.readyState === 4 && xhr.status === 400){
-	    	var json = JSON.parse(xhr.responseText);
-	    	console.log(json.error)
+			var json = JSON.parse(xhr.responseText);
+			if (json.error == "false") {
+				document.location.href = "../login.html";
+			}
+	    } else if (xhr.readyState === 4 && xhr.status === 0){
+			var json = JSON.parse(xhr.responseText);
+			console.log(json);
+			document.getElementById('errServ').style.display = "inline";
 	    }
 	};
 	var user = document.getElementById('userInfo')
 	var req = "";
 	var tar = "";
+	var bool = true;
 	for (var x in user.children) {
-		if (x<user.children.length) {
+		if (x<user.children.length-1) {
 			tar  = encodeURIComponent(user.children[x].value);
+			console.log(tar)
+			if (tar == "") {
+				bool = false;
+			} else {
+				bool = true;
+			}
 			req = req + user.children[x].name + "=" + tar + ((x<user.children.length-1)? "&":"");
 		}
 	}
-	console.log(encodeURIComponent("Rish Mahe"));
-	console.log(req)
-	xhr.send(req);
+	console.log(user.children.length);
+	console.log(req);
+	console.log(bool);
+	if (bool) {
+		document.getElementById('errUser').style.display = "none";
+		xhr.send(req);
+	} else {
+		document.getElementById('errUser').style.display = "inline";
+	}
 }
 
 document.getElementById('submit').addEventListener('click', onSubmit);
