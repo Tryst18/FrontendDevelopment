@@ -49,8 +49,18 @@
 }
 #form #message {
   margin: 15px 0 0;
-  color: #b3b3b3;
+  color: #534f4f;
   font-size: 12px;
+}
+#form #err {
+  background: #f18484;
+  margin-top: 15px;
+}
+#form #err p {
+  margin: 15px 0 0;
+  color: #534f4f;
+  font-size: 14px;
+  display: none;
 }
 #form #message a {
   color: #3d405b;

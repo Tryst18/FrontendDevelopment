@@ -48,10 +48,20 @@
   color: #3d405b;
   border-color: #3d405b;
 }
+#form #err {
+  background: #f18484;
+  margin-top: 15px;
+}
+#form #err p {
+  margin: 15px 0 0;
+  color: #534f4f;
+  font-size: 14px;
+  display: none;
+}
 #form .message {
   margin: 15px 0 0;
   color: #b3b3b3;
-  font-size: 12px;
+  font-size: 14px;
 }
 #form .message a {
   color: #3d405b;
