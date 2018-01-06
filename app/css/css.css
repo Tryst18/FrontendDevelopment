@@ -280,7 +280,7 @@
 
 	strong, b {
 		font-weight: 400;
-		color: #483949;
+		color:#e07a5f;;
 	}
 
 	em, i {
@@ -1799,7 +1799,7 @@ section h3.section-subheading {
 
 @media(min-width:768px) {
     section {
-        padding-top: 150px;
+        padding-top: 50px;
         padding-bottom: 10px;
     }
 }
