@@ -1,8 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+body
+{
+  overflow: hidden;
+}
 
 #signup-page {
   width: 360px;
-  padding: 8% 0 0;
+  padding: 2% 0 0;
   margin: auto;
 }
 #form {
@@ -11,7 +15,7 @@
   background: #FFFFFF;
   max-width: 360px;
   margin: 0 auto 100px;
-  padding: 45px;
+  padding: 35px 35px 25px 35px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }

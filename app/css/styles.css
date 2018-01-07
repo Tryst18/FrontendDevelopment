@@ -1,5 +1,6 @@
 body {
   background-color: #222629;
+  overflow: hidden;
   /*background-image: url("../images/background-comp.jpg");*/ }
 
 #particle-js {
