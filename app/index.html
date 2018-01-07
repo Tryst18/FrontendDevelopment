@@ -75,6 +75,7 @@
         <div class="block"></div>
         <div class="init"><MARQUEE onmouseover="this.stop();" onmouseout="this.start();" >RoboSapiens in association with Tryst 2018, is conducting 1 day training program between 23rd-26th February 2018 at IIT Delhi. You can register for it <a class="universal" href="http://robotryst.com/workshops.php">here</a>. Also refer your friend and get a workshop free.</MARQUEE></div>
 
+        <p id="User"></p>
     <div class="initial"><img src="images/tryst_logo.png"></div>
     <div id="particles-js"></div>
 
@@ -83,7 +84,12 @@
 	<script src="js/themepart.js"></script>
 
     <!-- <script src="js/particle.js"></script> -->
-
+        <script>
+        if (localStorage.getItem("authUser")) {
+            var user = JSON.parse(localStorage.getItem("authUser"));
+            document.getElementById("User").innerText = Hi + user.name;
+        }
+        </script>
 
     <!-- <script type="text/javascript" src="js/responsive_navbar.js"></script> -->
     	
