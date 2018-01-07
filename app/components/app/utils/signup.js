@@ -8,19 +8,29 @@
         xhr.open("POST", url+"/api/user/create", true);
         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         // console.log(xhr.readyState, xhr.status);
+        document.getElementById('loading').style.display = "inline";
         xhr.onreadystatechange = function () {
             // console.log(xhr.responseText, "response");
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                var json = JSON.parse(xhr.responseText);
-                if (json.error == "false") {
+            document.getElementById('loading').style.display = "none";
+            
+            if (xhr.readyState === 4){
+                if (xhr.status === 200) {
+                    var json = JSON.parse(xhr.responseText);
+                    if (json.error == "false") {
+                        document.getElementById('errServ').style.display = "inline";
+                    } else {
+                        document.location.href = "../index.html";
+                    }
+                } else if (xhr.status === 401){
+                    document.getElementById('errNoUser').style.display = "inline";
+                } else if (xhr.status === 500){
+                    console.log(xhr.responseText, "response");
+                    // console.log("response");
+                    console.log(xhr.readyState, xhr.status);
+                    var json = JSON.parse(xhr.responseText);
+                    console.log(json);
                     document.getElementById('errServ').style.display = "inline";
                 }
-            } else if (xhr.readyState === 4 && xhr.status === 0){
-                // console.log(xhr.responseText, "response");
-                // console.log("response");
-                var json = JSON.parse(xhr.responseText);
-                // console.log(json);
-                document.getElementById('errServ').style.display = "inline";
             }
         };
         var user = document.getElementById('userInfo')
@@ -28,7 +38,7 @@
         var tar = "";
         var bool = true;
         for (var x in user.children) {
-            if (x<user.children.length-1) {
+            if (x<user.children.length) {
                 tar  = encodeURIComponent(user.children[x].value);
                 // console.log(tar)
                 if (tar == "") {
