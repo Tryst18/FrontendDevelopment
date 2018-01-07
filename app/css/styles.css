@@ -8,10 +8,11 @@ body {
 
 .init {
   position: fixed;
-  margin-top: 70px;
   color: #f4f1de;
   font-size: 20px;
-  z-index: 1990; }
+  z-index: 1990;
+  width: 100%;
+   }
 
 .init a {
   color: #e07a5f; }

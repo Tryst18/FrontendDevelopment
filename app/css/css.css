@@ -2172,29 +2172,7 @@ ul.social-buttons li a:active {
 .white-popup ul{
 	list-style-type: decimal;
 }
-.imageu
-{
-	height: 500px;
-	width: 600px;
-	background-color: black;
-	position: fixed;
-	top: -280px;
-	left: -400px;
-	z-index: 2001;
-	border-radius: 0 0 200px 0;
-}
 
-.imageu img
-{
-	overflow: visible;
-	background-color: black;
-	position: relative;
-	top: 270px;
-	left: 380px;
-	height: 210px;
-	width: 210px;
-	border-radius: 0 0 180px 0;
-}
 .tk
 {
 	font-size: 20px;

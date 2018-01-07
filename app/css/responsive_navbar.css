@@ -37,9 +37,10 @@ nav.head {
 .head .logo-section{
     
     float: left;
-    margin: 0px;
+    margin: 0px 0 0px 0;
     font-family: serif;
     z-index: 1;
+
 }
 
 .head .hb-button{
@@ -167,7 +168,7 @@ header {
 }
 
 
-@media screen and (max-width: 1043px){
+@media screen and (max-width: 1200px){
     .head {
         height: 65px
     }
@@ -184,6 +185,8 @@ header {
     nav.head ul.show{
         max-height: 25em;
         z-index: 2002;
+        /*position: relative;
+        top: 65px;*/
         /*position: fixed;*/
     }
     nav.head ul li{
@@ -204,11 +207,42 @@ header {
         text-align: center;
     }
 }
+.imageu
+{
+    height: 500px;
+    width: 600px;
+    background-color: black;
+    position: fixed;
+    top: -280px;
+    left: -400px;
+    z-index: 2001;
+    border-radius: 0 0 200px 0;
+}
+
+.imageu img
+{
+    overflow: visible;
+    background-color: black;
+    position: relative;
+    top: 270px;
+    left: 380px;
+    height: 210px;
+    width: 210px;
+    border-radius: 0 0 180px 0;
+}
 
 @media screen and (max-width: 555px)  {
     .image img {
         display: none;
     }
+    .imageu
+    {
+        display: none;
+    }
+    .imageu img
+    {
+        display: none;
+    } 
 
     .logosmall {
         display: inline;
@@ -218,12 +252,20 @@ header {
 
     .logosmall img {
         display: inline;
-        background-color: #000
+        background-color: black;
     }
 
     nav.head {
         text-align: center;
         height: auto;
     }
-
+    .head .logo-section
+    {
+        margin: 0;
+        height: 100px;
+    }
+    .block
+    {
+        height: 110px;
+    }
 }
