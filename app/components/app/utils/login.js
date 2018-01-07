@@ -19,6 +19,7 @@
                     document.location.href = "../index.html";
                 }
             } else if (xhr.readyState === 4 && xhr.status === 0){
+                console.log(xhr.responseText, "response");
                 var json = JSON.parse(xhr.responseText);
                 document.getElementById('errServ').style.display = "inline";
             }
