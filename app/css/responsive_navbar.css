@@ -1,4 +1,4 @@
-*{
+    pa*{
     margin: 0;
     padding: 0;
 
@@ -60,7 +60,7 @@ nav.head {
 nav.head a{
     text-decoration: none;https://www.w3schools.com/css/css_padding.asp
     color: #282828;
-    font-size: 20px;
+    font-size: 18px;
     padding: 5px;
 }
 

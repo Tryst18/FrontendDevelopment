@@ -35,12 +35,17 @@
         <div class="block"></div>
         <div id="login-page">
             <div id="form">
-                <form id="logInfo">
+                <div id="logInfo">
                     <input name="email" type="text" placeholder="Username">
                     <input name="password" type="password" placeholder="Password">
                     <button id="submit">Login</button>
-                    <p id="message">Not registered? <a href="signup.html">Create an account</a></p>
-                </form>
+                    
+                </div>
+                <div id="err">
+                        <p id="errServ">Server error, try later</p>
+                        <p id="errUser">All fields are important</p>
+                </div>
+                <p id="message">Not registered? <a href="signup.html">Create an account</a></p>
             </div>
         </div>
        
