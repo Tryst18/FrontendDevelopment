@@ -20,8 +20,6 @@
   "author": "manish-baghel",
   "license": "ISC",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
     "browser-sync": "^2.18.11",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
