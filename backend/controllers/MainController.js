@@ -7,3 +7,10 @@ module.exports = {
 function home(req,res){
 	res.render('index.ejs');
 }
+
+function shedule(req,res){
+
+}
+function workshops(req,res){
+	
+}

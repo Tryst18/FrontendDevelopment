@@ -20,13 +20,13 @@ app.use(express.static(path.resolve(__dirname, 'client')));
 app.set('port', process.env.PORT || 8080);
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-app.set('views', __dirname + '/client/views');
+app.set('views', __dirname + '/app/');
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
 app.use(cookieParser());
 
 
-app.use('/', mainRoutes);
+app.use('/',mainRoutes);
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
