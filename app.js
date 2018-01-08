@@ -8,7 +8,6 @@ var app = require('./ApplicationInstance');
 var flash    = require('connect-flash');
 var cookieParser = require('cookie-parser');
 var session      = require('express-session');
-var configDB = require('./backend/Models/database.js');
 var compression = require('compression');
 var _ = require("underscore");
 var mainRoutes = require('./backend/routes/MainRoutes');
