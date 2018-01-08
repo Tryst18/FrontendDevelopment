@@ -4,7 +4,10 @@
 
 }
 
-
+ul
+{
+    z-index: 1000;
+}
 
 /*nav.head {
     background: #86c232;
@@ -58,7 +61,7 @@ nav.head {
 }
 
 nav.head a{
-    text-decoration: none;https://www.w3schools.com/css/css_padding.asp
+    text-decoration: none;
     color: #282828;
     font-size: 18px;
     padding: 5px;
@@ -168,7 +171,7 @@ header {
 }
 
 
-@media screen and (max-width: 1200px){
+@media screen and (max-width: 1275px){
     .head {
         height: 65px
     }
@@ -183,7 +186,7 @@ header {
         z-index: 3000
     }
     nav.head ul.show{
-        max-height: max-content;
+        max-height: 35em;
         z-index: 2002;
         /*position: relative;
         top: 65px;*/
@@ -268,4 +271,14 @@ header {
     {
         height: 110px;
     }
+    .content
+    {
+        top: 0;
+    }
+    .head .hb-button
+    {
+        padding: 5px 10px;
+        margin: 35px 16px 0 0;
+    }
+
 }

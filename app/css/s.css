@@ -18,3 +18,8 @@ h1
     height: 165px;
     z-index: -100;
 }
+.content
+{
+    top: 140px;
+    position: relative;
+}
