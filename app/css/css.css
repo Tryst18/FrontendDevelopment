@@ -1974,7 +1974,7 @@ ul.social-buttons li a:active {
 		.button:hover {
 			text-decoration: none;
 			color: #fff;
-			background: #ef8376;
+			background: #008CBA/*#ef8376*/;
 		}
 
 		input[type="button"].alt,
