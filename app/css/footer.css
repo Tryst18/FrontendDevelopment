@@ -28,7 +28,8 @@ nav.w {
 }
 
 .foot .hb-button{
-    float: right;
+    /*float: inherit;*/
+    left:50%;
     background: black;
     color: #ffffff;
     border: none;
