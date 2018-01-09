@@ -1,4 +1,4 @@
-import "../utils/index.js";
+import "./index.js";
 
 console.log("hi");
 function onSubmit() {
