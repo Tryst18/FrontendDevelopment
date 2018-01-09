@@ -36,7 +36,19 @@
   "dependencies": {
     "es6-module-transpiler": "^0.10.0",
     "gulp-es6-module-transpiler": "^0.2.2",
-    "recast": "^0.13.0"
+    "recast": "^0.13.0",
+    "body-parser": "^1.16.0",
+    "compression": "^1.6.2",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.0.0",
+    "cors": "^2.8.1",
+    "ejs": "^2.5.7",
+    "express": "^4.14.0",
+    "express-session": "^1.0.0",
+    "method-override": "^1.0.0",
+    "morgan": "^1.7.0",
+    "path": "^0.12.7",
+    "underscore": "1.6.0"
   },
   "bugs": {
     "url": "https://github.com/Tryst18/FrontendDevelopment/issues"
