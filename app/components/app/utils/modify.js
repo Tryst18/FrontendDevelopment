@@ -20,7 +20,7 @@
                     if (json.error == false) {
                         document.getElementById('userInfo').innerHTML = '<p>Successful, go to <a href=index.html>Home</a></p>'
                         localStorage.setItem("authUser", JSON.stringify(savUser))
-
+    
                     } else {
                         document.getElementById('errServ').style.display = "inline";
                     }
