@@ -16,8 +16,8 @@ function onSubmit() {
 				var data = json.data;
 				// console.log(json.error == false)
 				if (json.error == false) {
-					localStorage.setItem("authUser", JSON.stringify(data.user));
-					localStorage.setItem("token", data.token);
+					sessionStorage.setItem("authUser", JSON.stringify(data.user));
+					sessionStorage.setItem("token", data.token);
 					console.log("login")
 					document.location.href = "../index.html";
 					

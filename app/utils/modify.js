@@ -1,11 +1,18 @@
 import "../utils/index.js";
 
+
+
+var savUser = JSON.parse(sessionStorage.getItem("authUser"))
+document.getElementById('userInfo').innerHTML =  '<input name="name" type="text" placeholder='+savUser.name+'/>'
++'<input name="phone" type="text" placeholder='+savUser.phone+'/>'
++'<input name="university" type="text" placeholder='+savUser.university+'/>'
++'<input name="address" type="text" placeholder='+savUser.address+'/></div>'
+
 function onSubmit() {
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", url+"/api/user/modify", true);
 	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xhr.setRequestHeader("x-auth-token", localStorage.getItem("token"));
-	var savUser = JSON.parse(localStorage.getItem("authUser"))
+	xhr.setRequestHeader("x-auth-token", sessionStorage.getItem("token"));
 	// console.log(xhr.readyState, xhr.status);
 	document.getElementById('loading').style.display = "inline";
 	xhr.onreadystatechange = function () {
@@ -17,8 +24,7 @@ function onSubmit() {
 				var json = JSON.parse(xhr.responseText);
 				if (json.error == false) {
 					document.getElementById('userInfo').innerHTML = '<p>Successful, go to <a href=index.html>Home</a></p>'
-					localStorage.setItem("authUser", JSON.stringify(savUser))
-
+					sessionStorage.setItem("authUser", JSON.stringify(savUser))
 				} else {
 					document.getElementById('errServ').style.display = "inline";
 				}

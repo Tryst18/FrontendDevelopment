@@ -2,12 +2,19 @@
     "use strict";
     var url = "https://api.tryst-iitd.com";
 
+
+
+    var app$utils$modify$$savUser = JSON.parse(sessionStorage.getItem("authUser"));
+    document.getElementById('userInfo').innerHTML =  '<input name="name" type="text" placeholder='+app$utils$modify$$savUser.name+'/>'
+    +'<input name="phone" type="text" placeholder='+app$utils$modify$$savUser.phone+'/>'
+    +'<input name="university" type="text" placeholder='+app$utils$modify$$savUser.university+'/>'
+    +'<input name="address" type="text" placeholder='+app$utils$modify$$savUser.address+'/></div>';
+
     function app$utils$modify$$onSubmit() {
         var xhr = new XMLHttpRequest();
         xhr.open("POST", url+"/api/user/modify", true);
         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhr.setRequestHeader("x-auth-token", localStorage.getItem("token"));
-        var savUser = JSON.parse(localStorage.getItem("authUser"))
+        xhr.setRequestHeader("x-auth-token", sessionStorage.getItem("token"));
         // console.log(xhr.readyState, xhr.status);
         document.getElementById('loading').style.display = "inline";
         xhr.onreadystatechange = function () {
@@ -19,8 +26,7 @@
                     var json = JSON.parse(xhr.responseText);
                     if (json.error == false) {
                         document.getElementById('userInfo').innerHTML = '<p>Successful, go to <a href=index.html>Home</a></p>'
-                        localStorage.setItem("authUser", JSON.stringify(savUser))
-    
+                        sessionStorage.setItem("authUser", JSON.stringify(app$utils$modify$$savUser))
                     } else {
                         document.getElementById('errServ').style.display = "inline";
                     }
@@ -47,12 +53,12 @@
                 if (tar == "") {
                     // bool = false;
                 } else {
-                    savUser = Object.assign(savUser, {[user.children[x].name]:tar})
+                    app$utils$modify$$savUser = Object.assign(app$utils$modify$$savUser, {[user.children[x].name]:tar})
                     req = req + user.children[x].name + "=" + tar + ((x<user.children.length-1)? "&":"");
                 }
             }
         }
-        console.log(savUser)
+        console.log(app$utils$modify$$savUser)
         // console.log(user.children.length);
         console.log(req);
         // console.log(bool);
