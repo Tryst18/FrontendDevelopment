@@ -1,6 +1,6 @@
 (function() {
     "use strict";
-    var url = "http://localhost:4000";
+    var url = "https://api.tryst-iitd.com";
 
     var app$utils$speciEvent$$category = document.location.search.split("=")[1];
     document.getElementById('main').innerHTML = app$utils$speciEvent$$category;
