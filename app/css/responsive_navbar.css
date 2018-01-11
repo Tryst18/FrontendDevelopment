@@ -82,7 +82,7 @@ nav.head ul{
 
 nav.head ul li{
     float: right;
-    display: inline-block;
+    display: block;
     padding: 19px;
 }
 

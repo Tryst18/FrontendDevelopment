@@ -26,7 +26,7 @@
             </div>
 
             <ul>
-                <li><a href="login.html">Login</a></li>
+                <li><a href="login.html" class="login">Login</a></li>
                 <li><a href="signup.html">Sign Up</a></li>
                 <li><a href="comingsoon.html">Social</a></li>
                 <li><a href="comingsoon.html">Accomodation</a></li>
@@ -52,9 +52,9 @@
         
     <!-- <script src="js/particle.js"></script> -->
         <script>
-        if (localStorage.getItem("authUser")) {
-            var user = JSON.parse(localStorage.getItem("authUser"));
-            document.getElementById("User").innerHTML = 'Hi <a href="modify.html">' + user.name + '</a>';
+        if (sessionStorage.getItem("authUser")) {
+            var user = JSON.parse(sessionStorage.getItem("authUser"));
+            document.getElementById("User").innerHTML = 'Hi '+ user.name + ' ' + '<a href="modify.html">' + 'Modify' + '</a>';
         } else {
             document.getElementById("User").innerHTML = 'Hi <a href="login.html">' + 'Stranger' + '</a>';
             console.log("this happened")
