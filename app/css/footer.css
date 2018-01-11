@@ -26,6 +26,15 @@ nav.w {
     margin: 0px;
     font-family: serif;
 }
+.blockf
+{
+    width:100%;
+    position: relative;
+    height: 66px;
+    background-color: #1f2833;
+    z-index: -100;
+    bottom: 0px;
+}
 
 .foot .hb-button{
     /*float: inherit;*/

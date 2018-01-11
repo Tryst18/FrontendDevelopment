@@ -1,7 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 body
 {
-  overflow: scroll;
+  overflow: auto;
+  height: 100%;
+  width: 100%;
 }
 #login-page {
   width: 500px;
