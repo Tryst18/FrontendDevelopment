@@ -6,6 +6,7 @@
 	margin: 0;
 	padding: 0;
 }
+
 #page-wrapper
 {
 	background-color: #1f2833;
@@ -27,6 +28,7 @@
 
 	body {
 		line-height: 1;
+		overflow: auto;
 	}
 
 	ol, ul {
