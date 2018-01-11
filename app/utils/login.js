@@ -1,4 +1,4 @@
-import "../utils/index.js";
+import "./index.js";
 
 console.log("hi");
 function onSubmit() {
@@ -6,27 +6,37 @@ function onSubmit() {
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", url+"/api/user/login", true);
 	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	document.getElementById('loading').style.display = "inline";
 	xhr.onreadystatechange = function () {
-		
-	    if (xhr.readyState === 4 && xhr.status === 200) {
-			var json = JSON.parse(xhr.responseText);
-			var data = json.data;
-			if (json.error == "false") {
-				localStorage.setItem("authUser", JSON.stringify(data.user));
-				localStorage.setItem("sessKey", data.token);
-				document.location.href = "../index.html";
+		document.getElementById('loading').style.display = "none";
+		console.log(xhr.responseText + " " + xhr.status, "response");
+	    if (xhr.readyState === 4){
+			if (xhr.status === 200) {
+				var json = JSON.parse(xhr.responseText);
+				var data = json.data;
+				// console.log(json.error == false)
+				if (json.error == false) {
+					sessionStorage.setItem("authUser", JSON.stringify(data.user));
+					sessionStorage.setItem("token", data.token);
+					console.log("login")
+					document.location.href = "../index.html";
+					
+				}
+			} else if (xhr.status === 401){
+				document.getElementById('errNoUser').style.display = "inline";
+			} else if (xhr.status === 500){
+				var json = JSON.parse(xhr.responseText);
+				console.log(json, "json");
+				document.getElementById('errServ').style.display = "inline";
 			}
-	    } else if (xhr.readyState === 4 && xhr.status === 0){
-	    	var json = JSON.parse(xhr.responseText);
-			document.getElementById('errServ').style.display = "inline";
-	    }
+		}
 	};
 	var log = document.getElementById('logInfo')
 	var req = "";
 	var tar = "";
 	var bool = true;
 	for (var x in log.children) {
-		if (x<log.children.length-1) {
+		if (x<log.children.length) {
 			tar  = encodeURIComponent(log.children[x].value);
 			console.log(tar)
 			if (tar == "") {

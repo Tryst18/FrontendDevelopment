@@ -15,54 +15,19 @@
         src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
-          <style> /*
-.button {
-    background-color: white; 
-    cursor: pointer;
-    position:absolute;
-    transition: .5s ease;
-    top: 30%;
-    left: 30%;
-    
-}
-
-.button1 {
-    background-color: white; 
-    color: black; 
-    border: 2px solid  #000;
-    position:absolute;
-    transition: .5s ease;
-    top: 15%;
-    left: 90%;
-     font-size: 16px;
-
-}
-.button2 {
-    background-color: white; 
-    color: black; 
-    border: 2px solid  #000;
-    position:absolute;
-    transition: .5s ease;
-    top: 19%;
-    left: 90%;
-    font-size: 16px;
-
-}*/
-</style>
     </head>
     <body>
-         <!-- <button class="button button1">LOGIN</button> -->
-        <!-- <button class="button button2">REGISTER</button> -->
-        
+    	
     <div class="image"><a href="index.html"><img src="images/tryst_logo.png"></a></div>
         <nav class="head">
             <div class="logo-section">
-                <div class="logosmall"><a href="index.html"><img src="images/tryst_logo.png"></a></div>
+          <div class="logosmall"><a href="index.html"><img src="images/tryst_logo.png"></a></div>
                 <button class="hb-button"><i class="fa fa-bars"></i></button>
             </div>
+
             <ul>
-                <li><a href="comingsoon.html">Login</a></li>
-                <li><a href="comingsoon.html">Register</a></li>
+                <li><a href="login.html" class="login">Login</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
                 <li><a href="comingsoon.html">Social</a></li>
                 <li><a href="comingsoon.html">Accomodation</a></li>
                 <li><a href="Workshops.html">Workshops</a></li>
@@ -75,15 +40,26 @@
         <div class="block"></div>
         <div class="init"><MARQUEE onmouseover="this.stop();" onmouseout="this.start();" >RoboSapiens in association with Tryst 2018, is conducting 1 day training program between 23rd-26th February 2018 at IIT Delhi. You can register for it <a class="universal" href="http://robotryst.com/workshops.php">here</a>. Also refer your friend and get a workshop free.</MARQUEE></div>
 
+        <p id="User"></p>
     <div class="initial"><img src="images/tryst_logo.png"></div>
-    <div id="particles-js" style=""></div>
+    
+    <!-- <div class="initial"><img src="images/tryst_logo.png"></div> -->
+   <div id="particles-js"></div>
 
-        
+<!-- scripts -->
 	<script src="js/particle.js"></script>
 	<script src="js/themepart.js"></script>
-
+        
     <!-- <script src="js/particle.js"></script> -->
-
+        <script>
+        if (sessionStorage.getItem("authUser")) {
+            var user = JSON.parse(sessionStorage.getItem("authUser"));
+            document.getElementById("User").innerHTML = 'Hi '+ user.name + ' ' + '<a href="modify.html">' + 'Modify' + '</a>';
+        } else {
+            document.getElementById("User").innerHTML = 'Hi <a href="login.html">' + 'Stranger' + '</a>';
+            console.log("this happened")
+        }
+        </script>
 
     <!-- <script type="text/javascript" src="js/responsive_navbar.js"></script> -->
     	
@@ -97,7 +73,6 @@
                 <a class="logo" href="#"></a>
                 <button class="hb-button"><i class="fa fa-bars"></i></button>
             </div>
-
             <ul>
                 
                 <li><a href="tablenew.html">Sponsors</a></li>
@@ -105,7 +80,7 @@
                 <li><a href="https://www.facebook.com/IITD.Tryst/?hc_ref=ARTh5ibetklzycSzq8XQ5csPBKBS0kOOPx0IHhpG7EIgkZmsnZ_el6P8ljcxwdTIi6U&fref=nf" class="fa fa-facebook"></a></li>
                 <li><a href="https://twitter.com/iitdtryst?lang=en" class="fa fa-twitter"></a></li>
                 <li><a href="comingsoon.html">Gallery</a></li>
-                <li><a href="AboutUs.html">About Us</a></li>
+                <li><a href="about.html">About Us</a></li>
             </ul>
         </nav>
         <script type="text/javascript" src="js/responsive_navbar.js"></script>

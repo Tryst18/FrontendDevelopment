@@ -1,8 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+body
+{
+  overflow: hidden;
+}
 
 #signup-page {
   width: 360px;
-  padding: 8% 0 0;
+  padding: 2% 0 0;
   margin: auto;
 }
 #form {
@@ -11,7 +15,7 @@
   background: #FFFFFF;
   max-width: 360px;
   margin: 0 auto 100px;
-  padding: 45px;
+  padding: 35px 35px 25px 35px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
@@ -30,7 +34,7 @@
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
-  background: #3d405b;
+  background: #222629;
   width: 100%;
   border: 0;
   padding: 15px;
@@ -45,8 +49,8 @@
 }
 #form button:hover,#form button:active,#form button:focus {
   background: white;
-  color: #3d405b;
-  border-color: #3d405b;
+  color: #222629;
+  border-color: #222629;
 }
 #form #err {
   background: #f18484;
@@ -64,7 +68,7 @@
   font-size: 14px;
 }
 #form .message a {
-  color: #3d405b;
+  color: #222629;
   text-decoration: none;
 }
 #form .message a:hover

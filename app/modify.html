@@ -3,7 +3,7 @@
     <head>
         <title>Tryst 2018</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="css/login.css">
+        <link rel="stylesheet" type="text/css" href="css/signup.css">
         <link rel="stylesheet" type="text/css" href="css/responsive_navbar.css">
         <link rel="stylesheet" type="text/css" href="css/footer.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -11,12 +11,13 @@
         src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
+
     </head>
 
     
 
-    <body style="background-color: #1f2833">
-        <div class="image"><a href="index.html"><img src="images/tryst_logo.png"></a></div>
+    <body style="background-color: #222629">
+    	 <div class="image"><a href="index.html"><img src="images/tryst_logo.png"></a></div>
         <nav class="head">
             <div class="logo-section">
                 <div class="logosmall"><a href="index.html"><img src="images/tryst_logo.png"></a></div>
@@ -24,7 +25,7 @@
             </div>
             <ul>
                 <li><a href="login.html" class="login">Login</a></li>
-                <li><a href="signup.html">Sign Up</a></li>    
+                <li><a href="signup.html">Sign Up</a></li>
                 <li><a href="comingsoon.html">Social</a></li>
                 <li><a href="comingsoon.html">Accomodation</a></li>
                 <li><a href="Workshops.html">Workshops</a></li>
@@ -35,26 +36,22 @@
             </ul>
         </nav>
         <div class="block"></div>
-        <div id="login-page">
-            <div id="form">
-                
-                <div id="logInfo">
-                    <input name="email" type="text" placeholder="Email">
-                    <input name="password" type="password" placeholder="Password">
-                    
+        <div id="signup-page">
+        	<div id="form">
+                <div id="userInfo">
+
                 </div>
-                <button id="submit">Login</button>
+                <button id="submit">Modify</button>
                 <div id="err">
-                        <p id="errNoUser">Wrong email or password</p>
                         <p id="errServ">Server error, try again</p>
                         <p id="errUser">All fields are important</p>
                         <p id="loading">Loading...</p>
                 </div>
-                <p id="message">Not registered? <a href="signup.html">Create an account</a></p>
-            </div>
+        	</div>
         </div>
-       
-         <nav class="foot">
+    	
+		
+		 <nav class="foot">
             <div class="logo-section">
                 <a class="logo" href="#"></a>
                 <button class="hb-button"><i class="fa fa-bars"></i></button>
@@ -74,5 +71,5 @@
         <script type="text/javascript" src="js/footer.js"></script>
     </body>
 
-    <script type="text/javascript" src="components/app/utils/login.js"></script>
+    <script type="text/javascript" src="components/app/utils/modify.js"></script>
 </html>
