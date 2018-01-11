@@ -1,7 +1,6 @@
 (function() {
     "use strict";
     function onClick(e) {
-        e;
         console.log(e.target);
         console.log(e);
     }
