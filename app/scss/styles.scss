@@ -11,6 +11,8 @@ body{
 #particle-js {
 	height: auto;
 	width: 100%;
+	position: absolute;
+	top: 0;
 }
 
 .init {
@@ -29,6 +31,7 @@ body{
 	height: 100%; 
 	width: 100%; 
 	position: absolute;
+	top: 0;
 }
 
 .comingsoon {

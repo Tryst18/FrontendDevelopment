@@ -41,7 +41,8 @@
                 function onClick(e) {
                     var dataPass = e.target.id
                     var eveList = app$utils$eventsList$$events[e.target.id]
-                    document.getElementById('eveList').innerHTML = eveList[0].id
+                    // for ()
+                    document.getElementById('eveList').innerHTML = eveList
                 }
                 
                 

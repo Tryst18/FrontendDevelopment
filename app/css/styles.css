@@ -8,7 +8,9 @@ body {
 
 #particle-js {
   height: auto;
-  width: 100%; }
+  width: 100%;
+  position: absolute;
+  top: 0; }
 
 .init {
   position: fixed;
@@ -23,7 +25,8 @@ body {
 #particles-js {
   height: 100%;
   width: 100%;
-  position: absolute; }
+  position: absolute;
+  top: 0; }
 
 .comingsoon {
   position: fixed;

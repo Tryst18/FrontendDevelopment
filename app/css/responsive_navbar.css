@@ -37,6 +37,7 @@ nav.head {
     z-index: -100;
 }
 
+
 .head .logo-section{
     
     float: left;
@@ -60,13 +61,18 @@ nav.head {
     display: none;
 }
 
-nav.head a{
+nav.head a.underline{
     text-decoration: none;
     color: #1f2833;
     font-size: 18px;
     padding: 5px;
 }
-
+/*nav.head a.no-underline
+{
+    height: 0;
+    width: 0;
+}
+*/
 nav.head ul{
     overflow: hidden;
     color: #fff;
@@ -81,11 +87,27 @@ nav.head ul{
 }
 
 nav.head ul li{
+<<<<<<< HEAD
+    display: inline-block;
+=======
     float: right;
     display: block;
+>>>>>>> a513bf68bb36ce1ad99a920c6f6687137182a3a0
     padding: 19px;
+    box-sizing: content-box;
 }
-
+nav.head ul li.no-pad{
+    display: inline-block;
+    padding: 0px;
+}
+nav.head ul li.leftfloat{
+    float: left;
+    
+}
+nav.head ul li.rightfloat{
+    float: right;
+    
+}
 .head li a{
     position: relative;
     color: #1f2833;
@@ -97,7 +119,7 @@ nav.head ul li{
     color: white;
 }*/
 
-.head li a:before{
+.head li a.underline:before{
     content:"";
     position: absolute;
     width: 100%;
@@ -112,7 +134,7 @@ nav.head ul li{
     transition: all 0.3s ease-in-out 0s;
 }
 
-.head li a:hover:before{
+.head li a.underline:hover:before{
     /*visibility: visible;*/
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
@@ -122,6 +144,13 @@ body{
     font-family: sans-serif;
     height: auto;
     /*overflow: hidden;*/
+}
+.home_logo
+{
+    width: 90px;
+    height: 50px;
+    padding: 4.5px;
+    box-sizing: content-box;
 }
 
 
@@ -146,15 +175,14 @@ header {
 
 .logosmall img {
     display: none;
-    max-width: 100px;
-    max-height: 100px;
-    width: auto;
-    height: auto;
-    
+    width: 90px;
+    height: 50px;
+    padding: 4.5px;
+    box-sizing: content-box;
     color: #fff;
 }
 
-.image img
+/*.image img
 {
     max-height: 200px;
     max-width: 300px;
@@ -168,10 +196,10 @@ header {
     border-radius: 200px;
     top: -210px;
     left: -220px;
-}
+}*/
 
 
-@media screen and (max-width: 1275px){
+@media screen and (max-width: 1097px){
     .head {
         height: 65px
     }
@@ -183,14 +211,15 @@ header {
         background: #ffffff;
         max-height: 0;
         width: 100%;
-        z-index: 3000
+        /*z-index: 3000*/
+        z-index: 0;
+        position: absolute;
+        top: 0;
     }
     nav.head ul.show{
         max-height: 35em;
-        z-index: 2002;
-        /*position: relative;
-        top: 65px;*/
-        /*position: fixed;*/
+        
+        
     }
     nav.head ul li{
         box-sizing: border-box;
@@ -209,40 +238,11 @@ header {
     nav.head {
         text-align: center;
     }
-}
-.imageu
-{
-    height: 500px;
-    width: 600px;
-    background-color: black;
-    position: fixed;
-    top: -280px;
-    left: -400px;
-    z-index: 2001;
-    border-radius: 0 0 200px 0;
-}
-
-.imageu img
-{
-    overflow: visible;
-    background-color: black;
-    position: relative;
-    top: 270px;
-    left: 380px;
-    height: 210px;
-    width: 210px;
-    border-radius: 0 0 180px 0;
-}
-
-@media screen and (max-width: 555px)  {
-    .image img {
-        display: none;
-    }
-    .imageu
+    .image
     {
         display: none;
     }
-    .imageu img
+    .image img
     {
         display: none;
     } 
@@ -255,7 +255,8 @@ header {
 
     .logosmall img {
         display: inline;
-        background-color: black;
+        background-color: transparent;
+        z-index: -1;
     }
 
     nav.head {
@@ -265,7 +266,7 @@ header {
     .head .logo-section
     {
         margin: 0;
-        height: 100px;
+        height: 65px;
     }
     .block
     {
@@ -278,7 +279,78 @@ header {
     .head .hb-button
     {
         padding: 5px 10px;
-        margin: 35px 16px 0 0;
+        margin: 16px;
+        z-index: 3000;
+    }
+}
+.image
+{
+    height: 500px;
+    width: 600px;
+    background-color: black;
+    position: fixed;
+    top: -280px;
+    left: -400px;
+    z-index: 2001;
+    border-radius: 0 0 200px 0;
+}
+
+.image img
+{
+    overflow: visible;
+    background-color: black;
+    position: relative;
+    top: 270px;
+    left: 380px;
+    height: 210px;
+    width: 210px;
+    border-radius: 0 0 180px 0;
+}
+
+/*@media screen and (max-width: 555px)  {
+    
+    .image
+    {
+        display: none;
+    }
+    .image img
+    {
+        display: none;
+    } 
+
+    .logosmall {
+        display: inline;
+        width: 100%;
+        position: relative;
+    }
+
+    .logosmall img {
+        display: inline;
+        background-color: transparent;
+    }
+
+    nav.head {
+        text-align: center;
+        height: auto;
+    }
+    .head .logo-section
+    {
+        margin: 0;
+        height: 65px;
+    }
+    .block
+    {
+        height: 110px;
+    }
+    .content
+    {
+        top: 0;
+    }
+    .head .hb-button
+    {
+        padding: 5px 10px;
+        margin: 16px;
     }
 
 }
+*/

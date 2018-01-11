@@ -39,7 +39,8 @@ xhr.onreadystatechange = function () {
             function onClick(e) {
                 var dataPass = e.target.id
                 var eveList = events[e.target.id]
-                document.getElementById('eveList').innerHTML = eveList[0].id
+                // for ()
+                document.getElementById('eveList').innerHTML = eveList
             }
             
             
