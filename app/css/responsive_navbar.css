@@ -87,12 +87,8 @@ nav.head ul{
 }
 
 nav.head ul li{
-<<<<<<< HEAD
-    display: inline-block;
-=======
     float: right;
     display: block;
->>>>>>> a513bf68bb36ce1ad99a920c6f6687137182a3a0
     padding: 19px;
     box-sizing: content-box;
 }
