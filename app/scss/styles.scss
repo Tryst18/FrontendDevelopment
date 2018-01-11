@@ -45,7 +45,9 @@ body{
 }
 
 #User {
-	text-align: right
+	text-align: right;
+	position: relative;
+	z-index: 100;
 }
 
 p {

@@ -38,7 +38,9 @@ body {
   z-index: -3; }
 
 #User {
-  text-align: right; }
+  text-align: right;
+  position: relative;
+  z-index: 100; }
 
 p {
   color: #f4f1de;

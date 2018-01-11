@@ -41,8 +41,12 @@
                 function onClick(e) {
                     var dataPass = e.target.id
                     var eveList = app$utils$eventsList$$events[e.target.id]
-                    // for ()
-                    document.getElementById('eveList').innerHTML = eveList
+                    let str = ''
+                    for (var x in eveList) {
+                        str += '<p><a href=../specifEvent.html?'+eveList[x].id+'>'+eveList[x].name+'</a></p>'
+                    }
+                    document.getElementById('eveList').innerHTML = str
+                    document.getElementById('eveList').className = 'show'
                 }
                 
                 

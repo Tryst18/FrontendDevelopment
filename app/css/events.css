@@ -42,7 +42,23 @@
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
   }
+
   button
   {
     background-color: #008CBA;
+  }
+
+  #eveList {
+    display: none;
+    transition: max-height 0.5s;
+    -webkit-transition: max-height 0.5s;
+    -moz-transition: max-height 0.5s;
+    -ms-transition: max-height 0.5s;
+    -o-transition: max-height 0.5s;
+    
+  }
+
+  .show {
+    display: inline;
+    max-height: 35em;
   }
