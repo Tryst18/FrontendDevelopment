@@ -1,6 +1,6 @@
 (function() {
     "use strict";
-    var url = "http://localhost:4000";
+    var url = "https://api.tryst-iitd.com";
 
     console.log("hi");
     function app$utils$login$$onSubmit() {
@@ -16,10 +16,13 @@
                 if (xhr.status === 200) {
                     var json = JSON.parse(xhr.responseText);
                     var data = json.data;
-                    if (json.error == "false") {
+                    // console.log(json.error == false)
+                    if (json.error == false) {
                         localStorage.setItem("authUser", JSON.stringify(data.user));
-                        localStorage.setItem("sessKey", data.token);
+                        localStorage.setItem("token", data.token);
+                        console.log("login")
                         document.location.href = "../index.html";
+                        
                     }
                 } else if (xhr.status === 401){
                     document.getElementById('errNoUser').style.display = "inline";

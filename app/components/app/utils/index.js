@@ -1,4 +1,4 @@
 (function() {
     "use strict";
-    var url = "http://localhost:4000";
+    var url = "https://api.tryst-iitd.com";
 }).call(this);
