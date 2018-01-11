@@ -1,6 +1,12 @@
 import "./index.js";
 
 console.log("hi");
+
+if (sessionStorage.getItem("authUser")) {
+	sessionStorage.removeItem("authUser")
+	sessionStorage.removeItem("token")
+}
+
 function onSubmit() {
 	// var url = "http://localhost:4000/"
 	var xhr = new XMLHttpRequest();

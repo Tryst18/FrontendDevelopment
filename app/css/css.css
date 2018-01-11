@@ -224,7 +224,7 @@
 
 	body {
 		background: #f0f4f4;
-		color: #222629;
+		color: #1f2833;
 		font-size: 15pt;
 		line-height: 1.85em;
 		/*font-family: 'Amethysta', serif!important;*/
@@ -929,7 +929,7 @@
 
 		.dropotron li {
 			border-top: solid 1px rgba(128, 128, 128, 0.2);
-			color: #222629;
+			color: #1f2833;
 			font-size: 100%;
 		}
 
@@ -945,7 +945,7 @@
 				display: block;
 				border: 0;
 				padding: 0.5em 0 0.5em 0;
-				color: #222629;
+				color: #1f2833;
 				text-decoration: none;
 				-moz-transition: color 0.35s ease-in-out;
 				-webkit-transition: color 0.35s ease-in-out;

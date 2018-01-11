@@ -3,6 +3,12 @@
     var url = "https://api.tryst-iitd.com";
 
     console.log("hi");
+
+    if (sessionStorage.getItem("authUser")) {
+        sessionStorage.removeItem("authUser")
+        sessionStorage.removeItem("token")
+    }
+
     function app$utils$login$$onSubmit() {
         // var url = "http://localhost:4000/"
         var xhr = new XMLHttpRequest();

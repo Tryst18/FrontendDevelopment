@@ -34,7 +34,7 @@ body
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
-  background: #222629;
+  background: #1f2833;
   width: 100%;
   border: 0;
   padding: 15px;
@@ -49,8 +49,8 @@ body
 }
 #form button:hover,#form button:active,#form button:focus {
   background: white;
-  color: #222629;
-  border-color: #222629;
+  color: #1f2833;
+  border-color: #1f2833;
 }
 #form #err {
   background: #f18484;
@@ -68,7 +68,7 @@ body
   font-size: 14px;
 }
 #form .message a {
-  color: #222629;
+  color: #1f2833;
   text-decoration: none;
 }
 #form .message a:hover

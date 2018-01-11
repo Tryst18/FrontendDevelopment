@@ -54,7 +54,7 @@
         <script>
         if (sessionStorage.getItem("authUser")) {
             var user = JSON.parse(sessionStorage.getItem("authUser"));
-            document.getElementById("User").innerHTML = 'Hi '+ user.name + ' ' + '<a href="modify.html">' + 'Modify' + '</a>';
+            document.getElementById("User").innerHTML = 'Hi <a href="modify.html">'+ user.name + '</a><br><a href="modify.html">' + 'Modify' + '</a>';
         } else {
             document.getElementById("User").innerHTML = 'Hi <a href="login.html">' + 'Stranger' + '</a>';
             console.log("this happened")
