@@ -18,7 +18,7 @@ ul
 }*/
 
 nav.head {
-    background: #86c232;
+    background: #66fcf1;
     /*overflow: hidden;*/
     width: 100%;
     top: 0;
@@ -62,7 +62,7 @@ nav.head {
 
 nav.head a{
     text-decoration: none;
-    color: #282828;
+    color: #1f2833;
     font-size: 18px;
     padding: 5px;
 }
@@ -88,14 +88,14 @@ nav.head ul li{
 
 .head li a{
     position: relative;
-    color: #000;
+    color: #1f2833;
     text-decoration: none;
     font-family: arial;
 }
 
-.head li a:hover{
-    color: #000;
-}
+/*.head li a:hover{
+    color: white;
+}*/
 
 .head li a:before{
     content:"";
@@ -104,7 +104,7 @@ nav.head ul li{
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #000;
+    background-color: #1f2833;
     /*visibility: hidden;*/
     -webkit-transform: scaleX(0);
     transform: scaleX(0);

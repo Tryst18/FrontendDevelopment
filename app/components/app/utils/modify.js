@@ -7,6 +7,7 @@
         xhr.open("POST", url+"/api/user/modify", true);
         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhr.setRequestHeader("x-auth-token", localStorage.getItem("token"));
+        var savUser = JSON.parse(localStorage.getItem("authUser"))
         // console.log(xhr.readyState, xhr.status);
         document.getElementById('loading').style.display = "inline";
         xhr.onreadystatechange = function () {
@@ -18,6 +19,8 @@
                     var json = JSON.parse(xhr.responseText);
                     if (json.error == false) {
                         document.getElementById('userInfo').innerHTML = '<p>Successful, go to <a href=index.html>Home</a></p>'
+                        localStorage.setItem("authUser", JSON.stringify(savUser))
+
                     } else {
                         document.getElementById('errServ').style.display = "inline";
                     }
@@ -33,7 +36,7 @@
             }
         };
         var user = document.getElementById('userInfo')
-        var savUser = JSON.parse(localStorage.getItem("authUser"))
+        
         var req = "";
         var tar = "";
         var bool = true;
@@ -44,11 +47,12 @@
                 if (tar == "") {
                     // bool = false;
                 } else {
+                    savUser = Object.assign(savUser, {[user.children[x].name]:tar})
                     req = req + user.children[x].name + "=" + tar + ((x<user.children.length-1)? "&":"");
                 }
-                
             }
         }
+        console.log(savUser)
         // console.log(user.children.length);
         console.log(req);
         // console.log(bool);
