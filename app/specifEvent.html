@@ -27,55 +27,37 @@
     </head>
     <body class="homepage">
        
-        <div class="imageu"><a href="index.html"><img src="images/tryst_logo.png"></a></div>
-        <nav class="head">
-            <div class="logo-section">
-              <div class="logosmall"><a href="index.html"><img src="images/tryst_logo.png"></a></div>
-                <button class="hb-button"><i class="fa fa-bars"></i></button>
-            </div>
-            <ul>
-                <li><a class="tk" href="login.html">Login</a></li>
-                <li><a class="tk" href="signup.html">Sign Up</a></li>
-                <li><a class="tk" href="comingsoon.html">Social</a></li>
-                <li><a class="tk" href="comingsoon.html">Accomodation</a></li>
-                <li><a class="tk" href="Workshops.html">Workshops</a></li>
-                <li><a class="tk" href="comingsoon.html">Guest Lectures</a></li>
-                <li><a class="tk" href="events.html">Events</a></li>
-                <li><a class="tk" href="comingsoon.html">Schedule</a></li>
-                <li><a class="tk" href="index.html">Home</a></li>
-            </ul>
-        </nav>
+            <nav class="head">
+                    <div class="logo-section">
+                  <div class="logosmall"><a href="index.html"><img src="images/tryst_logo_filled_black.png"></a></div>
+                        <button class="hb-button"><i class="fa fa-bars"></i></button>
+                    </div>
+            
+                    <ul>
+                        <li class="no-pad leftfloat"><a class="no-underline" href="index.html"><img class="home_logo" src="images/tryst_logo_filled_black.png"></a></li>
+                        <li class="leftfloat"><a class="underline" href="comingsoon.html">Schedule</a></li>
+                         <li class="leftfloat"><a class="underline" href="events.html">Events</a></li>
+                         <li class="leftfloat"><a class="underline" href="comingsoon.html">Guest Lectures</a></li>
+                         <li class="leftfloat"><a class="underline" href="Workshops.html">Workshops</a></li>
+                         <li class="leftfloat"><a class="underline" href="comingsoon.html">Accomodation</a></li>
+                         <li class="leftfloat"><a class="underline" href="comingsoon.html">Social</a></li>
+                         <li class="rightfloat"><a class="underline" href="login.html">Login</a></li>
+                        <li class="rightfloat"><a class="underline" href="signup.html">Sign Up</a></li>
+                    </ul>
+                </nav>
         <div class="block"></div>
        
         <div id="page-wrapper">
           <center><h1>Event Name</h1></center>
-          <center> <img src="images/dance.jpg"></center>
+          <center> <img id="image" src="images/dance.jpg"></center>
     <h2>Description</h2>
-    <p> Hey all,. I've had this problem in attempts in a row in two different projects. I am placing an image inside it's own div. When I call the div it has no effect on the image. The only time I can make the image do what I want it to do is when I give the img a class and call that in my css. Here is a quick example:.
-    </p>
-    <h2>Rules</h2>
-    <p> Hey all,. I've had this problem in attempts in a row in two different projects. I am placing an image inside it's own div. When I call the div it has no effect on the image. The only time I can make the image do what I want it to do is when I give the img a class and call that in my css. Here is a quick example:.
+    <p id="description"> Hey all,. I've had this problem in attempts in a row in two different projects. I am placing an image inside it's own div. When I call the div it has no effect on the image. The only time I can make the image do what I want it to do is when I give the img a class and call that in my css. Here is a quick example:.
     </p>
     <h2>Prizes</h2>
-    <p> Hey all,. I've had this problem in attempts in a row in two different projects. I am placing an image inside it's own div. When I call the div it has no effect on the image. The only time I can make the image do what I want it to do is when I give the img a class and call that in my css. Here is a quick example:<br>
-     Registration url: "dfnsagndsgnsdfjgn"
-    </p>
-    <h2>Event Details</h2>
-    <p>  <li>type</li>
-<li>date</li>
-<li>start_time</li>
-<li>end_time</li>
-<li>venue</li>
-    </p>
-    <h2>Registration</h2>
-    <p> 
-reg_deadline: Date<br>
-reg_type: "team",<br>
-reg_mode: "website",<br>
-reg_email: "coding@gmail.com" <br>
-reg_link: "form.google.com/xd"<br>
-reg_min_team_size: 2<br>
-Registration url: "dfnsagndsgnsdfjgn"
+    <p id="prizes"> Hey all,. I've had this problem in attempts in a row in two different projects. I am placing an image inside it's own div. When I call the div it has no effect on the image. The only time I can make the image do what I want it to do is when I give the img a class and call that in my css. Here is a quick example:<br>
+    <p id="probState"></p>
+    <p id="register">Register</p>
+    <p id="poc">
     </p>
    
   
@@ -96,7 +78,7 @@ Registration url: "dfnsagndsgnsdfjgn"
                 <li><a href="AboutUs.html">About Us</a></li>
             </ul>
         </nav>
-        <script type="text/javascript" src="components/app/utils/eventsList.js"></script>
+        <script type="text/javascript" src="components/app/utils/specifEvent.js"></script>
         <script type="text/javascript" src="js/responsive_navbar.js"></script>
         <script type="text/javascript" src="js/footer.js"></script>
         </body>
