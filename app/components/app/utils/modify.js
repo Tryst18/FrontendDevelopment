@@ -26,7 +26,16 @@
                     var json = JSON.parse(xhr.responseText);
                     if (json.error == false) {
                         document.getElementById('userInfo').innerHTML = '<p>Successful, go to <a href=index.html>Home</a></p>'
+<<<<<<< HEAD
                         sessionStorage.setItem("authUser", JSON.stringify(app$utils$modify$$savUser))
+=======
+<<<<<<< HEAD
+                        sessionStorage.setItem("authUser", JSON.stringify(app$utils$modify$$savUser))
+=======
+                        localStorage.setItem("authUser", JSON.stringify(savUser))
+
+>>>>>>> a9533dbc26bd7ee32ccc6dd4a863d4d2c892f043
+>>>>>>> a513bf68bb36ce1ad99a920c6f6687137182a3a0
                     } else {
                         document.getElementById('errServ').style.display = "inline";
                     }
