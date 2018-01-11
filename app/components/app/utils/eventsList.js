@@ -1,10 +1,5 @@
 (function() {
     "use strict";
-<<<<<<< HEAD
-    function onClick(e) {
-        console.log(e.target);
-        console.log(e);
-=======
     var url = "https://api.tryst-iitd.com";
 
 
@@ -41,7 +36,6 @@
                 document.getElementById('move').innerHTML = eve
             }
         }
->>>>>>> c5777232ec298ab10793d87b5e5fda0a83726e82
     }
     // var hello = function(str) {
     //     console.log(str)

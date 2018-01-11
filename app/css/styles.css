@@ -1,10 +1,10 @@
 html {
-  background-color: #222629; }
+  background-color: #1f2833; }
 
 body {
   background-color: #1f2833;
-  /*background-image: url("../images/background-comp.jpg");*/ 
-overflow: hidden;}
+  /*background-image: url("../images/background-comp.jpg");*/
+  overflow: hidden; }
 
 #particle-js {
   height: auto;
