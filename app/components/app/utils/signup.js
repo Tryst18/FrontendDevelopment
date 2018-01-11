@@ -1,6 +1,6 @@
 (function() {
     "use strict";
-    var url = "http://localhost:4000";
+    var url = "https://api.tryst-iitd.com";
 
     function app$utils$signup$$onSubmit() {
         // var url = "http://localhost:4000/"
@@ -16,10 +16,10 @@
             if (xhr.readyState === 4){
                 if (xhr.status === 200) {
                     var json = JSON.parse(xhr.responseText);
-                    if (json.error == "false") {
+                    if (json.error == true) {
                         document.getElementById('errServ').style.display = "inline";
                     } else {
-                        document.location.href = "../index.html";
+                        document.getElementById('userInfo').innerHTML = '<p>Check your email for conformation link</p>'
                     }
                 } else if (xhr.status === 401){
                     document.getElementById('errNoUser').style.display = "inline";

@@ -245,7 +245,7 @@
 	input, textarea, select {
 		font-size: 15pt;
 		line-height: 1.85em;
-		font-family: 'Source Sans Pro', sans-serif;
+		font-family: 'Amethysta', serif !important;
 		font-weight: 300;
 	}
 
@@ -253,6 +253,7 @@
 		font-weight: 400;
 		color: #e07a5f;
 		line-height: 1.25em;
+		font-family: 'Source Sans Pro', sans-serif;
 	}
 
 	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -1973,7 +1974,7 @@ ul.social-buttons li a:active {
 		.button:hover {
 			text-decoration: none;
 			color: #fff;
-			background: #ef8376;
+			background: #008CBA/*#ef8376*/;
 		}
 
 		input[type="button"].alt,
