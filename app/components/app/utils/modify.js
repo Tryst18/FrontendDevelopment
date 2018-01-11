@@ -5,10 +5,10 @@
 
 
     var app$utils$modify$$savUser = JSON.parse(sessionStorage.getItem("authUser"));
-    document.getElementById('userInfo').innerHTML =  '<input name="name" type="text" placeholder='+app$utils$modify$$savUser.name+'/>'
-    +'<input name="phone" type="text" placeholder='+app$utils$modify$$savUser.phone+'/>'
-    +'<input name="university" type="text" placeholder='+app$utils$modify$$savUser.university+'/>'
-    +'<input name="address" type="text" placeholder='+app$utils$modify$$savUser.address+'/></div>';
+    document.getElementById('userInfo').innerHTML =  '<input name="name" type="text" placeholder='+decodeURIComponent(app$utils$modify$$savUser.name)+'>'
+    +'<input name="phone" type="text" placeholder='+decodeURIComponent(app$utils$modify$$savUser.phone)+'>'
+    +'<input name="university" type="text" placeholder='+decodeURIComponent(app$utils$modify$$savUser.university)+'>'
+    +'<input name="address" type="text" placeholder='+decodeURIComponent(app$utils$modify$$savUser.address)+'></div>';
 
     function app$utils$modify$$onSubmit() {
         var xhr = new XMLHttpRequest();

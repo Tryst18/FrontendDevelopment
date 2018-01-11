@@ -37,7 +37,7 @@
                     }
                 }
                 document.getElementById('move').innerHTML = eve
-    
+
                 function onClick(e) {
                     var dataPass = e.target.id
                     var eveList = app$utils$eventsList$$events[e.target.id]
