@@ -1,6 +1,6 @@
 import "./index.js";
 
-console.log("hi");
+// console.log("hi");
 
 if (sessionStorage.getItem("authUser")) {
 	sessionStorage.removeItem("authUser")
@@ -14,8 +14,8 @@ function onSubmit() {
 	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	document.getElementById('loading').style.display = "inline";
 	xhr.onreadystatechange = function () {
-		document.getElementById('loading').style.display = "none";
-		console.log(xhr.responseText + " " + xhr.status, "response");
+		
+		// console.log(xhr.responseText + " " + xhr.status, "response");
 	    if (xhr.readyState === 4){
 			if (xhr.status === 200) {
 				var json = JSON.parse(xhr.responseText);
@@ -24,7 +24,7 @@ function onSubmit() {
 				if (json.error == false) {
 					sessionStorage.setItem("authUser", JSON.stringify(data.user));
 					sessionStorage.setItem("token", data.token);
-					console.log("login")
+					// console.log("login")
 					var xh = new XMLHttpRequest();
 					xh.open("GET", url+"/api/user/view", true);
 					xh.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -35,9 +35,11 @@ function onSubmit() {
 								// console.log(xh.responseText)
 								var jso = JSON.parse(xh.responseText);
 								var dat = jso.data;
-								console.log(dat)
+								// console.log(dat)
 								if (jso.error == false) {
+									document.getElementById('loading').style.display = "none";
 									sessionStorage.setItem("authUser", JSON.stringify(dat));
+									document.location.href = "../index.html"
 								}
 							}
 						}
@@ -50,7 +52,7 @@ function onSubmit() {
 				document.getElementById('errNoUser').style.display = "inline";
 			} else if (xhr.status === 500){
 				var json = JSON.parse(xhr.responseText);
-				console.log(json, "json");
+				// console.log(json, "json");
 				document.getElementById('errServ').style.display = "inline";
 			}
 		}
@@ -62,7 +64,7 @@ function onSubmit() {
 	for (var x in log.children) {
 		if (x<log.children.length) {
 			tar  = encodeURIComponent(log.children[x].value);
-			console.log(tar)
+			// console.log(tar)
 			if (tar == "") {
 				bool = false;
 			} else {
@@ -71,9 +73,9 @@ function onSubmit() {
 			req = req + log.children[x].name + "=" + tar + ((x<log.children.length-1)? "&":"");
 		}
 	}
-	console.log(log.children.length);
-	console.log(req);
-	console.log(bool);
+	// console.log(log.children.length);
+	// console.log(req);
+	// console.log(bool);
 	if (bool) {
 		document.getElementById('errUser').style.display = "none";
 		xhr.send(req);

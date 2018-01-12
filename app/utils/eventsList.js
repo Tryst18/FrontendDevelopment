@@ -2,14 +2,14 @@ import "./index.js"
 
 var events = {}
 var arrKey = []
-console.log("hi")
+// console.log("hi")
 let xhr = new XMLHttpRequest();
 
 xhr.open("GET", url+"/api/event/getCategories", true);
 xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 xhr.onreadystatechange = function () {
     if (xhr.readyState === 4){
-        console.log(xhr.responseText)
+        // console.log(xhr.responseText)
         if (xhr.status === 200) {
             var json = JSON.parse(xhr.responseText);
             events = json.data;              //this can be different
@@ -90,7 +90,7 @@ xhr.send();
 
 
 // hello("hi")
-console.log(events)
+// console.log(events)
 
 
 

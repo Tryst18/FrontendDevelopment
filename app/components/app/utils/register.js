@@ -19,9 +19,9 @@
         document.getElementById('teamName').innerHTML = '<input id="tname" type="text" placeholder="Team Name">'
     }
 
-    var app$utils$register$$t = [1,2,3];
-    app$utils$register$$t.push(4);
-    console.log(app$utils$register$$t);
+    // var t = [1,2,3]
+    // t.push(4)
+    // console.log(t)
 
     function app$utils$register$$onReg() {
         var team = document.getElementById('teamInfo').children
@@ -39,7 +39,7 @@
             }
         }
         var teamName = document.getElementById('tname').value
-        console.log(teamName)
+        // console.log(teamName)
         var xhr = new XMLHttpRequest();
         xhr.open("POST", url+"/api/register/register", true);
         xhr.setRequestHeader("Content-type", "application/json");
@@ -50,7 +50,7 @@
                 if (xhr.status === 200) {
                     var json = JSON.parse(xhr.responseText);
                     var data = json.data;
-                    console.log(xhr.responseText)
+                    // console.log(xhr.responseText)
                     if (json.error == false) {
                         document.getElementById('teamInfo').hidden = true
                         document.getElementById('add').hidden = true
@@ -62,7 +62,7 @@
             }
         }
         var send = (Object.assign({}, {"event_id": app$utils$register$$id, "members": teamArr, "team_name": teamName}))
-        console.log(send)
+        // console.log(send)
         xhr.send(JSON.stringify(send))
     }
 

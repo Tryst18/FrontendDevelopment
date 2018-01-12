@@ -6,8 +6,8 @@ $(document).ready(function(){
     });
     if (sessionStorage.getItem("authUser")) {
         var jso = JSON.parse(sessionStorage.getItem("authUser"));
-        $('.login').html(jso.name);
-        console.log('this happened');
+        $('.login').html("Logout");
+        // console.log('this happened');
     }
     
 });

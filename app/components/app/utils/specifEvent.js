@@ -3,7 +3,7 @@
     var url = "https://api.tryst-iitd.com";
 
     var app$utils$specifEvent$$category = document.location.search.split("?")[1];
-    console.log(app$utils$specifEvent$$category);
+    // console.log(category)
 
     $(document).ready(function() {let xhr = new XMLHttpRequest();
     xhr.open("GET", url+"/api/event/view/"+app$utils$specifEvent$$category, true);
@@ -12,7 +12,7 @@
         if (xhr.readyState === 4){
             if (xhr.status === 200) {
                 var json = JSON.parse(xhr.responseText);
-                console.log(json)
+                // console.log(json)
                 var data = json.data
                 document.getElementById('description').innerText = data.description
                 document.getElementById('probState').innerHTML = '<a href='+data.url+'>Click here for Problem Statement</a>'

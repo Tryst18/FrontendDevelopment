@@ -4,14 +4,14 @@
 
     var app$utils$eventsList$$events = {}
     var app$utils$eventsList$$arrKey = [];
-    console.log("hi");
+    // console.log("hi")
     let app$utils$eventsList$$xhr = new XMLHttpRequest();
 
     app$utils$eventsList$$xhr.open("GET", url+"/api/event/getCategories", true);
     app$utils$eventsList$$xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     app$utils$eventsList$$xhr.onreadystatechange = function () {
         if (app$utils$eventsList$$xhr.readyState === 4){
-            console.log(app$utils$eventsList$$xhr.responseText)
+            // console.log(xhr.responseText)
             if (app$utils$eventsList$$xhr.status === 200) {
                 var json = JSON.parse(app$utils$eventsList$$xhr.responseText);
                 app$utils$eventsList$$events = json.data;              //this can be different
@@ -61,36 +61,4 @@
         }
     }
     app$utils$eventsList$$xhr.send();
-
-    // var hello = function(str) {
-    //     console.log(str)
-
-    //     var arr = [{"flagship":"john"},{"robotics":"jew"},{"name":"joe"}];        //this can be different
-    //     console.log(Object.keys(arr[1]))
-    //     var i = 0;
-    //     var eve = ''
-    //     for (var x in arr) {
-    //         if (i==0) {
-    //             eve += '<div class="row">'
-    //         }
-    //         eve += '<div class="col-md-4  animatedParent animateOnce" data-appear-top-offset="-200">'
-    //         eve += '<div class="team-member animated fadeInUp go">'
-    //         eve += '<div class="container">'
-    //         eve += '<img src="images/180.png" class="img-responsive img-circle" alt="">'
-    //         eve += '<button class="overlay" id="'+arr[x].name+'">'
-    //         eve += arr[x].name+'</button>'
-    //         eve += '</div>'
-    //         eve += '<h4>'+arr[x].name+'</h4>'
-    //         eve += '</div></div>'
-    //         i = (i+1)%3
-    //         if (i==0) {
-    //             eve += '</div>'
-    //         }
-    //     }
-    //     document.getElementById('move').innerHTML = eve
-    // }
-
-
-    // hello("hi")
-    console.log(app$utils$eventsList$$events);
 }).call(this);

@@ -17,9 +17,9 @@ if (ba.length == 3) {
 	document.getElementById('teamName').innerHTML = '<input id="tname" type="text" placeholder="Team Name">'
 }
 
-var t = [1,2,3]
-t.push(4)
-console.log(t)
+// var t = [1,2,3]
+// t.push(4)
+// console.log(t)
 
 function onReg() {
 	var team = document.getElementById('teamInfo').children
@@ -37,7 +37,7 @@ function onReg() {
 		}
 	}
 	var teamName = document.getElementById('tname').value
-	console.log(teamName)
+	// console.log(teamName)
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", url+"/api/register/register", true);
 	xhr.setRequestHeader("Content-type", "application/json");
@@ -48,7 +48,7 @@ function onReg() {
 			if (xhr.status === 200) {
 				var json = JSON.parse(xhr.responseText);
 				var data = json.data;
-				console.log(xhr.responseText)
+				// console.log(xhr.responseText)
 				if (json.error == false) {
 					document.getElementById('teamInfo').hidden = true
 					document.getElementById('add').hidden = true
@@ -60,7 +60,7 @@ function onReg() {
 		}
 	}
 	var send = (Object.assign({}, {"event_id": id, "members": teamArr, "team_name": teamName}))
-	console.log(send)
+	// console.log(send)
 	xhr.send(JSON.stringify(send))
 }
 

@@ -33,10 +33,10 @@
                 } else if (xhr.status === 401){
                     document.getElementById('errNoUser').style.display = "inline";
                 } else if (xhr.status === 500){
-                    console.log(xhr.responseText, "response");
-                    console.log(xhr.readyState, xhr.status);
+                    // console.log(xhr.responseText, "response");
+                    // console.log(xhr.readyState, xhr.status);
                     var json = JSON.parse(xhr.responseText);
-                    console.log(json);
+                    // console.log(json);
                     document.getElementById('errServ').style.display = "inline";
                 }
             }
@@ -58,9 +58,9 @@
                 }
             }
         }
-        console.log(app$utils$modify$$savUser)
+        // console.log(savUser)
         // console.log(user.children.length);
-        console.log(req);
+        // console.log(req);
         // console.log(bool);
         if (bool) {
             document.getElementById('errUser').style.display = "none";
