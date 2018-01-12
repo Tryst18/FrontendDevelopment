@@ -12,10 +12,16 @@
     document.getElementById('loading').style.display = "none";
 
 
+    var app$utils$register$$i = 10;
     if (app$utils$register$$ba.length == 3) {
         var app$utils$register$$form= '<input name="email" type="text" placeholder="Member">';
         document.getElementById('add').onclick= function () {
-            document.getElementById('teamInfo').insertAdjacentHTML('beforeend', app$utils$register$$form);
+            if (app$utils$register$$i>0){
+                document.getElementById('teamInfo').insertAdjacentHTML('beforeend', app$utils$register$$form);
+                app$utils$register$$i--;
+            }
+            
+            console.log(app$utils$register$$i)
         }
         document.getElementById('teamName').innerHTML = '<input id="tname" type="text" placeholder="Team Name">'
     }

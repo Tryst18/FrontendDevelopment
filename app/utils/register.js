@@ -10,10 +10,16 @@ document.getElementById('title').innerText = name
 document.getElementById('loading').style.display = "none";
 
 
+var i = 10;
 if (ba.length == 3) {
 	var form= '<input name="email" type="text" placeholder="Member">';
 	document.getElementById('add').onclick= function () {
-		document.getElementById('teamInfo').insertAdjacentHTML('beforeend', form);
+		if (i>0){
+			document.getElementById('teamInfo').insertAdjacentHTML('beforeend', form);
+			i--;
+		}
+		
+		console.log(i)
 	}
 	document.getElementById('teamName').innerHTML = '<input id="tname" type="text" placeholder="Team Name">'
 }

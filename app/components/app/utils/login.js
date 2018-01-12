@@ -3,6 +3,8 @@
     var url = "https://api.tryst-iitd.com";
 
     // console.log("hi");
+    var app$utils$login$$link = document.location.search;
+    console.log(app$utils$login$$link);
 
     if (sessionStorage.getItem("authUser")) {
         sessionStorage.removeItem("authUser")
@@ -19,41 +21,24 @@
             
             // console.log(xhr.responseText + " " + xhr.status, "response");
             if (xhr.readyState === 4){
+                var json = JSON.parse(xhr.responseText);
+                document.getElementById('loading').innerText = json.message;
                 if (xhr.status === 200) {
-                    var json = JSON.parse(xhr.responseText);
+                    
                     var data = json.data;
                     // console.log(json.error == false)
                     if (json.error == false) {
                         sessionStorage.setItem("authUser", JSON.stringify(data.user));
                         sessionStorage.setItem("token", data.token);
                         // console.log("login")
-                        var xh = new XMLHttpRequest();
-                        xh.open("GET", url+"/api/user/view", true);
-                        xh.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                        xh.setRequestHeader("x-auth-token", sessionStorage.getItem("token"));
-                        xh.onreadystatechange = function () {
-                            if (xh.readyState === 4){
-                                if (xh.status === 200) {
-                                    // console.log(xh.responseText)
-                                    var jso = JSON.parse(xh.responseText);
-                                    var dat = jso.data;
-                                    // console.log(dat)
-                                    if (jso.error == false) {
-                                        document.getElementById('loading').style.display = "none";
-                                        sessionStorage.setItem("authUser", JSON.stringify(dat));
-                                        document.location.href = "../index.html"
-                                    }
-                                }
-                            }
-                        }
-                        xh.send()
-                        // document.location.href = "../index.html";
                         
+                        document.getElementById('loading').style.display = "none";
+                        document.location.href = (app$utils$login$$link=="")? "../index.html": ("../register.html" + app$utils$login$$link)
                     }
                 } else if (xhr.status === 401){
                     document.getElementById('errNoUser').style.display = "inline";
                 } else if (xhr.status === 500){
-                    var json = JSON.parse(xhr.responseText);
+                    // var json = JSON.parse(xhr.responseText);
                     // console.log(json, "json");
                     document.getElementById('errServ').style.display = "inline";
                 }
