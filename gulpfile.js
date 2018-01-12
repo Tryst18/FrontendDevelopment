@@ -1,4 +1,4 @@
-var gulp = require('gulp'); 
+var gulp = require('gulp');
 var sass = require('gulp-sass');
 var browserSync = require('browser-sync').create();
 var useref = require('gulp-useref');
@@ -10,7 +10,7 @@ var cache = require('gulp-cache');
 var del = require('del');
 var runSequence = require('run-sequence');
 var transpile  = require('gulp-es6-module-transpiler');
- 
+
 gulp.task('es6', function() {
     return gulp.src('app/utils/**/*.js')
         .pipe(transpile({
@@ -49,7 +49,7 @@ gulp.task('watch',['browserSync','sass', 'es6'], function(){
 /*=======Spinning Web Server=========*/
 gulp.task('browserSync',function(){
     browserSync.init({
-	ghostMode: false,
+	  ghostMode: false,
         server: {
             baseDir: 'app'
         },
@@ -64,7 +64,7 @@ gulp.task('browserSync',function(){
 gulp.task('useref',function(){
     return gulp.src('app/*.html')
     .pipe(useref())
-    //minifies only if it is js 
+    //minifies only if it is js
     .pipe(gulpIf('*.js',uglify()))
     .pipe(gulpIf('*.css',cssnano()))
     .pipe(gulp.dest('dist'))
@@ -113,4 +113,3 @@ gulp.task('build',function(callback){
 gulp.task('default',function(callback){
     runSequence(['sass','browserSync','watch', 'es6'],callback)
 });
-
