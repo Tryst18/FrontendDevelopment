@@ -1,10 +1,9 @@
 html {
-  background-color: #1f2833; }
+  background-color: #0a1119; }
 
 body {
-  background-color: #1f2833;
-  /*background-image: url("../images/background-comp.jpg");*/
-  overflow: hidden; }
+  background-color: #0a1119;
+  /*background-image: url("../images/background-comp.jpg");*/ }
 
 #particle-js {
   height: auto;
@@ -17,7 +16,8 @@ body {
   margin-top: 80px;
   color: #f4f1de;
   font-size: 20px;
-  z-index: 1990; }
+  z-index: 1990;
+  bottom: 68px; }
 
 .init a {
   color: #e07a5f; }
@@ -44,7 +44,7 @@ body {
 
 p {
   color: #f4f1de;
-  font-size: 20px;
+  font-size: 25px;
   margin: 10px 10px 0px 0px;
   border: #f4e0de;
   border-width: 5px; }

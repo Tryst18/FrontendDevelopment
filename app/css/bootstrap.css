@@ -1599,8 +1599,9 @@ pre code {
     margin-left: auto
 }
 .row {
-    margin-right: -15px;
-    margin-left: -15px
+    margin-right: -20px;
+    margin-left: -20px;
+    background-color: transparent;
 }
 .col-lg-1,
 .col-lg-10,

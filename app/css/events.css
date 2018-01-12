@@ -1,6 +1,22 @@
+html
+{
+  background-color: #0a1119;
+}
 body
 {
   overflow: auto;
+  background-color: #0a1119;
+}
+h2
+{
+  text-align: center;
+  border-style: solid;
+  border-color: #e07a5f;
+  border-width: 2px 0 2px 0;
+}
+input
+{
+  float: right;
 }
 .container {
     position: relative;
@@ -59,6 +75,7 @@ body
     -moz-transition: max-height 0.5s;
     -ms-transition: max-height 0.5s;
     -o-transition: max-height 0.5s;
+    background-color: #0a1119;
     
   }
 

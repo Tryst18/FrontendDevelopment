@@ -62,8 +62,8 @@ nav.head {
 }
 
 nav.head a.underline{
-    text-decoration: none;
-    color: #1f2833;
+    font-weight: 550;
+    color: #000000;
     font-size: 18px;
     padding: 5px;
 }
@@ -195,7 +195,7 @@ header {
 }*/
 
 
-@media screen and (max-width: 1097px){
+@media screen and (max-width: 1103px){
     .head {
         height: 65px
     }
