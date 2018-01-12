@@ -1,11 +1,11 @@
 html {
-	background-color: #1f2833;
+	background-color: #0a1119;
 }
 
 body{
-    background-color: #1f2833;
+    background-color: #0a1119;
     /*background-image: url("../images/background-comp.jpg");*/
-    overflow: hidden;
+  
 }
 
 #particle-js {
@@ -21,6 +21,7 @@ body{
 	color: #f4f1de;
 	font-size: 20px;
 	z-index: 1990;
+	bottom: 68px;
 }
 
 .init a {
@@ -52,7 +53,7 @@ body{
 
 p {
 	color: #f4f1de;
-	font-size: 20px;
+	font-size: 25px;
 	margin: 10px 10px 0px 0px;
 }
 

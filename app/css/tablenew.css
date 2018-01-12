@@ -1,3 +1,7 @@
+body
+{
+	overflow: hidden;
+}
 div#parent
 {
 	width: 300px;

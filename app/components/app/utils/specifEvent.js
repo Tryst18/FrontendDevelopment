@@ -17,7 +17,7 @@
                 document.getElementById('description').innerText = data.description
                 document.getElementById('probState').innerHTML = '<a href='+data.url+'>Problem Statement</a>'
                 document.getElementById('prizes').innerText = data.prizes
-
+    
                 document.getElementById('register').innerHTML = '<form action="../register.html" method="POST"><input type="hidden" name="id" value='+data.id+'>'+'<input type="hidden" name="name" value='+data.name+'>'+'<input type="submit" value="Register"></form>'
                 document.getElementById('poc').innerText = data.description
                 document.getElementById('image').innerText = data.description
