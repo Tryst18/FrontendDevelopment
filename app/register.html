@@ -28,8 +28,9 @@
                  <li class="leftfloat"><a class="underline" href="Workshops.html">Workshops</a></li>
                  <li class="leftfloat"><a class="underline" href="comingsoon.html">Accomodation</a></li>
                  <li class="leftfloat"><a class="underline" href="comingsoon.html">Social</a></li>
-                 <li class="rightfloat"><a class="underline login" href="login.html">Login</a></li>
-                <li class="rightfloat"><a class="underline" href="signup.html">Sign Up</a></li>
+                 <li class="rightfloat"><a class="underline" href="login.html">Login/Sign Up</a></li>
+                <!-- <li class="rightfloat"><a class="underline" href="signup.html">Sign Up</a></li> -->
+
             </ul>
         </nav>
         <div class="block"></div>
@@ -37,10 +38,11 @@
             <div id="form">
                 <div id="title"></div>
                 <div id="teamInfo">
-                    <input name="email" type="text" placeholder="Member">
+                    <input name="email" type="text" placeholder="Member's registered email">
                 </div>
                 
                 <button id="add">Add Member</button>
+                <button id="del" hidden='true'>Delete Member</button>
                 <div id="teamName"></div>
                 <button id="submit">Register</button>
                 <p id="loading" style="background-color:#f18484">Loading...</p>
@@ -63,8 +65,10 @@
             </ul>
         </nav>
         <div class="blockf"></div>
+
+        <script type="text/javascript" src="components/app/utils/register.js"></script>
         <script type="text/javascript" src="js/responsive_navbar.js"></script>
         <script type="text/javascript" src="js/footer.js"></script>
-       <script type="text/javascript" src="components/app/utils/register.js"></script>
+       
 </body>
 </html>

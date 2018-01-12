@@ -6,7 +6,7 @@ body
 
 #signup-page {
   width: 360px;
-  padding: 2% 0 0;
+  padding: .5% 0 0;
   margin: auto;
 }
 #form {
@@ -34,7 +34,7 @@ body
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
-  background: #1f2833;
+  background: #0a1119;
   width: 100%;
   border: 0;
   padding: 15px;
@@ -49,8 +49,8 @@ body
 }
 #form button:hover,#form button:active,#form button:focus {
   background: white;
-  color: #1f2833;
-  border-color: #1f2833;
+  color: #0a1119;
+  border-color: #0a1119;
 }
 #form #err {
   background: #f18484;
