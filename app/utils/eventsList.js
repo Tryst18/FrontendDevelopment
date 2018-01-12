@@ -23,7 +23,7 @@ xhr.onreadystatechange = function () {
                 eve += '<div class="col-md-4 col-sm-6 animatedParent animateOnce" data-appear-top-offset="-200">'
                 eve += '<div class="team-member animated fadeInUp go">'
                 eve += '<div class="container">'
-                eve += '<img src="images/flagship.png" class="img-responsive img-circle oneeighty" alt="">'
+                eve += '<img src="images/'+arrKey[x]+'.png" class="img-responsive img-circle oneeighty" alt="">'
                 eve += '<button class="overlay" id="'+arrKey[x]+'">'
                 eve += arrKey[x].toUpperCase()+'</button>'
                 eve += '</div>'
