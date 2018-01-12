@@ -7,6 +7,7 @@ var id = ba[0]
 var name = ba[1]
 
 document.getElementById('title').innerText = name
+document.getElementById('loading').style.display = "none";
 
 
 if (ba.length == 3) {
@@ -56,6 +57,12 @@ function onReg() {
 					document.getElementById('submit').hidden = true
 					document.getElementById('loading').innerText = "Successful";
 				}
+			} else if (xhr.status == 400) {
+				document.getElementById('loading').innerText = "All fields are necessary"
+			} else if (xhr.status == 401) {
+				document.getElementById('loading').innerText = "Please login"
+			} else {
+				document.getElementById('loading').innerText = "Server error, try later"
 			}
 		}
 	}

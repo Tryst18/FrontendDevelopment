@@ -9,6 +9,7 @@
     var app$utils$register$$name = app$utils$register$$ba[1];
 
     document.getElementById('title').innerText = app$utils$register$$name;
+    document.getElementById('loading').style.display = "none";
 
 
     if (app$utils$register$$ba.length == 3) {
@@ -58,6 +59,12 @@
                         document.getElementById('submit').hidden = true
                         document.getElementById('loading').innerText = "Successful";
                     }
+                } else if (xhr.status == 400) {
+                    document.getElementById('loading').innerText = "All fields are necessary"
+                } else if (xhr.status == 401) {
+                    document.getElementById('loading').innerText = "Please login"
+                } else {
+                    document.getElementById('loading').innerText = "Server error, try later"
                 }
             }
         }

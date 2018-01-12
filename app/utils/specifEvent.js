@@ -16,7 +16,7 @@ xhr.onreadystatechange = function () {
             document.getElementById('probState').innerHTML = '<a href='+data.url+'>Click here for Problem Statement</a>'
             document.getElementById('prizes').innerText = data.prizes
             document.getElementById('image').innerHTML = '<img src=../images/'+data.name+'.png>'
-            document.getElementById('register').innerHTML = '<button><a href="../register.html?'+data.id+'='+data.name+((data.reg_type == "team")? '=1':'')+'">'+'Register</a></button>'
+            document.getElementById('register').innerHTML = (sessionStorage.getItem("authUser"))? ('<button><a href="../register.html?'+data.id+'='+data.name+((data.reg_type == "team")? '=1':'')+'">'+'Register</a></button>'):'<button><a href="../login.html">'+'Register</a></button>'
             var cont = 'For queries, contact at '
             for (var x in data.poc) {
                 cont += data.poc[x]
