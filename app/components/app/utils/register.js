@@ -20,7 +20,6 @@
                 document.getElementById('teamInfo').insertAdjacentHTML('beforeend', app$utils$register$$form);
                 app$utils$register$$i--;
             }
-            
             console.log(app$utils$register$$i)
         }
         document.getElementById('teamName').innerHTML = '<input id="tname" type="text" placeholder="Team Name">'

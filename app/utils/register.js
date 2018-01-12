@@ -18,7 +18,6 @@ if (ba.length == 3) {
 			document.getElementById('teamInfo').insertAdjacentHTML('beforeend', form);
 			i--;
 		}
-		
 		console.log(i)
 	}
 	document.getElementById('teamName').innerHTML = '<input id="tname" type="text" placeholder="Team Name">'

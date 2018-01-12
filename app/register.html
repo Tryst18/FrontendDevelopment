@@ -37,10 +37,11 @@
             <div id="form">
                 <div id="title"></div>
                 <div id="teamInfo">
-                    <input name="email" type="text" placeholder="Member">
+                    <input name="email" type="text" placeholder="Member's registered email">
                 </div>
                 
                 <button id="add">Add Member</button>
+                <button id="del" hidden='true'>Delete Member</button>
                 <div id="teamName"></div>
                 <button id="submit">Register</button>
                 <p id="loading" style="background-color:#f18484">Loading...</p>
@@ -63,8 +64,10 @@
             </ul>
         </nav>
         <div class="blockf"></div>
+
+        <script type="text/javascript" src="components/app/utils/register.js"></script>
         <script type="text/javascript" src="js/responsive_navbar.js"></script>
         <script type="text/javascript" src="js/footer.js"></script>
-       <script type="text/javascript" src="components/app/utils/register.js"></script>
+       
 </body>
 </html>
