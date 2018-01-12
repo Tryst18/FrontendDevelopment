@@ -1,7 +1,7 @@
 import "./index.js"
 
 var category = document.location.search.split("?")[1]
-console.log(category)
+// console.log(category)
 
 $(document).ready(function() {let xhr = new XMLHttpRequest();
 xhr.open("GET", url+"/api/event/view/"+category, true);
@@ -10,15 +10,21 @@ xhr.onreadystatechange = function () {
     if (xhr.readyState === 4){
         if (xhr.status === 200) {
             var json = JSON.parse(xhr.responseText);
-            console.log(json)
+            // console.log(json)
             var data = json.data
             document.getElementById('description').innerText = data.description
-            document.getElementById('probState').innerHTML = '<a href='+data.url+'>Problem Statement</a>'
+            document.getElementById('probState').innerHTML = '<a href='+data.url+'>Click here for Problem Statement</a>'
             document.getElementById('prizes').innerText = data.prizes
+            document.getElementById('image').innerHTML = '<img src=../images/'+data.name+'.png>'
+            let stri = data.id+'='+data.name+((data.reg_type == "team")? '=1':'')
+            document.getElementById('register').innerHTML = (sessionStorage.getItem("authUser"))? ('<button><a href="../register.html?'+stri+'">'+'Register</a></button>'):('<button><a href="../login.html?'+stri+'">'+'Register</a></button>')
+            var cont = 'For queries, contact at '
+            for (var x in data.poc) {
+                cont += data.poc[x]
+            }
+            document.getElementById('poc').innerText = cont
 
-            document.getElementById('register').innerHTML = '<form action="../register.html" method="POST"><input type="hidden" name="id" value='+data.id+'>'+'<input type="hidden" name="name" value='+data.name+'>'+'<input type="submit" value="Register"></form>'
-            document.getElementById('poc').innerText = data.description
-            document.getElementById('image').innerText = data.description
+            document.getElementById('title').innerText = data.name
         }
     }
 }

@@ -34,6 +34,7 @@
              <li class="leftfloat"><a class="underline" href="comingsoon.html">Social</a></li>
              <li class="rightfloat"><a class="underline" href="login.html">Login/Sign Up</a></li>
             <!-- <li class="rightfloat"><a class="underline" href="signup.html">Sign Up</a></li> -->
+
         </ul>
     </nav>
         <div class="block"></div>
@@ -53,7 +54,7 @@
         <script>
         if (sessionStorage.getItem("authUser")) {
             var user = JSON.parse(sessionStorage.getItem("authUser"));
-            document.getElementById("User").innerHTML = 'Hi <a href="modify.html">'+ decodeURIComponent(user.name) + '</a><br><a href="modify.html">' + 'Modify' + '</a>';
+            document.getElementById("User").innerHTML = 'Hi <a href="modify.html">'+ decodeURIComponent(user.name) +'</a><br>Tryst ID: '+ user.id +'<br><a href="modify.html">' + 'Modify' + '</a>';
         } else {
             document.getElementById("User").innerHTML = 'Hi <a href="login.html">' + 'Guest' + '</a>';
             console.log("this happened")

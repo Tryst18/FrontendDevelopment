@@ -2,7 +2,9 @@
     "use strict";
     var url = "https://api.tryst-iitd.com";
 
-    console.log("hi");
+    // console.log("hi");
+    var app$utils$login$$link = document.location.search;
+    console.log(app$utils$login$$link);
 
     if (sessionStorage.getItem("authUser")) {
         sessionStorage.removeItem("authUser")
@@ -16,25 +18,28 @@
         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         document.getElementById('loading').style.display = "inline";
         xhr.onreadystatechange = function () {
-            document.getElementById('loading').style.display = "none";
-            console.log(xhr.responseText + " " + xhr.status, "response");
+            
+            // console.log(xhr.responseText + " " + xhr.status, "response");
             if (xhr.readyState === 4){
+                var json = JSON.parse(xhr.responseText);
+                document.getElementById('loading').innerText = json.message;
                 if (xhr.status === 200) {
-                    var json = JSON.parse(xhr.responseText);
+                    
                     var data = json.data;
                     // console.log(json.error == false)
                     if (json.error == false) {
                         sessionStorage.setItem("authUser", JSON.stringify(data.user));
                         sessionStorage.setItem("token", data.token);
-                        console.log("login")
-                        document.location.href = "../index.html";
+                        // console.log("login")
                         
+                        document.getElementById('loading').style.display = "none";
+                        document.location.href = (app$utils$login$$link=="")? "../index.html": ("../register.html" + app$utils$login$$link)
                     }
                 } else if (xhr.status === 401){
                     document.getElementById('errNoUser').style.display = "inline";
                 } else if (xhr.status === 500){
-                    var json = JSON.parse(xhr.responseText);
-                    console.log(json, "json");
+                    // var json = JSON.parse(xhr.responseText);
+                    // console.log(json, "json");
                     document.getElementById('errServ').style.display = "inline";
                 }
             }
@@ -46,7 +51,7 @@
         for (var x in log.children) {
             if (x<log.children.length) {
                 tar  = encodeURIComponent(log.children[x].value);
-                console.log(tar)
+                // console.log(tar)
                 if (tar == "") {
                     bool = false;
                 } else {
@@ -55,9 +60,9 @@
                 req = req + log.children[x].name + "=" + tar + ((x<log.children.length-1)? "&":"");
             }
         }
-        console.log(log.children.length);
-        console.log(req);
-        console.log(bool);
+        // console.log(log.children.length);
+        // console.log(req);
+        // console.log(bool);
         if (bool) {
             document.getElementById('errUser').style.display = "none";
             xhr.send(req);

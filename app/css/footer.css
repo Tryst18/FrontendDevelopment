@@ -33,7 +33,9 @@ nav.w {
     height: 66px;
     background-color: transparent;
     z-index: 0;
+
     bottom: 0px;
+    /* overflow: auto; */
 }
 
 .foot .hb-button{

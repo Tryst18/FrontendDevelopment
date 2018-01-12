@@ -49,6 +49,7 @@ gulp.task('watch',['browserSync','sass', 'es6'], function(){
 /*=======Spinning Web Server=========*/
 gulp.task('browserSync',function(){
     browserSync.init({
+	ghostMode: false,
         server: {
             baseDir: 'app'
         },

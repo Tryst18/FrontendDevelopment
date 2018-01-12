@@ -7,7 +7,7 @@
     var app$utils$modify$$savUser = JSON.parse(sessionStorage.getItem("authUser"));
     document.getElementById('userInfo').innerHTML =  '<input name="name" type="text" placeholder='+decodeURIComponent(app$utils$modify$$savUser.name)+'>'
     +'<input name="phone" type="text" placeholder='+decodeURIComponent(app$utils$modify$$savUser.phone)+'>'
-    +'<input name="university" type="text" placeholder='+decodeURIComponent(app$utils$modify$$savUser.university)+'>'
+    +'<input name="university" type="text" placeholder="'+decodeURIComponent(app$utils$modify$$savUser.university)+'">'
     +'<input name="address" type="text" placeholder='+decodeURIComponent(app$utils$modify$$savUser.address)+'></div>';
 
     function app$utils$modify$$onSubmit() {
@@ -33,10 +33,10 @@
                 } else if (xhr.status === 401){
                     document.getElementById('errNoUser').style.display = "inline";
                 } else if (xhr.status === 500){
-                    console.log(xhr.responseText, "response");
-                    console.log(xhr.readyState, xhr.status);
+                    // console.log(xhr.responseText, "response");
+                    // console.log(xhr.readyState, xhr.status);
                     var json = JSON.parse(xhr.responseText);
-                    console.log(json);
+                    // console.log(json);
                     document.getElementById('errServ').style.display = "inline";
                 }
             }
@@ -58,9 +58,9 @@
                 }
             }
         }
-        console.log(app$utils$modify$$savUser)
+        // console.log(savUser)
         // console.log(user.children.length);
-        console.log(req);
+        // console.log(req);
         // console.log(bool);
         if (bool) {
             document.getElementById('errUser').style.display = "none";

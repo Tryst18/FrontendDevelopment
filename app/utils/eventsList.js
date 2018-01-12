@@ -2,14 +2,14 @@ import "./index.js"
 
 var events = {}
 var arrKey = []
-console.log("hi")
+// console.log("hi")
 let xhr = new XMLHttpRequest();
 
 xhr.open("GET", url+"/api/event/getCategories", true);
 xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 xhr.onreadystatechange = function () {
     if (xhr.readyState === 4){
-        console.log(xhr.responseText)
+        // console.log(xhr.responseText)
         if (xhr.status === 200) {
             var json = JSON.parse(xhr.responseText);
             events = json.data;              //this can be different
@@ -23,11 +23,11 @@ xhr.onreadystatechange = function () {
                 eve += '<div class="col-md-4  animatedParent animateOnce" data-appear-top-offset="-200">'
                 eve += '<div class="team-member animated fadeInUp go">'
                 eve += '<div class="container">'
-                eve += '<img src="images/180.png" class="img-responsive img-circle" alt="">'
+                eve += '<img src="images/flagship.jpg" class="img-responsive img-circle oneeighty" alt="">'
                 eve += '<button class="overlay" id="'+arrKey[x]+'">'
-                eve += arrKey[x]+'</button>'
+                eve += arrKey[x].toUpperCase()+'</button>'
                 eve += '</div>'
-                eve += '<h4>'+arrKey[x]+'</h4>'
+                eve += '<h4>'+arrKey[x].toUpperCase()+'</h4>'
                 eve += '</div></div>'
                 i = (i+1)%3
                 if (i==0) {
@@ -90,7 +90,7 @@ xhr.send();
 
 
 // hello("hi")
-console.log(events)
+// console.log(events)
 
 
 

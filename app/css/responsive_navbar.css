@@ -214,6 +214,7 @@ header {
     }
     nav.head ul.show{
         max-height: 35em;
+        /* z-index: 9990; */
         
         
     }
