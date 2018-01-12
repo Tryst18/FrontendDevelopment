@@ -25,7 +25,25 @@ function onSubmit() {
 					sessionStorage.setItem("authUser", JSON.stringify(data.user));
 					sessionStorage.setItem("token", data.token);
 					console.log("login")
-					document.location.href = "../index.html";
+					var xh = new XMLHttpRequest();
+					xh.open("GET", url+"/api/user/view", true);
+					xh.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+					xh.setRequestHeader("x-auth-token", sessionStorage.getItem("token"));
+					xh.onreadystatechange = function () {
+						if (xh.readyState === 4){
+							if (xh.status === 200) {
+								// console.log(xh.responseText)
+								var jso = JSON.parse(xh.responseText);
+								var dat = jso.data;
+								console.log(dat)
+								if (jso.error == false) {
+									sessionStorage.setItem("authUser", JSON.stringify(dat));
+								}
+							}
+						}
+					}
+					xh.send()
+					// document.location.href = "../index.html";
 					
 				}
 			} else if (xhr.status === 401){

@@ -15,12 +15,17 @@
                 console.log(json)
                 var data = json.data
                 document.getElementById('description').innerText = data.description
-                document.getElementById('probState').innerHTML = '<a href='+data.url+'>Problem Statement</a>'
+                document.getElementById('probState').innerHTML = '<a href='+data.url+'>Click here for Problem Statement</a>'
                 document.getElementById('prizes').innerText = data.prizes
+                document.getElementById('image').innerHTML = '<img src=../images/'+data.name+'.png>'
+                document.getElementById('register').innerHTML = '<button><a href="../register.html?'+data.id+'='+data.name+((data.reg_type == "team")? '=1':'')+'">'+'Register</a></button>'
+                var cont = 'For queries, contact at '
+                for (var x in data.poc) {
+                    cont += data.poc[x]
+                }
+                document.getElementById('poc').innerText = cont
 
-                document.getElementById('register').innerHTML = '<form action="../register.html" method="POST"><input type="hidden" name="id" value='+data.id+'>'+'<input type="hidden" name="name" value='+data.name+'>'+'<input type="submit" value="Register"></form>'
-                document.getElementById('poc').innerText = data.description
-                document.getElementById('image').innerText = data.description
+                document.getElementById('title').innerText = data.name
             }
         }
     }
