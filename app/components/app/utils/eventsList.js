@@ -22,10 +22,10 @@
                     if (i==0) {
                         eve += '<div class="row">'
                     }
-                    eve += '<div class="col-md-4  animatedParent animateOnce" data-appear-top-offset="-200">'
+                    eve += '<div class="col-md-4 col-sm-6 animatedParent animateOnce" data-appear-top-offset="-200">'
                     eve += '<div class="team-member animated fadeInUp go">'
                     eve += '<div class="container">'
-                    eve += '<img src="images/flagship.jpg" class="img-responsive img-circle oneeighty" alt="">'
+                    eve += '<img src="images/flagship.png" class="img-responsive img-circle oneeighty" alt="">'
                     eve += '<button class="overlay" id="'+app$utils$eventsList$$arrKey[x]+'">'
                     eve += app$utils$eventsList$$arrKey[x].toUpperCase()+'</button>'
                     eve += '</div>'
@@ -37,13 +37,13 @@
                     }
                 }
                 document.getElementById('move').innerHTML = eve
-    
+
                 function onClick(e) {
                     var dataPass = e.target.id
                     var eveList = app$utils$eventsList$$events[e.target.id]
                     let str = ''
                     for (var x in eveList) {
-                        str += '<p><a href=../specifEvent.html?'+eveList[x].id+'>'+eveList[x].name+'</a></p>'
+                        str += '<a href=../specifEvent.html?'+eveList[x].id+'><img src="../images/'+eveList[x].name+'.png">'+eveList[x].name+'</a>'
                     }
                     document.getElementById('eveList').innerHTML = str
                     document.getElementById('eveList').className = 'show'

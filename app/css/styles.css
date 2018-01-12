@@ -63,7 +63,7 @@ p {
     text-decoration-style: solid;
     padding: 5px 5px 5px 5px;
     background: #0bedf5;
-    width: fit-content; }
+    align-content: center; }
 
 .oneeighty {
   max-width: auto;

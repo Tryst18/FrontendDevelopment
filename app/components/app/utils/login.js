@@ -23,8 +23,7 @@
             if (xhr.readyState === 4){
                 var json = JSON.parse(xhr.responseText);
                 document.getElementById('loading').innerText = json.message;
-                if (xhr.status === 200) {
-                    
+                if (xhr.status === 200) {				
                     var data = json.data;
                     // console.log(json.error == false)
                     if (json.error == false) {

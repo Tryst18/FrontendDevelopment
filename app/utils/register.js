@@ -11,17 +11,33 @@ document.getElementById('loading').style.display = "none";
 
 
 var i = 10;
+var id = 0;
 if (ba.length == 3) {
-	var form= '<input name="email" type="text" placeholder="Member">';
+	let del = document.getElementById('del')
 	document.getElementById('add').onclick= function () {
 		if (i>0){
+			var form = '<input name="email" type="text" id="mem'+id+'" placeholder="Member\'s registered email">';
 			document.getElementById('teamInfo').insertAdjacentHTML('beforeend', form);
 			i--;
+			id++;
 		}
-		console.log(i)
+		if (i<10) {
+			del.hidden = false
+		}
+		// console.log(i)
 	}
 	document.getElementById('teamName').innerHTML = '<input id="tname" type="text" placeholder="Team Name">'
+	del.onclick=function () {
+		var rem = document.getElementById('mem'+(id-1))
+		rem.parentNode.removeChild(rem)
+		id--;
+		if (i=10) {
+			del.hidden = true
+		}
+	}
 }
+
+
 
 // var t = [1,2,3]
 // t.push(4)

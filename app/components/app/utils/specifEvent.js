@@ -26,7 +26,7 @@
                     cont += data.poc[x]
                 }
                 document.getElementById('poc').innerText = cont
-    
+
                 document.getElementById('title').innerText = data.name
             }
         }
