@@ -1,0 +1,65 @@
+#title
+{
+  text-align: left;
+}
+#event-logos
+{
+  /*background-color: rgb(255, 255, 255);*/
+  height: 250px;
+  width: 250px;
+  margin: 25px 0 25px 0;
+
+}
+#image
+{
+  background-color: white;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  float: right;
+  /*position: absolute;*/
+}
+#title
+{
+position: absolute;
+top: 200px;
+margin: 0 0 0 200px;
+font-size: 50px;
+}
+.block1
+{
+width: 100%;
+position: relative;
+height: 310px;
+}
+#probState
+{
+float: right;
+margin: 20px 70px 20px 70px;
+}
+#prizesss
+{
+width: 50%;
+height: 160px;
+float: left;
+position: relative;
+}
+.block2
+{
+width: 50%;
+height: 160px;
+float: left;
+}
+button
+{
+margin-left: 80px;
+float: right;
+margin-right: 120px;
+}
+#poc
+{
+text-align: left;
+width: 50%;
+position: relative;
+
+}

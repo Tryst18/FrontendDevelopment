@@ -13,18 +13,33 @@
 
 
     var app$utils$register$$i = 10;
+    var app$utils$register$$id = 0;
     if (app$utils$register$$ba.length == 3) {
-        var app$utils$register$$form= '<input name="email" type="text" placeholder="Member">';
+        let app$utils$register$$del = document.getElementById('del')
         document.getElementById('add').onclick= function () {
             if (app$utils$register$$i>0){
-                document.getElementById('teamInfo').insertAdjacentHTML('beforeend', app$utils$register$$form);
+                var form = '<input name="email" type="text" id="mem'+app$utils$register$$id+'" placeholder="Member\'s registered email">';
+                document.getElementById('teamInfo').insertAdjacentHTML('beforeend', form);
                 app$utils$register$$i--;
+                app$utils$register$$id++;
             }
-            
-            console.log(app$utils$register$$i)
+            if (app$utils$register$$i<10) {
+                app$utils$register$$del.hidden = false
+            }
+            // console.log(i)
         }
         document.getElementById('teamName').innerHTML = '<input id="tname" type="text" placeholder="Team Name">'
+        app$utils$register$$del.onclick=function () {
+            var rem = document.getElementById('mem'+(app$utils$register$$id-1))
+            rem.parentNode.removeChild(rem)
+            app$utils$register$$id--;
+            if (app$utils$register$$i=10) {
+                app$utils$register$$del.hidden = true
+            }
+        }
     }
+
+
 
     // var t = [1,2,3]
     // t.push(4)

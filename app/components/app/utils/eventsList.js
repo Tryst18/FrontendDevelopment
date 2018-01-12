@@ -18,42 +18,55 @@
                 var i = 0;
                 var eve = ''
                 app$utils$eventsList$$arrKey = Object.keys(app$utils$eventsList$$events)
+                console.log(app$utils$eventsList$$arrKey);
                 for (var x in app$utils$eventsList$$arrKey) {
-                    if (i==0) {
-                        eve += '<div class="row">'
-                    }
-                    eve += '<div class="col-md-4  animatedParent animateOnce" data-appear-top-offset="-200">'
-                    eve += '<div class="team-member animated fadeInUp go">'
-                    eve += '<div class="container">'
-                    eve += '<img src="images/flagship.jpg" class="img-responsive img-circle oneeighty" alt="">'
-                    eve += '<button class="overlay" id="'+app$utils$eventsList$$arrKey[x]+'">'
-                    eve += app$utils$eventsList$$arrKey[x].toUpperCase()+'</button>'
-                    eve += '</div>'
-                    eve += '<h4>'+app$utils$eventsList$$arrKey[x].toUpperCase()+'</h4>'
-                    eve += '</div></div>'
-                    i = (i+1)%3
-                    if (i==0) {
-                        eve += '</div>'
-                    }
+                    $("#row").append(
+                      '<div class="col-md-4 col-sm-6 col-xs-12 category-block  animatedParent animateOnce" data-appear-top-offset="-200">'+
+                        '<div class="container">'+
+                          '<img src='+'images/'+app$utils$eventsList$$arrKey[x]+'.png'+' class="img-responsive img-circle oneeighty mx-auto category-img" alt="">'+
+                          '<button class="overlay" id='+app$utils$eventsList$$arrKey[x]+'>'+app$utils$eventsList$$arrKey[x].toUpperCase()+'</button>'+
+                          '<h4>'+app$utils$eventsList$$arrKey[x].toUpperCase()+'</h4>'+
+                          '<div class="description-block mx-auto container-fluid">'+
+                            '<div class="row" id="eveList"></div>'+
+                          '</div>'+
+                        '</div>'+
+                      '</div>'
+                    );
                 }
-                document.getElementById('move').innerHTML = eve
     
                 function onClick(e) {
+                  var opened = $(".description-block").hasClass("active");
+                  if( opened ){
+                    console.log("__opened");
+                    $("#eveList").empty();
+                  }
                     var dataPass = e.target.id
                     var eveList = app$utils$eventsList$$events[e.target.id]
                     let str = ''
                     for (var x in eveList) {
-                        str += '<p><a href=../specifEvent.html?'+eveList[x].id+'>'+eveList[x].name+'</a></p>'
+                      $("#eveList").append(
+                        '<div class="col-md-4 col-sm-6 col-xs-12 event-container">'+
+                        '<img src='+'"../images/'+eveList[x].name+'.png"'+' class="img-responsive event-img">'+
+                        '<p class="mx-auto">'+
+                          '<a href=../specifEvent.html?'+eveList[x].id+'>'+eveList[x].name+'</a>'+
+                        '</p>'+
+                        '</div>'
+                      );
                     }
-                    document.getElementById('eveList').innerHTML = str
-                    document.getElementById('eveList').className = 'show'
+                    $("#eveList").toggleClass("show");
                 }
-                
-                
-                
-                var eventsButton = document.getElementsByClassName('overlay');
+    
+    
+    
+                var eventsButton = document.getElementsByClassName('category-block');
                 var x = 0;
+                console.log(eventsButton);
                 while (x < eventsButton.length) {
+    
+                    $(".category-block").click(function(){
+                      console.log("clicked");
+                      $(".description-block").toggleClass("active");
+                    });
                     eventsButton[x].addEventListener('click', onClick);
                     x++;
                 }
