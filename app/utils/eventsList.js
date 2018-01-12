@@ -21,7 +21,7 @@ xhr.onreadystatechange = function () {
                 $("#row").append(
                   '<div class="col-md-4 col-sm-6 col-xs-12 category-block  animatedParent animateOnce" data-appear-top-offset="-200">'+
                     '<div class="container">'+
-                      '<img src="images/flagship.jpg" class="img-responsive img-circle oneeighty mx-auto category-img" alt="">'+
+                      '<img src='+'images/'+arrKey[x]+'.png'+' class="img-responsive img-circle oneeighty mx-auto category-img" alt="">'+
                       '<button class="overlay" id='+arrKey[x]+'>'+arrKey[x].toUpperCase()+'</button>'+
                       '<h4>'+arrKey[x].toUpperCase()+'</h4>'+
                       '<div class="description-block mx-auto container-fluid">'+
@@ -44,7 +44,7 @@ xhr.onreadystatechange = function () {
                 for (var x in eveList) {
                   $("#eveList").append(
                     '<div class="col-md-4 col-sm-6 col-xs-12 event-container">'+
-                    '<img src=../images/'+eveList[x].name+'.png'+' class="img-responsive event-img">'+
+                    '<img src='+'"../images/'+eveList[x].name+'.png"'+' class="img-responsive event-img">'+
                     '<p class="mx-auto">'+
                       '<a href=../specifEvent.html?'+eveList[x].id+'>'+eveList[x].name+'</a>'+
                     '</p>'+
