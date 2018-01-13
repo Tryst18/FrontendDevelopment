@@ -91,6 +91,8 @@ input
   button
   {
     background-color: #008CBA;
+    border-radius: 0.5em;
+    border: 0px;
   }
 
   #eveList {
@@ -129,7 +131,7 @@ input
 .description-block{
   max-width:1180px;
   width:93vw;
-  height:0;
+  height:fit-content;
   min-height:0;
   position: absolute;
   background: #fff;

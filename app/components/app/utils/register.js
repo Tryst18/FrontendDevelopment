@@ -79,6 +79,22 @@
                         document.getElementById('teamName').hidden = true
                         document.getElementById('submit').hidden = true
                         document.getElementById('loading').innerText = "Successful";
+                        var xh = new XMLHttpRequest();
+                        xh.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                        xh.setRequestHeader("x-auth-token", sessionStorage.getItem("token"))
+                        xh.onreadystatechange = function () {
+                            if (xhr.readyState === 4){
+                                if (xhr.status === 200) {
+                                    var json = JSON.parse(xhr.responseText);
+                                    var data = json.data;
+                                    // console.log(xhr.responseText)
+                                    if (json.error == false) {
+                                        sessionStorage.setItem("authUser", JSON.stringify(data))
+                                    }
+                                }
+                            }
+                        }
+
                     }
                 } else if (xhr.status == 400) {
                     document.getElementById('loading').innerText = "All fields are necessary"
