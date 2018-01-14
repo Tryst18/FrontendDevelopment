@@ -17,11 +17,26 @@ xhr.onreadystatechange = function () {
             document.getElementById('prizes').innerText = data.prizes
             document.getElementById('image').innerHTML = '<img id="event-logos" src=../images/'+data.name+'.png>'
             let stri = data.id+'='+data.name+((data.reg_type == "team")? '=1':'')
+            let user = sessionStorage.getItem("authUser")
+            if (user) {
+                var pres = false
+                for (var l in user.registration) {
+                    if (data.id == user.registration[l]) {
+                        document.getElementById('register').innerHTML = '<button><a href="../viewReg.html?'+user.registration[l].reg_id+'">'+'View registration</a></button>'
+                        pres = true
+                    }
+                }
+                if (!pres) {
+                    document.getElementById('register').innerHTML = '<button><a href="../register.html?'+stri+'">'+'Register</a></button>'
+                }
+            } else {
+                document.getElementById('register').innerHTML = '<button><a href="../login.html?'+stri+'">'+'Register</a></button>'
+            }
             // document.getElementById('register').innerHTML = (sessionStorage.getItem("authUser"))? ('<button><a href="../register.html?'+stri+'">'+'Register</a></button>'):('<button><a href="../login.html?'+stri+'">'+'Register</a></button>')
-            document.getElementById('register').innerHTML = '<button><a href ="http://iitd.info/EnvironmenD">Register</a></button>'
+            // document.getElementById('register').innerHTML = '<button><a href ="http://iitd.info/EnvironmenD">Register</a></button>'
             var cont = 'For queries, contact at '
             for (var x in data.poc) {
-                cont += data.poc[x]
+                cont += data.poc[x] + ((x<data.poc.length-1)? ', ':'')
             }
             document.getElementById('poc').innerText = cont
 
