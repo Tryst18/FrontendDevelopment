@@ -6,10 +6,7 @@
     var app$utils$login$$link = document.location.search;
     console.log(app$utils$login$$link);
 
-    if (sessionStorage.getItem("authUser")) {
-        sessionStorage.removeItem("authUser")
-        sessionStorage.removeItem("token")
-    }
+
 
     function app$utils$login$$onSubmit() {
         // var url = "http://localhost:4000/"

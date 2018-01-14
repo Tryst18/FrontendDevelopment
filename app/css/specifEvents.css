@@ -21,9 +21,8 @@
 }
 #title
 {
-position: absolute;
+position: relaive;
 top: 200px;
-margin: 0 0 0 200px;
 font-size: 50px;
 }
 .block1

@@ -16,7 +16,7 @@ xhr.onreadystatechange = function () {
             var i = 0;
             var eve = ''
             arrKey = Object.keys(events)
-            console.log(arrKey);
+            // console.log(arrKey);
             for (var x in arrKey) {
                 $("#row").append(
                   '<div class="col-md-4 col-sm-6 col-xs-12 category-block  animatedParent animateOnce" data-appear-top-offset="-200">'+
@@ -35,7 +35,7 @@ xhr.onreadystatechange = function () {
             function onClick(e) {
               var opened = $(".description-block").hasClass("active");
               if( opened ){
-                console.log("__opened");
+                // console.log("__opened");
                 $("#eveList").empty();
               }
                 var dataPass = e.target.id
@@ -59,11 +59,11 @@ xhr.onreadystatechange = function () {
 
             var eventsButton = document.getElementsByClassName('category-block');
             var x = 0;
-            console.log(eventsButton);
+            // console.log(eventsButton);
             while (x < eventsButton.length) {
 
                 $(".category-block").click(function(){
-                  console.log("clicked");
+                  // console.log("clicked");
                   $(".description-block").toggleClass("active");
                 });
                 eventsButton[x].addEventListener('click', onClick);
