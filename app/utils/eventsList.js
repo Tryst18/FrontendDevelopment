@@ -42,14 +42,15 @@ xhr.onreadystatechange = function () {
                 var eveList = events[e.target.id]
                 let str = ''
                 for (var x in eveList) {
-                  $("#eveList").append(
-                    '<div class="col-md-4 col-sm-6 col-xs-12 event-container">'+
-                    '<img src='+'"../images/'+eveList[x].name+'.png"'+' class="img-responsive event-img">'+
-                    '<p class="mx-auto">'+
-                      '<a href=../specifEvent.html?'+eveList[x].id+'>'+eveList[x].name+'</a>'+
-                    '</p>'+
-                    '</div>'
-                  );
+                  if (eveList[x].name != "bogus")
+                    $("#eveList").append(
+                      '<div class="col-md-4 col-sm-6 col-xs-12 event-container">'+
+                      '<img src='+'"../images/'+eveList[x].name+'.png"'+' class="img-responsive event-img">'+
+                      '<p class="mx-auto">'+
+                        '<a href=../specifEvent.html?'+eveList[x].id+'>'+eveList[x].name+'</a>'+
+                      '</p>'+
+                      '</div>'
+                    );
                 }
                 $("#eveList").toggleClass("show");
             }
