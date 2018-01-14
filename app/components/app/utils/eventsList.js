@@ -44,7 +44,8 @@
                     var eveList = app$utils$eventsList$$events[e.target.id]
                     let str = ''
                     for (var x in eveList) {
-                      if (eveList[x].name !== "bogus") {  
+                      console.log(eveList[x].name)
+                      if (eveList[x].name) {  
                         $("#eveList").append(
                           '<div class="col-md-4 col-sm-6 col-xs-12 event-container">'+
                           '<img src='+'"../images/'+eveList[x].name+'.png"'+' class="img-responsive event-img">'+

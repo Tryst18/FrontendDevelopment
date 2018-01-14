@@ -80,23 +80,6 @@ function onReg() {
 					document.getElementById('teamName').hidden = true
 					document.getElementById('submit').hidden = true
 					document.getElementById('loading').innerText = json.message;
-					var xh = new XMLHttpRequest();
-					xh.open("GET", url+"/api/user/view", true);
-					xh.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-					xh.setRequestHeader("x-auth-token", sessionStorage.getItem("token"))
-					xh.onreadystatechange = function () {
-						if (xhr.readyState === 4){
-							if (xhr.status === 200) {
-								var jon = JSON.parse(xhr.responseText);
-								var dta = jon.data;
-								// console.log(xhr.responseText)
-								if (jon.error == false) {
-									sessionStorage.setItem("authUser", JSON.stringify(dta))
-								}
-							}
-						}
-					}
-					xh.send()
 				}
 			}
 		}
