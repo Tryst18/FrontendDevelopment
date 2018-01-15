@@ -32,7 +32,7 @@
              <li class="leftfloat"><a class="underline" href="Workshops.html">Workshops</a></li>
              <li class="leftfloat"><a class="underline" href="comingsoon.html">Accomodation</a></li>
              <li class="leftfloat"><a class="underline" href="comingsoon.html">Social</a></li>
-             <li class="rightfloat"><a class="underline" href="login.html">Login/Sign Up</a></li>
+             <li class="rightfloat"><a class="underline login" href="login.html">Login/Sign Up</a></li>
             <!-- <li class="rightfloat"><a class="underline" href="signup.html">Sign Up</a></li> -->
 
         </ul>
@@ -57,7 +57,7 @@
             document.getElementById("User").innerHTML = 'Hi <a href="modify.html">'+ decodeURIComponent(user.name) +'</a><br>Tryst ID: '+ user.id +'<br><a href="modify.html">' + 'Modify' + '</a>';
         } else {
             document.getElementById("User").innerHTML = 'Hi <a href="login.html">' + 'Guest' + '</a>';
-            console.log("this happened")
+            // console.log("this happened")
         }
         </script>
 
@@ -84,6 +84,9 @@
             </ul>
         </nav>
         <div class="blockf"></div>
+        <script type="text/javascript" src="components/app/utils/home.js">
+            
+        </script>
         <script type="text/javascript" src="js/responsive_navbar.js"></script>
         <script type="text/javascript" src="js/footer.js"></script>
     </body>

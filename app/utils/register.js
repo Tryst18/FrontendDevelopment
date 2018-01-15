@@ -3,7 +3,7 @@ import "./index.js"
 var str = document.location.search;
 var bas = str.split("?")
 var ba = bas[1].split("=")
-var id = ba[0]
+var eveId = ba[0]
 var name = ba[1]
 
 document.getElementById('title').innerText = name
@@ -67,27 +67,25 @@ function onReg() {
 	document.getElementById('loading').style.display = "inline";
 	xhr.onreadystatechange = function () {
 		if (xhr.readyState === 4){
+			var json = JSON.parse(xhr.responseText);
+			var data = json.data;
+			console.log(JSON.parse(xhr.response))
+			document.getElementById('loading').innerText = json.message;
 			if (xhr.status === 200) {
-				var json = JSON.parse(xhr.responseText);
-				var data = json.data;
+				
 				// console.log(xhr.responseText)
 				if (json.error == false) {
 					document.getElementById('teamInfo').hidden = true
 					document.getElementById('add').hidden = true
 					document.getElementById('teamName').hidden = true
 					document.getElementById('submit').hidden = true
-					document.getElementById('loading').innerText = "Successful";
+					document.getElementById('loading').innerText = json.message;
 				}
-			} else if (xhr.status == 400) {
-				document.getElementById('loading').innerText = "All fields are necessary"
-			} else if (xhr.status == 401) {
-				document.getElementById('loading').innerText = "Please login"
-			} else {
-				document.getElementById('loading').innerText = "Server error, try later"
 			}
 		}
 	}
-	var send = (Object.assign({}, {"event_id": id, "members": teamArr, "team_name": teamName}))
+	console.log(eveId, "here")
+	var send = (Object.assign({}, {"event_id": eveId, "members": teamArr, "team_name": teamName}))
 	// console.log(send)
 	xhr.send(JSON.stringify(send))
 }

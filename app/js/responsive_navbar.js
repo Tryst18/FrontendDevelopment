@@ -7,7 +7,14 @@ $(document).ready(function(){
     if (sessionStorage.getItem("authUser")) {
         var jso = JSON.parse(sessionStorage.getItem("authUser"));
         $('.login').html("Logout");
+        $('.login').attr("href", "../index.html");
         // console.log('this happened');
+        $('.login').click(function (e) {
+            console.log(e);
+            sessionStorage.removeItem("authUser");
+            sessionStorage.removeItem("token");
+            // document.location.href = "../index.html"
+        })
     }
     
 });
