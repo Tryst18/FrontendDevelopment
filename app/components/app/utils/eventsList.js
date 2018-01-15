@@ -18,7 +18,7 @@
                 var i = 0;
                 var eve = ''
                 app$utils$eventsList$$arrKey = Object.keys(app$utils$eventsList$$events)
-                console.log(app$utils$eventsList$$arrKey);
+                // console.log(arrKey);
                 for (var x in app$utils$eventsList$$arrKey) {
                     $("#row").append(
                       '<div class="col-md-4 col-sm-6 col-xs-12 category-block  animatedParent animateOnce" data-appear-top-offset="-200">'+
@@ -37,15 +37,14 @@
                 function onClick(e) {
                   var opened = $(".description-block").hasClass("active");
                   if( opened ){
-                    console.log("__opened");
+                    // console.log("__opened");
                     $("#eveList").empty();
                   }
                     var dataPass = e.target.id
                     var eveList = app$utils$eventsList$$events[e.target.id]
                     let str = ''
                     for (var x in eveList) {
-                      console.log(eveList[x].name)
-                      if (eveList[x].name) {  
+                      if (eveList[x].name != "bogus")
                         $("#eveList").append(
                           '<div class="col-md-4 col-sm-6 col-xs-12 event-container">'+
                           '<img src='+'"../images/'+eveList[x].name+'.png"'+' class="img-responsive event-img">'+
@@ -54,7 +53,6 @@
                           '</p>'+
                           '</div>'
                         );
-                      }
                     }
                     $("#eveList").toggleClass("show");
                 }
@@ -63,11 +61,11 @@
 
                 var eventsButton = document.getElementsByClassName('category-block');
                 var x = 0;
-                console.log(eventsButton);
+                // console.log(eventsButton);
                 while (x < eventsButton.length) {
 
                     $(".category-block").click(function(){
-                      console.log("clicked");
+                      // console.log("clicked");
                       $(".description-block").toggleClass("active");
                     });
                     eventsButton[x].addEventListener('click', onClick);
