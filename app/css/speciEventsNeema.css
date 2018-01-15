@@ -1,0 +1,40 @@
+.event-name
+{
+	height: 310px;
+	position: relative;
+}
+a
+{
+	width: 100%;
+	display: block;
+	text-align: center;
+}
+.registered
+{
+	position: relative;
+}
+button
+{
+	display: block;
+	
+
+
+/*margin-left: 80px;*/
+/*float: right;*/
+/*margin-right: 120px;*/
+/*align-content: middle;*/
+margin-left: auto;
+margin-right: auto;
+
+}
+@media screen and (max-width: 768px)
+{
+	#title
+	{
+		margin: 0;
+	}
+	.event-name
+	{
+		height: 55px;
+	}
+}

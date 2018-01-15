@@ -41,13 +41,15 @@ xhr.onreadystatechange = function () {
                 $("#eveList").empty();
               }
               var eveList = events[e.target.id]
-              // console.log(eveList)
+              // console.log(eveList[0].photos[0])
               let str = ''
               for (var x in eveList) {
                 if (bool != "1") {
+                  // console.log(eveList[x].photos[0])
+                  let phot = (eveList[x].photos && eveList[x].photos.length)? eveList[x].photos[0]:''
                   $("#eveList").append(
                     '<div class="col-md-4 col-sm-6 col-xs-12 event-container">'+
-                    '<img src='+eveList[x].photos[0]+' class="img-responsive event-img">'+
+                    '<img src="'+phot+'" class="img-responsive event-img">'+
                     '<p class="mx-auto">'+
                       '<a href=../specifEvent.html?'+eveList[x].id+'>'+eveList[x].name+'</a>'+
                     '</p>'+

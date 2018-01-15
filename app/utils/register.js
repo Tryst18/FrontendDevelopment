@@ -5,37 +5,67 @@ var bas = str.split("?")
 var ba = bas[1].split("=")
 var eveId = ba[0]
 var name = ba[1]
-
+var user = JSON.parse(sessionStorage.getItem("authUser"))
 document.getElementById('title').innerText = name
 document.getElementById('loading').style.display = "none";
 
 
 var i = 10;
-var id = 0;
-if (ba.length == 3) {
-	let del = document.getElementById('del')
-	document.getElementById('add').onclick= function () {
-		if (i>0){
-			var form = '<input name="email" type="text" id="mem'+id+'" placeholder="Member\'s registered email">';
-			document.getElementById('teamInfo').insertAdjacentHTML('beforeend', form);
-			i--;
-			id++;
+var j = 2;
+$(document).ready(function(){
+	let xhr = new XMLHttpRequest();
+	xhr.open("GET", url+"/api/event/view/"+eveId, true);
+	xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhr.onreadystatechange = function () {
+		if (xhr.readyState === 4){
+			if (xhr.status === 200) {
+				var json = JSON.parse(xhr.responseText);
+				console.log(json)
+				var data = json.data
+				j = data.reg_min_team_size
+				i = data.reg_max_team_size
+			}
 		}
-		if (i<10) {
-			del.hidden = false
-		}
-		// console.log(i)
 	}
-	document.getElementById('teamName').innerHTML = '<input id="tname" type="text" placeholder="Team Name">'
-	del.onclick=function () {
-		var rem = document.getElementById('mem'+(id-1))
-		rem.parentNode.removeChild(rem)
-		id--;
-		if (i=10) {
-			del.hidden = true
-		}
+	xhr.send()
+})
+var id = 0
+for (var t = 0; t<j-1; t++) {
+	var form = '<input name="email" type="text" id="mem'+id+'" placeholder="Member\'s registered email">';
+	document.getElementById('teamInfo').insertAdjacentHTML('beforeend', form);
+	i--;
+	id++;
+}
+
+document.getElementById('fir').value = user.email
+let del = document.getElementById('del')
+
+document.getElementById('add').onclick= function () {
+	if (i-j>0) {
+		var form = '<input name="email" type="text" id="mem'+id+'" placeholder="Member\'s registered email">';
+		document.getElementById('teamInfo').insertAdjacentHTML('beforeend', form);
+		console.log(id)
+		i--;
+		id++;
+	}
+	if (i-j<10) {
+		del.hidden = false
+		
+	}
+	// console.log(i)
+}
+// if ()
+document.getElementById('teamName').innerHTML = '<input id="tname" type="text" placeholder="Team Name">'
+del.onclick=function () {
+	console.log(id)
+	var rem = document.getElementById('mem'+(id-1))
+	rem.parentNode.removeChild(rem)
+	id--;
+	if (i-j==10) {
+		del.hidden = true
 	}
 }
+
 
 
 
@@ -69,7 +99,7 @@ function onReg() {
 		if (xhr.readyState === 4){
 			var json = JSON.parse(xhr.responseText);
 			var data = json.data;
-			console.log(JSON.parse(xhr.response))
+			// console.log(JSON.parse(xhr.response))
 			document.getElementById('loading').innerText = json.message;
 			if (xhr.status === 200) {
 				
@@ -85,7 +115,7 @@ function onReg() {
 			}
 		}
 	}
-	console.log(eveId, "here")
+	// console.log(eveId, "here")
 	var send = (Object.assign({}, {"event_id": eveId, "members": teamArr, "team_name": teamName}))
 	// console.log(send)
 	xhr.send(JSON.stringify(send))

@@ -33,37 +33,67 @@
     var app$utils$register$$ba = app$utils$register$$bas[1].split("=");
     var app$utils$register$$eveId = app$utils$register$$ba[0];
     var app$utils$register$$name = app$utils$register$$ba[1];
-
+    var app$utils$register$$user = JSON.parse(sessionStorage.getItem("authUser"));
     document.getElementById('title').innerText = app$utils$register$$name;
     document.getElementById('loading').style.display = "none";
 
 
     var app$utils$register$$i = 10;
-    var app$utils$register$$id = 0;
-    if (app$utils$register$$ba.length == 3) {
-        let app$utils$register$$del = document.getElementById('del')
-        document.getElementById('add').onclick= function () {
-            if (app$utils$register$$i>0){
-                var form = '<input name="email" type="text" id="mem'+app$utils$register$$id+'" placeholder="Member\'s registered email">';
-                document.getElementById('teamInfo').insertAdjacentHTML('beforeend', form);
-                app$utils$register$$i--;
-                app$utils$register$$id++;
+    var app$utils$register$$j = 2;
+    $(document).ready(function(){
+        let xhr = new XMLHttpRequest();
+        xhr.open("GET", $$index$$url+"/api/event/view/"+app$utils$register$$eveId, true);
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4){
+                if (xhr.status === 200) {
+                    var json = JSON.parse(xhr.responseText);
+                    console.log(json)
+                    var data = json.data
+                    app$utils$register$$j = data.reg_min_team_size
+                    app$utils$register$$i = data.reg_max_team_size
+                }
             }
-            if (app$utils$register$$i<10) {
-                app$utils$register$$del.hidden = false
-            }
-            // console.log(i)
         }
-        document.getElementById('teamName').innerHTML = '<input id="tname" type="text" placeholder="Team Name">'
-        app$utils$register$$del.onclick=function () {
-            var rem = document.getElementById('mem'+(app$utils$register$$id-1))
-            rem.parentNode.removeChild(rem)
-            app$utils$register$$id--;
-            if (app$utils$register$$i=10) {
-                app$utils$register$$del.hidden = true
-            }
+        xhr.send()
+    });
+    var app$utils$register$$id = 0;
+    for (var app$utils$register$$t = 0; app$utils$register$$t<app$utils$register$$j-1; app$utils$register$$t++) {
+        var app$utils$register$$form = '<input name="email" type="text" id="mem'+app$utils$register$$id+'" placeholder="Member\'s registered email">';
+        document.getElementById('teamInfo').insertAdjacentHTML('beforeend', app$utils$register$$form);
+        app$utils$register$$i--;
+        app$utils$register$$id++;
+    }
+
+    document.getElementById('fir').value = app$utils$register$$user.email;
+    let app$utils$register$$del = document.getElementById('del');
+
+    document.getElementById('add').onclick= function () {
+        if (app$utils$register$$i-app$utils$register$$j>0) {
+            var form = '<input name="email" type="text" id="mem'+app$utils$register$$id+'" placeholder="Member\'s registered email">';
+            document.getElementById('teamInfo').insertAdjacentHTML('beforeend', form);
+            console.log(app$utils$register$$id)
+            app$utils$register$$i--;
+            app$utils$register$$id++;
+        }
+        if (app$utils$register$$i-app$utils$register$$j<10) {
+            app$utils$register$$del.hidden = false
+            
+        }
+        // console.log(i)
+    }
+    // if ()
+    document.getElementById('teamName').innerHTML = '<input id="tname" type="text" placeholder="Team Name">';
+    app$utils$register$$del.onclick=function () {
+        console.log(app$utils$register$$id)
+        var rem = document.getElementById('mem'+(app$utils$register$$id-1))
+        rem.parentNode.removeChild(rem)
+        app$utils$register$$id--;
+        if (app$utils$register$$i-app$utils$register$$j==10) {
+            app$utils$register$$del.hidden = true
         }
     }
+
 
 
 
@@ -97,7 +127,7 @@
             if (xhr.readyState === 4){
                 var json = JSON.parse(xhr.responseText);
                 var data = json.data;
-                console.log(JSON.parse(xhr.response))
+                // console.log(JSON.parse(xhr.response))
                 document.getElementById('loading').innerText = json.message;
                 if (xhr.status === 200) {
                     
@@ -113,7 +143,7 @@
                 }
             }
         }
-        console.log(app$utils$register$$eveId, "here")
+        // console.log(eveId, "here")
         var send = (Object.assign({}, {"event_id": app$utils$register$$eveId, "members": teamArr, "team_name": teamName}))
         // console.log(send)
         xhr.send(JSON.stringify(send))
