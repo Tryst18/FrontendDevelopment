@@ -72,10 +72,11 @@
                     var pres = false
                     for (var l in app$utils$specifEvent$$user.registration) {
                         if (data.id == app$utils$specifEvent$$user.registration[l].event_id) {
+                            console.log(data.id, "here")
+                            pres = true
                             if (data.reg_type == "team") { 
                                 // console.log('user')
                                 regButton.innerHTML = '<button>View registration</button>'
-                                pres = true
                                 regButton.addEventListener('click', function() {
                                     let xh = new XMLHttpRequest()
                                     xh.open("GET", $$index$$url+"/api/register/view/"+app$utils$specifEvent$$user.registration[l].reg_id, true)
@@ -110,39 +111,50 @@
                                     }
                                     xh.send()
                                 })
-                                break
-                            } 
+                            } else {
+                                regButton.innerHTML = '<button id="regsin">Delete Registration</button>'
+                                document.getElementById('regsin').addEventListener('click', function() {
+                                    app$utils$specifEvent$$delReg(app$utils$specifEvent$$user.registration[l].reg_id)
+                                })
+                            }
+                            break; 
                         }
                     }
                     if (!pres) {
                         if (data.reg_type == "team") {
                             regButton.innerHTML = '<button><a href="../register.html?'+stri+'">'+'Register</a></button>'
                         } else {
-                            regButton.innerHTML = '<button>Register</button>'
-                            regButton.click(function(){
-                                var xhr = new XMLHttpRequest();
-                                xhr.open("POST", $$index$$url+"/api/register/register", true);
-                                xhr.setRequestHeader("Content-type", "application/json");
-                                xhr.setRequestHeader("x-auth-token", sessionStorage.getItem("token"))
-                                document.getElementById('loading').style.display = "inline";
-                                xhr.onreadystatechange = function () {
-                                    if (xhr.readyState === 4){
-                                        var json = JSON.parse(xhr.responseText);
-                                        var data = json.data;
-                                        console.log(JSON.parse(xhr.response))
-                                        document.getElementById('loading').innerText = json.message;
-                                        if (xhr.status === 200) {
+                            // console.log('thi')
+                            regButton.innerHTML = '<button id="regsin">Register</button>'
+                            document.getElementById('regsin').addEventListener('click', function(){
+                                console.log('this happened')
+                                var xr = new XMLHttpRequest();
+                                xr.open("POST", $$index$$url+"/api/register/register", true);
+                                xr.setRequestHeader("Content-type", "application/json");
+                                xr.setRequestHeader("x-auth-token", sessionStorage.getItem("token"))
+                                // document.getElementById('loading').style.display = "inline";
+                                xr.onreadystatechange = function () {
+                                    if (xr.readyState === 4){
+                                        var son = JSON.parse(xr.responseText);
+                                        var ata = son.ata;
+                                        console.log(JSON.parse(xr.response))
+                                        // document.getElementById('loading').innerText = json.message;
+                                        if (xr.status === 200) {
                                             
-                                            // console.log(xhr.responseText)
-                                            if (json.error == false) {
-
+                                            // console.log(xr.responseText)
+                                            if (son.error == false) {
+                                                // console.log('this happened too')
                                                 $$index$$updateUser(true)
+
                                             }
                                         }
                                     }
                                 }
+                                console.log(app$utils$specifEvent$$event)
+                                var send = Object.assign({}, {"event_id": app$utils$specifEvent$$event, "members": [{"email":app$utils$specifEvent$$user.email}], team_name: "null"})
+                                xr.send(JSON.stringify(send))
                             })
-                        }
+                        } 
                     }
                 } else {
                     regButton.innerHTML = '<button><a href="../login.html?'+stri+'">'+'Register</a></button>'

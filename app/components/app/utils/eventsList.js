@@ -54,7 +54,7 @@
                           '<img src='+'./images/'+app$utils$eventsList$$arrKey[x]+'.png'+' class="img-responsive img-circle oneeighty mx-auto category-img" alt="">'+
                           '<button class="overlay" id='+app$utils$eventsList$$arrKey[x]+'>'+app$utils$eventsList$$arrKey[x].toUpperCase()+'</button>'+
                           '<h4>'+app$utils$eventsList$$arrKey[x].toUpperCase()+'</h4>'+
-                          '<div class="description-block mx-auto container-fluid">'+
+                          '<div class="description-block mx-auto container-fluid" id="'+x+'">'+
                             '<div class="row" id="eveList"></div>'+
                           '</div>'+
                         '</div>'+
@@ -62,14 +62,17 @@
                     );
                 }
 
-                function onClick(e) {
-                  var opened = $(".description-block").hasClass("active");
-                  if( opened ){
-                    // console.log("__opened");
-                    $("#eveList").empty();
-                  }
+                function onClick(e, t) {
+                  var opened = $("#"+t).hasClass("active");
+                  // console.log(opened)
+                  // if( opened ){
+                  //   console.log("__opened");
+                    
+                  //   console.log($('#eveList').html())
+                  // }
+                  $("#eveList").empty();
                   var eveList = app$utils$eventsList$$events[e.target.id]
-                  // console.log(eveList[0].photos[0])
+                  // console.log(eveList)
                   let str = ''
                   for (var x in eveList) {
                     if (app$utils$eventsList$$bool != "1") {
@@ -88,7 +91,7 @@
                       // console.log(eveList[x].name != "bogus" && (eveList[x].id == user.registration[y].event_id || bool == "1"))
                       for (var y in app$utils$eventsList$$user.registration) {
                         if (eveList[x].name != "bogus" && (eveList[x].id == app$utils$eventsList$$user.registration[y].event_id)) {
-                          console.log(eveList[x].name)
+                          // console.log(eveList[x].name)
                           $("#eveList").append(
                             '<div class="col-md-4 col-sm-6 col-xs-12 event-container">'+
                             '<img src='+eveList[x].photos[0]+' class="img-responsive event-img">'+
@@ -111,11 +114,15 @@
                 // console.log(eventsButton);
                 while (x < eventsButton.length) {
 
-                    $(".category-block").click(function(){
-                      // console.log("clicked");
-                      $(".description-block").toggleClass("active");
+                    // $(".category-block").click(function(e){
+                    //   console.log(e.target);
+                        
+                    // });
+                    eventsButton[x].addEventListener('click', function(e) {
+                      // console.log('hi')
+                      $("#"+x).toggleClass("active");
+                      onClick(e, x)
                     });
-                    eventsButton[x].addEventListener('click', onClick);
                     x++;
                 }
             }
