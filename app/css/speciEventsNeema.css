@@ -27,6 +27,21 @@ margin-left: auto;
 margin-right: auto;
 
 }
+p
+{
+	margin: 0;
+	padding: 0;
+}
+#delReg
+{
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#prizess
+{
+	text-align: center;
+}
 @media screen and (max-width: 768px)
 {
 	#title

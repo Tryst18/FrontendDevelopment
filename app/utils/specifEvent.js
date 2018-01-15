@@ -39,6 +39,7 @@ xhr.onreadystatechange = function () {
                                     if (xh.status == 200) {
                                         console.log(xh.responseText)
                                         if (json.error == false) {
+                                            console.log("hey")
                                             var data = json.data
                                             let mems = ''
                                             for (var t in data.members) {
@@ -46,9 +47,11 @@ xhr.onreadystatechange = function () {
                                                     mems += data.members[t].email+' '
                                                 }
                                             }
+                                            console.log(mems)
                                             $('#viewReg').append(
-                                                'Team Name: '+data.team_name+'<br>'+'Member(s): '+mems
-                                                +'<button id="delReg">Delete Registration</button>'
+                                                '<p class="col-xs-12 col-sm-6">'+
+                                                'Team Name: '+data.team_name+'<br>'+'Member(s): '+mems+'</p>'
+                                                +'<button id="delReg" >Delete Registration</button>'
                                             )
                                             $('#delReg').click(function() {
                                                 console.log('worked')
@@ -57,10 +60,10 @@ xhr.onreadystatechange = function () {
                                                 xt.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
                                                 xt.setRequestHeader("x-auth-token", sessionStorage.getItem("token"))
                                                 xt.onreadystatechange = function () {
-                                                    if (xh.readyState == 4) {
-                                                        var json = JSON.parse(xh.responseText)
+                                                    if (xt.readyState == 4) {
+                                                        var json = JSON.parse(xt.responseText)
                                                         console.log(json)
-                                                        if (xh.status == 200) {
+                                                        if (xt.status == 200) {
                                                             console.log('done')
                                                             document.location.href = "../index.html"
                                                         }
@@ -68,6 +71,7 @@ xhr.onreadystatechange = function () {
                                                 }
                                                 xt.send()
                                             })
+                                            console.log("this")
                                             $('#viewReg').show() 
                                         }
                                         
