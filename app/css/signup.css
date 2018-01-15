@@ -76,6 +76,10 @@ body
   text-decoration: underline;
 }
 
+#userInfo p {
+  background: #8df152;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;

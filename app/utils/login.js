@@ -1,4 +1,4 @@
-import "./index.js";
+import {url} from "./index.js";
 
 // console.log("hi");
 var link = document.location.search

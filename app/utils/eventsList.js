@@ -1,8 +1,10 @@
-import "./index.js"
+import {url} from "./index.js"
 
 var events = {}
 var arrKey = []
-// console.log("hi")
+var user = JSON.parse(sessionStorage.getItem("authUser"))
+let bool = document.location.search.split("?")[1]
+// console.log(bool == "1")
 let xhr = new XMLHttpRequest();
 
 xhr.open("GET", url+"/api/event/getCategories", true);
@@ -21,7 +23,7 @@ xhr.onreadystatechange = function () {
                 $("#row").append(
                   '<div class="col-md-4 col-sm-6 col-xs-12 category-block  animatedParent animateOnce" data-appear-top-offset="-200">'+
                     '<div class="container">'+
-                      '<img src='+'images/'+arrKey[x]+'.png'+' class="img-responsive img-circle oneeighty mx-auto category-img" alt="">'+
+                      '<img src='+'./images/'+arrKey[x]+'.png'+' class="img-responsive img-circle oneeighty mx-auto category-img" alt="">'+
                       '<button class="overlay" id='+arrKey[x]+'>'+arrKey[x].toUpperCase()+'</button>'+
                       '<h4>'+arrKey[x].toUpperCase()+'</h4>'+
                       '<div class="description-block mx-auto container-fluid">'+
@@ -38,22 +40,38 @@ xhr.onreadystatechange = function () {
                 // console.log("__opened");
                 $("#eveList").empty();
               }
-                var dataPass = e.target.id
-                var eveList = events[e.target.id]
-                let str = ''
-                for (var x in eveList) {
-
-                  if (eveList[x].name != "bogus")
-                    $("#eveList").append(
-                      '<div class="col-md-4 col-sm-6 col-xs-12 event-container">'+
-                      '<img src='+'"../images/'+eveList[x].name+'.png"'+' class="img-responsive event-img">'+
-                      '<p class="mx-auto">'+
-                        '<a href=../specifEvent.html?'+eveList[x].id+'>'+eveList[x].name+'</a>'+
-                      '</p>'+
-                      '</div>'
-                    );
+              var eveList = events[e.target.id]
+              // console.log(eveList)
+              let str = ''
+              for (var x in eveList) {
+                if (bool != "1") {
+                  $("#eveList").append(
+                    '<div class="col-md-4 col-sm-6 col-xs-12 event-container">'+
+                    '<img src='+eveList[x].photos[0]+' class="img-responsive event-img">'+
+                    '<p class="mx-auto">'+
+                      '<a href=../specifEvent.html?'+eveList[x].id+'>'+eveList[x].name+'</a>'+
+                    '</p>'+
+                    '</div>'
+                  );
+                } else {
+                  console.log(user.registration, "here")
+                  // console.log(eveList[x].name != "bogus" && (eveList[x].id == user.registration[y].event_id || bool == "1"))
+                  for (var y in user.registration) {
+                    if (eveList[x].name != "bogus" && (eveList[x].id == user.registration[y].event_id)) {
+                      console.log(eveList[x].name)
+                      $("#eveList").append(
+                        '<div class="col-md-4 col-sm-6 col-xs-12 event-container">'+
+                        '<img src='+eveList[x].photos[0]+' class="img-responsive event-img">'+
+                        '<p class="mx-auto">'+
+                          '<a href=../specifEvent.html?'+eveList[x].id+'>'+eveList[x].name+'</a>'+
+                        '</p>'+
+                        '</div>'
+                      );
+                    }
+                  }
                 }
-                $("#eveList").toggleClass("show");
+              }
+              $("#eveList").toggleClass("show");
             }
 
 

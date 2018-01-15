@@ -1,4 +1,4 @@
-import "./index.js"
+import {url, updateUser} from "./index.js"
 
 var str = document.location.search;
 var bas = str.split("?")
@@ -80,6 +80,7 @@ function onReg() {
 					document.getElementById('teamName').hidden = true
 					document.getElementById('submit').hidden = true
 					document.getElementById('loading').innerText = json.message;
+					updateUser(false)
 				}
 			}
 		}

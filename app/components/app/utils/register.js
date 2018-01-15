@@ -1,6 +1,32 @@
 (function() {
     "use strict";
-    var url = "https://api.tryst-iitd.com";
+    const $$index$$url = "https://api.tryst-iitd.com";
+
+    function $$index$$updateUser(rel) {
+        console.log("this")
+        var xh = new XMLHttpRequest();
+        xh.open("GET", $$index$$url+"/api/user/view", true);
+        xh.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xh.setRequestHeader("x-auth-token", sessionStorage.getItem("token"))
+        xh.onreadystatechange = function () {
+            if (xh.readyState === 4){
+                if (xh.status === 200) {
+                    var jon = JSON.parse(xh.responseText);
+                    var dta = jon.data;
+                    // console.log(xhr.responseText)
+                    if (jon.error == false) {
+                        console.log(dta)
+                        console.log("this hap")
+                        sessionStorage.setItem("authUser", JSON.stringify(dta))
+                        if (rel) {
+                            document.location.reload(true)
+                        }
+                    }
+                }
+            }
+        }
+        xh.send()
+    }
 
     var app$utils$register$$str = document.location.search;
     var app$utils$register$$bas = app$utils$register$$str.split("?");
@@ -63,7 +89,7 @@
         var teamName = document.getElementById('tname').value
         // console.log(teamName)
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", url+"/api/register/register", true);
+        xhr.open("POST", $$index$$url+"/api/register/register", true);
         xhr.setRequestHeader("Content-type", "application/json");
         xhr.setRequestHeader("x-auth-token", sessionStorage.getItem("token"))
         document.getElementById('loading').style.display = "inline";
@@ -82,6 +108,7 @@
                         document.getElementById('teamName').hidden = true
                         document.getElementById('submit').hidden = true
                         document.getElementById('loading').innerText = json.message;
+                        $$index$$updateUser(false)
                     }
                 }
             }

@@ -1,25 +1,32 @@
 (function() {
     "use strict";
-    var url = "https://api.tryst-iitd.com";
+    const $$index$$url = "https://api.tryst-iitd.com";
 
-    if (sessionStorage.getItem("authUser")) {
+    function $$index$$updateUser(rel) {
         console.log("this")
-        var app$utils$home$$xh = new XMLHttpRequest();
-        app$utils$home$$xh.open("GET", url+"/api/user/view", true);
-        app$utils$home$$xh.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        app$utils$home$$xh.setRequestHeader("x-auth-token", sessionStorage.getItem("token"))
-        app$utils$home$$xh.onreadystatechange = function () {
-            if (app$utils$home$$xh.readyState === 4){
-                if (app$utils$home$$xh.status === 200) {
-                    var jon = JSON.parse(app$utils$home$$xh.responseText);
+        var xh = new XMLHttpRequest();
+        xh.open("GET", $$index$$url+"/api/user/view", true);
+        xh.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xh.setRequestHeader("x-auth-token", sessionStorage.getItem("token"))
+        xh.onreadystatechange = function () {
+            if (xh.readyState === 4){
+                if (xh.status === 200) {
+                    var jon = JSON.parse(xh.responseText);
                     var dta = jon.data;
                     // console.log(xhr.responseText)
                     if (jon.error == false) {
+                        console.log(dta)
+                        console.log("this hap")
                         sessionStorage.setItem("authUser", JSON.stringify(dta))
+                        if (rel) {
+                            document.location.reload(true)
+                        }
                     }
                 }
             }
         }
-        app$utils$home$$xh.send()
+        xh.send()
     }
+
+    $$index$$updateUser(false);
 }).call(this);
