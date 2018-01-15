@@ -1,6 +1,7 @@
 html
 {
   background-color: #0a1119;
+  font-size: 13pt;
 }
 body
 {
@@ -93,6 +94,7 @@ input
     background-color: #008CBA;
     border-radius: 0.5em;
     border: 0px;
+    outline: 0px;
   }
 
   #eveList {
