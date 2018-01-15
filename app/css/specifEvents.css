@@ -16,22 +16,25 @@
   height: 300px;
   width: 300px;
   border-radius: 50%;
-  float: right;
+  /*float: right;*/
   /*position: absolute;*/
 }
 #title
 {
-position: absolute;
-top: 200px;
-margin: 0 0 0 200px;
+/*position: absolute;*/
+/*top: 155px;*/
+margin-top: 123px;
 font-size: 50px;
+margin-right: auto;
+margin-left: auto;
+text-align: center;
 }
-.block1
+/*.block1
 {
 width: 100%;
 position: relative;
 height: 310px;
-}
+}*/
 #probState
 {
 float: right;
