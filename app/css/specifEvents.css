@@ -40,13 +40,20 @@ height: 310px;
 #probState
 {
 float: right;
-margin: 20px 70px 20px 70px;
+/*margin: 20px 70px 20px 70px;*/
+margin: 0;
+padding: 0;
+height: 85px;
+margin-top: 20px;
+position: relative;
 }
-#prizesss
+.prizesss
 {
-width: 50%;
+/*width: 50%;
 height: 160px;
 float: left;
+position: relative;*/
+padding: 0;
 position: relative;
 }
 .block2
@@ -55,16 +62,14 @@ width: 50%;
 height: 160px;
 float: left;
 }
-button
-{
-margin-left: 80px;
-float: right;
-margin-right: 120px;
-}
+
 #poc
 {
-text-align: left;
-width: 50%;
+text-align: center;
+
 position: relative;
+margin: 35px 0 0 0;
+padding: 0;
+height: 90px;
 
 }

@@ -119,7 +119,8 @@ input
 /* Events Category styling  */
 #page-wrapper{
   padding-top:20px;
-  height: 100%;
+/*  height: 100%;*/
+height: auto;
 }
 
 #page-wrapper .container-fluid{
