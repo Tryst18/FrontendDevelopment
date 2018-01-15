@@ -5,7 +5,7 @@
     var app$utils$register$$str = document.location.search;
     var app$utils$register$$bas = app$utils$register$$str.split("?");
     var app$utils$register$$ba = app$utils$register$$bas[1].split("=");
-    var app$utils$register$$id = app$utils$register$$ba[0];
+    var app$utils$register$$eveId = app$utils$register$$ba[0];
     var app$utils$register$$name = app$utils$register$$ba[1];
 
     document.getElementById('title').innerText = app$utils$register$$name;
@@ -69,27 +69,25 @@
         document.getElementById('loading').style.display = "inline";
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4){
+                var json = JSON.parse(xhr.responseText);
+                var data = json.data;
+                console.log(JSON.parse(xhr.response))
+                document.getElementById('loading').innerText = json.message;
                 if (xhr.status === 200) {
-                    var json = JSON.parse(xhr.responseText);
-                    var data = json.data;
+                    
                     // console.log(xhr.responseText)
                     if (json.error == false) {
                         document.getElementById('teamInfo').hidden = true
                         document.getElementById('add').hidden = true
                         document.getElementById('teamName').hidden = true
                         document.getElementById('submit').hidden = true
-                        document.getElementById('loading').innerText = "Successful";
+                        document.getElementById('loading').innerText = json.message;
                     }
-                } else if (xhr.status == 400) {
-                    document.getElementById('loading').innerText = "All fields are necessary"
-                } else if (xhr.status == 401) {
-                    document.getElementById('loading').innerText = "Please login"
-                } else {
-                    document.getElementById('loading').innerText = "Server error, try later"
                 }
             }
         }
-        var send = (Object.assign({}, {"event_id": app$utils$register$$id, "members": teamArr, "team_name": teamName}))
+        console.log(app$utils$register$$eveId, "here")
+        var send = (Object.assign({}, {"event_id": app$utils$register$$eveId, "members": teamArr, "team_name": teamName}))
         // console.log(send)
         xhr.send(JSON.stringify(send))
     }

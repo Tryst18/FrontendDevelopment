@@ -42,6 +42,7 @@ xhr.onreadystatechange = function () {
                 var eveList = events[e.target.id]
                 let str = ''
                 for (var x in eveList) {
+
                   if (eveList[x].name != "bogus")
                     $("#eveList").append(
                       '<div class="col-md-4 col-sm-6 col-xs-12 event-container">'+
