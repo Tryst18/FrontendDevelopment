@@ -28,6 +28,11 @@
         xh.send()
     }
 
+    function $$index$$linkExtract(str) {
+        let arr = str.split('=')
+        return 'https://drive.google.com/uc?id='+arr[1]+'&export=view'
+    }
+
     var app$utils$register$$str = document.location.search;
     var app$utils$register$$bas = app$utils$register$$str.split("?");
     var app$utils$register$$ba = app$utils$register$$bas[1].split("=");

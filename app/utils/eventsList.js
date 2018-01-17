@@ -1,5 +1,7 @@
 import {url} from "./index.js"
 
+
+
 var events = {}
 var arrKey = []
 var user = JSON.parse(sessionStorage.getItem("authUser"))
@@ -52,7 +54,7 @@ xhr.onreadystatechange = function () {
                   let phot = (eveList[x].photos && eveList[x].photos.length)? eveList[x].photos[0]:''
                   $("#eveList").append(
                     '<div class="col-md-4 col-sm-6 col-xs-12 event-container">'+
-                    '<img src="'+phot+'" class="img-responsive event-img">'+
+                    '<img src="'+'../images/'+eveList[x].name+'.png" class="img-responsive event-img">'+
                     '<p class="mx-auto">'+
                       '<a href=../specifEvent.html?'+eveList[x].id+'>'+eveList[x].name+'</a>'+
                     '</p>'+

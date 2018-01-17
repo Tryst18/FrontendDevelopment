@@ -28,6 +28,11 @@
         xh.send()
     }
 
+    function $$$utils$index$$linkExtract(str) {
+        let arr = str.split('=')
+        return 'https://drive.google.com/uc?id='+arr[1]+'&export=view'
+    }
+
     function app$utils$signup$$onSubmit() {
         // var url = "http://localhost:4000/"
         var xhr = new XMLHttpRequest();

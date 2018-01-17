@@ -28,6 +28,11 @@
         xh.send()
     }
 
+    function $$index$$linkExtract(str) {
+        let arr = str.split('=')
+        return 'https://drive.google.com/uc?id='+arr[1]+'&export=view'
+    }
+
     var app$utils$specifEvent$$event = document.location.search.split("?")[1];
     let app$utils$specifEvent$$user = JSON.parse(sessionStorage.getItem("authUser"));
     // console.log(category)

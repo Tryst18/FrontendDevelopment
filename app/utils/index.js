@@ -25,3 +25,8 @@ export function updateUser(rel) {
     }
     xh.send()
 }
+
+export function linkExtract(str) {
+    let arr = str.split('=')
+    return 'https://drive.google.com/uc?id='+arr[1]+'&export=view'
+}

@@ -28,6 +28,11 @@
         xh.send()
     }
 
+    function $$$utils$index$$linkExtract(str) {
+        let arr = str.split('=')
+        return 'https://drive.google.com/uc?id='+arr[1]+'&export=view'
+    }
+
 
 
     var app$utils$viewUser$$savUser = JSON.parse(sessionStorage.getItem("authUser"));

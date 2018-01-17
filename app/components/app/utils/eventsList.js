@@ -28,6 +28,13 @@
         xh.send()
     }
 
+    function $$index$$linkExtract(str) {
+        let arr = str.split('=')
+        return 'https://drive.google.com/uc?id='+arr[1]+'&export=view'
+    }
+
+
+
     var app$utils$eventsList$$events = {}
     var app$utils$eventsList$$arrKey = [];
     var app$utils$eventsList$$user = JSON.parse(sessionStorage.getItem("authUser"));
@@ -80,7 +87,7 @@
                       let phot = (eveList[x].photos && eveList[x].photos.length)? eveList[x].photos[0]:''
                       $("#eveList").append(
                         '<div class="col-md-4 col-sm-6 col-xs-12 event-container">'+
-                        '<img src="'+phot+'" class="img-responsive event-img">'+
+                        '<img src="'+'../images/'+eveList[x].name+'.png" class="img-responsive event-img">'+
                         '<p class="mx-auto">'+
                           '<a href=../specifEvent.html?'+eveList[x].id+'>'+eveList[x].name+'</a>'+
                         '</p>'+
