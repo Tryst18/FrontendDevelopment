@@ -1,4 +1,4 @@
-import {url} from "./index.js"
+import {url, linkExtract} from "./index.js"
 
 
 
@@ -8,7 +8,7 @@ var user = JSON.parse(sessionStorage.getItem("authUser"))
 let bool = document.location.search.split("?")[1]
 // console.log(bool == "1")
 let xhr = new XMLHttpRequest();
-
+if (bool=='1') {document.getElementById('headTitle').innerHTML = '<h1>Registered Events</h1>'}
 xhr.open("GET", url+"/api/event/getCategories", true);
 xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 xhr.onreadystatechange = function () {
@@ -48,27 +48,30 @@ xhr.onreadystatechange = function () {
               var eveList = events[e.target.id]
               // console.log(eveList)
               let str = ''
+              
               for (var x in eveList) {
+                let phot = (eveList[x].photos && eveList[x].photos.length)? eveList[x].photos[0]:''
                 if (bool != "1") {
                   // console.log(eveList[x].photos[0])
-                  let phot = (eveList[x].photos && eveList[x].photos.length)? eveList[x].photos[0]:''
+                  
+                  // console.log(phot)
                   $("#eveList").append(
                     '<div class="col-md-4 col-sm-6 col-xs-12 event-container">'+
-                    '<img src="'+'../images/'+eveList[x].name+'.png" class="img-responsive event-img">'+
+                    '<img src="'+linkExtract(phot)+'" class="img-responsive event-img">'+
                     '<p class="mx-auto">'+
                       '<a href=../specifEvent.html?'+eveList[x].id+'>'+eveList[x].name+'</a>'+
                     '</p>'+
                     '</div>'
                   );
                 } else {
-                  console.log(user.registration, "here")
+                  // console.log(user.registration, "here")
                   // console.log(eveList[x].name != "bogus" && (eveList[x].id == user.registration[y].event_id || bool == "1"))
                   for (var y in user.registration) {
                     if (eveList[x].name != "bogus" && (eveList[x].id == user.registration[y].event_id)) {
                       // console.log(eveList[x].name)
                       $("#eveList").append(
                         '<div class="col-md-4 col-sm-6 col-xs-12 event-container">'+
-                        '<img src="'+'../images/'+eveList[x].name+'.png" class="img-responsive event-img">'+
+                        '<img src="'+linkExtract(phot)+'" class="img-responsive event-img">'+
                         '<p class="mx-auto">'+
                           '<a href=../specifEvent.html?'+eveList[x].id+'>'+eveList[x].name+'</a>'+
                         '</p>'+

@@ -6,7 +6,7 @@ var ba = bas[1].split("=")
 var eveId = ba[0]
 var name = ba[1]
 var user = JSON.parse(sessionStorage.getItem("authUser"))
-document.getElementById('title').innerText = name
+document.getElementById('title').innerText = decodeURIComponent(name)
 document.getElementById('loading').style.display = "none";
 
 
@@ -20,7 +20,7 @@ $(document).ready(function(){
 		if (xhr.readyState === 4){
 			if (xhr.status === 200) {
 				var json = JSON.parse(xhr.responseText);
-				console.log(json)
+				// console.log(json)
 				var data = json.data
 				j = data.reg_min_team_size
 				i = data.reg_max_team_size
@@ -29,6 +29,7 @@ $(document).ready(function(){
 	}
 	xhr.send()
 })
+let min = i;
 var id = 0
 for (var t = 0; t<j-1; t++) {
 	var form = '<input name="email" type="text" id="mem'+id+'" placeholder="Member\'s registered email">';
@@ -41,14 +42,14 @@ document.getElementById('fir').value = user.email
 let del = document.getElementById('del')
 
 document.getElementById('add').onclick= function () {
-	if (i-j>0) {
+	if (i>0) {
 		var form = '<input name="email" type="text" id="mem'+id+'" placeholder="Member\'s registered email">';
 		document.getElementById('teamInfo').insertAdjacentHTML('beforeend', form);
-		console.log(id)
+		// console.log(id)
 		i--;
 		id++;
 	}
-	if (i-j<10) {
+	if (i<t) {
 		del.hidden = false
 		
 	}
@@ -57,11 +58,11 @@ document.getElementById('add').onclick= function () {
 // if ()
 document.getElementById('teamName').innerHTML = '<input id="tname" type="text" placeholder="Team Name">'
 del.onclick=function () {
-	console.log(id)
+	// console.log(id)
 	var rem = document.getElementById('mem'+(id-1))
 	rem.parentNode.removeChild(rem)
 	id--;
-	if (i-j==10) {
+	if (i==t) {
 		del.hidden = true
 	}
 }
@@ -109,6 +110,7 @@ function onReg() {
 					document.getElementById('add').hidden = true
 					document.getElementById('teamName').hidden = true
 					document.getElementById('submit').hidden = true
+					del.hidden = true
 					document.getElementById('loading').innerText = json.message;
 					updateUser(false)
 				}

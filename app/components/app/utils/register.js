@@ -3,7 +3,7 @@
     const $$index$$url = "https://api.tryst-iitd.com";
 
     function $$index$$updateUser(rel) {
-        console.log("this")
+        // console.log("this")
         var xh = new XMLHttpRequest();
         xh.open("GET", $$index$$url+"/api/user/view", true);
         xh.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -15,8 +15,8 @@
                     var dta = jon.data;
                     // console.log(xhr.responseText)
                     if (jon.error == false) {
-                        console.log(dta)
-                        console.log("this hap")
+                        // console.log(dta)
+                        // console.log("this hap")
                         sessionStorage.setItem("authUser", JSON.stringify(dta))
                         if (rel) {
                             document.location.reload(true)
@@ -30,6 +30,7 @@
 
     function $$index$$linkExtract(str) {
         let arr = str.split('=')
+        // console.log(arr[1])
         return 'https://drive.google.com/uc?id='+arr[1]+'&export=view'
     }
 
@@ -39,7 +40,7 @@
     var app$utils$register$$eveId = app$utils$register$$ba[0];
     var app$utils$register$$name = app$utils$register$$ba[1];
     var app$utils$register$$user = JSON.parse(sessionStorage.getItem("authUser"));
-    document.getElementById('title').innerText = app$utils$register$$name;
+    document.getElementById('title').innerText = decodeURIComponent(app$utils$register$$name);
     document.getElementById('loading').style.display = "none";
 
 
@@ -53,7 +54,7 @@
             if (xhr.readyState === 4){
                 if (xhr.status === 200) {
                     var json = JSON.parse(xhr.responseText);
-                    console.log(json)
+                    // console.log(json)
                     var data = json.data
                     app$utils$register$$j = data.reg_min_team_size
                     app$utils$register$$i = data.reg_max_team_size
@@ -62,6 +63,7 @@
         }
         xhr.send()
     });
+    let app$utils$register$$min = app$utils$register$$i;
     var app$utils$register$$id = 0;
     for (var app$utils$register$$t = 0; app$utils$register$$t<app$utils$register$$j-1; app$utils$register$$t++) {
         var app$utils$register$$form = '<input name="email" type="text" id="mem'+app$utils$register$$id+'" placeholder="Member\'s registered email">';
@@ -74,14 +76,14 @@
     let app$utils$register$$del = document.getElementById('del');
 
     document.getElementById('add').onclick= function () {
-        if (app$utils$register$$i-app$utils$register$$j>0) {
+        if (app$utils$register$$i>0) {
             var form = '<input name="email" type="text" id="mem'+app$utils$register$$id+'" placeholder="Member\'s registered email">';
             document.getElementById('teamInfo').insertAdjacentHTML('beforeend', form);
-            console.log(app$utils$register$$id)
+            // console.log(id)
             app$utils$register$$i--;
             app$utils$register$$id++;
         }
-        if (app$utils$register$$i-app$utils$register$$j<10) {
+        if (app$utils$register$$i<app$utils$register$$t) {
             app$utils$register$$del.hidden = false
             
         }
@@ -90,11 +92,11 @@
     // if ()
     document.getElementById('teamName').innerHTML = '<input id="tname" type="text" placeholder="Team Name">';
     app$utils$register$$del.onclick=function () {
-        console.log(app$utils$register$$id)
+        // console.log(id)
         var rem = document.getElementById('mem'+(app$utils$register$$id-1))
         rem.parentNode.removeChild(rem)
         app$utils$register$$id--;
-        if (app$utils$register$$i-app$utils$register$$j==10) {
+        if (app$utils$register$$i==app$utils$register$$t) {
             app$utils$register$$del.hidden = true
         }
     }
@@ -142,6 +144,7 @@
                         document.getElementById('add').hidden = true
                         document.getElementById('teamName').hidden = true
                         document.getElementById('submit').hidden = true
+                        app$utils$register$$del.hidden = true
                         document.getElementById('loading').innerText = json.message;
                         $$index$$updateUser(false)
                     }

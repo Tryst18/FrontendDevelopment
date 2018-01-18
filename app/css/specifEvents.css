@@ -5,20 +5,27 @@
 #event-logos
 {
   /*background-color: rgb(255, 255, 255);*/
-  height: 250px;
-  width: 250px;
+  height: auto;
+  width: auto;
+  max-width: 250px;
   margin: 25px 0 25px 0;
 
 }
 #image
 {
-  background-color: white;
-  height: 300px;
-  width: 300px;
+  width: auto;
+  height: auto;
+  max-height: 300px;
+  max-width: 300px;
   border-radius: 50%;
   /*float: right;*/
   /*position: absolute;*/
 }
+
+.old{
+  background-color: white;
+}
+
 #title
 {
 

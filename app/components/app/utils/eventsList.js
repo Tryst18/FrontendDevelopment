@@ -3,7 +3,7 @@
     const $$index$$url = "https://api.tryst-iitd.com";
 
     function $$index$$updateUser(rel) {
-        console.log("this")
+        // console.log("this")
         var xh = new XMLHttpRequest();
         xh.open("GET", $$index$$url+"/api/user/view", true);
         xh.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -15,8 +15,8 @@
                     var dta = jon.data;
                     // console.log(xhr.responseText)
                     if (jon.error == false) {
-                        console.log(dta)
-                        console.log("this hap")
+                        // console.log(dta)
+                        // console.log("this hap")
                         sessionStorage.setItem("authUser", JSON.stringify(dta))
                         if (rel) {
                             document.location.reload(true)
@@ -30,6 +30,7 @@
 
     function $$index$$linkExtract(str) {
         let arr = str.split('=')
+        // console.log(arr[1])
         return 'https://drive.google.com/uc?id='+arr[1]+'&export=view'
     }
 
@@ -41,7 +42,7 @@
     let app$utils$eventsList$$bool = document.location.search.split("?")[1];
     // console.log(bool == "1")
     let app$utils$eventsList$$xhr = new XMLHttpRequest();
-
+    if (app$utils$eventsList$$bool=='1') {document.getElementById('headTitle').innerHTML = '<h1>Registered Events</h1>'}
     app$utils$eventsList$$xhr.open("GET", $$index$$url+"/api/event/getCategories", true);
     app$utils$eventsList$$xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     app$utils$eventsList$$xhr.onreadystatechange = function () {
@@ -81,27 +82,30 @@
                   var eveList = app$utils$eventsList$$events[e.target.id]
                   // console.log(eveList)
                   let str = ''
+                  
                   for (var x in eveList) {
+                    let phot = (eveList[x].photos && eveList[x].photos.length)? eveList[x].photos[0]:''
                     if (app$utils$eventsList$$bool != "1") {
                       // console.log(eveList[x].photos[0])
-                      let phot = (eveList[x].photos && eveList[x].photos.length)? eveList[x].photos[0]:''
+                      
+                      // console.log(phot)
                       $("#eveList").append(
                         '<div class="col-md-4 col-sm-6 col-xs-12 event-container">'+
-                        '<img src="'+'../images/'+eveList[x].name+'.png" class="img-responsive event-img">'+
+                        '<img src="'+$$index$$linkExtract(phot)+'" class="img-responsive event-img">'+
                         '<p class="mx-auto">'+
                           '<a href=../specifEvent.html?'+eveList[x].id+'>'+eveList[x].name+'</a>'+
                         '</p>'+
                         '</div>'
                       );
                     } else {
-                      console.log(app$utils$eventsList$$user.registration, "here")
+                      // console.log(user.registration, "here")
                       // console.log(eveList[x].name != "bogus" && (eveList[x].id == user.registration[y].event_id || bool == "1"))
                       for (var y in app$utils$eventsList$$user.registration) {
                         if (eveList[x].name != "bogus" && (eveList[x].id == app$utils$eventsList$$user.registration[y].event_id)) {
                           // console.log(eveList[x].name)
                           $("#eveList").append(
                             '<div class="col-md-4 col-sm-6 col-xs-12 event-container">'+
-                            '<img src="'+'../images/'+eveList[x].name+'.png" class="img-responsive event-img">'+
+                            '<img src="'+$$index$$linkExtract(phot)+'" class="img-responsive event-img">'+
                             '<p class="mx-auto">'+
                               '<a href=../specifEvent.html?'+eveList[x].id+'>'+eveList[x].name+'</a>'+
                             '</p>'+

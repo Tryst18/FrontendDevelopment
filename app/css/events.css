@@ -148,7 +148,9 @@ height: auto;
   transition: min-height 0.4s ease-in-out;
 }
 
-
+#headTitle {
+  text-align: center;
+}
 
 /* Events styling */
 .event-container p{
@@ -157,4 +159,8 @@ height: auto;
 .event-img{
   max-height:200px;
   width:auto;
+}
+
+#eveList {
+  background-color: black;
 }

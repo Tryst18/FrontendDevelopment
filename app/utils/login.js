@@ -2,7 +2,7 @@ import {url} from "./index.js";
 
 // console.log("hi");
 var link = document.location.search
-console.log(link)
+// console.log(link)
 
 
 
