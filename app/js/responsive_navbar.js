@@ -2,7 +2,7 @@ $(document).ready(function(){
     $('.head .hb-button').on('click', function(e){
     	e.stopPropagation();
         $('nav.head ul').toggleClass('show');
-        $('.init').toggle();
+        // $('.init').toggle();
     });
     if (sessionStorage.getItem("authUser")) {
         var jso = JSON.parse(sessionStorage.getItem("authUser"));
