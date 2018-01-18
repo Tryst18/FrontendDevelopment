@@ -167,6 +167,7 @@ height: auto;
 .event-img{
   max-height:200px;
   width:auto;
+  margin: auto;
 }
 
 #eveList {
