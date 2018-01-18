@@ -101,6 +101,7 @@ input
 
   #eveList {
     display: none;
+    padding-bottom: 100px;
     transition: max-height 0.5s;
     -webkit-transition: max-height 0.5s;
     -moz-transition: max-height 0.5s;
@@ -111,7 +112,7 @@ input
 
   .show {
     display: inline;
-    max-height: 35em;
+    max-height: fit-content;
   }
 .mx-auto{
   margin-left:auto;
@@ -148,6 +149,8 @@ height: auto;
   
 }
 
+
+
 #headTitle {
   text-align: center;
 }
@@ -156,6 +159,11 @@ height: auto;
 .event-container p{
   text-align: center;
 }
+
+.event-container {
+  align-content: center;
+}
+
 .event-img{
   max-height:200px;
   width:auto;
