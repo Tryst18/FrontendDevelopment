@@ -75,7 +75,10 @@
                 let stri = data.id+'='+data.name
                 
                 let regButton = document.getElementById('register')
-                console.log(data.reg_mode)
+                if (data.name=="EnvironmenD") {
+                    document.getElementById('register').innerHTML = '<button><a href ="http://iitd.info/EnvironmenD">Register</a></button>'
+                } else {
+                    console.log(data.reg_mode)
                     if (app$utils$specifEvent$$user) {
                         var pres = false
                         for (var l in app$utils$specifEvent$$user.registration) {  
@@ -167,8 +170,8 @@
                     } else {
                         regButton.innerHTML = '<button><a href="../login.html?'+stri+'">'+'Register</a></button>'
                     }
-                // document.getElementById('register').innerHTML = (sessionStorage.getItem("authUser"))? ('<button><a href="../register.html?'+stri+'">'+'Register</a></button>'):('<button><a href="../login.html?'+stri+'">'+'Register</a></button>')
-                // document.getElementById('register').innerHTML = '<button><a href ="http://iitd.info/EnvironmenD">Register</a></button>'
+                }
+                    // document.getElementById('register').innerHTML = (sessionStorage.getItem("authUser"))? ('<button><a href="../register.html?'+stri+'">'+'Register</a></button>'):('<button><a href="../login.html?'+stri+'">'+'Register</a></button>')
                 var cont = 'For queries, contact at ' + '<br>'
                 
                 for (var y in data.poc) {
@@ -181,6 +184,7 @@
                 document.getElementById('poc').innerHTML = cont
 
                 document.getElementById('title').innerText = data.name
+                
             }
         }
     }

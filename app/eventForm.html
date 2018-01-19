@@ -13,10 +13,10 @@
                 <input name="category" type="radio" value="flagship">Flagship
                 <input name="category" type="radio" value="social">Social
                 <input name="category" type="radio" value="robotics">Robotics
-            </fieldset> 
+            </fieldset>
             <fieldset id="type" class="radioset">
                 <legend>Type</legend>
-                <input name="type" type="radio" value="event">Event
+                <input name="type" type="radio" value="event" checked>Event
                 <input name="type" type="radio" value="guest">Guest
                 <input name="type" type="radio" value="workshop">Workshop
             </fieldset>
@@ -29,16 +29,26 @@
                 </fieldset>
                 <input name="photos" id="phot" type="text" placeholder="Link to logo (drive link)">
                 Deadline<input name="reg_deadline" id="dead" type="date" placeholder="Deadline">
-                <fieldset id="reg_type" class="radioset">
-                    <legend>Method of registration</legend>
-                    <input name="reg_t" type="radio" id="1" value="website">Website
-                    <input name="reg_t" type="radio" id="2" value="email">Email
-                    <input name="reg_t" type="radio" id="3" value="external">External
+                <fieldset id="reg_mode" class="radioset">
+                        <legend>Method of registration</legend>
+                        <input name="reg_mode" type="radio" id="1" value="website" checked>Website
+                        <input name="reg_mode" type="radio" id="2" value="email">Email
+                        <input name="reg_mode" type="radio" id="3" value="external">External
                 </fieldset>
-                <div id="extra">
-                    <input name="email" type="text" placeholder="Email">
-                    <input name="password" type="text" placeholder="Mobile No">
-                </div>
+                <input id="email" name="reg_email" type="text" placeholder="Email" hidden>
+                <input id="external" name="reg_email" type="text" placeholder="Email" hidden>
+                
+                <fieldset id="reg_type" class="radioset">
+                        <legend>Type</legend>
+                        <input name="reg_type" type="radio" id="1" value="website" checked>Website
+                        <input name="reg_type" type="radio" id="2" value="email">Email
+                        <input name="reg_type" type="radio" id="3" value="external">External
+                </fieldset>
+                        
+                <input id="email" name="reg_email" type="text" placeholder="Email" hidden>
+                <input id="external" name="reg_email" type="text" placeholder="Email" hidden>
+                
+                    
                 <button id="launch">Launch!</button>
                 <script src="components/app/utils/eventForm.js"></script>
 <!-- To add: reg_email, reg_link, reg_min_team_size, reg_max_team_size -->
