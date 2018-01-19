@@ -20,37 +20,38 @@
                 <input name="type" type="radio" value="guest">Guest
                 <input name="type" type="radio" value="workshop">Workshop
             </fieldset>
-                <textarea name="description" id="t1">Description</textarea>
-                <input name="prizes" type="text" id="t2" placeholder="Prizes">    
-                <fieldset id="poc" Name="Poc">
-                    <legend>Poc</legend>
-                    <input name="email" type="text" placeholder="Email">
-                    <input name="password" type="text" placeholder="Mobile No">
-                </fieldset>
-                <input name="photos" id="phot" type="text" placeholder="Link to logo (drive link)">
-                Deadline<input name="reg_deadline" id="dead" type="date" placeholder="Deadline">
-                <fieldset id="reg_mode" class="radioset">
-                        <legend>Method of registration</legend>
-                        <input name="reg_mode" type="radio" id="1" value="website" checked>Website
-                        <input name="reg_mode" type="radio" id="2" value="email">Email
-                        <input name="reg_mode" type="radio" id="3" value="external">External
-                </fieldset>
-                <input id="email" name="reg_email" type="text" placeholder="Email" hidden>
-                <input id="external" name="reg_email" type="text" placeholder="Email" hidden>
-                
-                <fieldset id="reg_type" class="radioset">
-                        <legend>Type</legend>
-                        <input name="reg_type" type="radio" id="1" value="website" checked>Website
-                        <input name="reg_type" type="radio" id="2" value="email">Email
-                        <input name="reg_type" type="radio" id="3" value="external">External
-                </fieldset>
-                        
-                <input id="email" name="reg_email" type="text" placeholder="Email" hidden>
-                <input id="external" name="reg_email" type="text" placeholder="Email" hidden>
-                
+            <textarea name="description" id="t1">Description</textarea><br>
+            <input name="prizes" type="text" id="t2" placeholder="Prizes">    
+            <fieldset id="poc">
+                <legend>Peson of Contact</legend>
+                <input name="email" type="text" placeholder="Email">
+                <input name="mobile_no" type="text" placeholder="Mobile No">
+            </fieldset>
+            <input name="url" id="t7" type="text" placeholder="Link to problem Statement"><br>
+            <input name="photos" id="phot" type="text" placeholder="Link to logo (drive link)">
+            Deadline<input name="reg_deadline" id="dead" type="date" placeholder="Deadline">
+            <fieldset id="reg_mode" class="radioset">
+                    <legend>Mode</legend>
+                    <input name="reg_mode" type="radio" id="mo1" value="single">Single
+                    <input name="reg_mode" type="radio" id="mo2" value="team">Team
+            </fieldset>
+            <div id="team" hidden>
+            <input id="t5" name="reg_min_team_size" type="number" placeholder="Min members">
+            <input id="t6" name="reg_max_team_size" type="number" placeholder="Max members">
+            </div>
+            <fieldset id="reg_type" class="radioset">
+                    <legend>Type</legend>
+                    <input name="reg_type" type="radio" id="ty1" value="website">Website
+                    <input name="reg_type" type="radio" id="ty2" value="email">Email
+                    <input name="reg_type" type="radio" id="ty3" value="external">External
+            </fieldset>
                     
-                <button id="launch">Launch!</button>
-                <script src="components/app/utils/eventForm.js"></script>
+            <input id="t3" name="reg_email" type="text" placeholder="Email" hidden>
+            <input id="t4" name="reg_link" type="text" placeholder="Link" hidden>
+            
+            
+            <button id="launch">Launch!</button>
+            <script src="components/app/utils/eventForm.js"></script>
 <!-- To add: reg_email, reg_link, reg_min_team_size, reg_max_team_size -->
                 
         </div>

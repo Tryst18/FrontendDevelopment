@@ -92,6 +92,8 @@
                     }
                     // if ()
                     document.getElementById('teamName').innerHTML = '<input id="tname" type="text" placeholder="Team Name">'
+                    document.getElementById('source').innerHTML = '<input id="source" type="text" placeholder="Source (Mention name if campus ambassador)">'
+                    
                     del.onclick=function () {
                         // console.log(id)
                         var rem = document.getElementById('mem'+(id-1))
@@ -128,6 +130,7 @@
                             }
                         }
                         var teamName = document.getElementById('tname').value
+                        var src = document.getElementById('source').value
                         // console.log(teamName)
                         var xhr = new XMLHttpRequest();
                         xhr.open("POST", $$index$$url+"/api/register/register", true);
@@ -156,7 +159,7 @@
                             }
                         }
                         // console.log(eveId, "here")
-                        var send = (Object.assign({}, {"event_id": app$utils$register$$eveId, "members": teamArr, "team_name": teamName}))
+                        var send = (Object.assign({}, {"event_id": app$utils$register$$eveId, "members": teamArr, "team_name": teamName, "source": src}))
                         // console.log(send)
                         xhr.send(JSON.stringify(send))
                     }

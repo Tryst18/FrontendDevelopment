@@ -77,7 +77,7 @@
                 let regButton = document.getElementById('register')
                 if (data.name=="EnvironmenD") {
                     document.getElementById('register').innerHTML = '<button><a href ="http://iitd.info/EnvironmenD">Register</a></button>'
-                } else {
+                } else if (data.reg_mode == "website"){
                     console.log(data.reg_mode)
                     if (app$utils$specifEvent$$user) {
                         var pres = false
@@ -136,7 +136,7 @@
                                 regButton.innerHTML = '<button><a href="../register.html?'+stri+'">'+'Register</a></button>'
                             } else {
                                 // console.log('thi')
-                                regButton.innerHTML = '<button id="regsin">Register</button>'
+                                regButton.innerHTML = '<input id="source" placeholder="Mention source (Name, if campus ambassador)"><button id="regsin">Register</button>'
                                 document.getElementById('regsin').addEventListener('click', function(){
                                     // console.log('this happened')
                                     var xr = new XMLHttpRequest();
@@ -162,7 +162,7 @@
                                         }
                                     }
                                     // console.log(event)
-                                    var send = Object.assign({}, {"event_id": app$utils$specifEvent$$event, "members": [{"email":app$utils$specifEvent$$user.email}], team_name: "null"})
+                                    var send = Object.assign({}, {"event_id": app$utils$specifEvent$$event, "members": [{"email":app$utils$specifEvent$$user.email}], team_name: "null", "source": document.getElementById('source')})
                                     xr.send(JSON.stringify(send))
                                 })
                             } 
@@ -170,6 +170,10 @@
                     } else {
                         regButton.innerHTML = '<button><a href="../login.html?'+stri+'">'+'Register</a></button>'
                     }
+                } else if (data.reg_mode == "external"){
+                    document.getElementById('register').innerHTML = '<button><a href ="'+data.reg_link+'">Register</a></button>'
+                } else {
+                    document.getElementById('register').innerHTML = '<button><a href ="mailto:'+data.reg_email+'">Register</a></button>'
                 }
                     // document.getElementById('register').innerHTML = (sessionStorage.getItem("authUser"))? ('<button><a href="../register.html?'+stri+'">'+'Register</a></button>'):('<button><a href="../login.html?'+stri+'">'+'Register</a></button>')
                 var cont = 'For queries, contact at ' + '<br>'
