@@ -69,7 +69,7 @@
                       '</div>'
                     );
                 }
-    
+
                 function onClick(e, t) {
                   var opened = $("#"+t).hasClass("active");
                   // console.log(opened)
@@ -117,14 +117,14 @@
                   }
                   $("#eveList").toggleClass("show");
                 }
-    
-    
-    
+
+
+
                 var eventsButton = document.getElementsByClassName('category-block');
                 var x = 0;
                 // console.log(eventsButton);
                 while (x < eventsButton.length) {
-    
+
                     // $(".category-block").click(function(e){
                     //   console.log(e.target);
                         

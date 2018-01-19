@@ -110,7 +110,7 @@
                                                         $('#delReg').click(function() {
                                                             app$utils$specifEvent$$delReg(app$utils$specifEvent$$user.registration[l].reg_id)
                                                         })
-    
+
                                                         $('#viewReg').show() 
                                                     }
                                                     
@@ -153,7 +153,7 @@
                                                 if (son.error == false) {
                                                     // console.log('this happened too')
                                                     $$index$$updateUser(true)
-    
+
                                                 }
                                             }
                                         }
@@ -179,12 +179,12 @@
                     cont += '<br>'
                 }
                 document.getElementById('poc').innerHTML = cont
-    
+
                 document.getElementById('title').innerText = data.name
             }
         }
     }
-    
-    
+
+
     xhr.send()});
 }).call(this);
