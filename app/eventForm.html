@@ -6,6 +6,8 @@
         <div id="logInfo">
             <input name="email" type="text" id="em" placeholder="Admin-Email">
             <input name="password" type="password" id="pa" placeholder="Password">
+            <br>
+            <input name="name" type="text" id="t8" placeholder="Name of event">
             <fieldset id="cat" class="radioset">
                 <legend>Category</legend>
                 <input name="category" type="radio" value="club">Club
@@ -24,26 +26,27 @@
             <input name="prizes" type="text" id="t2" placeholder="Prizes">    
             <fieldset id="poc">
                 <legend>Peson of Contact</legend>
+                <input name="name" type="text" placeholder="Name">
                 <input name="email" type="text" placeholder="Email">
                 <input name="mobile_no" type="text" placeholder="Mobile No">
             </fieldset>
             <input name="url" id="t7" type="text" placeholder="Link to problem Statement"><br>
             <input name="photos" id="phot" type="text" placeholder="Link to logo (drive link)">
             Deadline<input name="reg_deadline" id="dead" type="date" placeholder="Deadline">
-            <fieldset id="reg_mode" class="radioset">
+            <fieldset id="reg_type" class="radioset">
                     <legend>Mode</legend>
-                    <input name="reg_mode" type="radio" id="mo1" value="single">Single
-                    <input name="reg_mode" type="radio" id="mo2" value="team">Team
+                    <input name="reg_type" type="radio" id="mo1" value="single">Single
+                    <input name="reg_type" type="radio" id="mo2" value="team">Team
             </fieldset>
             <div id="team" hidden>
             <input id="t5" name="reg_min_team_size" type="number" placeholder="Min members">
             <input id="t6" name="reg_max_team_size" type="number" placeholder="Max members">
             </div>
-            <fieldset id="reg_type" class="radioset">
+            <fieldset id="reg_mode" class="radioset">
                     <legend>Type</legend>
-                    <input name="reg_type" type="radio" id="ty1" value="website">Website
-                    <input name="reg_type" type="radio" id="ty2" value="email">Email
-                    <input name="reg_type" type="radio" id="ty3" value="external">External
+                    <input name="reg_mode" type="radio" id="ty1" value="website">Website
+                    <input name="reg_mode" type="radio" id="ty2" value="email">Email
+                    <input name="reg_mode" type="radio" id="ty3" value="external">External
             </fieldset>
                     
             <input id="t3" name="reg_email" type="text" placeholder="Email" hidden>
@@ -51,6 +54,7 @@
             
             
             <button id="launch">Launch!</button>
+            <div id="message"></div>
             <script src="components/app/utils/eventForm.js"></script>
 <!-- To add: reg_email, reg_link, reg_min_team_size, reg_max_team_size -->
                 
