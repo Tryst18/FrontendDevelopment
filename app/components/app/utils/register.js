@@ -151,6 +151,7 @@
                                         document.getElementById('add').hidden = true
                                         document.getElementById('teamName').hidden = true
                                         document.getElementById('submit').hidden = true
+                                        document.getElementById('source').hidden = true
                                         del.hidden = true
                                         document.getElementById('loading').innerText = json.message;
                                         $$index$$updateUser(false)

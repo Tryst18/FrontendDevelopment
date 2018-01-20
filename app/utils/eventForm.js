@@ -79,7 +79,8 @@ document.getElementById('launch').addEventListener('click', function() {
 		
 		// console.log(xhr.responseText + " " + xhr.status, "response");
 	    if (xhr.readyState === 4){
-			if (xhr.status === 200) {				
+			if (xhr.status === 200) {
+				document.write('email and pasword checked')		
 				var data = json.data;
 				// console.log(json.error == false)
 				if (json.error == false) {
