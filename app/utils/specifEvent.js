@@ -34,7 +34,7 @@ xhr.onreadystatechange = function () {
             // console.log(json)
             var data = json.data
             document.getElementById('description').innerText = data.description
-            document.getElementById('probState').innerHTML = '<button><a href='+data.url+'>Click here for Problem Statement</a></button>'
+            document.getElementById('probState').innerHTML = '<a href='+data.url+'><button>Click here for Problem Statement</button></a>'
             document.getElementById('prizes').innerText = data.prizes
             let phot = (data.photos && data.photos.length)? data.photos[0]:''
             document.getElementById('image').innerHTML = '<img id="event-logos" src='+linkExtract(phot)+'>'
@@ -42,7 +42,7 @@ xhr.onreadystatechange = function () {
             
             let regButton = document.getElementById('register')
             if (data.name=="EnvironmenD") {
-                document.getElementById('register').innerHTML = '<button><a href ="http://iitd.info/EnvironmenD">Register</a></button>'
+                document.getElementById('register').innerHTML = '<a href ="http://iitd.info/EnvironmenD"><button>Register</button></a>'
             } else if (data.reg_mode == "website"){
                 console.log(data.reg_mode)
                 if (user) {
@@ -99,7 +99,7 @@ xhr.onreadystatechange = function () {
                     }
                     if (!pres) {
                         if (data.reg_type == "team") {
-                            regButton.innerHTML = '<button><a href="../register.html?'+stri+'">'+'Register</a></button>'
+                            regButton.innerHTML = '<a href="../register.html?'+stri+'"><button>'+'Register</button></a>'
                         } else {
                             // console.log('thi')
                             regButton.innerHTML = '<input id="source" placeholder="Mention source (Name, if campus ambassador)"><button id="regsin">Register</button>'
@@ -134,12 +134,12 @@ xhr.onreadystatechange = function () {
                         } 
                     }
                 } else {
-                    regButton.innerHTML = '<button><a href="../login.html?'+stri+'">'+'Register</a></button>'
+                    regButton.innerHTML = '<a href="../login.html?'+stri+'"><button>'+'Register</button></a>'
                 }
             } else if (data.reg_mode == "external"){
-                document.getElementById('register').innerHTML = '<button><a href ="'+data.reg_link+'">Register</a></button>'
+                document.getElementById('register').innerHTML = '<a href ="'+data.reg_link+'"><button>Register</button></a>'
             } else {
-                document.getElementById('register').innerHTML = '<button><a href ="mailto:'+data.reg_email+'">Register</a></button>'
+                document.getElementById('register').innerHTML = '<a href ="mailto:'+data.reg_email+'"><button>Register</button></a>'
             }
                 // document.getElementById('register').innerHTML = (sessionStorage.getItem("authUser"))? ('<button><a href="../register.html?'+stri+'">'+'Register</a></button>'):('<button><a href="../login.html?'+stri+'">'+'Register</a></button>')
             var cont = 'For queries, contact at ' + '<br>'
