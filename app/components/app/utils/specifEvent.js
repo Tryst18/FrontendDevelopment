@@ -68,14 +68,17 @@
                 // console.log(json)
                 var data = json.data
                 document.getElementById('description').innerText = data.description
-                document.getElementById('probState').innerHTML = '<button><a href='+data.url+'>Click here for Problem Statement</a></button>'
+                document.getElementById('probState').innerHTML = '<a href='+data.url+'><button>Click here for Problem Statement</button></a>'
                 document.getElementById('prizes').innerText = data.prizes
                 let phot = (data.photos && data.photos.length)? data.photos[0]:''
                 document.getElementById('image').innerHTML = '<img id="event-logos" src='+$$index$$linkExtract(phot)+'>'
                 let stri = data.id+'='+data.name
                 
                 let regButton = document.getElementById('register')
-                console.log(data.reg_mode)
+                if (data.name=="EnvironmenD") {
+                    document.getElementById('register').innerHTML = '<a href ="http://iitd.info/EnvironmenD"><button>Register</button></a>'
+                } else if (data.reg_mode == "website"){
+                    console.log(data.reg_mode)
                     if (app$utils$specifEvent$$user) {
                         var pres = false
                         for (var l in app$utils$specifEvent$$user.registration) {  
@@ -110,7 +113,7 @@
                                                         $('#delReg').click(function() {
                                                             app$utils$specifEvent$$delReg(app$utils$specifEvent$$user.registration[l].reg_id)
                                                         })
-    
+
                                                         $('#viewReg').show() 
                                                     }
                                                     
@@ -130,10 +133,10 @@
                         }
                         if (!pres) {
                             if (data.reg_type == "team") {
-                                regButton.innerHTML = '<button><a href="../register.html?'+stri+'">'+'Register</a></button>'
+                                regButton.innerHTML = '<a href="../register.html?'+stri+'"><button>'+'Register</button></a>'
                             } else {
                                 // console.log('thi')
-                                regButton.innerHTML = '<button id="regsin">Register</button>'
+                                regButton.innerHTML = '<input id="source" placeholder="Mention source (Name, if campus ambassador)"><button id="regsin">Register</button>'
                                 document.getElementById('regsin').addEventListener('click', function(){
                                     // console.log('this happened')
                                     var xr = new XMLHttpRequest();
@@ -153,22 +156,26 @@
                                                 if (son.error == false) {
                                                     // console.log('this happened too')
                                                     $$index$$updateUser(true)
-    
+
                                                 }
                                             }
                                         }
                                     }
                                     // console.log(event)
-                                    var send = Object.assign({}, {"event_id": app$utils$specifEvent$$event, "members": [{"email":app$utils$specifEvent$$user.email}], team_name: "null"})
+                                    var send = Object.assign({}, {"event_id": app$utils$specifEvent$$event, "members": [{"email":app$utils$specifEvent$$user.email}], team_name: "null", "source": document.getElementById('source')})
                                     xr.send(JSON.stringify(send))
                                 })
                             } 
                         }
                     } else {
-                        regButton.innerHTML = '<button><a href="../login.html?'+stri+'">'+'Register</a></button>'
+                        regButton.innerHTML = '<a href="../login.html?'+stri+'"><button>'+'Register</button></a>'
                     }
-                // document.getElementById('register').innerHTML = (sessionStorage.getItem("authUser"))? ('<button><a href="../register.html?'+stri+'">'+'Register</a></button>'):('<button><a href="../login.html?'+stri+'">'+'Register</a></button>')
-                // document.getElementById('register').innerHTML = '<button><a href ="http://iitd.info/EnvironmenD">Register</a></button>'
+                } else if (data.reg_mode == "external"){
+                    document.getElementById('register').innerHTML = '<a href ="'+data.reg_link+'"><button>Register</button></a>'
+                } else {
+                    document.getElementById('register').innerHTML = '<a href ="mailto:'+data.reg_email+'"><button>Register</button></a>'
+                }
+                    // document.getElementById('register').innerHTML = (sessionStorage.getItem("authUser"))? ('<button><a href="../register.html?'+stri+'">'+'Register</a></button>'):('<button><a href="../login.html?'+stri+'">'+'Register</a></button>')
                 var cont = 'For queries, contact at ' + '<br>'
                 
                 for (var y in data.poc) {
@@ -179,12 +186,13 @@
                     cont += '<br>'
                 }
                 document.getElementById('poc').innerHTML = cont
-    
+
                 document.getElementById('title').innerText = data.name
+                
             }
         }
     }
-    
-    
+
+
     xhr.send()});
 }).call(this);

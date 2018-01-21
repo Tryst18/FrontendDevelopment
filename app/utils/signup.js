@@ -1,4 +1,4 @@
-import "../utils/index.js";
+import {url} from "./index.js";
 
 function onSubmit() {
 	// var url = "http://localhost:4000/"

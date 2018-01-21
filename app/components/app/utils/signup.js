@@ -1,11 +1,11 @@
 (function() {
     "use strict";
-    const $$$utils$index$$url = "https://api.tryst-iitd.com";
+    const $$index$$url = "https://api.tryst-iitd.com";
 
-    function $$$utils$index$$updateUser(rel) {
+    function $$index$$updateUser(rel) {
         // console.log("this")
         var xh = new XMLHttpRequest();
-        xh.open("GET", $$$utils$index$$url+"/api/user/view", true);
+        xh.open("GET", $$index$$url+"/api/user/view", true);
         xh.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xh.setRequestHeader("x-auth-token", sessionStorage.getItem("token"))
         xh.onreadystatechange = function () {
@@ -28,7 +28,7 @@
         xh.send()
     }
 
-    function $$$utils$index$$linkExtract(str) {
+    function $$index$$linkExtract(str) {
         let arr = str.split('=')
         // console.log(arr[1])
         return 'https://drive.google.com/uc?id='+arr[1]+'&export=view'
@@ -37,7 +37,7 @@
     function app$utils$signup$$onSubmit() {
         // var url = "http://localhost:4000/"
         var xhr = new XMLHttpRequest();
-        xhr.open("POST", url+"/api/user/create", true);
+        xhr.open("POST", $$index$$url+"/api/user/create", true);
         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         // console.log(xhr.readyState, xhr.status);
         document.getElementById('loading').style.display = "inline";
