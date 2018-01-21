@@ -70,11 +70,11 @@
                         app$utils$register$$i--;
                         id++;
                     }
-
+    
                     document.getElementById('fir').value = app$utils$register$$user.email
                     let del = document.getElementById('del')
                     let add = document.getElementById('add')
-
+    
                     add.onclick= function () {
                         if (app$utils$register$$i>0) {
                             var form = '<input name="email" type="text" id="mem'+id+'" placeholder="Member\'s registered email">';
@@ -104,14 +104,14 @@
                             del.hidden = true
                         }
                     }
-
+    
                     document.getElementById('form').hidden = false
-
-
+    
+    
                     // var t = [1,2,3]
                     // t.push(4)
                     // console.log(t)
-
+    
                     function onReg() {
                         var team = document.getElementById('teamInfo').children
                         var teamArr = []
@@ -160,7 +160,7 @@
                         // console.log(send)
                         xhr.send(JSON.stringify(send))
                     }
-
+    
                     document.getElementById('submit').addEventListener('click', onReg)
                 }
             }
@@ -175,10 +175,10 @@
         // 	i--;
         // 	id++;
         // }
-
+    
         // document.getElementById('fir').value = user.email
         // let del = document.getElementById('del')
-
+    
         // document.getElementById('add').onclick= function () {
         // 	if (i>0) {
         // 		var form = '<input name="email" type="text" id="mem'+id+'" placeholder="Member\'s registered email">';
@@ -204,14 +204,14 @@
         // 		del.hidden = true
         // 	}
         // }
-
-
-
-
+    
+    
+    
+    
         // // var t = [1,2,3]
         // // t.push(4)
         // // console.log(t)
-
+    
         // function onReg() {
         // 	var team = document.getElementById('teamInfo').children
         // 	var teamArr = []
@@ -260,7 +260,7 @@
         // 	// console.log(send)
         // 	xhr.send(JSON.stringify(send))
         // }
-
+    
         // document.getElementById('submit').addEventListener('click', onReg)
     });
 }).call(this);
