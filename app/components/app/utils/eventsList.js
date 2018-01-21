@@ -79,7 +79,7 @@
             app$utils$eventsList$$events = newEvents
             app$utils$eventsList$$arrKey = Object.keys(app$utils$eventsList$$events)
           }
-
+    
           for (var x in app$utils$eventsList$$arrKey) {
             $("#row").append(
               '<div class="col-md-4 col-sm-6 col-xs-12 category-block  animatedParent animateOnce" data-appear-top-offset="-200">' +
@@ -94,25 +94,25 @@
               '</div>'
             );
           }
-
+    
           function onClick(e, t) {
             var opened = $("#" + t).hasClass("active");
             // console.log(opened)
             // if( opened ){
             //   console.log("__opened");
-
+    
             //   console.log($('#eveList').html())
             // }
             $("#eveList").empty();
             var eveList = app$utils$eventsList$$events[e.target.id]
             // console.log(eveList)
             let str = ''
-
+    
             for (var x in eveList) {
               let phot = (eveList[x].photos && eveList[x].photos.length) ? eveList[x].photos[0] : ''
               if (app$utils$eventsList$$bool != "1") {
                 // console.log(eveList[x].photos[0])
-
+    
                 // console.log(phot)
                 $("#eveList").append(
                   '<div class="col-md-4 col-sm-6 col-xs-12 event-container">' +
@@ -142,17 +142,17 @@
             }
             $("#eveList").toggleClass("show");
           }
-
-
-
+    
+    
+    
           var eventsButton = document.getElementsByClassName('category-block');
           var x = 0;
           // console.log(eventsButton);
           while (x < eventsButton.length) {
-
+    
             // $(".category-block").click(function(e){
             //   console.log(e.target);
-
+    
             // });
             eventsButton[x].addEventListener('click', function (e) {
               // console.log('hi')

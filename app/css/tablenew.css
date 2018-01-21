@@ -4,15 +4,15 @@ body
 }
 div#parent
 {
-	width: 300px;
-	height: 200px;
+	height: 250px;
 	margin: auto;
+	width: 350px;
 	position: relative;
-	border-color: #025477;
-	border-width: 5px;
+	border-color: white;
+	border-width: 0 0 5px 0;
 	border-style: solid;
 	border-radius: 20px 20px 20px 20px;
-	transition-duration: 500ms;
+	
 }
 div#parent:hover
 {

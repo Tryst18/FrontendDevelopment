@@ -1,0 +1,89 @@
+body
+{
+	overflow: auto;
+}
+.acchead
+{
+	text-align: center;
+	color: #e07a5f;
+	padding: 10px;
+	border-style: solid;
+	border-width: 0 0 2px 0;
+	border-color: white;
+	position: relative;
+}
+marquee
+{
+	color: #66fcf1;
+	border-style: solid;
+	border-width: 0 0 2px 0;
+	border-color: white;
+	position: relative;
+}
+span
+{
+	text-decoration: underline;
+	color: white;
+}
+
+a
+{
+	cursor: pointer;
+	color: #e07a5f;
+}
+.pfr1
+{
+	padding: 3px 5px 0 5px;
+	position: relative;
+	border-style: solid;
+	border-width: 0 0 2px 0;
+	border-color: white;
+}
+.pfr
+{
+	text-align: left;
+	color: #e07a5f;
+	padding: 0 0 3px 0;
+}
+ul
+{
+	color: white;
+	margin: 0 0 0 30px;
+}
+li
+{
+	margin: 0 0 2px 0;
+}
+sub
+{
+	font-size: 20px;
+}
+h1
+{
+	text-align: justify;
+	color: #e07a5f;
+}
+h2
+{
+	text-align: justify;
+	color: #e07a5f;
+}
+h4
+{
+	text-align: justify;
+}
+@media screen and (max-width: 460px)
+{
+	h1
+	{
+		font-size: 25px;
+	}
+	h2
+	{
+		font-size: 20px;
+	}
+	h4
+	{
+		font-size: 18px;
+	}
+}
