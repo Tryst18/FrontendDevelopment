@@ -48,6 +48,8 @@ h2#prizess
 input
 {
   float: right;
+  width:100%;
+  color: black;
 }
 .container {
     position: relative;

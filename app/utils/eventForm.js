@@ -70,30 +70,31 @@ document.getElementById('launch').addEventListener('click', function() {
     send = Object.assign(send, {"reg_deadline":(new Date(Date.parse(document.getElementById('dead').value)).toISOString())})
     send = Object.assign(send, {"registration": true, "reg_status": true, "subheading":"", "dtv":[]})
     console.log(send)
-    var xhr = new XMLHttpRequest();
-	xhr.open("POST", url+"/api/user/login", true);
-    xhr.setRequestHeader("Content-type", "application/json");
-    document.getElementById('message').innerHTML = ('loading...')
-	xhr.onreadystatechange = function () {
-        var json = JSON.parse(xhr.responseText);
-		document.getElementById('message').innerHTML = xhr.responseText
-		// console.log(xhr.responseText + " " + xhr.status, "response");
-	    if (xhr.readyState === 4){
-			if (xhr.status === 200) {
-				document.getElementById('message').innerHTML = ('email and password checked')		
-				var data = json.data;
+    // var xhr = new XMLHttpRequest();
+	// xhr.open("POST", url+"/api/user/login", true);
+    // xhr.setRequestHeader("Content-type", "application/json");
+    // document.getElementById('message').innerHTML = ('loading...')
+	// xhr.onreadystatechange = function () {
+    //     var json = JSON.parse(xhr.responseText);
+	// 	document.getElementById('message').innerHTML = xhr.responseText
+	// 	// console.log(xhr.responseText + " " + xhr.status, "response");
+	//     if (xhr.readyState === 4){
+	// 		if (xhr.status === 200) {
+	// 			document.getElementById('message').innerHTML = ('email and password checked')		
+	// 			var data = json.data;
 				// console.log(json.error == false)
-				if (json.error == false) {
-					sessionStorage.setItem("token", data.token);
+				// if (json.error == false) {
+					// sessionStorage.setItem("token", data.token);
                     console.log("login")
                     var xt = new XMLHttpRequest();
                     xt.open("POST", url+"/api/event/create", true)
                     xt.setRequestHeader("Content-type", "application/json")
-                    xt.setRequestHeader("x-auth-token", data.token)
+                    xt.setRequestHeader("x-auth-token", sessionStorage.getItem('token'))
                     xt.onreadystatechange = function() {
                         if (xt.readyState === 4) {
                             if (xt.status === 200) {
-                                document.getElementById('message').innerHTML = ('cool' + (xt.responseText))
+                                let res = JSON.parse(xt.responseText)
+                                document.getElementById('message').innerHTML = ('Cool' + res.message + 'id: ' + res.data.id + 'Name: ' + res.data.name)
                             } else {
                                 document.getElementById('message').innerHTML = ('some problem has occured')
                             }
@@ -101,11 +102,11 @@ document.getElementById('launch').addEventListener('click', function() {
                     }
                     console.log(({"event":send}))
                     xt.send(JSON.stringify({"event":send}))
-				}
-            }
-        }
-    }
-    console.log(JSON.stringify({"email":document.getElementById('em').value, "password":document.getElementById('pa').value}))
-    xhr.send(JSON.stringify({"email":document.getElementById('em').value, "password":document.getElementById('pa').value}))
+				
+    //         }
+    //     }
+    // }
+    // console.log(JSON.stringify({"email":document.getElementById('em').value, "password":document.getElementById('pa').value}))
+    // xhr.send(JSON.stringify({"email":document.getElementById('em').value, "password":document.getElementById('pa').value}))
 
 })

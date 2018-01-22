@@ -136,7 +136,8 @@
                                 regButton.innerHTML = '<a href="../register.html?'+stri+'"><button>'+'Register</button></a>'
                             } else {
                                 // console.log('thi')
-                                regButton.innerHTML = '<input id="source" placeholder="Mention source (Name, if campus ambassador)"><button id="regsin">Register</button>'
+                                // document.getElementById('srcp').innerHTML = '<input id="src" placeholder="Mention source (Name, if campus ambassador)">'
+                                regButton.innerHTML = '<input id="src" name="source" type="text" placeholder="Source (Name, if campus ambassador)"><button id="regsin">Register</button>'
                                 document.getElementById('regsin').addEventListener('click', function(){
                                     // console.log('this happened')
                                     var xr = new XMLHttpRequest();
@@ -162,13 +163,17 @@
                                         }
                                     }
                                     // console.log(event)
-                                    var send = Object.assign({}, {"event_id": app$utils$specifEvent$$event, "members": [{"email":app$utils$specifEvent$$user.email}], team_name: "null", "source": document.getElementById('source')})
+                                    var send = Object.assign({}, {"event_id": app$utils$specifEvent$$event, "members": [{"email":app$utils$specifEvent$$user.email}], team_name: "null", "source": document.getElementById('src').value})
                                     xr.send(JSON.stringify(send))
                                 })
                             } 
                         }
                     } else {
-                        regButton.innerHTML = '<a href="../login.html?'+stri+'"><button>'+'Register</button></a>'
+                        if (data.reg_type=="team") {
+                            regButton.innerHTML = '<a href="../login.html?'+stri+'"><button>'+'Register</button></a>'
+                        } else {
+                            regButton.innerHTML = '<a href="../login.html?'+'"><button>'+'Register</button></a>'
+                        }
                     }
                 } else if (data.reg_mode == "external"){
                     document.getElementById('register').innerHTML = '<a href ="'+data.reg_link+'"><button>Register</button></a>'
