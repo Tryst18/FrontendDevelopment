@@ -5,9 +5,9 @@ import {url} from "./index.js";
 var savUser = JSON.parse(sessionStorage.getItem("authUser"))
 document.getElementById('userInfo').innerHTML =  '<input name="name" type="text" placeholder='+decodeURIComponent(savUser.name)+'>'
 +'<input name="phone" type="text" placeholder='+decodeURIComponent(savUser.phone)+'>'
++'<input name="address" type="text" placeholder='+decodeURIComponent(savUser.year)+'></div>'
 +'<input name="university" type="text" placeholder="'+decodeURIComponent(savUser.university)+'">'
 +'<input name="address" type="text" placeholder='+decodeURIComponent(savUser.address)+'></div>'
-
 function onSubmit() {
 	var xhr = new XMLHttpRequest();
 	xhr.open("POST", url+"/api/user/modify", true);

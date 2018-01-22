@@ -39,9 +39,9 @@
     var app$utils$modify$$savUser = JSON.parse(sessionStorage.getItem("authUser"));
     document.getElementById('userInfo').innerHTML =  '<input name="name" type="text" placeholder='+decodeURIComponent(app$utils$modify$$savUser.name)+'>'
     +'<input name="phone" type="text" placeholder='+decodeURIComponent(app$utils$modify$$savUser.phone)+'>'
+    +'<input name="address" type="text" placeholder='+decodeURIComponent(app$utils$modify$$savUser.year)+'></div>'
     +'<input name="university" type="text" placeholder="'+decodeURIComponent(app$utils$modify$$savUser.university)+'">'
     +'<input name="address" type="text" placeholder='+decodeURIComponent(app$utils$modify$$savUser.address)+'></div>';
-
     function app$utils$modify$$onSubmit() {
         var xhr = new XMLHttpRequest();
         xhr.open("POST", $$index$$url+"/api/user/modify", true);

@@ -59,8 +59,8 @@
                     var data = json.data
                     app$utils$register$$j = data.reg_min_team_size
                     app$utils$register$$i = data.reg_max_team_size - 1
-                    console.log(app$utils$register$$i+" "+app$utils$register$$j)
-                    console.log(app$utils$register$$i+" "+app$utils$register$$j)
+                    // console.log(i+" "+j)
+                    // console.log(i+" "+j)
                     let memsA = 1;
                     var id = 0
                     for (var t = 0; t<app$utils$register$$j-1; t++) {
@@ -70,11 +70,11 @@
                         app$utils$register$$i--;
                         id++;
                     }
-    
+
                     document.getElementById('fir').value = app$utils$register$$user.email
                     let del = document.getElementById('del')
                     let add = document.getElementById('add')
-    
+
                     add.onclick= function () {
                         if (app$utils$register$$i>0) {
                             var form = '<input name="email" type="text" id="mem'+id+'" placeholder="Member\'s registered email">';
@@ -92,7 +92,7 @@
                     }
                     // if ()
                     document.getElementById('teamName').innerHTML = '<input id="tname" type="text" placeholder="Team Name">'
-                    document.getElementById('source').innerHTML = '<input id="source" type="text" placeholder="Source (Mention name if campus ambassador)">'
+                    document.getElementById('source').innerHTML = '<input id="src" type="text" placeholder="Source (Mention name if campus ambassador)">'
                     
                     del.onclick=function () {
                         // console.log(id)
@@ -106,17 +106,18 @@
                             del.hidden = true
                         }
                     }
-    
+
                     document.getElementById('form').hidden = false
-    
-    
+
+
                     // var t = [1,2,3]
                     // t.push(4)
                     // console.log(t)
-    
+
                     function onReg() {
                         var team = document.getElementById('teamInfo').children
                         var teamArr = []
+                        console.log('this')
                         if (sessionStorage.getItem("authUser")) {
                             var user = JSON.parse(sessionStorage.getItem("authUser"))
                             // console.log(user)
@@ -130,8 +131,8 @@
                             }
                         }
                         var teamName = document.getElementById('tname').value
-                        var src = document.getElementById('source').value
-                        // console.log(teamName)
+                        var src = document.getElementById('src').value
+                        console.log(src)
                         var xhr = new XMLHttpRequest();
                         xhr.open("POST", $$index$$url+"/api/register/register", true);
                         xhr.setRequestHeader("Content-type", "application/json");
@@ -164,107 +165,11 @@
                         // console.log(send)
                         xhr.send(JSON.stringify(send))
                     }
-    
+
                     document.getElementById('submit').addEventListener('click', onReg)
                 }
             }
         }
         xhr.send()
-        // console.log(i+" "+j)
-        // let min = i;
-        // var id = 0
-        // for (var t = 0; t<j-1; t++) {
-        // 	var form = '<input name="email" type="text" id="mem'+id+'" placeholder="Member\'s registered email">';
-        // 	document.getElementById('teamInfo').insertAdjacentHTML('beforeend', form);
-        // 	i--;
-        // 	id++;
-        // }
-    
-        // document.getElementById('fir').value = user.email
-        // let del = document.getElementById('del')
-    
-        // document.getElementById('add').onclick= function () {
-        // 	if (i>0) {
-        // 		var form = '<input name="email" type="text" id="mem'+id+'" placeholder="Member\'s registered email">';
-        // 		document.getElementById('teamInfo').insertAdjacentHTML('beforeend', form);
-        // 		// console.log(id)
-        // 		i--;
-        // 		id++;
-        // 	}
-        // 	if (i<min) {
-        // 		del.hidden = false
-                
-        // 	}
-        // 	// console.log(i)
-        // }
-        // // if ()
-        // document.getElementById('teamName').innerHTML = '<input id="tname" type="text" placeholder="Team Name">'
-        // del.onclick=function () {
-        // 	// console.log(id)
-        // 	var rem = document.getElementById('mem'+(id-1))
-        // 	rem.parentNode.removeChild(rem)
-        // 	id--;
-        // 	if (i==min) {
-        // 		del.hidden = true
-        // 	}
-        // }
-    
-    
-    
-    
-        // // var t = [1,2,3]
-        // // t.push(4)
-        // // console.log(t)
-    
-        // function onReg() {
-        // 	var team = document.getElementById('teamInfo').children
-        // 	var teamArr = []
-        // 	if (sessionStorage.getItem("authUser")) {
-        // 		var user = JSON.parse(sessionStorage.getItem("authUser"))
-        // 		// console.log(user)
-        // 		var email = user.email 
-        // 		var teamArr = [{"email": email}]
-        // 	}
-        // 	for (var x in team) {
-        // 		if (x<team.length && (team[x].value != "")) {
-        // 			// console.log(user)
-        // 			teamArr.push({[team[x].name]: team[x].value})
-        // 		}
-        // 	}
-        // 	var teamName = document.getElementById('tname').value
-        // 	// console.log(teamName)
-        // 	var xhr = new XMLHttpRequest();
-        // 	xhr.open("POST", url+"/api/register/register", true);
-        // 	xhr.setRequestHeader("Content-type", "application/json");
-        // 	xhr.setRequestHeader("x-auth-token", sessionStorage.getItem("token"))
-        // 	document.getElementById('loading').style.display = "inline";
-        // 	xhr.onreadystatechange = function () {
-        // 		if (xhr.readyState === 4){
-        // 			var json = JSON.parse(xhr.responseText);
-        // 			var data = json.data;
-        // 			// console.log(JSON.parse(xhr.response))
-        // 			document.getElementById('loading').innerText = json.message;
-        // 			if (xhr.status === 200) {
-                        
-        // 				// console.log(xhr.responseText)
-        // 				if (json.error == false) {
-        // 					document.getElementById('teamInfo').hidden = true
-        // 					document.getElementById('add').hidden = true
-        // 					document.getElementById('teamName').hidden = true
-        // 					document.getElementById('submit').hidden = true
-        // 					del.hidden = true
-        // 					document.getElementById('loading').innerText = json.message;
-        // 					updateUser(false)
-        // 				}
-        // 			}
-        // 		}
-        // 	}
-        // 	// console.log(eveId, "here")
-        // 	var send = (Object.assign({}, {"event_id": eveId, "members": teamArr, "team_name": teamName}))
-        // 	// console.log(send)
-        // 	xhr.send(JSON.stringify(send))
-        // }
-    
-        // document.getElementById('submit').addEventListener('click', onReg)
     });
 }).call(this);
