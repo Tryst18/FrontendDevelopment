@@ -186,9 +186,10 @@
                 for (var y in data.poc) {
                     let keyCont = Object.keys(data.poc[y])
                     for (var x in keyCont) {
-                        cont += keyCont[x] + ': '+ data.poc[y][keyCont[x]] + ((x<keyCont.length-1)? ', ':'')
+                        cont += keyCont[x] + ': '+ ((data.poc[y][keyCont[x]]=="Email")?'mailto:':'')+data.poc[y][keyCont[x]] + ((x<keyCont.length-1)? ', ':'')
+                        cont += '<br>'
                     }
-                    cont += '<br>'
+                    
                 }
                 document.getElementById('poc').innerHTML = cont
 

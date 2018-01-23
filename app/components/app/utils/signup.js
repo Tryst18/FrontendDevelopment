@@ -93,4 +93,11 @@
     }
 
     document.getElementById('submit').addEventListener('click', app$utils$signup$$onSubmit);
+
+    document.onkeyup = function(e) {
+        var key = e.keyCode ? e.keyCode : e.which;
+        if (key == 13) {
+            app$utils$signup$$onSubmit();
+        }
+    }
 }).call(this);

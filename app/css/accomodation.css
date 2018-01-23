@@ -33,7 +33,14 @@ a
 {
 	cursor: pointer;
 	color: #e07a5f;
+	text-decoration: underline;
 }
+
+#link{
+	color: #e07a5f;
+	text-decoration: underline;
+}
+
 .pfr1
 {
 	padding: 3px 5px 0 5px;
@@ -45,17 +52,21 @@ a
 
 .pfrb
 {
-	padding: 3px 5px 0 5px;
+	padding: 3px 5px 5px 5px;
 	position: relative;
 	border-style: solid;
 	border-width: 0 0 2px 0;
 	border-color: white;
+	text-align: center;
 }
 
+#button {
+	font-size: 1.7em;
+}
 
 .pfr
 {
-	text-align: left;
+	text-align: center;
 	color: #e07a5f;
 	padding: 0 0 3px 0;
 }
@@ -86,7 +97,9 @@ h2
 }
 h4
 {
+	color: #ffffff;
 	text-align: justify;
+	font-size: 1.1em;
 }
 @media screen and (max-width: 460px)
 {

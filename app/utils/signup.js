@@ -59,3 +59,10 @@ function onSubmit() {
 }
 
 document.getElementById('submit').addEventListener('click', onSubmit);
+
+document.onkeyup = function(e) {
+	var key = e.keyCode ? e.keyCode : e.which;
+	if (key == 13) {
+		onSubmit();
+	}
+}
