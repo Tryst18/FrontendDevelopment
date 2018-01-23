@@ -48,6 +48,14 @@
     //     }
     // })
 
+    document.getElementById('cat').addEventListener('change', function() {
+        if (document.getElementById('c2').checked) {
+            document.getElementById('depName').hidden = false
+        } else {
+            document.getElementById('depName').hidden = true
+        }
+    });
+
     document.getElementById('reg_type').addEventListener('change', function() {
         if (document.getElementById('mo2').checked) {
             document.getElementById('team').hidden = false
@@ -79,7 +87,11 @@
                         if (t.children[x].checked) {
                             app$utils$eventForm$$send = Object.assign(app$utils$eventForm$$send, {[t.children[x].name]:t.children[x].value})
                             if ([t.children[x].name] == "category"){
-                                app$utils$eventForm$$send = Object.assign(app$utils$eventForm$$send, {"category_name":t.children[x].value})
+                                if (t.children[x].value == "department") {
+                                    app$utils$eventForm$$send = Object.assign(app$utils$eventForm$$send, {"category_name":document.getElementById('depName').value})
+                                } else {
+                                    app$utils$eventForm$$send = Object.assign(app$utils$eventForm$$send, {"category_name":t.children[x].value})
+                                }
                             }
                         }
                     }

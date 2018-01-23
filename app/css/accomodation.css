@@ -2,21 +2,24 @@ body
 {
 	overflow: auto;
 }
+
+
+
 .acchead
 {
 	text-align: center;
 	color: #e07a5f;
 	padding: 10px;
-	border-style: solid;
+	/* border-style: solid;
 	border-width: 0 0 2px 0;
-	border-color: white;
+	border-color: white; */
 	position: relative;
 }
 marquee
 {
 	color: #66fcf1;
 	border-style: solid;
-	border-width: 0 0 2px 0;
+	border-width: 2px 0 2px 0;
 	border-color: white;
 	position: relative;
 }
@@ -39,6 +42,17 @@ a
 	border-width: 0 0 2px 0;
 	border-color: white;
 }
+
+.pfrb
+{
+	padding: 3px 5px 0 5px;
+	position: relative;
+	border-style: solid;
+	border-width: 0 0 2px 0;
+	border-color: white;
+}
+
+
 .pfr
 {
 	text-align: left;
@@ -62,11 +76,13 @@ h1
 {
 	text-align: justify;
 	color: #e07a5f;
+	font-size: 2.85em;
 }
 h2
 {
 	text-align: justify;
 	color: #e07a5f;
+	font-size: 2.5em;
 }
 h4
 {
