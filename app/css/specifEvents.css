@@ -15,6 +15,7 @@
 {
   width: auto;
   height: auto;
+  min-height:300px; 
   max-height: 300px;
   max-width: 300px;
   border-radius: 50%;

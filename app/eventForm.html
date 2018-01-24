@@ -15,8 +15,9 @@
                 <input name="category" type="radio" id="c3" value="flagship">Flagship
                 <input name="category" type="radio" id="c4" value="social">Social
                 <input name="category" type="radio" id="c5" value="robotics">Robotics
+                <input name="category" type="radio" id="c6" value="guest">Guest
                 <br>
-                <input id="depName" type="text" placeholder="Department Name" hidden>
+                <input id="depName" type="text" placeholder="Sub Category" hidden>
             </fieldset>
             <fieldset id="type" class="radioset">
                 <legend>Type</legend>
@@ -50,7 +51,16 @@
                     <input name="reg_mode" type="radio" id="ty2" value="email">Email
                     <input name="reg_mode" type="radio" id="ty3" value="external">External
             </fieldset>
-                    
+            <fieldset id="remReq" class="checkB">
+                <legend>Remark required</legend>
+                <input type="checkbox" id="rem1">Remark required
+                <input name="rules" type="text" id="place" placeholder="Place Holder" hidden>
+            </fieldset>
+            <fieldset id="remReq" class="checkB">
+                <legend>Warning message</legend>
+                <input type="checkbox" id="wm1">Warning message
+                <input name="subheading" type="text" id="sub" placeholder="Message" hidden>
+            </fieldset>
             <input id="t3" name="reg_email" type="text" placeholder="Email" hidden>
             <input id="t4" name="reg_link" type="text" placeholder="Link" hidden>
             

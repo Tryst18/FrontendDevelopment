@@ -59,6 +59,8 @@ $(document).ready(function(){
 				// if ()
 				document.getElementById('teamName').innerHTML = '<input id="tname" type="text" placeholder="Team Name">'
 				document.getElementById('source').innerHTML = '<input id="src" type="text" placeholder="Source (Mention name if campus ambassador)">'
+				if (data.rules!=""){document.getElementById('remD').innerHTML = '<input id="remark" type="text" placeholder="'+data.rules+'">'} else {document.getElementById('remD').hidden = true}
+				if (data.subheading!=""){document.getElementById('warnD').innerHTML = '<input id="warn" type="text" value="'+data.subheading+'" disabled>'} else {document.getElementById('warnD').hidden = true}
 				
 				del.onclick=function () {
 					// console.log(id)
@@ -119,6 +121,8 @@ $(document).ready(function(){
 									document.getElementById('teamName').hidden = true
 									document.getElementById('submit').hidden = true
 									document.getElementById('source').hidden = true
+									document.getElementById('remark').hidden = true
+									document.getElementById('warn').hidden = true
 									del.hidden = true
 									document.getElementById('loading').innerText = json.message;
 									updateUser(false)
@@ -127,7 +131,7 @@ $(document).ready(function(){
 						}
 					}
 					// console.log(eveId, "here")
-					var send = (Object.assign({}, {"event_id": eveId, "members": teamArr, "team_name": teamName, "source": src}))
+					var send = (Object.assign({}, {"event_id": eveId, "members": teamArr, "team_name": teamName, "source": src, "remark":document.getElementById('remark').value}))
 					// console.log(send)
 					xhr.send(JSON.stringify(send))
 				}

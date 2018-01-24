@@ -15,7 +15,7 @@ var send = {}
 // })
 
 document.getElementById('cat').addEventListener('change', function() {
-    if (document.getElementById('c2').checked) {
+    if (document.getElementById('c2').checked || document.getElementById('c1').checked) {
         document.getElementById('depName').hidden = false
     } else {
         document.getElementById('depName').hidden = true
@@ -27,6 +27,22 @@ document.getElementById('reg_type').addEventListener('change', function() {
         document.getElementById('team').hidden = false
     } else {
         document.getElementById('team').hidden = true
+    }
+})
+
+document.getElementById('wm1').addEventListener('click', function() {
+    if (document.getElementById('wm1').checked) {
+        document.getElementById('sub').hidden = false
+    } else {
+        document.getElementById('sub').hidden = true
+    }
+})
+
+document.getElementById('rem1').addEventListener('click', function() {
+    if (document.getElementById('rem1').checked) {
+        document.getElementById('place').hidden = false
+    } else {
+        document.getElementById('place').hidden = true
     }
 })
 
@@ -53,7 +69,7 @@ document.getElementById('launch').addEventListener('click', function() {
                     if (t.children[x].checked) {
                         send = Object.assign(send, {[t.children[x].name]:t.children[x].value})
                         if ([t.children[x].name] == "category"){
-                            if (t.children[x].value == "department") {
+                            if (t.children[x].value == "department" || t.children[x].value == "club") {
                                 send = Object.assign(send, {"category_name":document.getElementById('depName').value})
                             } else {
                                 send = Object.assign(send, {"category_name":t.children[x].value})
@@ -80,7 +96,7 @@ document.getElementById('launch').addEventListener('click', function() {
 
     send = Object.assign(send, {"photos":[document.getElementById('phot').value]})
     send = Object.assign(send, {"reg_deadline":(new Date(Date.parse(document.getElementById('dead').value)).toISOString())})
-    send = Object.assign(send, {"registration": true, "reg_status": true, "subheading":"", "dtv":[]})
+    send = Object.assign(send, {"registration": true, "reg_status": true, "subheading":document.getElementById('sub').value, "rules":document.getElementById('place').value, "dtv":[]})
     console.log(send)
     // var xhr = new XMLHttpRequest();
 	// xhr.open("POST", url+"/api/user/login", true);
