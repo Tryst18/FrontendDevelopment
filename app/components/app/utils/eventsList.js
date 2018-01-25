@@ -84,16 +84,20 @@
             $("#row").append(
               '<div class="col-md-4 col-sm-6 col-xs-12 category-block  animatedParent animateOnce" data-appear-top-offset="-200">' +
               '<div class="container">' +
-              '<img src=' + './images/' + app$utils$eventsList$$arrKey[x] + '.png' + ' class="img-responsive img-circle oneeighty mx-auto category-img" alt="">' +
+              '<img src=' + './images/' + app$utils$eventsList$$arrKey[x] + '.png' + ' class="img-responsive oneeighty mx-auto category-img" alt="">' +
               '<button class="overlay" id=' + app$utils$eventsList$$arrKey[x] + '>' + app$utils$eventsList$$arrKey[x].toUpperCase() + '</button>' +
               '<h4>' + app$utils$eventsList$$arrKey[x].toUpperCase() + '</h4>' +
-              '<div class="description-block mx-auto container-fluid" id="' + x + '">' +
-              '<div class="row" id="eveList"></div>' +
-              '</div>' +
               '</div>' +
               '</div>'
             );
           }
+          $("#row").append(
+            '<div class="description-block mx-auto container-fluid">' +
+            
+            '<div class="row" id="eveList">' +
+            '</div>' +
+            '</div>'
+          )
 
           function onClick(e, t) {
             var opened = $("#" + t).hasClass("active");
@@ -104,6 +108,9 @@
             //   console.log($('#eveList').html())
             // }
             $("#eveList").empty();
+            $("#eveList").append(
+              '<div id="cloBut"><input type="image" src="./images/close.png" id="close"></div>'
+            )
             var eveList = app$utils$eventsList$$events[e.target.id]
             // console.log(eveList)
             let str = ''
@@ -116,7 +123,7 @@
                 // console.log(phot)
                 $("#eveList").append(
                   '<div class="col-md-4 col-sm-6 col-xs-12 event-container">' +
-                  '<img src="' + $$index$$linkExtract(phot) + '" class="img-responsive event-img">' +
+                  '<div class="fixed mx-auto"><img src="' + $$index$$linkExtract(phot) + '" class="img-responsive event-img"></div>' +
                   '<p class="mx-auto">' +
                   '<a href=../specifEvent.html?' + eveList[x].id + '>' + eveList[x].name + '</a>' +
                   '</p>' +
@@ -130,7 +137,7 @@
                     // console.log(eveList[x].name)
                     $("#eveList").append(
                       '<div class="col-md-4 col-sm-6 col-xs-12 event-container">' +
-                      '<img src="' + $$index$$linkExtract(phot) + '" class="img-responsive event-img">' +
+                      '<div class="fixed mx-auto"><img src="' + $$index$$linkExtract(phot) + '" class="img-responsive event-img"></div>' +
                       '<p class="mx-auto">' +
                       '<a href=../specifEvent.html?' + eveList[x].id + '>' + eveList[x].name + '</a>' +
                       '</p>' +
@@ -139,8 +146,20 @@
                   }
                 }
               }
+
+            }
+            var images = Array.prototype.slice.call(document.getElementsByClassName('event-img'), 0)
+            for (var x in images) {
+              console.log(images[x])
+              console.log(images[x].parentNode)
+              images[x].onload = function () {
+                this.parentNode.style.backgroundImage = "none"
+              }
             }
             $("#eveList").toggleClass("show");
+            document.getElementById('close').addEventListener('click', function(){
+              $("#eveList").toggleClass("show");
+            })
           }
 
 

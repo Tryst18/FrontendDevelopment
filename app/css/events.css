@@ -141,7 +141,9 @@ height: auto;
 }
 .description-block{
   max-width:1180px;
-  width:93vw;
+  /* width:93vw; */
+  margin-left: 4%;
+  margin-right: 4%;
   height:fit-content;
   min-height:0;
   position: absolute;
@@ -177,4 +179,22 @@ height: auto;
 
 #eveList {
   background-color: black;
+}
+
+.fixed {
+  height: 200px;
+  width: 300px;
+  background-image: url("../images/loader.gif");
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
+#closBut {
+  width: 100%;
+}
+
+#close {
+  float: none;
+  max-height: 30px;
+  width: auto;
 }
