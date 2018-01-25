@@ -121,7 +121,7 @@ $(document).ready(function(){
 									document.getElementById('teamName').hidden = true
 									document.getElementById('submit').hidden = true
 									document.getElementById('source').hidden = true
-									document.getElementById('remark').hidden = true
+									if (data.rules=="") {document.getElementById('remark').hidden = true}
 									document.getElementById('warn').hidden = true
 									del.hidden = true
 									document.getElementById('loading').innerText = json.message;

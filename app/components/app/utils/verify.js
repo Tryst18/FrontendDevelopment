@@ -18,11 +18,13 @@
                         // console.log(dta)
                         // console.log("this hap")
                         sessionStorage.setItem("authUser", JSON.stringify(dta))
-                        let userReg = dta.registrations
+                        let userReg = dta.registration
+                        // console.log(dta)
                         let uDict = {}
                         for (var x in userReg) {
                             uDict[userReg[x].event_id] = 1
                         }
+                        // console.log(uDict)
                         sessionStorage.setItem("useReg", JSON.stringify(uDict))
                         if (rel) {
                             document.location.reload(true)
@@ -45,12 +47,12 @@
     let app$utils$verify$$xhr = new XMLHttpRequest();
     app$utils$verify$$xhr.open("GET", url+"/api/user/verify_registration/"+app$utils$verify$$token, true);
     app$utils$verify$$xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    document.getElementById('veri').hidden = true;
+    // document.getElementById('veri').hidden = true
     app$utils$verify$$xhr.onreadystatechange = function () {
         if (app$utils$verify$$xhr.readyState === 4){
-
+            document.getElementById('veri').hidden = false
+            document.getElementById('veri').innerHTML = JSON.parse(app$utils$verify$$xhr.responseText).message    
             if (app$utils$verify$$xhr.status === 200) {
-                document.getElementById('veri').hidden = false
                 document.getElementById('veri').innerHTML = JSON.parse(app$utils$verify$$xhr.responseText).message    
             }
         }

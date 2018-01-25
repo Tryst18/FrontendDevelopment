@@ -18,11 +18,13 @@
                         // console.log(dta)
                         // console.log("this hap")
                         sessionStorage.setItem("authUser", JSON.stringify(dta))
-                        let userReg = dta.registrations
+                        let userReg = dta.registration
+                        // console.log(dta)
                         let uDict = {}
                         for (var x in userReg) {
                             uDict[userReg[x].event_id] = 1
                         }
+                        // console.log(uDict)
                         sessionStorage.setItem("useReg", JSON.stringify(uDict))
                         if (rel) {
                             document.location.reload(true)
@@ -68,12 +70,9 @@
           let uDict = {}
           // console.log(arrKey);
           if (app$utils$eventsList$$bool == "1") {
-            let usReg = app$utils$eventsList$$user.registration
-            for (var uR in usReg) {
-              uDict[usReg[uR].event_id] = 1;
-            }
-            console.log(uDict)
-            console.log(JSON.parse(sessionStorage.getItem("useReg")))
+            uDict = JSON.parse(sessionStorage.getItem("useReg"))
+            // console.log(uDict)
+            // console.log(JSON.parse(sessionStorage.getItem("useReg")))
             let newEvents = {}
             for (var y in app$utils$eventsList$$arrKey) {
               for (var ev in app$utils$eventsList$$events[app$utils$eventsList$$arrKey[y]]) {
@@ -88,15 +87,17 @@
           }
 
           for (var x in app$utils$eventsList$$arrKey) {
-            $("#row").append(
-              '<div class="col-md-4 col-sm-6 col-xs-12 category-block  animatedParent animateOnce" data-appear-top-offset="-200">' +
-              '<div class="container">' +
-              '<img src=' + './images/' + app$utils$eventsList$$arrKey[x] + '.png' + ' class="img-responsive oneeighty mx-auto category-img" alt="">' +
-              '<button class="overlay" id=' + app$utils$eventsList$$arrKey[x] + '>' + app$utils$eventsList$$arrKey[x].toUpperCase() + '</button>' +
-              '<h4>' + app$utils$eventsList$$arrKey[x].toUpperCase() + '</h4>' +
-              '</div>' +
-              '</div>'
-            );
+            if (app$utils$eventsList$$arrKey[x]!="guest") {
+              $("#row").append(
+                '<div class="col-md-4 col-sm-6 col-xs-12 category-block  animatedParent animateOnce" data-appear-top-offset="-200">' +
+                '<div class="container">' +
+                '<img src=' + './images/' + app$utils$eventsList$$arrKey[x] + '.png' + ' class="img-responsive oneeighty mx-auto category-img" alt="">' +
+                '<button class="overlay" id=' + app$utils$eventsList$$arrKey[x] + '>' + app$utils$eventsList$$arrKey[x].toUpperCase() + '</button>' +
+                '<h4>' + app$utils$eventsList$$arrKey[x].toUpperCase() + '</h4>' +
+                '</div>' +
+                '</div>'
+              );
+            }
           }
           $("#row").append(
             '<div class="description-block mx-auto container-fluid">' +

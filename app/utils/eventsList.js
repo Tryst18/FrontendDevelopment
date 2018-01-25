@@ -28,12 +28,9 @@ xhr.onreadystatechange = function () {
       let uDict = {}
       // console.log(arrKey);
       if (bool == "1") {
-        let usReg = user.registration
-        for (var uR in usReg) {
-          uDict[usReg[uR].event_id] = 1;
-        }
-        console.log(uDict)
-        console.log(JSON.parse(sessionStorage.getItem("useReg")))
+        uDict = JSON.parse(sessionStorage.getItem("useReg"))
+        // console.log(uDict)
+        // console.log(JSON.parse(sessionStorage.getItem("useReg")))
         let newEvents = {}
         for (var y in arrKey) {
           for (var ev in events[arrKey[y]]) {
@@ -48,15 +45,17 @@ xhr.onreadystatechange = function () {
       }
 
       for (var x in arrKey) {
-        $("#row").append(
-          '<div class="col-md-4 col-sm-6 col-xs-12 category-block  animatedParent animateOnce" data-appear-top-offset="-200">' +
-          '<div class="container">' +
-          '<img src=' + './images/' + arrKey[x] + '.png' + ' class="img-responsive oneeighty mx-auto category-img" alt="">' +
-          '<button class="overlay" id=' + arrKey[x] + '>' + arrKey[x].toUpperCase() + '</button>' +
-          '<h4>' + arrKey[x].toUpperCase() + '</h4>' +
-          '</div>' +
-          '</div>'
-        );
+        if (arrKey[x]!="guest") {
+          $("#row").append(
+            '<div class="col-md-4 col-sm-6 col-xs-12 category-block  animatedParent animateOnce" data-appear-top-offset="-200">' +
+            '<div class="container">' +
+            '<img src=' + './images/' + arrKey[x] + '.png' + ' class="img-responsive oneeighty mx-auto category-img" alt="">' +
+            '<button class="overlay" id=' + arrKey[x] + '>' + arrKey[x].toUpperCase() + '</button>' +
+            '<h4>' + arrKey[x].toUpperCase() + '</h4>' +
+            '</div>' +
+            '</div>'
+          );
+        }
       }
       $("#row").append(
         '<div class="description-block mx-auto container-fluid">' +
