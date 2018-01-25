@@ -45,7 +45,7 @@ xhr.onreadystatechange = function () {
       }
 
       for (var x in arrKey) {
-        if (arrKey[x]!="guest") {
+        if (arrKey[x]!="guest" || bool == "1") {
           $("#row").append(
             '<div class="col-md-4 col-sm-6 col-xs-12 category-block  animatedParent animateOnce" data-appear-top-offset="-200">' +
             '<div class="container">' +

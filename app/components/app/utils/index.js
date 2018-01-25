@@ -22,7 +22,7 @@
                         // console.log(dta)
                         let uDict = {}
                         for (var x in userReg) {
-                            uDict[userReg[x].event_id] = 1
+                            uDict[userReg[x].event_id] = userReg[x].reg_id
                         }
                         // console.log(uDict)
                         sessionStorage.setItem("useReg", JSON.stringify(uDict))

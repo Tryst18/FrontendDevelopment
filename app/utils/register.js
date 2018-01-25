@@ -117,8 +117,8 @@ $(document).ready(function(){
 					xhr.onreadystatechange = function () {
 						if (xhr.readyState === 4){
 							var json = JSON.parse(xhr.responseText);
-							var data = json.data;
-							// console.log(JSON.parse(xhr.response))
+							var dat = json.data;
+							console.log(JSON.parse(xhr.response))
 							document.getElementById('loading').innerText = json.message;
 							if (xhr.status === 200) {
 								
@@ -129,8 +129,8 @@ $(document).ready(function(){
 									document.getElementById('teamName').hidden = true
 									document.getElementById('submit').hidden = true
 									document.getElementById('source').hidden = true
-									if (data.rules!="") {document.getElementById('remark').hidden = true}
-									document.getElementById('warn').hidden = true
+									if (data.rules!="") {console.log(data);document.getElementById('remark').hidden = true}
+									if (data.subheading!="") {document.getElementById('warn').hidden = true}
 									del.hidden = true
 									document.getElementById('loading').innerText = json.message;
 									updateUser(false)

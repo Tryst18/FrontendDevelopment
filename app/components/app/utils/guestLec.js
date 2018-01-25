@@ -22,7 +22,7 @@
                         // console.log(dta)
                         let uDict = {}
                         for (var x in userReg) {
-                            uDict[userReg[x].event_id] = 1
+                            uDict[userReg[x].event_id] = userReg[x].reg_id
                         }
                         // console.log(uDict)
                         sessionStorage.setItem("useReg", JSON.stringify(uDict))
@@ -42,7 +42,9 @@
         return 'https://drive.google.com/uc?id='+arr[1]+'&export=view'
     }
 
-
+    $$index$$updateUser(false);
+    let app$utils$guestLec$$useReg = (sessionStorage.getItem("authUser"))?JSON.parse(sessionStorage.getItem("useReg")):{}
+    let app$utils$guestLec$$email = (sessionStorage.getItem("authUser"))?JSON.parse(sessionStorage.getItem("authUser")).email:{}
     let app$utils$guestLec$$xhr = new XMLHttpRequest();
     app$utils$guestLec$$xhr.open("GET", $$index$$url + "/api/event/getCategories", true);
     app$utils$guestLec$$xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -54,12 +56,79 @@
                 let guestLecs = json.data.guest
                 console.log(guestLecs)
                 $('#guests').append(            
-                    '<div class="row" id="">'+
-                        '<div class="col-md-4 col-sm-4 col-sm-4">'+
-
-                        '</div>'+
-                    '</div>'
+                    '<div class="row">'
                 )
+                for (var x in guestLecs) {
+                    $('#guests').append(          
+                        '<div class="col-md-4 col-sm-4 col-sm-4 guestElement">'+
+                        '<div class="fixed"><img src="'+$$index$$linkExtract(guestLecs[x].photos[0])+'" class="event-img"></div>'+
+                        '<p>' + guestLecs[x].name + '</p>' + 
+                        '<p class="desc">' + guestLecs[x].description + '</p>' +
+                        '<button id="'+guestLecs[x].id+'" class="regisGuest">'+ ((guestLecs[x].id in app$utils$guestLec$$useReg)?'Delete Registration':'Register') + '</button>'+
+                        '</div>'
+                    )
+                    if (x%3==2) {
+                        $('#guests').append(
+                            '</div>'+
+                            '<div class="row">'
+                        )
+                    }
+
+                    document.getElementById(guestLecs[x].id).addEventListener('click', function(e) {
+                        let xh = new XMLHttpRequest()
+                        console.log(app$utils$guestLec$$useReg, e.target.id)
+                        if ((sessionStorage.getItem("authUser"))) {
+                        if (e.target.id in app$utils$guestLec$$useReg) {
+                            
+                            // console.log(useReg[e.target.id], "here")
+                            xh.open("POST", $$index$$url+"/api/register/delete/"+app$utils$guestLec$$useReg[e.target.id], true)
+                            xh.setRequestHeader("Content-type", "application/json");
+                            xh.setRequestHeader("x-auth-token", sessionStorage.getItem("token"))
+                            xh.onreadystatechange = function () {
+                                if (xh.readyState === 4) {
+                                    // console.log(xh.responseText)
+                                    if (xh.status === 200) {
+                                        delete app$utils$guestLec$$useReg[e.target.id]
+                                        sessionStorage.setItem("useReg", JSON.stringify(app$utils$guestLec$$useReg))
+                                        e.target.innerText = 'Register'
+                                    }
+                                }
+                            }
+                            xh.send()
+                        } else {
+                            xh.open("POST", $$index$$url+"/api/register/register", true)
+                            xh.setRequestHeader("Content-type", "application/json");
+                            xh.setRequestHeader("x-auth-token", sessionStorage.getItem("token"))
+                            xh.onreadystatechange = function () {
+                                if (xh.readyState === 4) {
+                                    // console.log(xh.responseText)
+                                    let data = JSON.parse(xh.responseText).data
+                                    if (xh.status === 200) {
+                                        app$utils$guestLec$$useReg[e.target.id] = data.reg_id
+                                        sessionStorage.setItem("useReg", JSON.stringify(app$utils$guestLec$$useReg))
+                                        e.target.innerText = 'Delete Registration'
+                                    }
+                                }
+                            }
+                            // console.log(e.target.id)
+                            var send = (Object.assign({}, {"event_id": e.target.id, "members": [{"email":app$utils$guestLec$$email}], "team_name": "", "source": "", "remark":""}))
+                            // console.log(send)
+                            xh.send(JSON.stringify(send))
+                        }
+                        } else {
+                            document.location.href = "../login.html"      
+                        }
+                    })
+                }
+                $('#guests').append(            
+                    '<div>'
+                )
+                var images = Array.prototype.slice.call(document.getElementsByClassName('event-img'), 0)
+                for (var x in images) {
+                  images[x].onload = function () {
+                    this.parentNode.style.backgroundImage = "none"
+                  }
+                }
             }
         }
     }

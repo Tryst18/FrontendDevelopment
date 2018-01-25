@@ -22,7 +22,7 @@
                         // console.log(dta)
                         let uDict = {}
                         for (var x in userReg) {
-                            uDict[userReg[x].event_id] = 1
+                            uDict[userReg[x].event_id] = userReg[x].reg_id
                         }
                         // console.log(uDict)
                         sessionStorage.setItem("useReg", JSON.stringify(uDict))
@@ -87,7 +87,7 @@
           }
 
           for (var x in app$utils$eventsList$$arrKey) {
-            if (app$utils$eventsList$$arrKey[x]!="guest") {
+            if (app$utils$eventsList$$arrKey[x]!="guest" || app$utils$eventsList$$bool == "1") {
               $("#row").append(
                 '<div class="col-md-4 col-sm-6 col-xs-12 category-block  animatedParent animateOnce" data-appear-top-offset="-200">' +
                 '<div class="container">' +

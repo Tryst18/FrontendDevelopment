@@ -1,0 +1,14 @@
+.guestElement {
+  height: 60%; }
+
+.fixed {
+  height: 256px;
+  width: 256px;
+  background-image: url("../images/loader.gif");
+  background-position: 50%;
+  background-repeat: no-repeat; }
+
+.desc {
+  font-size: 20px;
+  margin: 0;
+  text-align: left; }
