@@ -53,6 +53,13 @@
                 let json = JSON.parse(app$utils$guestLec$$xhr.responseText)
                 let guestLecs = json.data.guest
                 console.log(guestLecs)
+                $('#guests').append(            
+                    '<div class="row" id="">'+
+                        '<div class="col-md-4 col-sm-4 col-sm-4">'+
+
+                        '</div>'+
+                    '</div>'
+                )
             }
         }
     }

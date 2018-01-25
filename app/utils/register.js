@@ -83,6 +83,12 @@ $(document).ready(function(){
 				// console.log(t)
 
 				function onReg() {
+					console.log('hi')
+					if (data.rules!="" && document.getElementById('remark').value == "") {
+						console.log('hello')
+						document.getElementById('loading').style.display = "inline";
+						document.getElementById('loading').innerText = "Fill all fields";	
+					} else {
 					var team = document.getElementById('teamInfo').children
 					var teamArr = []
 					console.log('this')
@@ -101,10 +107,12 @@ $(document).ready(function(){
 					var teamName = document.getElementById('tname').value
 					var src = document.getElementById('src').value
 					console.log(src)
+
 					var xhr = new XMLHttpRequest();
 					xhr.open("POST", url+"/api/register/register", true);
 					xhr.setRequestHeader("Content-type", "application/json");
 					xhr.setRequestHeader("x-auth-token", sessionStorage.getItem("token"))
+					document.getElementById('loading').innerText = "Loading";
 					document.getElementById('loading').style.display = "inline";
 					xhr.onreadystatechange = function () {
 						if (xhr.readyState === 4){
@@ -121,7 +129,7 @@ $(document).ready(function(){
 									document.getElementById('teamName').hidden = true
 									document.getElementById('submit').hidden = true
 									document.getElementById('source').hidden = true
-									if (data.rules=="") {document.getElementById('remark').hidden = true}
+									if (data.rules!="") {document.getElementById('remark').hidden = true}
 									document.getElementById('warn').hidden = true
 									del.hidden = true
 									document.getElementById('loading').innerText = json.message;
@@ -135,7 +143,7 @@ $(document).ready(function(){
 					// console.log(send)
 					xhr.send(JSON.stringify(send))
 				}
-
+				}
 				document.getElementById('submit').addEventListener('click', onReg)
 			}
 		}
