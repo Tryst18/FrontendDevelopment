@@ -33,6 +33,7 @@ xhr.onreadystatechange = function () {
           uDict[usReg[uR].event_id] = 1;
         }
         console.log(uDict)
+        console.log(JSON.parse(sessionStorage.getItem("useReg")))
         let newEvents = {}
         for (var y in arrKey) {
           for (var ev in events[arrKey[y]]) {
