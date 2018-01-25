@@ -18,6 +18,12 @@
                         // console.log(dta)
                         // console.log("this hap")
                         sessionStorage.setItem("authUser", JSON.stringify(dta))
+                        let userReg = dta.registrations
+                        let uDict = {}
+                        for (var x in userReg) {
+                            uDict[userReg[x].event_id] = 1
+                        }
+                        sessionStorage.setItem("useReg", JSON.stringify(uDict))
                         if (rel) {
                             document.location.reload(true)
                         }
@@ -165,7 +171,7 @@
                             }
                         }
                         // console.log(eveId, "here")
-                        var send = (Object.assign({}, {"event_id": app$utils$register$$eveId, "members": teamArr, "team_name": teamName, "source": src, "remark":document.getElementById('remark').value}))
+                        var send = (Object.assign({}, {"event_id": app$utils$register$$eveId, "members": teamArr, "team_name": teamName, "source": src, "remark":(data.rules=="")?'':document.getElementById('remark').value}))
                         // console.log(send)
                         xhr.send(JSON.stringify(send))
                     }

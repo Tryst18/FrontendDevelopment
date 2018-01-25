@@ -18,6 +18,12 @@
                         // console.log(dta)
                         // console.log("this hap")
                         sessionStorage.setItem("authUser", JSON.stringify(dta))
+                        let userReg = dta.registrations
+                        let uDict = {}
+                        for (var x in userReg) {
+                            uDict[userReg[x].event_id] = 1
+                        }
+                        sessionStorage.setItem("useReg", JSON.stringify(uDict))
                         if (rel) {
                             document.location.reload(true)
                         }
@@ -67,6 +73,7 @@
               uDict[usReg[uR].event_id] = 1;
             }
             console.log(uDict)
+            console.log(JSON.parse(sessionStorage.getItem("useReg")))
             let newEvents = {}
             for (var y in app$utils$eventsList$$arrKey) {
               for (var ev in app$utils$eventsList$$events[app$utils$eventsList$$arrKey[y]]) {

@@ -131,7 +131,7 @@ $(document).ready(function(){
 						}
 					}
 					// console.log(eveId, "here")
-					var send = (Object.assign({}, {"event_id": eveId, "members": teamArr, "team_name": teamName, "source": src, "remark":document.getElementById('remark').value}))
+					var send = (Object.assign({}, {"event_id": eveId, "members": teamArr, "team_name": teamName, "source": src, "remark":(data.rules=="")?'':document.getElementById('remark').value}))
 					// console.log(send)
 					xhr.send(JSON.stringify(send))
 				}
