@@ -45,7 +45,7 @@
     var app$utils$verify$$token = document.location.search.split("?")[1];
 
     let app$utils$verify$$xhr = new XMLHttpRequest();
-    app$utils$verify$$xhr.open("GET", url+"/api/user/verify_registration/"+app$utils$verify$$token, true);
+    app$utils$verify$$xhr.open("GET", $$index$$url+"/api/user/verify_registration/"+app$utils$verify$$token, true);
     app$utils$verify$$xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     // document.getElementById('veri').hidden = true
     app$utils$verify$$xhr.onreadystatechange = function () {
@@ -57,4 +57,5 @@
             }
         }
     }
+    app$utils$verify$$xhr.send();
 }).call(this);

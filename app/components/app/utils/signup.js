@@ -60,6 +60,7 @@
                         document.getElementById('errServ').style.display = "inline";
                     } else {
                         document.getElementById('userInfo').innerHTML = '<p>Check your email for confirmation link</p>'
+                        document.getElementById('submit').hidden = true
                     }
                 } else if (xhr.status === 401){
                     document.getElementById('errNoUser').style.display = "inline";

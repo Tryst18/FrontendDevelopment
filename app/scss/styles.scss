@@ -8,13 +8,6 @@ body{
   
 }
 
-#particle-js {
-	height: auto;
-	width: 100%;
-	position: absolute;
-	top: 0;
-}
-
 .init {
 	position: fixed;
 	margin-top: 80px;
@@ -31,7 +24,7 @@ body{
 #particles-js {
 	height: 100%; 
 	width: 100%; 
-	position: absolute;
+	position: fixed;
 	top: 0;
 }
 

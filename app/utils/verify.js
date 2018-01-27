@@ -1,4 +1,4 @@
-import "./index.js"
+import {url} from "./index.js"
 
 var token = document.location.search.split("?")[1]
 
@@ -15,3 +15,4 @@ xhr.onreadystatechange = function () {
         }
     }
 }
+xhr.send()

@@ -35,7 +35,7 @@ function buttonCtrl(e, str) {
                         delete useReg[tar]
                         sessionStorage.setItem("useReg", JSON.stringify(useReg))
                         e.target.innerText = 'Register'
-                        if (str=='v') {document.getElementById(tar).innerText = 'Register'}
+                        if (str=='v') {document.getElementById(tar).innerText = 'Register'; document.getElementById(tar).classList.toggle('reg')}
                         e.target.classList.toggle('reg')
                     }
                 }
@@ -53,7 +53,7 @@ function buttonCtrl(e, str) {
                         useReg[tar] = data.reg_id
                         sessionStorage.setItem("useReg", JSON.stringify(useReg))
                         e.target.innerText = 'Delete'
-                        if (str=='v') {document.getElementById(tar).innerText = 'Delete'}
+                        if (str=='v') {document.getElementById(tar).innerText = 'Delete'; document.getElementById(tar).classList.toggle('reg')}
                         e.target.classList.toggle('reg')
                     }
                 }
