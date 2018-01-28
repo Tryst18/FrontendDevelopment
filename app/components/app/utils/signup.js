@@ -18,11 +18,13 @@
                         // console.log(dta)
                         // console.log("this hap")
                         sessionStorage.setItem("authUser", JSON.stringify(dta))
-                        let userReg = dta.registrations
+                        let userReg = dta.registration
+                        // console.log(dta)
                         let uDict = {}
                         for (var x in userReg) {
-                            uDict[userReg[x].event_id] = 1
+                            uDict[userReg[x].event_id] = userReg[x].reg_id
                         }
+                        // console.log(uDict)
                         sessionStorage.setItem("useReg", JSON.stringify(uDict))
                         if (rel) {
                             document.location.reload(true)
@@ -58,6 +60,7 @@
                         document.getElementById('errServ').style.display = "inline";
                     } else {
                         document.getElementById('userInfo').innerHTML = '<p>Check your email for confirmation link</p>'
+                        document.getElementById('submit').hidden = true
                     }
                 } else if (xhr.status === 401){
                     document.getElementById('errNoUser').style.display = "inline";

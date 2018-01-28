@@ -18,11 +18,13 @@
                         // console.log(dta)
                         // console.log("this hap")
                         sessionStorage.setItem("authUser", JSON.stringify(dta))
-                        let userReg = dta.registrations
+                        let userReg = dta.registration
+                        // console.log(dta)
                         let uDict = {}
                         for (var x in userReg) {
-                            uDict[userReg[x].event_id] = 1
+                            uDict[userReg[x].event_id] = userReg[x].reg_id
                         }
+                        // console.log(uDict)
                         sessionStorage.setItem("useReg", JSON.stringify(uDict))
                         if (rel) {
                             document.location.reload(true)
@@ -192,7 +194,7 @@
                 for (var y in data.poc) {
                     let keyCont = Object.keys(data.poc[y])
                     for (var x in keyCont) {
-                        cont += keyCont[x] + ': '+ ((data.poc[y][keyCont[x]]=="Email")?'mailto:':'')+data.poc[y][keyCont[x]] + ((x<keyCont.length-1)? ', ':'')
+                        cont += keyCont[x] + ': '+ ((data.poc[y][keyCont[x]]=="Email")?'mailto:':'')+data.poc[y][keyCont[x]]
                         cont += '<br>'
                     }
                     

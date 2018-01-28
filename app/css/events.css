@@ -63,7 +63,6 @@ input
   }
 
   .overlay {
-    position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
@@ -82,7 +81,7 @@ input
     -ms-transform: translate(-50%, -50%);
   }
 
-  .img-responsive:hover .overlay {
+  .overlay:hover {
     opacity: 1;
   }
 
@@ -122,6 +121,7 @@ input
 .mx-auto{
   margin-left:auto;
   margin-right: auto;
+  padding-top: 5px;
 }
 
 /* Events Category styling  */
