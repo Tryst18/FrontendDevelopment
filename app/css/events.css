@@ -23,9 +23,9 @@ h2#descriptions
 {
   text-align: justify;
   /*width: 100%;*/
-  margin-left: auto;
-  margin-right: auto;
-  width: 1200px;
+  margin-left: 5%;
+  margin-right: 5%;
+  /* width: 1200px; */
 
 }
 h2#prizess

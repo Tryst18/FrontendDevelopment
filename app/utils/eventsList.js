@@ -6,12 +6,12 @@ var events = {}
 var arrKey = []
 var user = JSON.parse(sessionStorage.getItem("authUser"))
 let bool = document.location.search.split("?")[1]
-// console.log(bool == "1")
+// console.log(bool)
 let xhr = new XMLHttpRequest();
 if (bool == '1') { document.getElementById('headTitle').innerHTML = '<h1>Registered Events</h1>' 
   if (user.registration.length == 0){ 
     document.getElementById('headTitle').insertAdjacentHTML('beforeend', '<p>No registered events</p>')
-    console.log(user.registration)
+    // console.log(user.registration)
   }
 }
 xhr.open("GET", url + "/api/event/getCategories", true);
@@ -22,6 +22,21 @@ xhr.onreadystatechange = function () {
     if (xhr.status === 200) {
       var json = JSON.parse(xhr.responseText);
       events = json.data;              //this can be different
+      if (bool == "department" || bool == "club") {
+        let catEve = json.data[bool]
+        // console.log(catEve)
+        let catDict = {}
+        for (var x in catEve) {
+          if (catEve[x].category_name in catDict) {
+            catDict[catEve[x].category_name].push(catEve[x]) 
+          } else {
+            catDict[catEve[x].category_name] = [catEve[x]]
+          }
+        }
+        // console.log(catDict)
+        // console.log(events)
+        events = catDict
+      }
       var i = 0;
       var eve = ''
       arrKey = Object.keys(events)
@@ -46,11 +61,12 @@ xhr.onreadystatechange = function () {
 
       for (var x in arrKey) {
         if (arrKey[x]!="guest" || bool == "1") {
+          // console.log(arrKey[x])
           $("#row").append(
             '<div class="col-md-4 col-sm-6 col-xs-12 category-block  animatedParent animateOnce" data-appear-top-offset="-200">' +
             '<div class="container">' +
-            '<img src=' + './images/' + arrKey[x] + '.png' + ' class="img-responsive oneeighty mx-auto category-img" alt="">' +
-            '<button class="overlay" id=' + arrKey[x] + '>' + arrKey[x].toUpperCase() + '</button>' +
+            '<img src="' + './images/' + arrKey[x] + '.png"' + ' class="img-responsive oneeighty mx-auto category-img" alt="">' +
+            '<button class="overlay" id="' + arrKey[x] + '">' + arrKey[x].toUpperCase() + '</button>' +
             '<h4>' + arrKey[x].toUpperCase() + '</h4>' +
             '</div>' +
             '</div>'
@@ -116,8 +132,8 @@ xhr.onreadystatechange = function () {
         }
         var images = Array.prototype.slice.call(document.getElementsByClassName('event-img'), 0)
         for (var x in images) {
-          console.log(images[x])
-          console.log(images[x].parentNode)
+          // console.log(images[x])
+          // console.log(images[x].parentNode)
           images[x].onload = function () {
             this.parentNode.style.backgroundImage = "none"
           }
@@ -141,8 +157,14 @@ xhr.onreadystatechange = function () {
         // });
         eventsButton[x].addEventListener('click', function (e) {
           // console.log('hi')
-          $("#" + x).toggleClass("active");
-          onClick(e, x)
+          let str = e.target.id
+          // console.log(str, "this")
+          if (str == "department" || str == "club") {
+            document.location.href = "../events.html?"+str
+          } else {
+            $("#" + x).toggleClass("active");
+            onClick(e, x)
+          }
         });
         x++;
       }

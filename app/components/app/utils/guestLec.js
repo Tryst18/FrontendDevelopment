@@ -153,19 +153,19 @@
                         $('#fill').html(
                             '<div class="col-md-8 col-sm-12 col-xs-12">'+
                             '<p>'+tarLec.description+'</p>'+
-                            '<button id="lea'+guestLecs[x].id+'" value="'+tarLec.id+'" class="regisGuest '+((guestLecs[x].id in app$utils$guestLec$$useReg)?'reg':'')+'">'+ ((tarLec.id in app$utils$guestLec$$useReg)?'Delete':'Register') + '</button>'+
+                            '<button id="lea'+tarLec.id+'" value="'+tarLec.id+'" class="regisGuest '+((tarLec.id in app$utils$guestLec$$useReg)?'reg':'')+'">'+ ((tarLec.id in app$utils$guestLec$$useReg)?'Delete':'Register') + '</button>'+
                             '</div>'+
                             '<div class="col-md-4 col-sm-12 col-xs-12 lec-img">' +
                             '<div class="fixed"><img src="'+$$index$$linkExtract(tarLec.photos[0])+'" id="pho'+tarLec.id+'" class="event-img"></div>'+
                             '</div>'
                         )
 
-                        document.getElementById('lea'+guestLecs[x].id).addEventListener('click', function(e) {
+                        document.getElementById('lea'+tarLec.id).addEventListener('click', function(e) {
                             app$utils$guestLec$$buttonCtrl(e, "v")
                         })
 
                         document.getElementById('pho'+tarLec.id).onload = function () {
-                            // console.log(this.parentNode)
+                            console.log(this.parentNode)
                             this.parentNode.style.backgroundImage = "none"
                         }
 

@@ -48,12 +48,12 @@
     var app$utils$eventsList$$arrKey = [];
     var app$utils$eventsList$$user = JSON.parse(sessionStorage.getItem("authUser"));
     let app$utils$eventsList$$bool = document.location.search.split("?")[1];
-    // console.log(bool == "1")
+    // console.log(bool)
     let app$utils$eventsList$$xhr = new XMLHttpRequest();
     if (app$utils$eventsList$$bool == '1') { document.getElementById('headTitle').innerHTML = '<h1>Registered Events</h1>' 
       if (app$utils$eventsList$$user.registration.length == 0){ 
         document.getElementById('headTitle').insertAdjacentHTML('beforeend', '<p>No registered events</p>')
-        console.log(app$utils$eventsList$$user.registration)
+        // console.log(user.registration)
       }
     }
     app$utils$eventsList$$xhr.open("GET", $$index$$url + "/api/event/getCategories", true);
@@ -64,6 +64,21 @@
         if (app$utils$eventsList$$xhr.status === 200) {
           var json = JSON.parse(app$utils$eventsList$$xhr.responseText);
           app$utils$eventsList$$events = json.data;              //this can be different
+          if (app$utils$eventsList$$bool == "department" || app$utils$eventsList$$bool == "club") {
+            let catEve = json.data[app$utils$eventsList$$bool]
+            // console.log(catEve)
+            let catDict = {}
+            for (var x in catEve) {
+              if (catEve[x].category_name in catDict) {
+                catDict[catEve[x].category_name].push(catEve[x]) 
+              } else {
+                catDict[catEve[x].category_name] = [catEve[x]]
+              }
+            }
+            // console.log(catDict)
+            // console.log(events)
+            app$utils$eventsList$$events = catDict
+          }
           var i = 0;
           var eve = ''
           app$utils$eventsList$$arrKey = Object.keys(app$utils$eventsList$$events)
@@ -88,11 +103,12 @@
 
           for (var x in app$utils$eventsList$$arrKey) {
             if (app$utils$eventsList$$arrKey[x]!="guest" || app$utils$eventsList$$bool == "1") {
+              // console.log(arrKey[x])
               $("#row").append(
                 '<div class="col-md-4 col-sm-6 col-xs-12 category-block  animatedParent animateOnce" data-appear-top-offset="-200">' +
                 '<div class="container">' +
-                '<img src=' + './images/' + app$utils$eventsList$$arrKey[x] + '.png' + ' class="img-responsive oneeighty mx-auto category-img" alt="">' +
-                '<button class="overlay" id=' + app$utils$eventsList$$arrKey[x] + '>' + app$utils$eventsList$$arrKey[x].toUpperCase() + '</button>' +
+                '<img src="' + './images/' + app$utils$eventsList$$arrKey[x] + '.png"' + ' class="img-responsive oneeighty mx-auto category-img" alt="">' +
+                '<button class="overlay" id="' + app$utils$eventsList$$arrKey[x] + '">' + app$utils$eventsList$$arrKey[x].toUpperCase() + '</button>' +
                 '<h4>' + app$utils$eventsList$$arrKey[x].toUpperCase() + '</h4>' +
                 '</div>' +
                 '</div>'
@@ -158,8 +174,8 @@
             }
             var images = Array.prototype.slice.call(document.getElementsByClassName('event-img'), 0)
             for (var x in images) {
-              console.log(images[x])
-              console.log(images[x].parentNode)
+              // console.log(images[x])
+              // console.log(images[x].parentNode)
               images[x].onload = function () {
                 this.parentNode.style.backgroundImage = "none"
               }
@@ -183,8 +199,14 @@
             // });
             eventsButton[x].addEventListener('click', function (e) {
               // console.log('hi')
-              $("#" + x).toggleClass("active");
-              onClick(e, x)
+              let str = e.target.id
+              // console.log(str, "this")
+              if (str == "department" || str == "club") {
+                document.location.href = "../events.html?"+str
+              } else {
+                $("#" + x).toggleClass("active");
+                onClick(e, x)
+              }
             });
             x++;
           }
