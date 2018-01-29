@@ -1,6 +1,8 @@
 body
 {
 	overflow: auto;
+	font-family: 'Open Sans', sans-serif;
+
 }
 
 
@@ -18,9 +20,14 @@ body
 marquee
 {
 	color: #66fcf1;
-	border-style: solid;
+	/*border-style: solid;
 	border-width: 2px 0 2px 0;
-	border-color: white;
+	border-color: white;*/
+	border: 2px solid transparent;
+  -moz-border-image: -moz-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
+  -webkit-border-image: -webkit-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
+  border-image: linear-gradient(to bottom left, #ffffff 0%, #0a1119 100%);
+  border-image-slice: 1;
 	position: relative;
 }
 span
@@ -45,19 +52,31 @@ a
 {
 	padding: 3px 5px 0 5px;
 	position: relative;
-	border-style: solid;
-	border-width: 0 0 2px 0;
-	border-color: white;
+	/*border-style: solid;*/
+	/*border-width: 0 0 2px 0;*/
+	/*border-color: white;*/
+	border-bottom: 2px solid transparent;
+  -moz-border-image: -moz-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
+  -webkit-border-image: -webkit-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
+  border-image: linear-gradient(to bottom left, #ffffff 0%, #0a1119 100%);
+  border-image-slice: 1;
+	font-weight: 300;
 }
 
 .pfrb
 {
 	padding: 3px 5px 5px 5px;
 	position: relative;
-	border-style: solid;
+	/*border-style: solid;
 	border-width: 0 0 2px 0;
-	border-color: white;
+	border-color: white;*/
+	border-bottom: 2px solid transparent;
+  -moz-border-image: -moz-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
+  -webkit-border-image: -webkit-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
+  border-image: linear-gradient(to bottom left, #ffffff 0%, #0a1119 100%);
+  border-image-slice: 1;
 	text-align: center;
+	font-weight: 300;
 }
 
 #button {
@@ -100,6 +119,7 @@ h4
 	color: #ffffff;
 	text-align: justify;
 	font-size: 1.1em;
+	font-weight: 200;
 }
 @media screen and (max-width: 460px)
 {

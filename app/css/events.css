@@ -54,6 +54,14 @@ input
 .container {
     position: relative;
     width: 100%;
+    /*border: 10px solid red;*/
+    border: 2px solid transparent;
+    -moz-border-image: -moz-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
+    -webkit-border-image: -webkit-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
+    border-image: linear-gradient(to bottom left, #ffffff 0%, #0a1119 100%);
+
+    border-image-slice: 1;
+    margin: 10px;
   }
 
   .image {
@@ -71,7 +79,8 @@ input
     width: 100%;
     opacity: 0;
     transition: .5s ease;
-    background-color: #008CBA;
+    /*background-color: #008CBA;*/
+    background-color: rgba(3,169,244 ,0.8);
     color: white;
     font-size: 20px;
     position: absolute;
@@ -97,8 +106,9 @@ input
 
   button
   {
-    background-color: #008CBA;
-    border-radius: 0.5em;
+    /*background-color: #03A9F4;*/
+    background-color: rgba(3,169,244 ,0.8);
+    /*border-radius: 0.5em;*/
     border: 0px;
     outline: 0px;
   }
@@ -149,11 +159,12 @@ height: auto;
   position: absolute;
   z-index:10;
   transition: height,min-height 0.4s ease-in-out;
+
 }
 .description-block.active{
   min-height: 500px;
   transition: min-height 0.4s ease-in-out;
-  
+
 }
 
 
@@ -167,8 +178,20 @@ height: auto;
   text-align: center;
 }
 
+
 .event-container {
   align-content: center;
+  border: 2px solid transparent;
+
+
+}
+
+.event-container-head{
+  -moz-border-image: -moz-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
+  -webkit-border-image: -webkit-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
+  border-image: linear-gradient(to bottom left, #ffffff 0%, #0a1119 100%);
+  border-image-slice: 1;
+  padding: 8px;
 }
 
 .event-img{
@@ -179,6 +202,23 @@ height: auto;
 
 #eveList {
   background-color: black;
+
+
+}
+
+#eveList a{
+  /*background-color: red;*/
+  border: 2px solid transparent;
+  -moz-border-image: -moz-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
+  -webkit-border-image: -webkit-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
+  border-image: linear-gradient(to bottom left, #ffffff 0%, #0a1119 100%);
+  border-image-slice: 1;
+  background-color: transparent;
+  color: white;
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 1rem;
+  padding: 8px 16px;
 }
 
 .fixed {
