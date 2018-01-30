@@ -23,6 +23,7 @@ xhr.onreadystatechange = function () {
       var json = JSON.parse(xhr.responseText);
       events = json.data;              //this can be different
       if (bool == "department" || bool == "club") {
+        document.getElementById('back').hidden = false
         let catEve = json.data[bool]
         // console.log(catEve)
         let catDict = {}
@@ -57,6 +58,7 @@ xhr.onreadystatechange = function () {
         }
         events = newEvents
         arrKey = Object.keys(events)
+        // console.log(events)
       }
 
       for (var x in arrKey) {

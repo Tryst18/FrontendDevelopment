@@ -65,6 +65,7 @@
           var json = JSON.parse(app$utils$eventsList$$xhr.responseText);
           app$utils$eventsList$$events = json.data;              //this can be different
           if (app$utils$eventsList$$bool == "department" || app$utils$eventsList$$bool == "club") {
+            document.getElementById('back').hidden = false
             let catEve = json.data[app$utils$eventsList$$bool]
             // console.log(catEve)
             let catDict = {}
@@ -99,6 +100,7 @@
             }
             app$utils$eventsList$$events = newEvents
             app$utils$eventsList$$arrKey = Object.keys(app$utils$eventsList$$events)
+            // console.log(events)
           }
 
           for (var x in app$utils$eventsList$$arrKey) {

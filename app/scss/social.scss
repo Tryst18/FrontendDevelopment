@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'Samakaran';
+	src: url('../fonts/samakaran.eot');
+	src: url('../fonts/samakaran.eot?#iefix') format('embedded-opentype'),
+	     url('../fonts/samakaran.woff') format('woff'),
+	     url('../fonts/samakaran.ttf') format('truetype'),
+	     url('../fonts/samakaran.svg#webfont') format('svg');
+}
+
+
+.bg {
+    width: 100vw;
+    height: 100vw;
+    top: 65px;
+    z-index: -2;
+    position: absolute;
+    background-image: url("../images/we.jpg");
+    background-repeat: no-repeat;
+    // bac
+}
+
+h1 {
+    font-family: 'Samakaran';
+    color: #ffffff;
+}
+
+nav.head.soc {
+    top: auto;
+    z-index: 1001;
+    background: #66fcf1;
+    /*overflow: hidden;*/
+    width: 100%;
+    top: 0;
+    position: fixed;
+    box-shadow: -2px -7px 47px 9px rgba(0, 0, 0, 0.35);
+    margin: auto;
+    z-index: 1000;
+}

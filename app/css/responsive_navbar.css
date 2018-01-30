@@ -28,11 +28,17 @@ nav.head {
     z-index: 1000;
 }
 
+/* nav.head.soc {
+
+    top: auto;
+    z-index: 1001;
+} */
+
 .block
 {
     width:100%;
     position: relative;
-    height: 65px;
+    height: 63px;
     background-color: #1f2833;
     z-index: -100;
 }

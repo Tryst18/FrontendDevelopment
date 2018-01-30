@@ -56,6 +56,10 @@ input
     width: 100%;
   }
 
+.category-block {
+  margin: 0px 0px 5px 0px;
+}
+
   .image {
     display: block;
     width: 100%;
@@ -126,7 +130,7 @@ input
 
 /* Events Category styling  */
 #page-wrapper{
-  padding-top:20px;
+  padding-top:25px;
 /*  height: 100%;*/
 height: auto;
 }
@@ -197,4 +201,10 @@ height: auto;
   float: none;
   max-height: 30px;
   width: auto;
+}
+
+#back {
+  padding: 5px 0px 0px 10px;
+  position: absolute;
+  color: #ffffff
 }

@@ -68,7 +68,7 @@ function buttonCtrl(e, str) {
     }
 }
 
-let xhr = new XMLHttpRequest();
+let xhr = new XMLHttpRequest()
 xhr.open("GET", url + "/api/event/getCategories", true);
 xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 // console.log(sessionStorage.getItem('useReg'))
