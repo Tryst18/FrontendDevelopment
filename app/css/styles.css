@@ -70,4 +70,16 @@ p {
   -webkit-border-image: -webkit-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
   border-image: linear-gradient(to bottom left, #ffffff 0%, #0a1119 100%);
   border-image-slice: 1;
+  padding: 8px;
+}
+
+.standard-btn{
+  border: 2px solid transparent;
+  -moz-border-image: -moz-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
+  -webkit-border-image: -webkit-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
+  border-image: linear-gradient(to bottom left, #ffffff 0%, #0a1119 100%);
+  border-image-slice: 1;
+  padding: 8px 16px;
+  color: white;
+  cursor: pointer;
 }

@@ -18,6 +18,8 @@ h2#descriptions
 {
   width: 100%;
   text-align: center;
+  width: 90%;
+  margin: 0 auto;
 }
 #description
 {
@@ -27,19 +29,23 @@ h2#descriptions
   margin-right: 5%;
   /* width: 1200px; */
 
+
 }
 h2#prizess
 {
   text-align: center;
   /*float: right;
   width: 50%;*/
+  width: 80%;
+
+  margin: 0 auto;
+  max-width: 90%;
 }
 #prizes
 {
   text-align: center;
-  width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  /*width: 600px;*/
+
   /*
   float: right;
   position: relative;
@@ -107,10 +113,19 @@ input
   button
   {
     /*background-color: #03A9F4;*/
-    background-color: rgba(3,169,244 ,0.8);
+    /*background-color: rgba(3,169,244 ,0.8);*/
     /*border-radius: 0.5em;*/
     border: 0px;
     outline: 0px;
+    border: 2px solid transparent;
+    -moz-border-image: -moz-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
+    -webkit-border-image: -webkit-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
+    border-image: linear-gradient(to bottom left, #ffffff 0%, #0a1119 100%);
+    border-image-slice: 1;
+    padding: 8px 16px;
+    color: white;
+    cursor: pointer;
+    max-width: 90%;
   }
 
   #eveList {

@@ -215,7 +215,8 @@ header {
         position: relative;
     }
     nav.head ul{
-        background: #ffffff;
+        /*background: #ffffff;*/
+        background-color: #000000;
         max-height: 0;
         width: 100%;
         /*z-index: 3000*/
