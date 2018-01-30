@@ -10,13 +10,12 @@
 
 .bg {
     width: 100vw;
-    height: 100vw;
-    top: 65px;
-    z-index: -2;
-    position: absolute;
-    background-image: url("../images/we.jpg");
+    height: 100%;
+    top: 0;
+    position: fixed;
+    background-image: url(../images/we.jpg);
     background-repeat: no-repeat;
-    // bac
+    background-size: contain;
 }
 
 h1 {

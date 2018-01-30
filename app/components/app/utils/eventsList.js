@@ -50,8 +50,8 @@
     let app$utils$eventsList$$bool = document.location.search.split("?")[1];
     // console.log(bool)
     let app$utils$eventsList$$xhr = new XMLHttpRequest();
-    if (app$utils$eventsList$$bool == '1') { document.getElementById('headTitle').innerHTML = '<h1>Registered Events</h1>' 
-      if (app$utils$eventsList$$user.registration.length == 0){ 
+    if (app$utils$eventsList$$bool == '1') { document.getElementById('headTitle').innerHTML = '<h1>Registered Events</h1>'
+      if (app$utils$eventsList$$user.registration.length == 0){
         document.getElementById('headTitle').insertAdjacentHTML('beforeend', '<p>No registered events</p>')
         // console.log(user.registration)
       }
@@ -71,7 +71,7 @@
             let catDict = {}
             for (var x in catEve) {
               if (catEve[x].category_name in catDict) {
-                catDict[catEve[x].category_name].push(catEve[x]) 
+                catDict[catEve[x].category_name].push(catEve[x])
               } else {
                 catDict[catEve[x].category_name] = [catEve[x]]
               }
@@ -119,7 +119,7 @@
           }
           $("#row").append(
             '<div class="description-block mx-auto container-fluid">' +
-            
+
             '<div class="row" id="eveList">' +
             '</div>' +
             '</div>'
@@ -148,12 +148,14 @@
 
                 // console.log(phot)
                 $("#eveList").append(
+
                   '<div class="col-md-4 col-sm-6 col-xs-12 event-container">' +
                   '<div class="fixed mx-auto"><img src="' + $$index$$linkExtract(phot) + '" class="img-responsive event-img"></div>' +
                   '<p class="mx-auto">' +
                   '<a href=../specifEvent.html?' + eveList[x].id + '>' + eveList[x].name + '</a>' +
                   '</p>' +
                   '</div>'
+
                 );
               } else {
                 // console.log(user.registration, "here")
@@ -162,12 +164,14 @@
                   if (eveList[x].name != "bogus" && (eveList[x].id in uDict)) {
                     // console.log(eveList[x].name)
                     $("#eveList").append(
+
                       '<div class="col-md-4 col-sm-6 col-xs-12 event-container">' +
                       '<div class="fixed mx-auto"><img src="' + $$index$$linkExtract(phot) + '" class="img-responsive event-img"></div>' +
                       '<p class="mx-auto">' +
                       '<a href=../specifEvent.html?' + eveList[x].id + '>' + eveList[x].name + '</a>' +
                       '</p>' +
                       '</div>'
+                      
                     );
                   }
                 }

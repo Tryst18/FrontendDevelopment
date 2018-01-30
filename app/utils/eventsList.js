@@ -112,7 +112,7 @@ xhr.onreadystatechange = function () {
               '<p class="mx-auto">' +
               '<a href=../specifEvent.html?' + eveList[x].id + '>' + eveList[x].name + '</a>' +
               '</p>' +
-              '</div>'+
+              '</div>'
 
             );
           } else {
@@ -128,7 +128,7 @@ xhr.onreadystatechange = function () {
                   '<p class="mx-auto">' +
                   '<a href=../specifEvent.html?' + eveList[x].id + '>' + eveList[x].name + '</a>' +
                   '</p>' +
-                  '</div>'+
+                  '</div>'
                   
                 );
               }

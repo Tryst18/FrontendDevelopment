@@ -3,7 +3,6 @@ html {
 
 body {
   background-color: #0a1119;
-  font-family: 'Open Sans', sans-serif;
   /*background-image: url("../images/background-comp.jpg");*/ }
 
 .init {
@@ -63,23 +62,3 @@ p {
 .oneeighty {
   max-width: auto;
   max-height: 180px; }
-
-.standard-border{
-  border: 2px solid transparent;
-  -moz-border-image: -moz-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
-  -webkit-border-image: -webkit-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
-  border-image: linear-gradient(to bottom left, #ffffff 0%, #0a1119 100%);
-  border-image-slice: 1;
-  padding: 8px;
-}
-
-.standard-btn{
-  border: 2px solid transparent;
-  -moz-border-image: -moz-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
-  -webkit-border-image: -webkit-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
-  border-image: linear-gradient(to bottom left, #ffffff 0%, #0a1119 100%);
-  border-image-slice: 1;
-  padding: 8px 16px;
-  color: white;
-  cursor: pointer;
-}

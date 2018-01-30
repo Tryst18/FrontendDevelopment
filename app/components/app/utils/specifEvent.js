@@ -60,7 +60,7 @@
                     $$index$$updateUser(true)
                     // document.location.reload(true)
                 }
-            }       
+            }
         }
         xt.send()
     }
@@ -81,7 +81,7 @@
                 let phot = (data.photos && data.photos.length)? data.photos[0]:''
                 document.getElementById('image').innerHTML = '<img id="event-logos" src='+$$index$$linkExtract(phot)+'>'
                 let stri = data.id+'='+data.name
-                
+
                 let regButton = document.getElementById('register')
                 if (data.name=="EnvironmenD") {
                     document.getElementById('register').innerHTML = '<a href ="http://iitd.info/EnvironmenD"><button>Register</button></a>'
@@ -89,11 +89,11 @@
                     console.log(data.reg_mode)
                     if (app$utils$specifEvent$$user) {
                         var pres = false
-                        for (var l in app$utils$specifEvent$$user.registration) {  
+                        for (var l in app$utils$specifEvent$$user.registration) {
                             if (data.id == app$utils$specifEvent$$user.registration[l].event_id) {
                                 // console.log(data.id, "here")
                                 pres = true
-                                if (data.reg_type == "team") { 
+                                if (data.reg_type == "team") {
                                     // console.log('user')
                                     regButton.innerHTML = '<button>View registration</button>'
                                     regButton.addEventListener('click', function() {
@@ -122,9 +122,9 @@
                                                             app$utils$specifEvent$$delReg(app$utils$specifEvent$$user.registration[l].reg_id)
                                                         })
 
-                                                        $('#viewReg').show() 
+                                                        $('#viewReg').show()
                                                     }
-                                                    
+
                                                 }
                                             }
                                         }
@@ -136,7 +136,7 @@
                                         app$utils$specifEvent$$delReg(app$utils$specifEvent$$user.registration[l].reg_id)
                                     })
                                 }
-                                break; 
+                                break;
                             }
                         }
                         if (!pres) {
@@ -160,7 +160,7 @@
                                             // console.log(JSON.parse(xr.response))
                                             // document.getElementById('loading').innerText = json.message;
                                             if (xr.status === 200) {
-                                                
+
                                                 // console.log(xr.responseText)
                                                 if (son.error == false) {
                                                     // console.log('this happened too')
@@ -174,7 +174,7 @@
                                     var send = Object.assign({}, {"event_id": app$utils$specifEvent$$event, "members": [{"email":app$utils$specifEvent$$user.email}], team_name: "null", "source": document.getElementById('src').value})
                                     xr.send(JSON.stringify(send))
                                 })
-                            } 
+                            }
                         }
                     } else {
                         if (data.reg_type=="team") {
@@ -190,19 +190,19 @@
                 }
                     // document.getElementById('register').innerHTML = (sessionStorage.getItem("authUser"))? ('<button><a href="../register.html?'+stri+'">'+'Register</a></button>'):('<button><a href="../login.html?'+stri+'">'+'Register</a></button>')
                 var cont = 'For queries, contact at ' + '<br>'
-                
+
                 for (var y in data.poc) {
                     let keyCont = Object.keys(data.poc[y])
                     for (var x in keyCont) {
                         cont += keyCont[x] + ': '+ ((data.poc[y][keyCont[x]]=="Email")?'mailto:':'')+data.poc[y][keyCont[x]]
                         cont += '<br>'
                     }
-                    
+
                 }
                 document.getElementById('poc').innerHTML = cont
 
                 document.getElementById('title').innerText = data.name
-                
+
             }
         }
     }

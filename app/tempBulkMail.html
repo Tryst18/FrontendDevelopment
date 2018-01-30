@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<center>    <h1> Send Bulk Mail</h1> </center>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js?apiKey=k62qzjcmuramgqhp3jpo2xdegkkfbfdxayj74xjxyqnvnhqd"></script> 
+    <script>tinymce.init({ selector: "#text" });</script>
+</head>
+    
+<body>
+    <div id="mailer" >
+        <b>Token: (You should know it) </b><input type="message" name="x-auth-token" id="token"><br><br><br>        
+        
+        To email address <b>(COMMA separated values ONLY)</b>: <textarea type="text" name="to" id="to" style="width: 100%; height: 100px;overflow:scroll;"></textarea><br><br><br>        
+        From Email Address (The email will be sent from this email address, only accepted of the form xyz@tryst-iitd.com): <input type="text" name="from" id="from" style="width: 30%;"><br><br><br>
+        Reply To email address (Any email address on to which the user can reply if he/she has any query): <input type="text" name="reply_address" id="reply_address" style="width: 30%;"><br><br><br>
+        Subject of the Email: <input type="text" name="sub" id="sub" style="width: 30%;"><br><br><br>
+        <textarea name="text" id="text" rows=40 cols=60>Enter body here...</textarea><br><br><br>
+        <center><input type="submit" value="Submit" id="submit" style="width: 10em; height: 2em"></center><br>
+        <center>Please don't close the tab until you see an alert saying that mails sent or an error occured</center><br><br><br><br><br><br><br><br>
+    </div>
+
+
+    <script>
+            $("#submit").click(function(){     
+                var to = $("#to").val(); 
+                var from = $("#from").val();
+                var reply_address = $("#reply_address").val();
+                var sub = $("#sub").val();
+                var text = tinyMCE.activeEditor.getContent();
+                var token = sessionStorage.getItem('token');
+                to = to.split(',');             
+                
+                $.ajax({
+                    url: 'https://api.tryst-iitd.com/api/tempBulkMail',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ 
+                        'token': token,
+                        'mail': {
+                            'to': to, 
+                            'from': from, 
+                            'reply_address': reply_address, 
+                            'sub': sub,
+                            'text': text ,
+                        }
+                    }),
+                    dataType: 'json',
+		success: function(data,textStatus,xhr) { alert("mails sent");},
+		error: function(data,status) {alert("Error occurred:\n "+data.responseJSON.message);}
+                });
+            });
+        </script>
+</body>
+</html>
