@@ -20,7 +20,7 @@
 		font-size: 100%;
 		font: inherit;
 		vertical-align: baseline;
-		
+
 	}
 
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
@@ -703,7 +703,7 @@
 			font-size: 1.25em;
 		}
 
-			
+
 /* Wrapper */
 
 	.wrapper {
@@ -719,7 +719,7 @@
 /* Header */
 
         /*This portion is important to ensure proper text wrapping while changing width*/
-        body.homepage #header 
+        body.homepage #header
         {
 			min-height: 0;
 			padding: 9em 0 9em 0;
@@ -774,7 +774,7 @@
 
 		#header h2 {
 		padding-top: 0.6em;
-		font-size: 2.3em;			
+		font-size: 2.3em;
 		}
 
 		#header h1 a, #header h2 a{
@@ -817,7 +817,7 @@
 				background: rgba(192, 192, 192, 0.35);
 			}
 
-		#header footer {	
+		#header footer {
 			margin:0 auto;
 		}
 
@@ -840,7 +840,7 @@
 			font-size: 4em;
 		}
 
-		
+
 /* Nav */
 
 	#nav {
@@ -897,7 +897,7 @@
 				-ms-transition: color 0.35s ease-in-out, border-color 0.35s ease-in-out;
 				transition: color 0.35s ease-in-out, border-color 0.35s ease-in-out;
 			}
-			
+
 				#nav > ul > li.active {
 					border-color: rgba(192, 192, 192, 0.35);
 				}
@@ -1420,7 +1420,7 @@
 			input[type="button"],
 			input[type="submit"],
 			input[type="reset"],
-			
+
 			.button {
 				display: block;
 				padding: 0;
@@ -1868,7 +1868,7 @@ section h3.section-subheading {
 }
 
 .team-member {
-    
+
     margin-bottom: 50px;
     text-align: center;
 }
@@ -1953,7 +1953,7 @@ ul.social-buttons li a:active {
 	.button {
 		position: relative;
 		display: inline-block;
-		background: #df7366;
+		/*background: #df7366;
 		color: #fff;
 		text-align: center;
 		border-radius: 0.5em;
@@ -1963,7 +1963,18 @@ ul.social-buttons li a:active {
 		cursor: pointer;
 		text-decoration: none;
 		outline: 0;
-		font-weight: 300;
+		font-weight: 300;*/
+		border: 2px solid transparent;
+	  -moz-border-image: -moz-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
+	  -webkit-border-image: -webkit-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
+	  border-image: linear-gradient(to bottom left, #ffffff 0%, #0a1119 100%);
+	  border-image-slice: 1;
+	  background-color: transparent;
+	  color: white;
+	  text-decoration: none;
+	  font-weight: 300;
+	  font-size: 1rem;
+	  padding: 8px 16px;
 		-moz-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
 		-webkit-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
 		-ms-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
@@ -1976,8 +1987,8 @@ ul.social-buttons li a:active {
 		button:hover,
 		.button:hover {
 			text-decoration: none;
-			color: #fff;
-			background: #008CBA/*#ef8376*/;
+			/*color: #fff;*/
+			/*background: #008CBA/*#ef8376*/;*/
 		}
 
 		input[type="button"].alt,
@@ -1988,13 +1999,13 @@ ul.social-buttons li a:active {
 			background: #2B252C;
 		}
 
-			
+
 
 
 
 
 #footer{
-	
+
 	padding-top: 5px;
 	padding-bottom:5px;
 	margin-bottom: 0px;
@@ -2033,7 +2044,7 @@ ul.social-buttons li a:active {
 
 .action-button
 {
-	
+
 	padding: 20px 40px;
     margin:0 auto;
     border-radius:2%;
@@ -2041,20 +2052,20 @@ ul.social-buttons li a:active {
     font-family: 'Droid Serif', Georgia, Times, serif;
 	font-size: 120%;
 	color: #FFF;
-	text-decoration: none!important;	
+	text-decoration: none!important;
 }
 
 .blue
 {
 	background-color: #3498DB;
-	
+
 }
 
 .action-button:active
 {
 	transform: translate(0px,5px);
   -webkit-transform: translate(0px,5px);
-	
+
 }
 .action-button:hover
 {
@@ -2158,7 +2169,7 @@ ul.social-buttons li a:active {
 .color-4{
 	margin-top: 15%;
 	padding-top:50px;
-	padding-bottom: 50px;	
+	padding-bottom: 50px;
 	background-color: rgba(90, 90, 117, 0.2);
 }
 
@@ -2180,4 +2191,3 @@ ul.social-buttons li a:active {
 {
 	font-size: 20px;
 }
-

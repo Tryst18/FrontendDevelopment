@@ -18,7 +18,16 @@ ul
 }*/
 
 nav.head {
-    background: #66fcf1;
+    /*background: #66fcf1;*/
+    background: transparent;
+    z-index: 2;
+    border-bottom: 2px solid transparent;
+     -moz-border-image: -moz-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
+     -webkit-border-image: -webkit-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
+     border-image: linear-gradient(to bottom left, #ffffff 0%, #0a1119 100%);
+
+     border-image-slice: 1;
+
     /*overflow: hidden;*/
     width: 100%;
     top: 0;
@@ -45,7 +54,7 @@ nav.head {
 
 
 .head .logo-section{
-    
+
     float: left;
     margin: 0px 0 0px 0;
     font-family: serif;
@@ -68,8 +77,9 @@ nav.head {
 }
 
 nav.head a.underline{
-    font-weight: 550;
-    color: #000000;
+    font-weight: 400;
+    /*color: #000000;*/
+    color: #ffffff;
     font-size: 18px;
     padding: 5px;
 }
@@ -96,6 +106,7 @@ nav.head ul li{
     float: right;
     display: block;
     padding: 19px;
+    color: white;
     box-sizing: content-box;
 }
 nav.head ul li.no-pad{
@@ -104,11 +115,11 @@ nav.head ul li.no-pad{
 }
 nav.head ul li.leftfloat{
     float: left;
-    
+
 }
 nav.head ul li.rightfloat{
     float: right;
-    
+
 }
 .head li a{
     position: relative;
@@ -210,7 +221,8 @@ header {
         position: relative;
     }
     nav.head ul{
-        background: #ffffff;
+        /*background: #ffffff;*/
+        background-color: #000000;
         max-height: 0;
         width: 100%;
         /*z-index: 3000*/
@@ -221,8 +233,8 @@ header {
     nav.head ul.show{
         max-height: 50em;
         /* z-index: 9990; */
-        
-        
+
+
     }
     nav.head ul li{
         box-sizing: border-box;
@@ -248,7 +260,7 @@ header {
     .image img
     {
         display: none;
-    } 
+    }
 
     .logosmall {
         display: inline;
@@ -311,7 +323,7 @@ header {
 }
 
 /*@media screen and (max-width: 555px)  {
-    
+
     .image
     {
         display: none;
@@ -319,7 +331,7 @@ header {
     .image img
     {
         display: none;
-    } 
+    }
 
     .logosmall {
         display: inline;

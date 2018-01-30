@@ -18,6 +18,8 @@ h2#descriptions
 {
   width: 100%;
   text-align: center;
+  width: 90%;
+  margin: 0 auto;
 }
 #description
 {
@@ -27,19 +29,23 @@ h2#descriptions
   margin-right: 5%;
   /* width: 1200px; */
 
+
 }
 h2#prizess
 {
   text-align: center;
   /*float: right;
   width: 50%;*/
+  width: 80%;
+
+  margin: 0 auto;
+  max-width: 90%;
 }
 #prizes
 {
   text-align: center;
-  width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  /*width: 600px;*/
+
   /*
   float: right;
   position: relative;
@@ -54,6 +60,14 @@ input
 .container {
     position: relative;
     width: 100%;
+    /*border: 10px solid red;*/
+    border: 2px solid transparent;
+    -moz-border-image: -moz-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
+    -webkit-border-image: -webkit-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
+    border-image: linear-gradient(to bottom left, #ffffff 0%, #0a1119 100%);
+
+    border-image-slice: 1;
+    margin: 10px;
   }
 
 .category-block {
@@ -75,7 +89,8 @@ input
     width: 100%;
     opacity: 0;
     transition: .5s ease;
-    background-color: #008CBA;
+    /*background-color: #008CBA;*/
+    background-color: rgba(3,169,244 ,0.8);
     color: white;
     font-size: 20px;
     position: absolute;
@@ -101,10 +116,20 @@ input
 
   button
   {
-    background-color: #008CBA;
-    border-radius: 0.5em;
+    /*background-color: #03A9F4;*/
+    /*background-color: rgba(3,169,244 ,0.8);*/
+    /*border-radius: 0.5em;*/
     border: 0px;
     outline: 0px;
+    border: 2px solid transparent;
+    -moz-border-image: -moz-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
+    -webkit-border-image: -webkit-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
+    border-image: linear-gradient(to bottom left, #ffffff 0%, #0a1119 100%);
+    border-image-slice: 1;
+    padding: 8px 16px;
+    color: white;
+    cursor: pointer;
+    max-width: 90%;
   }
 
   #eveList {
@@ -153,11 +178,12 @@ height: auto;
   position: absolute;
   z-index:10;
   transition: height,min-height 0.4s ease-in-out;
+
 }
 .description-block.active{
   min-height: 500px;
   transition: min-height 0.4s ease-in-out;
-  
+
 }
 
 
@@ -171,8 +197,20 @@ height: auto;
   text-align: center;
 }
 
+
 .event-container {
   align-content: center;
+  border: 2px solid transparent;
+
+
+}
+
+.event-container-head{
+  -moz-border-image: -moz-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
+  -webkit-border-image: -webkit-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
+  border-image: linear-gradient(to bottom left, #ffffff 0%, #0a1119 100%);
+  border-image-slice: 1;
+  padding: 8px;
 }
 
 .event-img{
@@ -183,6 +221,23 @@ height: auto;
 
 #eveList {
   background-color: black;
+
+
+}
+
+#eveList a{
+  /*background-color: red;*/
+  border: 2px solid transparent;
+  -moz-border-image: -moz-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
+  -webkit-border-image: -webkit-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
+  border-image: linear-gradient(to bottom left, #ffffff 0%, #0a1119 100%);
+  border-image-slice: 1;
+  background-color: transparent;
+  color: white;
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 1rem;
+  padding: 8px 16px;
 }
 
 .fixed {
