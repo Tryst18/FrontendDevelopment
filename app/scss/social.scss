@@ -7,21 +7,72 @@
 	     url('../fonts/samakaran.svg#webfont') format('svg');
 }
 
+@font-face {
+    font-family: 'Geo';
+	src: url('../fonts/geometos-webfont.eot');
+	src: url('../fonts/geometos-webfont.eot?#iefix') format('embedded-opentype'),
+	     url('../fonts/geometos-webfont.woff') format('woff'),
+	     url('../fonts/geometos-webfont.ttf') format('truetype'),
+	     url('../fonts/geometos-webfont.svg#webfont') format('svg');
+}
 
 .bg {
-    width: 100vw;
-    height: 100%;
-    top: 0;
+    width: 100%;
+    margin-top: 10px;
+    padding-bottom: 54%;    // top: 0;
+    // height: 
     position: fixed;
     background-image: url(../images/we.jpg);
     background-repeat: no-repeat;
     background-size: contain;
+    z-index: 5;
+    filter: blur(5px);
 }
 
-h1 {
+.rest {
+    z-index: 10;
+    position: relative;
+    padding-top: 20px;
+    h1 {
+        // font-family: 'Samakaran';
+        // color: #ffffff;
+        font-size: 10em;
+    }
+}
+
+.row {
+    margin: 0px 0px 0px 0px;
+}
+
+.height {
+    height: 25vw;
+}
+
+p{
+    font-family: 'Geo';
+    font-size: 2em;
+    opacity: 1;
+    b {
+        opacity: 1;
+        font-size: 1.04em;
+    }
+}
+
+.para-right {
+    text-align: center;
+    float: right;
+}
+
+.para-down {
+    padding-top: 25%;
+}
+
+.samak {
     font-family: 'Samakaran';
     color: #ffffff;
 }
+
+
 
 nav.head.soc {
     top: auto;
