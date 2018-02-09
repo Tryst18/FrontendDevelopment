@@ -1,0 +1,35 @@
+nav.sched {
+    top:65px;
+    background: transparent;
+    position: fixed;
+    z-index: 2;
+    border-bottom: 2px solid transparent;
+     -moz-border-image: -moz-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
+     -webkit-border-image: -webkit-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
+     border-image: linear-gradient(to bottom left, #ffffff 0%, #0a1119 100%);
+
+     border-image-slice: 1;
+
+    /*overflow: hidden;*/
+    width: 100%;
+    box-shadow: -2px -7px 47px 9px rgba(0, 0, 0, 0.35);
+    margin: auto;
+    // z-index: 1000;
+    ul li {
+        display:inline-block;
+        float: none;
+        padding: 10px;
+    }
+}
+
+#schedule {
+    height: 72%;
+    position: absolute;
+    width: 100%;
+    top: 110px;
+}
+
+.blockf {
+    position: absolute;
+    bottom: -10px;
+}
