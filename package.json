@@ -32,6 +32,7 @@
     "gulp-uglify": "^2.1.2",
     "gulp-useref": "^3.1.2",
     "nodemon": "^1.14.11",
+    "pdfjs-dist": "^2.0.338",
     "run-sequence": "^1.2.2"
   },
   "dependencies": {
