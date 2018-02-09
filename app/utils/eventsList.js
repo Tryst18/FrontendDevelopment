@@ -98,8 +98,9 @@ xhr.onreadystatechange = function () {
         var eveList = events[e.target.id]
         // console.log(eveList)
         let str = ''
-
+        var k=0;
         for (var x in eveList) {
+          k++;
           let phot = (eveList[x].photos && eveList[x].photos.length) ? eveList[x].photos[0] : ''
           if (bool != "1") {
             // console.log(eveList[x].photos[0])
@@ -135,6 +136,33 @@ xhr.onreadystatechange = function () {
             }
           }
 
+        }
+        if (k==2)
+        {
+          $("#eveList").append(
+
+              '<div class="col-md-4 col-sm-6 col-xs-12 event-container">' +
+              '<div class="extra"></div>' +
+              '</div>'
+
+            );
+        }
+        else if(k==1)
+        {
+          $("#eveList").append(
+
+              '<div class="col-md-4 col-sm-6 col-xs-12 event-container">' +
+              '<div class="extra"></div>' +
+              '</div>'
+
+            );
+          $("#eveList").append(
+
+              '<div class="col-md-4 col-sm-6 col-xs-12 event-container">' +
+              '<div class="extra"></div>' +
+              '</div>'
+
+            );
         }
         var images = Array.prototype.slice.call(document.getElementsByClassName('event-img'), 0)
         for (var x in images) {
