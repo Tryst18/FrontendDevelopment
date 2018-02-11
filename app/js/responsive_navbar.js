@@ -4,6 +4,17 @@ $(document).ready(function(){
         $('nav.head ul').toggleClass('show');
         // $('.init').toggle();
     });
+    $(document).on('click', function(e){
+        e.stopPropagation();
+        $('nav.head ul.show').toggleClass('show');
+        // $('.init').toggle();
+    });
+    $('.foot .hb-button').on('click', function(e){
+        e.stopPropagation();
+        $('nav.head ul.show').toggleClass('show');
+        // $('.init').toggle();
+    });
+    
     if (sessionStorage.getItem("authUser")) {
         var jso = JSON.parse(sessionStorage.getItem("authUser"));
         $('.login').html("Logout");

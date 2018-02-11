@@ -10,19 +10,15 @@
   		<!-- <link rel="import" href="responsive_navbar.html"> -->
         <link rel="stylesheet" type="text/css" href="css/responsive_navbar.css">
         <link rel="stylesheet" type="text/css" href="css/footer.css">
-
+        <link rel="stylesheet" type="text/css" href="css/schedule.css">
         <!-- <link href="css/bootstrap.css" rel="stylesheet">  -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
         <script
         src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
-        <style>
-            body
-            {
-                overflow: hidden;
-            }
-        </style>
+        <script type="text/javascript" src="/js/pdfobject.js"></script>
+    
     </head>
     <body>
 
@@ -45,28 +41,24 @@
                 <!-- <li class="rightfloat"><a class="underline" href="signup.html">Sign Up</a></li> -->
             </ul>
         </nav>
-        <div class="block"></div>
-        <div class="comingsoon">
-        <h1>Coming soon!</h1>
-        <p>Play with particles till then, click around</p></div>
+        <nav class="sched">
+            <ul>
+                <li><p id="d1" class="underline">Workshops</a></li>
+                <li><a id="d2" class="underline">Accomodation</a></li>
+                <li><a id="d3" class="underline">Social</a></li>
+            </ul>
+        </nav>
+        <!-- <div>
+            <object data="/schedules/day1.pdf#" type="application/pdf">
+                <iframe src="/schedules/day1.pdf">
+                This browser does not support PDFs. Please download the PDF to view it: <a href="/schedules/day1.pdf">Download PDF</a>
+                </iframe>
+            </object>
+        </div> -->
+        <div id="schedule">
 
-    <!-- <div class="initial"><img src="images/tryst_logo.png"></div> -->
-   <div id="particles-js"></div>
-
-<!-- scripts -->
-	<script src="js/particle.js"></script>
-	<script src="js/themepart.js"></script>
-
-    <!-- <script src="js/particle.js"></script> -->
-
-
-    <!-- <script type="text/javascript" src="js/responsive_navbar.js"></script> -->
-
-
-
-
-    	<!-- <div class="initial"><img src="images/tryst_logo.png"></div> -->
-
+        </div>
+        <script type="text/javascript" src="/js/fillpdf.js"></script>
     	 <nav class="foot">
             <div class="logo-section">
                 <a class="logo" href="#"></a>
@@ -81,7 +73,7 @@
                 <li><a href="comingsoon.html">Gallery</a></li>
                 <li><a href="about.html">About Us</a></li>
             </ul>
-        </nav>
+        </nav> 
         <div class="blockf"></div>
         <script type="text/javascript" src="js/responsive_navbar.js"></script>
         <script type="text/javascript" src="js/footer.js"></script>
