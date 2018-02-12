@@ -7,5 +7,7 @@ var options = {
     }
 }
 
-PDFObject.embed("/schedules/day1.pdf", "#schedule", options);
+
+
+PDFObject.embed("/schedules/day2.pdf", "#schedule", options);
 

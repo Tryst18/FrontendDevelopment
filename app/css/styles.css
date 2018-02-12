@@ -11,7 +11,8 @@ body {
   color: #f4f1de;
   font-size: 20px;
   z-index: 1990;
-  bottom: 68px; }
+  bottom: 68px;
+  background-color: rgba(10, 17, 25, 0.7); }
 
 .init a {
   color: #e07a5f; }

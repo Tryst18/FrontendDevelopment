@@ -12,10 +12,14 @@ nav.sched {
   width: 100%;
   box-shadow: -2px -7px 47px 9px rgba(0, 0, 0, 0.35);
   margin: auto; }
-  nav.sched ul li {
-    display: inline-block;
-    float: none;
-    padding: 10px; }
+  nav.sched ul {
+    text-align: center; }
+    nav.sched ul p:hover {
+      cursor: pointer; }
+    nav.sched ul li {
+      display: inline-block;
+      float: none;
+      padding: 5px; }
 
 #schedule {
   height: 72%;
@@ -26,3 +30,6 @@ nav.sched {
 .blockf {
   position: absolute;
   bottom: -10px; }
+
+.underline {
+  font-size: 20px; }

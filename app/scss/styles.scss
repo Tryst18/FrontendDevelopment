@@ -15,6 +15,8 @@ body{
 	font-size: 20px;
 	z-index: 1990;
 	bottom: 68px;
+	// background-color: #0a1119;
+	background-color: rgba($color: #0a1119, $alpha: 0.7)
 }
 
 .init a {
@@ -76,4 +78,8 @@ p {
 .oneeighty {
 	max-width: auto;
 	max-height: 180px;
+}
+
+.backdrop {
+	background-image: url()
 }

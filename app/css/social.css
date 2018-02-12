@@ -41,11 +41,10 @@ p {
     font-size: 1.04em; }
 
 .para-right {
-  text-align: center;
   float: right; }
 
 .para-down {
-  padding-top: 25%; }
+  padding-top: 10%; }
 
 .samak {
   font-family: 'Samakaran';
@@ -62,3 +61,6 @@ nav.head.soc {
   box-shadow: -2px -7px 47px 9px rgba(0, 0, 0, 0.35);
   margin: auto;
   z-index: 1000; }
+
+.center {
+  text-align: center; }
