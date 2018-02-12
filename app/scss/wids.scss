@@ -7,6 +7,10 @@
 	     url('../fonts/samakaran.svg#webfont') format('svg');
 }
 
+.block {
+    height: 75px;
+}
+
 .row {
     margin: unset;
 }
@@ -42,10 +46,15 @@ h2, h3, h4 {
     padding: 10px;
 }
 
+.cent {
+    text-align: center;
+}
+
 .bubble {
     position: fixed;
     height: 100%;
     width: 100%;
+    overflow: scroll;
     top:65px;
     background-color: #000000;
 }
@@ -57,8 +66,17 @@ h2, h3, h4 {
     width: auto;
 }
 
+.event-img {
+    // max-width: 256px;
+    margin: auto;
+}
+
+.sub {
+    font-size: 1.2em;
+}
+
 .fixed {
-    max-width: 256;
+    margin: auto;
 }
 
 // .acchead {

@@ -3,6 +3,9 @@
   src: url("../fonts/samakaran.eot");
   src: url("../fonts/samakaran.eot?#iefix") format("embedded-opentype"), url("../fonts/samakaran.woff") format("woff"), url("../fonts/samakaran.ttf") format("truetype"), url("../fonts/samakaran.svg#webfont") format("svg"); }
 
+.block {
+  height: 75px; }
+
 .row {
   margin: unset; }
 
@@ -30,10 +33,14 @@ h2, h3, h4 {
   text-align: center;
   padding: 10px; }
 
+.cent {
+  text-align: center; }
+
 .bubble {
   position: fixed;
   height: 100%;
   width: 100%;
+  overflow: scroll;
   top: 65px;
   background-color: #000000; }
 
@@ -43,5 +50,11 @@ h2, h3, h4 {
   max-height: 30px;
   width: auto; }
 
+.event-img {
+  margin: auto; }
+
+.sub {
+  font-size: 1.2em; }
+
 .fixed {
-  max-width: 256; }
+  margin: auto; }
