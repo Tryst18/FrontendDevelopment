@@ -247,10 +247,11 @@ height: auto;
   background-position: 50%;
   background-repeat: no-repeat;
 }
+
 .extra {
   height: 200px;
   width: 300px;
-  background-color: : black;
+  background-color: black;
   background-position: 50%;
   background-repeat: no-repeat;
 }

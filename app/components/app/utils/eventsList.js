@@ -102,7 +102,7 @@
             app$utils$eventsList$$arrKey = Object.keys(app$utils$eventsList$$events)
             // console.log(events)
           }
-    
+
           for (var x in app$utils$eventsList$$arrKey) {
             if (app$utils$eventsList$$arrKey[x]!="guest" || app$utils$eventsList$$bool == "1") {
               // console.log(arrKey[x])
@@ -119,18 +119,18 @@
           }
           $("#row").append(
             '<div class="description-block mx-auto container-fluid">' +
-    
+
             '<div class="row" id="eveList">' +
             '</div>' +
             '</div>'
           )
-    
+
           function onClick(e, t) {
             var opened = $("#" + t).hasClass("active");
             // console.log(opened)
             // if( opened ){
             //   console.log("__opened");
-    
+
             //   console.log($('#eveList').html())
             // }
             $("#eveList").empty();
@@ -146,17 +146,17 @@
               let phot = (eveList[x].photos && eveList[x].photos.length) ? eveList[x].photos[0] : ''
               if (app$utils$eventsList$$bool != "1") {
                 // console.log(eveList[x].photos[0])
-    
+
                 // console.log(phot)
                 $("#eveList").append(
-    
+
                   '<div class="col-md-4 col-sm-6 col-xs-12 event-container">' +
                   '<div class="fixed mx-auto"><img src="' + $$index$$linkExtract(phot) + '" class="img-responsive event-img"></div>' +
                   '<p class="mx-auto">' +
                   '<a href=../specifEvent.html?' + eveList[x].id + '>' + eveList[x].name + '</a>' +
                   '</p>' +
                   '</div>'
-    
+
                 );
               } else {
                 // console.log(user.registration, "here")
@@ -165,7 +165,7 @@
                   if (eveList[x].name != "bogus" && (eveList[x].id in uDict)) {
                     // console.log(eveList[x].name)
                     $("#eveList").append(
-    
+
                       '<div class="col-md-4 col-sm-6 col-xs-12 event-container">' +
                       '<div class="fixed mx-auto"><img src="' + $$index$$linkExtract(phot) + '" class="img-responsive event-img"></div>' +
                       '<p class="mx-auto">' +
@@ -177,33 +177,33 @@
                   }
                 }
               }
-    
+
             }
             if (k==2)
             {
               $("#eveList").append(
-    
+
                   '<div class="col-md-4 col-sm-6 col-xs-12 event-container">' +
                   '<div class="extra"></div>' +
                   '</div>'
-    
+
                 );
             }
             else if(k==1)
             {
               $("#eveList").append(
-    
+
                   '<div class="col-md-4 col-sm-6 col-xs-12 event-container">' +
                   '<div class="extra"></div>' +
                   '</div>'
-    
+
                 );
               $("#eveList").append(
-    
+
                   '<div class="col-md-4 col-sm-6 col-xs-12 event-container">' +
                   '<div class="extra"></div>' +
                   '</div>'
-    
+
                 );
             }
             var images = Array.prototype.slice.call(document.getElementsByClassName('event-img'), 0)
@@ -219,17 +219,17 @@
               $("#eveList").toggleClass("show");
             })
           }
-    
-    
-    
+
+
+
           var eventsButton = document.getElementsByClassName('category-block');
           var x = 0;
           // console.log(eventsButton);
           while (x < eventsButton.length) {
-    
+
             // $(".category-block").click(function(e){
             //   console.log(e.target);
-    
+
             // });
             eventsButton[x].addEventListener('click', function (e) {
               // console.log('hi')

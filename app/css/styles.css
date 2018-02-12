@@ -63,3 +63,6 @@ p {
 .oneeighty {
   max-width: auto;
   max-height: 180px; }
+
+.backdrop {
+  background-image: url(); }
