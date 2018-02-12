@@ -7,6 +7,10 @@
 	     url('../fonts/samakaran.svg#webfont') format('svg');
 }
 
+nav.head {
+    background-color: #0a1119;
+}
+
 .block {
     height: 75px;
 }
@@ -67,7 +71,7 @@ h2, h3, h4 {
 }
 
 .event-img {
-    // max-width: 256px;
+    max-width: 256px;
     margin: auto;
 }
 

@@ -19,5 +19,6 @@ var images = Array.prototype.slice.call(document.getElementsByClassName('event-i
 for (var x in images) {
   images[x].onload = function () {
     this.parentNode.style.backgroundImage = "none"
+    console.log('done')
   }
 }

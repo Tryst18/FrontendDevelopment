@@ -3,6 +3,9 @@
   src: url("../fonts/samakaran.eot");
   src: url("../fonts/samakaran.eot?#iefix") format("embedded-opentype"), url("../fonts/samakaran.woff") format("woff"), url("../fonts/samakaran.ttf") format("truetype"), url("../fonts/samakaran.svg#webfont") format("svg"); }
 
+nav.head {
+  background-color: #0a1119; }
+
 .block {
   height: 75px; }
 
@@ -51,6 +54,7 @@ h2, h3, h4 {
   width: auto; }
 
 .event-img {
+  max-width: 256px;
   margin: auto; }
 
 .sub {
