@@ -14,3 +14,10 @@ document.getElementById('close').addEventListener('click', function(){
         document.getElementById('b'+x).hidden = true
     }
 })
+
+var images = Array.prototype.slice.call(document.getElementsByClassName('event-img'), 0)
+for (var x in images) {
+  images[x].onload = function () {
+    this.parentNode.style.backgroundImage = "none"
+  }
+}

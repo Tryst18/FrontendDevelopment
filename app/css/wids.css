@@ -42,3 +42,6 @@ h2, h3, h4 {
   float: none;
   max-height: 30px;
   width: auto; }
+
+.fixed {
+  max-width: 256; }
