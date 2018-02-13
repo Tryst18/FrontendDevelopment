@@ -22,11 +22,11 @@
     padding-bottom: 54%;    // top: 0;
     // height: 
     position: fixed;
-    background-image: url(../images/we.jpg);
+    background-image: url(../images/social/backdrop.jpg);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     z-index: 5;
-    filter: blur(3px);
+    // filter: blur(3px);
 }
 
 .rest {
