@@ -162,11 +162,11 @@
                         xt.setRequestHeader("x-auth-token", sessionStorage.getItem('token'))
                         xt.onreadystatechange = function() {
                             if (xt.readyState === 4) {
+                                let res = JSON.parse(xt.responseText)
                                 if (xt.status === 200) {
-                                    let res = JSON.parse(xt.responseText)
                                     document.getElementById('message').innerHTML = ('Cool' + res.message + 'id: ' + res.data.id + 'Name: ' + res.data.name)
                                 } else {
-                                    document.getElementById('message').innerHTML = ('some problem has occured')
+                                    document.getElementById('message').innerHTML = (res.message)
                                 }
                             }
                         }
