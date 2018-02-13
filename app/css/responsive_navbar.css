@@ -19,7 +19,7 @@ ul
 
 nav.head {
     /*background: #66fcf1;*/
-    background: transparent;
+    background: #0a1119;
     z-index: 2;
     border-bottom: 2px solid transparent;
      -moz-border-image: -moz-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
@@ -212,7 +212,7 @@ header {
 }*/
 
 
-@media screen and (max-width: 1124px){
+@media screen and (max-width: 1129px){
     .head {
         height: 65px
     }
