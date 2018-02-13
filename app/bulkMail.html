@@ -34,7 +34,7 @@
                 to = to.split(',');             
                 
                 $.ajax({
-                    url: 'https://api.tryst-iitd.com/api/tempBulkMail',
+                    url: 'https://api.tryst-iitd.com/api/email/send',
                     type: 'POST',
                     contentType: 'application/json',
                     data: JSON.stringify({ 
