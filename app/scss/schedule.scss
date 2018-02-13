@@ -35,6 +35,29 @@ nav.sched {
     top: 110px;
 }
 
+#download {
+    float: left;
+    padding: 5px;
+    margin: 10px;
+    background-color: #0a1119;
+    border-bottom: 2px solid transparent;
+     -moz-border-image: -moz-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
+     -webkit-border-image: -webkit-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
+     border-image: linear-gradient(to bottom left, #ffffff 0%, #0a1119 100%);
+    cursor: pointer;
+     border-image-slice: 1;
+    outline: none;
+    /*overflow: hidden;*/
+    // width: 100%;
+    box-shadow: -2px -7px 47px 9px rgba(0, 0, 0, 0.35);
+    color: #ffffff;
+}
+
+td {
+    height: fit-content;
+    width: fit-content;
+}
+
 .blockf {
     position: absolute;
     bottom: -10px;
