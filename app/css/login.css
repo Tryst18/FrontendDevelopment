@@ -47,7 +47,7 @@
   color: #0a1119;
   border-color: #0a1119;
 }
-#form #message {
+#form .message {
   margin: 15px 0 0;
   color: #534f4f;
   font-size: 12px;
@@ -62,11 +62,11 @@
   font-size: 14px;
   display: none;
 }
-#form #message a {
+#form .message a {
   color: #1f2833;
   text-decoration: none;
 }
-#form #message a:hover
+#form .message a:hover
 {
 	text-decoration: underline;
 }
