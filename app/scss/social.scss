@@ -29,14 +29,24 @@
     // filter: blur(3px);
 }
 
+.li-back {
+    background-color: rgba($color: #000000, $alpha: 0.4);
+    // filter: blur(3px);
+}
+
 .rest {
     z-index: 10;
     position: relative;
     padding-top: 20px;
+    .samak {
+        font-family: 'Samakaran';
+        color: #ffffff;
+    }
     h1 {
         // font-family: 'Samakaran';
         // color: #ffffff;
         font-size: 10em;
+        font-family: 'Geo'
     }
 }
 
@@ -66,12 +76,16 @@ p{
     padding-top: 10%;
 }
 
-.samak {
-    font-family: 'Samakaran';
-    color: #ffffff;
+
+
+.fixed {
+    height: 256px;
+    width: 256px;
+    margin: auto;
+    background-image: url("../images/loader.gif");
+    background-position: 50%;
+    background-repeat: no-repeat;
 }
-
-
 
 nav.head.soc {
     top: auto;
@@ -89,3 +103,18 @@ nav.head.soc {
 .center {
     text-align: center;
 }
+
+#eveList a{
+    /*background-color: red;*/
+    border: 2px solid transparent;
+    -moz-border-image: -moz-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
+    -webkit-border-image: -webkit-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
+    border-image: linear-gradient(to bottom left, #ffffff 0%, #0a1119 100%);
+    border-image-slice: 1;
+    background-color: transparent;
+    color: white;
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 0.7em;
+    padding: 8px 16px;
+  }

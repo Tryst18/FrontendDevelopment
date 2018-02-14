@@ -17,7 +17,7 @@ html.gray #loader-wrapper {
 body {
 	/*background-color: #DDDDDD;*/
 	color: black;
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	font-family: sans-serif;
 	font-size: 17px;
 	font-weight: 300;
 	overflow-x: hidden;
@@ -418,9 +418,9 @@ border-top-color: #f9c922; /* Chrome, Opera 15+, Safari 5+ */ animation: spin 1.
 }
 
 .tm-copyright-text {
-	/*background-color: rgba(0, 0, 0, 0.2);*/
+	/*fon*/
 	color: black;
-    font-size: 1.8rem;
+    font-size: 1.8rem;fon
     font-weight: 400;
 	text-align: center;
     padding: 30px;

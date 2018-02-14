@@ -138,14 +138,14 @@
                         '<button id="'+guestLecs[x].id+'info" value="'+guestLecs[x].id+'" class="fa fa-info-circle no_margin"></button>'+
                         '</div>'
                     )
-
+    
                     if (x%4==3) {
                         $('#guests').append(
                             '</div>'+
                             '<div class="row">'
                         )
                     }
-
+    
                     document.getElementById(guestLecs[x].id+'info').addEventListener('click', function(e) {
                         document.getElementById('popup').hidden = false
                         // document.getElementById('guests').classList.toggle('noscroll')
@@ -159,18 +159,18 @@
                             '<div class="fixed"><img src="'+$$index$$linkExtract(tarLec.photos[0])+'" id="pho'+tarLec.id+'" class="event-img"></div>'+
                             '</div>'
                         )
-
+    
                         document.getElementById('lea'+tarLec.id).addEventListener('click', function(e) {
                             app$utils$guestLec$$buttonCtrl(e, "v")
                         })
-
+    
                         document.getElementById('pho'+tarLec.id).onload = function () {
                             console.log(this.parentNode)
                             this.parentNode.style.backgroundImage = "none"
                         }
-
+    
                     })
-
+    
                     document.getElementById(guestLecs[x].id).addEventListener('click', function(e) {
                         app$utils$guestLec$$buttonCtrl(e, "i")
                     })
