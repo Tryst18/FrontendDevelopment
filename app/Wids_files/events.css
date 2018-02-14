@@ -1,0 +1,273 @@
+html
+{
+  background-color: #0a1119;
+  font-size: 13pt;
+}
+body
+{
+  overflow: auto;
+  background-color: #0a1119;
+}
+h2
+{
+  border-style: solid;
+  border-color: #e07a5f;
+  border-width: 2px 0 2px 0;
+}
+h2#descriptions
+{
+  width: 100%;
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+}
+#description
+{
+  text-align: justify;
+  /*width: 100%;*/
+  margin-left: 5%;
+  margin-right: 5%;
+  /* width: 1200px; */
+
+
+}
+h2#prizess
+{
+  text-align: center;
+  /*float: right;
+  width: 50%;*/
+  width: 80%;
+
+  margin: 0 auto;
+  max-width: 90%;
+}
+#prizes
+{
+  text-align: center;
+  /*width: 600px;*/
+
+  /*
+  float: right;
+  position: relative;
+  top: 50px;*/
+}
+input
+{
+  float: right;
+  width:100%;
+  color: black;
+}
+.container {
+    position: relative;
+    width: 100%;
+    /*border: 10px solid red;*/
+    border: 2px solid transparent;
+    -moz-border-image: -moz-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
+    -webkit-border-image: -webkit-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
+    border-image: linear-gradient(to bottom left, #ffffff 0%, #0a1119 100%);
+
+    border-image-slice: 1;
+    margin: 10px;
+  }
+
+.category-block {
+  margin: 0px 0px 5px 0px;
+}
+
+  .image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .overlay {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    /*background-color: #008CBA;*/
+    background-color: rgba(3,169,244 ,0.8);
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+
+  .overlay:hover {
+    opacity: 1;
+  }
+
+  .text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+  }
+
+  button
+  {
+    /*background-color: #03A9F4;*/
+    /*background-color: rgba(3,169,244 ,0.8);*/
+    /*border-radius: 0.5em;*/
+    border: 0px;
+    outline: 0px;
+    border: 2px solid transparent;
+    -moz-border-image: -moz-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
+    -webkit-border-image: -webkit-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
+    border-image: linear-gradient(to bottom left, #ffffff 0%, #0a1119 100%);
+    border-image-slice: 1;
+    padding: 8px 16px;
+    color: white;
+    cursor: pointer;
+    max-width: 90%;
+  }
+
+  #eveList {
+    display: none;
+    padding-bottom: 100px;
+    transition: max-height 0.5s;
+    -webkit-transition: max-height 0.5s;
+    -moz-transition: max-height 0.5s;
+    -ms-transition: max-height 0.5s;
+    -o-transition: max-height 0.5s;
+
+  }
+
+  .show {
+    display: inline;
+    max-height: fit-content;
+  }
+.mx-auto{
+  margin-left:auto;
+  margin-right: auto;
+  padding-top: 5px;
+}
+
+/* Events Category styling  */
+#page-wrapper{
+  padding-top:25px;
+/*  height: 100%;*/
+height: auto;
+}
+
+#page-wrapper .container-fluid{
+  max-width:1180px;
+}
+#move .row .container{
+  text-align: center;
+  position: relative;
+  padding: 0;
+}
+.description-block{
+  max-width:1180px;
+  /* width:93vw; */
+  margin-left: 4%;
+  margin-right: 4%;
+  height:fit-content;
+  min-height:0;
+  position: absolute;
+  z-index:10;
+  transition: height,min-height 0.4s ease-in-out;
+
+}
+.description-block.active{
+  min-height: 500px;
+  transition: min-height 0.4s ease-in-out;
+
+}
+
+
+
+#headTitle {
+  text-align: center;
+}
+
+/* Events styling */
+.event-container p{
+  text-align: center;
+}
+
+
+.event-container {
+  align-content: center;
+  border: 2px solid transparent;
+
+
+}
+
+.event-container-head{
+  -moz-border-image: -moz-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
+  -webkit-border-image: -webkit-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
+  border-image: linear-gradient(to bottom left, #ffffff 0%, #0a1119 100%);
+  border-image-slice: 1;
+  padding: 8px;
+}
+
+.event-img{
+  max-height:200px;
+  width:auto;
+  margin: auto;
+}
+
+#eveList {
+  background-color: black;
+
+
+}
+
+#eveList a{
+  /*background-color: red;*/
+  border: 2px solid transparent;
+  -moz-border-image: -moz-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
+  -webkit-border-image: -webkit-linear-gradient(top right, #ffffff 0%, #0a1119 100%);
+  border-image: linear-gradient(to bottom left, #ffffff 0%, #0a1119 100%);
+  border-image-slice: 1;
+  background-color: transparent;
+  color: white;
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 1rem;
+  padding: 8px 16px;
+}
+
+.fixed {
+  height: 200px;
+  width: 300px;
+  background-image: url("../images/loader.gif");
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
+.extra {
+  height: 200px;
+  width: 300px;
+  background-color: black;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
+#closBut {
+  width: 100%;
+}
+
+#close {
+  float: none;
+  max-height: 30px;
+  width: auto;
+}
+
+#back {
+  padding: 5px 0px 0px 10px;
+  position: absolute;
+  color: #ffffff
+}
