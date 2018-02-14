@@ -3,8 +3,8 @@
     <head>
         <title>Tryst 2018</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">         <link rel="icon" href="images/Logo.ico" type="image/ico">
-        <link rel="stylesheet" type="text/css" href="css/login.css">
         <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <link rel="stylesheet" type="text/css" href="css/signup.css">
         <link rel="stylesheet" type="text/css" href="css/responsive_navbar.css">
         <link rel="stylesheet" type="text/css" href="css/footer.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -12,12 +12,13 @@
         src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
+
     </head>
 
 
 
-    <body >
-        <!-- <div class="image"><a href="index.html"><img src="images/tryst_logo.png"></a></div> -->
+    <body>
+    	 <!-- <div class="image"><a href="index.html"><img src="images/tryst_logo.png"></a></div> -->
         <nav class="head">
             <div class="logo-section">
                 <div class="logosmall"><a href="index.html"><img src="images/tryst_logo_filled.png"></a></div>
@@ -36,25 +37,21 @@
 
             </ul>
         </nav>
-
         <div class="block"></div>
-        <div id="login-page">
-            <div id="form">
-
-                <div id="logInfo">
+        <p style="text-align: center;">Don't worry, we won't spam you</p>
+        <div id="signup-page">
+        	<div id="form">
+                <div id="userInfo">
                     <input name="email" type="text" placeholder="Email">
-                    <input name="password" type="password" placeholder="Password">
                 </div>
-                <button id="submit">Login</button>
+                <button id="submit">Submit</button>
                 <div id="err">
-                        <p id="errNoUser">Wrong email or password</p>
                         <p id="errServ">Server error, try again</p>
                         <p id="errUser">All fields are important</p>
                         <p id="loading">Loading...</p>
                 </div>
-                <p class="message">Not registered? <a href="signup.html">Create an account</a></p>
-                <p class="message"><a href="forgot.html">Forgot Password</a></p>
-            </div>
+                <p class="message"><a href="login.html">Sign In</a></p>
+        	</div>
         </div>
         <div id="particles-js"></div>
 
@@ -63,9 +60,9 @@
     <script src="js/themepart.js"></script>
 
 
-
-         <nav class="foot">
+		 <nav class="foot">
             <div class="logo-section">
+                <a class="logo" href="#"></a>
                 <button class="hb-button"><i class="fa fa-bars"></i></button>
             </div>
             <ul>
@@ -75,7 +72,7 @@
 
                 <li><a href="https://www.facebook.com/IITD.Tryst/?hc_ref=ARTh5ibetklzycSzq8XQ5csPBKBS0kOOPx0IHhpG7EIgkZmsnZ_el6P8ljcxwdTIi6U&fref=nf" class="fa fa-facebook"></a></li>
                 <li><a href="https://twitter.com/iitdtryst?lang=en" class="fa fa-twitter"></a></li>
-                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="comingsoon.html">Gallery</a></li>
                 <li><a href="about.html">About Us</a></li>
             </ul>
         </nav>
@@ -84,5 +81,5 @@
         <script type="text/javascript" src="js/footer.js"></script>
     </body>
 
-    <script type="text/javascript" src="components/app/utils/login.js"></script>
+    <script type="text/javascript" src="components/app/utils/forgot.js"></script>
 </html>
