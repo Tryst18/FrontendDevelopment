@@ -70,10 +70,10 @@
                 if (x%3 == 1) {
                     $("#eveList").append('</div><div class="row">')
                 }
-    
+
             }
             $("#eveList").append('</div>')
-    
+
             var images = Array.prototype.slice.call(document.getElementsByClassName('event-img'), 0)
             for (var x in images) {
               // console.log(images[x])
@@ -83,10 +83,10 @@
               }
             }
           
-    
-    
-    
-    
+
+
+
+
         }
       }
     }
