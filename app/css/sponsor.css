@@ -16,6 +16,13 @@
 	height: 100%;
 	padding: 10px 0 10px 0;
 }
+.bigger
+{
+	margin: auto;
+	width: 250px;
+	height: 100%;
+	padding: 10px 0 10px 0;
+}
 .onee
 {
 	margin: auto;
@@ -35,6 +42,10 @@
 	float: left;
 	position: relative;
 	vertical-align: middle;
+}
+.smaller
+{
+	width: 150px;
 }
 .oned
 {
@@ -66,6 +77,41 @@
 {
 	width: 200px;
 	height: auto;
+}
+.sp-image-big
+{
+	width: 250px;
+	height: auto;
+}
+.sp-image-small
+{
+	width: 150px;
+	height: auto;
+}
+div.one .sp-image-small
+{
+	margin: 0 25px 0 25px;
+}
+.sp-image-pop
+{
+	width: 100px;
+	height: auto;
+	
+}
+div.one .sp-image-pop
+{
+	margin: 0 50px 0 50px;
+}
+
+.sp-image-blink
+{
+	width: 80px;
+	height: auto;
+	
+}
+div.one .sp-image-blink
+{
+	margin: 0 60px 0 60px;
 }
 p
 {
