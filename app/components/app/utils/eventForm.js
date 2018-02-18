@@ -125,7 +125,7 @@
             var targ = document.getElementById('t'+x)
             app$utils$eventForm$$send = Object.assign(app$utils$eventForm$$send, {[targ.name]:targ.value})
         }
-
+    
         var pocInfo = Array.prototype.slice.call(document.getElementById('poc').children, 0)
         var poc = {}
         for (var n in pocInfo) {
@@ -135,7 +135,7 @@
             }
         }
         app$utils$eventForm$$send = Object.assign(app$utils$eventForm$$send, {"poc":[poc]})
-
+    
         app$utils$eventForm$$send = Object.assign(app$utils$eventForm$$send, {"photos":[document.getElementById('phot').value]})
         app$utils$eventForm$$send = Object.assign(app$utils$eventForm$$send, {"reg_deadline":(new Date(Date.parse(document.getElementById('dead').value)).toISOString())})
         app$utils$eventForm$$send = Object.assign(app$utils$eventForm$$send, {"registration": true, "reg_status": true, "subheading":document.getElementById('sub').value, "rules":document.getElementById('place').value, "dtv":[]})
@@ -178,6 +178,6 @@
         // }
         // console.log(JSON.stringify({"email":document.getElementById('em').value, "password":document.getElementById('pa').value}))
         // xhr.send(JSON.stringify({"email":document.getElementById('em').value, "password":document.getElementById('pa').value}))
-
+    
     });
 }).call(this);
