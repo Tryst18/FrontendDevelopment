@@ -49,7 +49,7 @@
 }
 .oned
 {
-	width: 300px;
+	width: 250px;
 	height: 100%;
 	float: left;
 	position: relative;
@@ -96,7 +96,7 @@ div.one .sp-image-small
 {
 	width: 100px;
 	height: auto;
-	
+	margin-right: 50px;
 }
 div.one .sp-image-pop
 {
@@ -107,7 +107,7 @@ div.one .sp-image-pop
 {
 	width: 80px;
 	height: auto;
-	
+	margin-left: 50px;
 }
 div.one .sp-image-blink
 {
