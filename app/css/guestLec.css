@@ -53,6 +53,9 @@
 .regisGuest {
   margin-top: 10px; }
 
+.nameBut {
+  cursor: pointer; }
+
 .noscroll {
   overflow: hidden; }
 
