@@ -62,10 +62,8 @@
         <script>
         if (sessionStorage.getItem("authUser")) {
             var user = JSON.parse(sessionStorage.getItem("authUser"));
-            document.getElementById("User").innerHTML = 'Hi <a href="events.html?1">'+ decodeURIComponent(user.name) +'</a><br>Tryst ID: '+ user.id +'<br><a href="modify.html">' + 'Modify' + '</a>';
-        } else {
-            document.getElementById("User").innerHTML = 'Hi <a href="login.html">' + 'Guest' + '</a>';
-            // console.log("this happened")
+            var str = '<a href="events.html?1">Registered Events</a>'
+            document.getElementById("User").innerHTML = 'Hi '+ decodeURIComponent(user.name) +'<br>Tryst ID: '+ user.id +'<br><a href="modify.html">' + 'Modify' + '</a><br>'+str;
         }
         </script>
 
