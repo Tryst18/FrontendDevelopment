@@ -197,8 +197,21 @@
                         cont += keyCont[x] + ': '+ ((data.poc[y][keyCont[x]]=="Email")?'mailto:':'')+data.poc[y][keyCont[x]]
                         cont += '<br>'
                     }
+                }
+                var dtvStr = ''
+                if (data.dtv.length >0) {
+                    for (var y in data.dtv) {
+                        let keyCont = Object.keys(data.dtv[y])
+                        for (var x in keyCont) {
+                            dtvStr += keyCont[x] + ': '+data.dtv[y][keyCont[x]]
+                            dtvStr += '<br>'
+                        }
+                    }
+                    document.getElementById('dtvDiv').hidden = false
+                    document.getElementById('dtv').innerHTML = dtvStr
 
                 }
+
                 document.getElementById('poc').innerHTML = cont
 
                 document.getElementById('title').innerText = data.name

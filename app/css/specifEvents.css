@@ -52,7 +52,7 @@ float: right;
 margin: 0;
 padding: 0;
 /* height: 85px; */
-margin-top: 20px;
+/* margin-top: 20px; */
 position: relative;
 }
 .prizesss
@@ -61,10 +61,10 @@ position: relative;
 height: 160px;
 float: left;
 position: relative;*/
-padding: 0;
+/* padding: 0; */
 position: relative;
-width: 90%;
-margin: 0 auto;
+/* width: 90%; */
+margin-top: 26px;
 }
 .block2
 {
