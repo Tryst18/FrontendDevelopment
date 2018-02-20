@@ -75,7 +75,7 @@
                 var json = JSON.parse(xhr.responseText);
                 // console.log(json)
                 var data = json.data
-                document.getElementById('description').innerText = data.description
+                document.getElementById('description').innerHTML = data.description
                 document.getElementById('probState').innerHTML = '<a href='+data.url+'><button>Click here for Problem Statement</button></a>'
                 document.getElementById('prizes').innerText = data.prizes
                 let phot = (data.photos && data.photos.length)? data.photos[0]:''
