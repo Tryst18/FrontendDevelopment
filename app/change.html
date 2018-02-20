@@ -7,6 +7,11 @@
             <!-- <input name="email" type="text" id="em" placeholder="Admin-Email">
             <input name="password" type="password" id="pa" placeholder="Password">
             <br> -->
+            <h2>Fill only fields you want to update, don't touch any otherwise or even they will be changed</h2>
+            <h2>
+                For person of contact and Date time venue, fill all even if you want to change one of the fields.
+                Repeat the rest.
+            </h2>
             <input name="name" type="text" id="t8" placeholder="Name of event">
             <fieldset id="cat" class="radioset">
                 <legend>Category</legend>
@@ -19,13 +24,8 @@
                 <br>
                 <input id="depName" type="text" placeholder="Sub Category" hidden>
             </fieldset>
-            <fieldset id="type" class="radioset">
-                <legend>Type</legend>
-                <input name="type" type="radio" value="event" checked>Event
-                <input name="type" type="radio" value="guest">Guest
-                <input name="type" type="radio" value="workshop">Workshop
-            </fieldset>
-            <textarea name="description" id="t1" placeholder="Description"></textarea><br>
+
+            <textarea name="description" id="t1" placeholder="Description" style="width:100%; height:25%;"></textarea><br>
             <input name="prizes" type="text" id="t2" placeholder="Prizes">    
             <fieldset id="poc">
                 <legend>Peson of Contact</legend>
@@ -33,14 +33,16 @@
                 <input name="Email" type="text" placeholder="Email">
                 <input name="Mobile No" type="text" placeholder="Mobile No">
             </fieldset>
+            <fieldset id="dtv">
+                <legend>Date Timings Details</legend>
+                <input name="Date" type="text" placeholder="Date">
+                <input name="Timings" type="text" placeholder="Timings">
+                <input name="Venue" type="text" placeholder="Venue">
+            </fieldset>
             <input name="url" id="t7" type="text" placeholder="Link to problem Statement"><br>
             <input name="photos" id="phot" type="text" placeholder="Link to logo (drive link)">
-            Deadline<input name="reg_deadline" id="dead" type="date" placeholder="Deadline">
-            <fieldset id="reg_type" class="radioset">
-                    <legend>Mode</legend>
-                    <input name="reg_type" type="radio" id="mo1" value="single">Single
-                    <input name="reg_type" type="radio" id="mo2" value="team">Team
-            </fieldset>
+            <!-- Deadline<input name="reg_deadline" id="dead" type="date" placeholder="Deadline"> -->
+
             <div id="team" hidden>
             <input id="t5" name="reg_min_team_size" type="number" placeholder="Min members">
             <input id="t6" name="reg_max_team_size" type="number" placeholder="Max members">
@@ -67,7 +69,7 @@
             
             <button id="launch">Launch!</button>
             <div id="message"></div>
-            <script src="components/app/utils/eventForm.js"></script>
+            <script src="components/app/utils/change.js"></script>
 <!-- To add: reg_email, reg_link, reg_min_team_size, reg_max_team_size -->
                 
         </div>

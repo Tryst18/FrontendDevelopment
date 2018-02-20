@@ -143,7 +143,7 @@
                             '<div class="row">'
                         )
                     }
-    
+
                     document.getElementById(guestLecs[x].id).addEventListener('click', function(e) {
                         document.getElementById('popup').hidden = false
                         // document.getElementById('guests').classList.toggle('noscroll')
@@ -157,18 +157,18 @@
                             '<div class="fixed"><img src="'+$$index$$linkExtract(tarLec.photos[0])+'" id="pho'+tarLec.id+'" class="event-img"></div>'+
                             '</div>'
                         )
-    
+
                         document.getElementById('lea'+tarLec.id).addEventListener('click', function(e) {
                             app$utils$guestLec$$buttonCtrl(e, "v")
                         })
-    
+
                         document.getElementById('pho'+tarLec.id).onload = function () {
                             // console.log(this.parentNode)
                             this.parentNode.style.backgroundImage = "none"
                         }
-    
+
                     })
-    
+
                     document.getElementById('info'+guestLecs[x].id).addEventListener('click', function(e) {
                         app$utils$guestLec$$buttonCtrl(e, "i")
                     })
