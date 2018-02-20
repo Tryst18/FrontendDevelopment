@@ -1,6 +1,9 @@
 .guestElement {
   height: 60%; }
 
+a {
+  color: dodgerblue; }
+
 .fixed {
   height: 256px;
   width: 256px;
@@ -55,6 +58,9 @@
 
 .nameBut {
   cursor: pointer; }
+
+.nameBut:hover {
+  color: blue; }
 
 .noscroll {
   overflow: hidden; }

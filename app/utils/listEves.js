@@ -16,7 +16,12 @@ xhr.onreadystatechange = function () {
                 main.insertAdjacentHTML('beforeend', '<h1>'+keyArr[x]+'</h1>')
                 let speCat = events[keyArr[x]]
                 for (var y in speCat) {
-                    main.insertAdjacentHTML('beforeend', '<a href="csvPage.html?'+speCat[y].id+'">'+speCat[y].name+'</a>, ')
+                    var purp = document.location.search.split('?')[1]
+                    if (purp == 'c'){
+                        main.insertAdjacentHTML('beforeend', '<a href="csvPage.html?'+speCat[y].id+'">'+speCat[y].name+'</a>, ')
+                    } else if (purp == 'g') {
+                        main.insertAdjacentHTML('beforeend', '<a href="change.html?'+speCat[y].id+'?'+speCat[y].name+'">'+speCat[y].name+'</a>, ')
+                    }
                 }
             }
         }

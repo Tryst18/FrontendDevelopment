@@ -78,11 +78,11 @@
                         app$utils$register$$i--;
                         id++;
                     }
-    
+
                     document.getElementById('fir').value = app$utils$register$$user.email
                     let del = document.getElementById('del')
                     let add = document.getElementById('add')
-    
+
                     add.onclick= function () {
                         if (app$utils$register$$i>0) {
                             var form = '<input name="email" type="text" id="mem'+id+'" placeholder="Member\'s registered email">';
@@ -116,14 +116,14 @@
                             del.hidden = true
                         }
                     }
-    
+
                     document.getElementById('form').hidden = false
-    
-    
+
+
                     // var t = [1,2,3]
                     // t.push(4)
                     // console.log(t)
-    
+
                     function onReg() {
                         console.log('hi')
                         if (data.rules!="" && document.getElementById('remark').value == "") {
@@ -149,7 +149,7 @@
                         var teamName = document.getElementById('tname').value
                         var src = document.getElementById('src').value
                         console.log(src)
-    
+
                         var xhr = new XMLHttpRequest();
                         xhr.open("POST", $$index$$url+"/api/register/register", true);
                         xhr.setRequestHeader("Content-type", "application/json");

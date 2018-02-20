@@ -42,7 +42,7 @@
         return 'https://drive.google.com/uc?id='+arr[1]+'&export=view'
     }
 
-    var app$utils$eventForm$$send = {}
+    var app$utils$change$$send = {}
 
 
     // var mode = document.getElementById('reg_mode')
@@ -56,6 +56,8 @@
     //     }
     // })
 
+    document.getElementById('t8').placeholder = decodeURI(document.location.search.split('?')[2]);
+
     document.getElementById('cat').addEventListener('change', function() {
         if (document.getElementById('c2').checked || document.getElementById('c1').checked) {
             document.getElementById('depName').hidden = false
@@ -64,13 +66,6 @@
         }
     });
 
-    document.getElementById('reg_type').addEventListener('change', function() {
-        if (document.getElementById('mo2').checked) {
-            document.getElementById('team').hidden = false
-        } else {
-            document.getElementById('team').hidden = true
-        }
-    });
 
     document.getElementById('wm1').addEventListener('click', function() {
         if (document.getElementById('wm1').checked) {
@@ -109,12 +104,12 @@
                 for (var x in t.children) {
                     if (x<t.children.length) {
                         if (t.children[x].checked) {
-                            app$utils$eventForm$$send = Object.assign(app$utils$eventForm$$send, {[t.children[x].name]:t.children[x].value})
+                            app$utils$change$$send = Object.assign(app$utils$change$$send, {[t.children[x].name]:t.children[x].value})
                             if ([t.children[x].name] == "category"){
                                 if (t.children[x].value == "department" || t.children[x].value == "club") {
-                                    app$utils$eventForm$$send = Object.assign(app$utils$eventForm$$send, {"category_name":document.getElementById('depName').value})
+                                    app$utils$change$$send = Object.assign(app$utils$change$$send, {"category_name":document.getElementById('depName').value})
                                 } else {
-                                    app$utils$eventForm$$send = Object.assign(app$utils$eventForm$$send, {"category_name":t.children[x].value})
+                                    app$utils$change$$send = Object.assign(app$utils$change$$send, {"category_name":t.children[x].value})
                                 }
                             }
                         }
@@ -123,23 +118,38 @@
         })
         for (var x=1; x<=8; x++) {
             var targ = document.getElementById('t'+x)
-            app$utils$eventForm$$send = Object.assign(app$utils$eventForm$$send, {[targ.name]:targ.value})
+            if (targ.value!="") {
+                app$utils$change$$send = Object.assign(app$utils$change$$send, {[targ.name]:targ.value})
+            }
         }
 
         var pocInfo = Array.prototype.slice.call(document.getElementById('poc').children, 0)
         var poc = {}
+        var pocE = true
         for (var n in pocInfo) {
             if (pocInfo[n].name) {
+                if (pocInfo[n].value!="") {pocE = false}
                 poc = Object.assign(poc, {[pocInfo[n].name]:pocInfo[n].value})
                 // console.log(pocInfo[n])
             }
         }
-        app$utils$eventForm$$send = Object.assign(app$utils$eventForm$$send, {"poc":[poc]})
-
-        app$utils$eventForm$$send = Object.assign(app$utils$eventForm$$send, {"photos":[document.getElementById('phot').value]})
-        app$utils$eventForm$$send = Object.assign(app$utils$eventForm$$send, {"reg_deadline":(new Date(Date.parse(document.getElementById('dead').value)).toISOString())})
-        app$utils$eventForm$$send = Object.assign(app$utils$eventForm$$send, {"registration": true, "reg_status": true, "subheading":document.getElementById('sub').value, "rules":document.getElementById('place').value, "dtv":[]})
-        console.log(app$utils$eventForm$$send)
+        var dtvE = true
+        var dtvInfo = Array.prototype.slice.call(document.getElementById('dtv').children, 0)
+        var dtv = {}
+        for (var n in dtvInfo) {
+            if (dtvInfo[n].name) {
+                if (dtvInfo[n].value!="") {dtvE = false}
+                dtv = Object.assign(dtv, {[dtvInfo[n].name]:dtvInfo[n].value})
+                // console.log(dtvInfo[n])
+            }
+        }
+        if (!pocE) {app$utils$change$$send = Object.assign(app$utils$change$$send, {"poc":[poc]})}
+        if (!dtvE) {app$utils$change$$send = Object.assign(app$utils$change$$send, {"dtv":[dtv]})}
+        if (document.getElementById('phot').value!="") {app$utils$change$$send = Object.assign(app$utils$change$$send, {"photos":[document.getElementById('phot').value]})}
+        // send = Object.assign(send, {"reg_deadline":(new Date(Date.parse(document.getElementById('dead').value)).toISOString())})
+        if (document.getElementById('sub').value) {app$utils$change$$send = Object.assign(app$utils$change$$send, {"subheading":document.getElementById('sub').value})}
+        if (document.getElementById('place').value) {app$utils$change$$send = Object.assign(app$utils$change$$send, {"rules":document.getElementById('place').value})}
+        console.log(app$utils$change$$send)
         // var xhr = new XMLHttpRequest();
         // xhr.open("POST", url+"/api/user/login", true);
         // xhr.setRequestHeader("Content-type", "application/json");
@@ -155,9 +165,9 @@
                     // console.log(json.error == false)
                     // if (json.error == false) {
                         // sessionStorage.setItem("token", data.token);
-                        console.log("login")
+                        // console.log("login")
                         var xt = new XMLHttpRequest();
-                        xt.open("POST", $$index$$url+"/api/event/create", true)
+                        xt.open("POST", $$index$$url+"/api/event/modify/"+document.location.search.split('?')[1], true)
                         xt.setRequestHeader("Content-type", "application/json")
                         xt.setRequestHeader("x-auth-token", sessionStorage.getItem('token'))
                         xt.onreadystatechange = function() {
@@ -170,9 +180,13 @@
                                 }
                             }
                         }
-                        console.log(({"event":app$utils$eventForm$$send}))
-                        xt.send(JSON.stringify({"event":app$utils$eventForm$$send}))
-                    
+                        // console.log(send)
+                        if (Object.keys(app$utils$change$$send).length>0) {
+                            console.log({"event":app$utils$change$$send})
+                            xt.send(JSON.stringify({"event":app$utils$change$$send}))
+                        } else {
+                            document.getElementById('message').innerHTML = 'Are you running some test or something?'
+                        }
         //         }
         //     }
         // }

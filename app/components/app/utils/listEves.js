@@ -42,27 +42,32 @@
         return 'https://drive.google.com/uc?id='+arr[1]+'&export=view'
     }
 
-    let app$utils$eventsCSVgen$$xhr = new XMLHttpRequest();
-    app$utils$eventsCSVgen$$xhr.open("GET", $$index$$url + "/api/event/getCategories", true);
-    app$utils$eventsCSVgen$$xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    app$utils$eventsCSVgen$$xhr.onreadystatechange = function () {
+    let app$utils$listEves$$xhr = new XMLHttpRequest();
+    app$utils$listEves$$xhr.open("GET", $$index$$url + "/api/event/getCategories", true);
+    app$utils$listEves$$xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    app$utils$listEves$$xhr.onreadystatechange = function () {
         main.innerText = 'loading...'
-        if (app$utils$eventsCSVgen$$xhr.readyState === 4) {
-            let json = JSON.parse(app$utils$eventsCSVgen$$xhr.responseText)
+        if (app$utils$listEves$$xhr.readyState === 4) {
+            let json = JSON.parse(app$utils$listEves$$xhr.responseText)
             let main = document.getElementById('main')
             main.innerText = json.message
-            if (app$utils$eventsCSVgen$$xhr.status === 200) {
+            if (app$utils$listEves$$xhr.status === 200) {
                 let events = json.data
                 let keyArr = Object.keys(json.data)
                 for (var x in keyArr) {
                     main.insertAdjacentHTML('beforeend', '<h1>'+keyArr[x]+'</h1>')
                     let speCat = events[keyArr[x]]
                     for (var y in speCat) {
-                        main.insertAdjacentHTML('beforeend', '<a href="csvPage.html?'+speCat[y].id+'">'+speCat[y].name+'</a>, ')
+                        var purp = document.location.search.split('?')[1]
+                        if (purp == 'c'){
+                            main.insertAdjacentHTML('beforeend', '<a href="csvPage.html?'+speCat[y].id+'">'+speCat[y].name+'</a>, ')
+                        } else if (purp == 'g') {
+                            main.insertAdjacentHTML('beforeend', '<a href="change.html?'+speCat[y].id+'?'+speCat[y].name+'">'+speCat[y].name+'</a>, ')
+                        }
                     }
                 }
             }
         }
     }
-    app$utils$eventsCSVgen$$xhr.send();
+    app$utils$listEves$$xhr.send();
 }).call(this);

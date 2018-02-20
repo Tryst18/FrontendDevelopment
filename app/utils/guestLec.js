@@ -103,28 +103,52 @@ xhr.onreadystatechange = function () {
                 }
 
                 document.getElementById(guestLecs[x].id).addEventListener('click', function(e) {
-                    document.getElementById('popup').hidden = false
-                    // document.getElementById('guests').classList.toggle('noscroll')
-                    let tarLec = guestDict[e.target.id]
-                    $('#fill').html(
-                        '<div class="col-md-8 col-sm-12 col-xs-12">'+
-                        '<p>'+tarLec.description+'</p>'+
-                        '<button id="lea'+tarLec.id+'" value="'+tarLec.id+'" class="regisGuest '+((tarLec.id in useReg)?'reg':'')+'">'+ ((tarLec.id in useReg)?'Delete':'Register') + '</button>'+
-                        '</div>'+
-                        '<div class="col-md-4 col-sm-12 col-xs-12 lec-img">' +
-                        '<div class="fixed"><img src="'+linkExtract(tarLec.photos[0])+'" id="pho'+tarLec.id+'" class="event-img"></div>'+
-                        '</div>'
-                    )
-
-                    document.getElementById('lea'+tarLec.id).addEventListener('click', function(e) {
-                        buttonCtrl(e, "v")
-                    })
-
-                    document.getElementById('pho'+tarLec.id).onload = function () {
-                        // console.log(this.parentNode)
-                        this.parentNode.style.backgroundImage = "none"
+                    let xr = new XMLHttpRequest();
+                    xr.open("GET", url+"/api/event/view/"+e.target.id, true);
+                    xr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                    xr.onreadystatechange = function () {
+                        if (xr.readyState === 4){
+                            if (xr.status === 200) { 
+                                document.getElementById('popup').hidden = false
+                                // document.getElementById('guests').classList.toggle('noscroll')
+                                let tarLec = JSON.parse(xr.responseText).data
+                                let cont = ''
+                                if (tarLec.dtv.length >0) {
+                                    for (var y in tarLec.dtv) {
+                                        let keyCont = Object.keys(tarLec.dtv[y])
+                                        for (var x in keyCont) {
+                                            cont += keyCont[x] + ': '+tarLec.dtv[y][keyCont[x]]
+                                            cont += '<br>'
+                                        }
+                                    }
+                                }
+                                $('#fill').html(
+                                    '<div class="col-md-8 col-sm-12 col-xs-12">'+
+                                    '<p>'+tarLec.description+'</p>'+
+                                        '<div class="col-md-6 col-sm-12 col-xs-12">'+
+                                            '<button id="lea'+tarLec.id+'" value="'+tarLec.id+'" class="regisGuest '+((tarLec.id in useReg)?'reg':'')+'">'+ ((tarLec.id in useReg)?'Delete':'Register') + '</button>'+
+                                        '</div>'+
+                                        '<div class="col-md-6 col-sm-12 col-xs-12">'+
+                                            '<p>'+cont+'</p>'+
+                                        '</div>'+
+                                    '</div>'+
+                                    '<div class="col-md-4 col-sm-12 col-xs-12 lec-img">' +
+                                    '<div class="fixed"><img src="'+linkExtract(tarLec.photos[0])+'" id="pho'+tarLec.id+'" class="event-img"></div>'+
+                                    '</div>'
+                                )
+                                
+                                document.getElementById('lea'+tarLec.id).addEventListener('click', function(e) {
+                                    buttonCtrl(e, "v")
+                                })
+            
+                                document.getElementById('pho'+tarLec.id).onload = function () {
+                                    // console.log(this.parentNode)
+                                    this.parentNode.style.backgroundImage = "none"
+                                }
+                            }
+                        }
                     }
-
+                    xr.send()
                 })
 
                 document.getElementById('info'+guestLecs[x].id).addEventListener('click', function(e) {

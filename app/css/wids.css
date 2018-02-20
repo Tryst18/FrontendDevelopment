@@ -61,3 +61,11 @@ h2, h3, h4 {
 
 .fixed {
   margin: auto; }
+
+.img-circle-5 {
+  max-width: 240px;
+  max-height: 240px; }
+
+.img-circle-4 {
+  max-width: 320px;
+  max-height: 320px; }
