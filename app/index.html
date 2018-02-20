@@ -50,6 +50,19 @@
 
         <p id="User"></p>
     <div class="initial"><img src="images/tryst_logo.png"></div>
+  <!--   <div id="count">
+        
+    <div id="countdown">
+    
+  <div id='tiles'></div>
+  <div class="labels">
+    <li>Days</li>
+    <li>Hours</li>
+    <li>Mins</li>
+    <li>Secs</li>
+  </div>
+</div>
+</div> -->
 
     <!-- <div class="initial"><img src="images/tryst_logo.png"></div> -->
    <div id="particles-js"></div>
@@ -57,13 +70,16 @@
 <!-- scripts -->
 	<script src="js/particle.js"></script>
 	<script src="js/themepart.js"></script>
+    <script src="js/index.js"></script>
 
     <!-- <script src="js/particle.js"></script> -->
         <script>
         if (sessionStorage.getItem("authUser")) {
             var user = JSON.parse(sessionStorage.getItem("authUser"));
-            var str = '<a href="events.html?1">Registered Events</a>'
-            document.getElementById("User").innerHTML = 'Hi '+ decodeURIComponent(user.name) +'<br>Tryst ID: '+ user.id +'<br><a href="modify.html">' + 'Modify' + '</a><br>'+str;
+            document.getElementById("User").innerHTML = 'Hi <a href="events.html?1">'+ decodeURIComponent(user.name) +'</a><br>Tryst ID: '+ user.id +'<br><a href="modify.html">' + 'Modify' + '</a>';
+        } else {
+            document.getElementById("User").innerHTML = 'Hi <a href="login.html">' + 'Guest' + '</a>';
+            // console.log("this happened")
         }
         </script>
 
