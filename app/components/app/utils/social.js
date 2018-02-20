@@ -48,7 +48,7 @@
     app$utils$social$$xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     app$utils$social$$xhr.onreadystatechange = function () {
       if (app$utils$social$$xhr.readyState === 4) {
-        console.log(app$utils$social$$xhr.responseText)
+        // console.log(xhr.responseText)
         if (app$utils$social$$xhr.status === 200) {
             var json = JSON.parse(app$utils$social$$xhr.responseText);
             let catEve = json.data["social"]
@@ -65,9 +65,9 @@
                     '<a href=../specifEvent.html?' + eveList[x].id + '>' + eveList[x].name + '</a>' +
                     '</p>' +
                     '</div>'
-      
                 );    
-                if (x%3 == 1) {
+                if (x%3 == 2) {
+                  console.log(x)
                     $("#eveList").append('</div><div class="row">')
                 }
 

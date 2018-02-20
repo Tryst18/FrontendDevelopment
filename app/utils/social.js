@@ -6,7 +6,7 @@ xhr.open("GET", url + "/api/event/getCategories", true);
 xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 xhr.onreadystatechange = function () {
   if (xhr.readyState === 4) {
-    console.log(xhr.responseText)
+    // console.log(xhr.responseText)
     if (xhr.status === 200) {
         var json = JSON.parse(xhr.responseText);
         let catEve = json.data["social"]
@@ -23,9 +23,9 @@ xhr.onreadystatechange = function () {
                 '<a href=../specifEvent.html?' + eveList[x].id + '>' + eveList[x].name + '</a>' +
                 '</p>' +
                 '</div>'
-  
             );    
-            if (x%3 == 1) {
+            if (x%3 == 2) {
+              console.log(x)
                 $("#eveList").append('</div><div class="row">')
             }
 

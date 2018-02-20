@@ -33,7 +33,7 @@ body {
   z-index: -3; }
 
 #User {
-  text-align: right;
+  float: right;
   position: relative;
   z-index: 100; }
 
@@ -65,4 +65,8 @@ p {
   max-height: 180px; }
 
 .backdrop {
-  background-image: url(); }
+  background-image: url("../images/bd.jpg");
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-size: contain; }
