@@ -63,13 +63,13 @@
         var seconds = Math.floor((distance % (1000 * 60)) / 1000);
         
         // Output the result in an element with id="demo"
-        document.getElementById("date").innerHTML = days + "day"+((day==1)?"":"s")+ " " + hours + "hours "
-        + minutes + "min " + seconds + "s ";
+        document.getElementById("date").innerHTML = days + "day"+((days==1)?"":"s")+ " " + hours + "hour"+((hours==1)?" ":"s ")+
+        + minutes + "min"+((minutes==1)?" ":"s ") + seconds + "s ";
         // console.log("hello"+1)
         // If the count down is over, write some text 
         if (distance < 0) {
             clearInterval(app$utils$home$$x);
-            document.getElementById("date").innerHTML = "Have a Blast to Infinity";
+            document.getElementById("date").innerHTML = "To Infinity and Beyond";
         }
     }, 1000);
 }).call(this);
