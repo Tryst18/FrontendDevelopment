@@ -108,9 +108,9 @@
               // console.log(arrKey[x])
               $("#row").append(
                 '<div class="'+((!app$utils$eventsList$$bool)?'col-md-6':'col-md-4')+' col-sm-6 col-xs-12 category-block  animatedParent animateOnce" data-appear-top-offset="-200">' +
-                '<div class="container" id="' + app$utils$eventsList$$arrKey[x] + '">' +
+                '<div class="container">' +
                 '<img src="' + './images/' + app$utils$eventsList$$arrKey[x] + '.png"' + ' class="img-responsive oneeighty mx-auto category-img" alt="">' +
-                // '<button class="overlay" id="' + arrKey[x] + '"></button>' +
+                '<button class="overlay" id="' + app$utils$eventsList$$arrKey[x] + '"></button>' +
                 '<h4>' + app$utils$eventsList$$arrKey[x].toUpperCase() + '</h4>' +
                 '</div>' +
                 '</div>'
