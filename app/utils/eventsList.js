@@ -60,14 +60,14 @@ xhr.onreadystatechange = function () {
         arrKey = Object.keys(events)
         // console.log(events)
       }
-
+      // console.log(bool)
       for (var x in arrKey) {
         if ((arrKey[x]!="guest" && arrKey[x]!="social") || bool == "1") {
           // console.log(arrKey[x])
           $("#row").append(
-            '<div class="col-md-6 col-sm-6 col-xs-12 category-block  animatedParent animateOnce" data-appear-top-offset="-200">' +
-            '<div class="container">' +
-            '<img src="' + './images/' + arrKey[x] + '.png"' + ' class="img-responsive oneeighty mx-auto category-img" id="' + arrKey[x] + '" alt="">' +
+            '<div class="'+((!bool)?'col-md-6':'col-md-4')+' col-sm-6 col-xs-12 category-block  animatedParent animateOnce" data-appear-top-offset="-200">' +
+            '<div class="container" id="' + arrKey[x] + '">' +
+            '<img src="' + './images/' + arrKey[x] + '.png"' + ' class="img-responsive oneeighty mx-auto category-img" alt="">' +
             // '<button class="overlay" id="' + arrKey[x] + '"></button>' +
             '<h4>' + arrKey[x].toUpperCase() + '</h4>' +
             '</div>' +
