@@ -80,9 +80,6 @@
         if (sessionStorage.getItem("authUser")) {
             var user = JSON.parse(sessionStorage.getItem("authUser"));
             document.getElementById("User").innerHTML = 'Hi <a href="events.html?1">'+ decodeURIComponent(user.name) +'</a><br>Tryst ID: '+ user.id +'<br><a href="modify.html">' + 'Modify' + '</a>';
-        } else {
-            document.getElementById("User").innerHTML = 'Hi <a href="login.html">' + 'Guest' + '</a>';
-            // console.log("this happened")
         }
         </script>
 
