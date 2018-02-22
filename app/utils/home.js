@@ -22,7 +22,7 @@ var x = setInterval(function() {
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
     // Output the result in an element with id="demo"
-    document.getElementById("date").innerHTML = "<b>"+days+"</b>" + " day"+((days==1)?"":"s")+ " " + "<b>"+hours+"</b>" + " hour"+((hours==1)?" ":"s ")+
+    document.getElementById("date").innerHTML = "<b>"+days+"</b>" + " day"+((days==1)?"":"s")+ " " + "<b>"+hours+"</b>" + " hour"+((hours==1)?" ":"s ")
     + "<b>"+minutes+"</b>" + " min"+((minutes==1)?" ":"s ") + "<b>"+seconds+"</b>" + " s remaining";
     // console.log("hello"+1)
     // If the count down is over, write some text 
