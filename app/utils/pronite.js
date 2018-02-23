@@ -31,11 +31,17 @@ function buttonCtrl(e, str) {
                 if (xh.readyState === 4) {
                     // console.log(xh.responseText)
                     if (xh.status === 200) {
-                        delete useReg[tar]
-                        sessionStorage.setItem("useReg", JSON.stringify(useReg))
-                        e.target.innerText = 'Register'
-                        if (str=='v') {document.getElementById('info'+tar).innerText = 'Register'; document.getElementById('info'+tar).classList.toggle('reg')}
-                        e.target.classList.toggle('reg')
+                        let jad = JSON.parse(xh.responseText)
+                        if (jad.error == false) {
+                            delete useReg[tar]
+                            sessionStorage.setItem("useReg", JSON.stringify(useReg))
+                            e.target.innerText = 'Register'
+                            if (str=='v') {document.getElementById('info'+tar).innerText = 'Register'; document.getElementById('info'+tar).classList.toggle('reg')}
+                            e.target.classList.toggle('reg')
+                        } else {
+                            e.target.innerText = 'Closed'
+                            if (str=='v') {document.getElementById('info'+tar).innerText = 'Closed'; document.getElementById('info'+tar).classList.toggle('reg')}
+                        }
                     }
                 }
             }
@@ -49,11 +55,17 @@ function buttonCtrl(e, str) {
                     // console.log(xh.responseText)
                     let data = JSON.parse(xh.responseText).data
                     if (xh.status === 200) {
-                        useReg[tar] = data.reg_id
-                        sessionStorage.setItem("useReg", JSON.stringify(useReg))
-                        e.target.innerText = 'Delete'
-                        if (str=='v') {document.getElementById('info'+tar).innerText = 'Delete'; document.getElementById('info'+tar).classList.toggle('reg')}
-                        e.target.classList.toggle('reg')
+                        let jas = JSON.parse(xh.responseText)
+                        if (jas.error == false) { 
+                            useReg[tar] = data.reg_id
+                            sessionStorage.setItem("useReg", JSON.stringify(useReg))
+                            e.target.innerText = 'Delete'
+                            if (str=='v') {document.getElementById('info'+tar).innerText = 'Delete'; document.getElementById('info'+tar).classList.toggle('reg')}
+                            e.target.classList.toggle('reg')
+                        } else {
+                            e.target.innerText = 'Closed'
+                            if (str=='v') {document.getElementById('info'+tar).innerText = 'Closed'; document.getElementById('info'+tar).classList.toggle('reg')}
+                        }
                     }
                 }
             }
