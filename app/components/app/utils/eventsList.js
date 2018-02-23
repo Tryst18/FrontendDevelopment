@@ -104,7 +104,7 @@
           }
           // console.log(bool)
           for (var x in app$utils$eventsList$$arrKey) {
-            if ((app$utils$eventsList$$arrKey[x]!="guest" && app$utils$eventsList$$arrKey[x]!="social") || app$utils$eventsList$$bool == "1") {
+            if ((app$utils$eventsList$$arrKey[x]!="guest" && app$utils$eventsList$$arrKey[x]!="social" && app$utils$eventsList$$arrKey[x]!="pronite") || app$utils$eventsList$$bool == "1") {
               // console.log(arrKey[x])
               $("#row").append(
                 '<div class="'+((!app$utils$eventsList$$bool)?'col-md-6':'col-md-4')+' col-sm-6 col-xs-12 category-block  animatedParent animateOnce" data-appear-top-offset="-200">' +

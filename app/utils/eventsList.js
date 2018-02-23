@@ -62,7 +62,7 @@ xhr.onreadystatechange = function () {
       }
       // console.log(bool)
       for (var x in arrKey) {
-        if ((arrKey[x]!="guest" && arrKey[x]!="social") || bool == "1") {
+        if ((arrKey[x]!="guest" && arrKey[x]!="social" && arrKey[x]!="pronite") || bool == "1") {
           // console.log(arrKey[x])
           $("#row").append(
             '<div class="'+((!bool)?'col-md-6':'col-md-4')+' col-sm-6 col-xs-12 category-block  animatedParent animateOnce" data-appear-top-offset="-200">' +
