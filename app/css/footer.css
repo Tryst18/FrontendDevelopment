@@ -149,16 +149,14 @@ body{
         float: none;
     }
 
-    .foot li a {
-        
-    }
+
     nav.foot ul{
         background: #ffffff;
         max-height: 0;
         width: 100%;
     }
     nav.foot ul.show{
-        max-height: 25em;
+        max-height: 38em;
         /*color: black;*/
     }
     .foot li a{
